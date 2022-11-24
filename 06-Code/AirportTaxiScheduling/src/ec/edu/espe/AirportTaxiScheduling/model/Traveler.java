@@ -15,7 +15,7 @@ public class Traveler {
 
     @Override
     public String toString() {
-        return "Traveler" + "\n name=" + name + "\n adress=" + adress + "\n phoneNumber=" + phoneNumber + "\n email=" + email + "\n birthDate=" + birthDate;
+        return  " name = " + name + "; adress = " + adress + "; phoneNumber = " + phoneNumber + "; email =" + email + "; birthDate=" + birthDate;
     }
 
    public Traveler(){
