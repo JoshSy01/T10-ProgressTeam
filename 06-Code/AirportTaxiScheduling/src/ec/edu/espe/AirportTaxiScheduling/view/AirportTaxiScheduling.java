@@ -3,6 +3,7 @@ package ec.edu.espe.AirportTaxiScheduling.view;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -104,6 +105,11 @@ public class AirportTaxiScheduling {
         String email;
         String birthDate;
         boolean repeatTraveler;
+        int day;
+        int month;
+        int year;
+        boolean validoFecha = false;
+        Scanner scan = new Scanner(System.in);
 
         Scanner input = new Scanner(System.in);
 
@@ -130,9 +136,31 @@ public class AirportTaxiScheduling {
         System.out.println("Write the email");
         email = input.nextLine();
 
-        System.out.println("Enter the birth date");
-        birthDate = input.nextLine();
+        
+        do {
+            System.out.println("Enter the birth date");
+            System.out.print("day: ");
+            day = scan.nextInt();
+            System.out.print("month: ");
+            month = scan.nextInt();
+            System.out.print("year: ");
+            year = scan.nextInt();
 
+            if ((day > 0 && day < 32) &&  (month > 0 && month < 13) && (year > 1921 && year < 2023)) {
+                validoFecha = true;
+            }
+            if (validoFecha == true) {
+                System.out.println("La fecha es correcta");
+
+            } else {
+                System.out.println("La fecha es incorrecta");
+                System.out.println("Reenter the date");
+            }
+        } while (validoFecha == false);
+
+        Date date = new Date(day, month, year);
+
+        birthDate = (date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
     }
