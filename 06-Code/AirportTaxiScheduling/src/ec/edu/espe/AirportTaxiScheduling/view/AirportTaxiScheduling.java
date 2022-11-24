@@ -123,7 +123,6 @@ public class AirportTaxiScheduling {
         do {
             repeatTraveler = false;
             System.out.println("Enter the phone number");
-<<<<<<< HEAD
             numberOfPhone = input.nextLine();
             input.nextLine();
             for (int x = 0; x <=1 ; x++){
@@ -139,12 +138,7 @@ public class AirportTaxiScheduling {
                 }
             }
             phoneNumber = Long.parseLong(numberOfPhone);
-                for (int i = 0; i < travelers.size(); i++) {
-=======
-            phoneNumber = input.nextLong();
-            input.nextLine();
             for (int i = 0; i < travelers.size(); i++) {
->>>>>>> 71107ee5cb1f910ccaa3abb2a064629f1d45183d
                 if (travelers.get(i).getPhoneNumber() == phoneNumber) {
                     System.out.println("This Traveler was already registered");
                     System.out.println("Use other");
