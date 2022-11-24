@@ -9,7 +9,7 @@ package ec.edu.espe.AirportTaxiScheduling.model;
  * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
  */
 public class Date {
-     private int day;
+    private int day;
     private int month;
     private int year;
 

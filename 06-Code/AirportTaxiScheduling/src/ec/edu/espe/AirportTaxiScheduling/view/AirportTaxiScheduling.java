@@ -33,6 +33,7 @@ public class AirportTaxiScheduling {
         ArrayList<Traveler> travelersJs = new ArrayList<Traveler>();
         storeFileJson(travelersJs);
         saveData(travelersJs);
+        
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
         
         Traveler traveler = new Traveler();
@@ -57,7 +58,7 @@ public class AirportTaxiScheduling {
             try {
                 System.out.println("Digit an option: ");
                 option = input.nextInt();
-                position[0]=travelersJs.size();
+                position[0]=travelers.size();
 
                 switch (option) {
                     case 1:
@@ -66,7 +67,7 @@ public class AirportTaxiScheduling {
                         saveTraveler(travelers.get(position[0]));
                         travelersJs = travelers;
                         saveData(travelersJs); //json
-                        
+                        position[0]=travelers.size();
                         break;
                     case 2:
                         long phoneNumber;
