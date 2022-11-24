@@ -1,13 +1,14 @@
 package ec.edu.espe.AirportTaxiScheduling.view;
 
+import ec.edu.espe.AirportTaxiScheduling.model.Money;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class AirportTaxiScheduling {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
         Traveler traveler = new Traveler();
         Scanner input = new Scanner(System.in);
@@ -33,7 +34,8 @@ public class AirportTaxiScheduling {
             System.out.println("1.Enter traveler");
             System.out.println("2.Search traveler");
             System.out.println("3.Print all travelers");
-            System.out.println("4.Exit");
+            System.out.println("4.Payment record");            
+            System.out.println("5.Exit");
 
             try {
                 System.out.println("Digit an option: ");
@@ -67,22 +69,44 @@ public class AirportTaxiScheduling {
                             System.out.println("No travelers registered yet");
                         }
                         break;
-                    case 3:
-                        if (position[0] != 0) {
-                            for (int i = 0; i < travelers.size(); i++) {
-                                printTraveler(travelers.get(i));
-                            }
-                        } else {
-                            System.out.println("No travelers registered yet");
+                    case 3:{
+                        FileReader chickenread = null;
+                        String linea;
+                        System.out.println("===============================");
+                        System.out.println("      TRAVELES DATA        ");
+                        System.out.println("===============================");
+                        File file = new File("travelerList.csv");
+                        chickenread = new FileReader(file);
+                        BufferedReader BR = new BufferedReader(chickenread);
+                        while ((linea = BR.readLine()) != null) {
+                            System.out.println(linea);
+
                         }
+                    }
                         break;
-                    case 4:
+                        case 4: {
+                        FileReader chickenread = null;
+                        String linea;
+                        System.out.println("================================");
+                        System.out.println("           PAYMENTS        ");
+                        System.out.println("================================");
+                        File file = new File("cash.csv");
+                        chickenread = new FileReader(file);
+                        BufferedReader BR = new BufferedReader(chickenread);
+                        while ((linea = BR.readLine()) != null) {
+                            System.out.println(linea);
+
+                        }
+                    }
+                    break;
+                    case 5:
                         System.out.println("You exit was success");
                         exit = true;
                         break;
                     default:
                         System.out.println("Nonexistent option");
                         break;
+                        
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Incorrect dataType");
@@ -109,6 +133,10 @@ public class AirportTaxiScheduling {
         int day;
         int month;
         int year;
+        int value;
+        Money cash;
+        String gmail = "@gmail.com";
+        
         boolean validoFecha = false;
         Scanner scan = new Scanner(System.in);
 
@@ -125,13 +153,13 @@ public class AirportTaxiScheduling {
             System.out.println("Enter the phone number");
             numberOfPhone = input.nextLine();
             input.nextLine();
-            for (int x = 0; x <=1 ; x++){
-            String regex = "\\d{10}";
-            
+            for (int x = 0; x <= 1; x++) {
+                String regex = "\\d{10}";
+
                 System.out.println("The number is: " + numberOfPhone);
                 System.out.println("Is the above phone number valid? " + numberOfPhone.matches(regex));
                 System.out.println();
-                if(numberOfPhone.matches(regex) == false){
+                if (numberOfPhone.matches(regex) == false) {
                     System.out.println("Enter the phone number");
                     numberOfPhone = input.nextLine();
                     input.nextLine();
@@ -147,10 +175,11 @@ public class AirportTaxiScheduling {
             }
         } while (repeatTraveler == true);
 
-        System.out.println("Write the email");
-        email = input.nextLine();
+        System.out.println("Write the email (@ gmail.com)");
 
-        
+        email = input.nextLine();
+        email = (email + gmail);
+        System.out.println("Email-->>" + email);
         do {
             System.out.println("Enter the birth date");
             System.out.print("day: ");
@@ -160,14 +189,14 @@ public class AirportTaxiScheduling {
             System.out.print("year: ");
             year = scan.nextInt();
 
-            if ((day > 0 && day < 32) &&  (month > 0 && month < 13) && (year > 1921 && year < 2023)) {
+            if ((day > 0 && day < 32) && (month > 0 && month < 13) && (year > 1921 && year < 2023)) {
                 validoFecha = true;
             }
             if (validoFecha == true) {
-                System.out.println("La fecha es correcta");
+                System.out.println("Date is correct");
 
             } else {
-                System.out.println("La fecha es incorrecta");
+                System.out.println("Date is not correct");
                 System.out.println("Reenter the date");
             }
         } while (validoFecha == false);
@@ -177,8 +206,27 @@ public class AirportTaxiScheduling {
         birthDate = (date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
-    }
+        createpayments(input, name, adress);
 
+    }
+private static void createpayments(Scanner input, String name, String adress) {
+        int value;
+        Money cash;
+        DateFormat dateFormat = new SimpleDateFormat(" d MMM yyyy, HH:mm:ss z");
+        String dateActual = dateFormat.format(new Date());
+        System.out.println("Write the cash");
+        value = input.nextInt();
+        cash = new Money(name, adress, value);
+        File List = new File("Cash.csv");
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(List, true));
+            writer.println("NAME" + ";" + "ADRESS" + ";" + "PAYMENT"+ ";"+ "DATE");
+            writer.println(name + ";" + adress + ";" + value + ";" + dateActual);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+    }
     private static void createFile() {
         File chickenList = new File("travelerList.json");
         try {
@@ -210,44 +258,4 @@ public class AirportTaxiScheduling {
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
-    }
-
-    /*private static void saveTravelersToJson(ArrayList<Traveler> travelers) {
-       File chickenList = new File("chickenList.json");
-        Gson gson = new Gson();
-        String json = gson.toJson(chickens);
-        //String json = new Gson().toJson(chickens);
-        
-        try {
-            PrintWriter writer = new PrintWriter(new FileWriter(chickenList, false)); 
-            //PrintWriter writer = new PrintWriter(chickenList); 
-            writer.print(json);   
-            writer.close();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace(System.out);   
-        } catch (IOException ex) {
-            ex.printStackTrace(System.out);
-        }
-    }*/
-
- /*private static void readJsonFile(ArrayList<Chicken> chickens, int position[]) {
-        String json = ""; 
-        Gson gson = new Gson();
-        Chicken chicken = new Chicken();
-        try {
-           BufferedReader reader = new BufferedReader(new FileReader("chickenlist.json"));
-           String line = "";
-        while ((line = reader.readLine())!= null){
-            json = line;
-            //chickens = gson.fromJson(json);
-            //chickens.add(position[0], chicken);
-            //position[0]++;
-        }
-            reader.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ChickenFarmSimulator.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(ChickenFarmSimulator.class.getName()).log(Level.SEVERE, null, ex);
-        }        
-    }*/
-}
+    }}
