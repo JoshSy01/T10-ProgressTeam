@@ -40,7 +40,7 @@ public class AirportTaxiScheduling {
 
                 switch (option) {
                     case 1:
-                        //createFile(); 
+                        createFile();
                         enterTraveler(travelers, traveler, position);
                         saveTraveler(travelers.get(position[0]));
                         //saveTravelersToJson(travelers);
@@ -49,17 +49,19 @@ public class AirportTaxiScheduling {
                     case 2:
                         long phoneNumber;
                         int found = 0;
-                        System.out.println("What is the phone number of the traveler?");
-                        phoneNumber = input.nextLong();
-                        for (int i = 0; i < travelers.size(); i++) {
-                            if (travelers.get(i).getPhoneNumber() == phoneNumber) {
-                                System.out.println("===Traveler Data===");
-                                printTraveler(travelers.get(i));
-                                found++;
+                        if (position[0] != 0) {
+                            System.out.println("What is the phone number of the traveler?");
+                            phoneNumber = input.nextLong();
+                            for (int i = 0; i < travelers.size(); i++) {
+                                if (travelers.get(i).getPhoneNumber() == phoneNumber) {
+                                    System.out.println("===Traveler Data===");
+                                    printTraveler(travelers.get(i));
+                                    found++;
+                                }
                             }
-                        }
-                        if (found == 0) {
-                            System.out.println("Unregistered traveler");
+                            if (found == 0) {
+                                System.out.println("Unregistered traveler");
+                            }
                         } else {
                             System.out.println("No travelers registered yet");
                         }
@@ -95,58 +97,55 @@ public class AirportTaxiScheduling {
         System.out.println(traveler);
     }
 
-    private static void enterTraveler(ArrayList<Traveler> travelers,Traveler traveler, int position[]) {
+    private static void enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
         String name;
         String adress;
         long phoneNumber;
         String email;
         String birthDate;
         boolean repeatTraveler;
-        
-        Scanner input = new Scanner(System.in); 
-        
+
+        Scanner input = new Scanner(System.in);
+
         System.out.println("Enter the name");
         name = input.nextLine();
 
         System.out.println("Write the adress");
         adress = input.nextLine();
-        
-        do{
-        repeatTraveler=false;
-        System.out.println("Enter the phone number");
-        phoneNumber = input.nextLong();
-        input.nextLine();
-         for (int i = 0; i < travelers.size(); i++) {
-                if(travelers.get(i).getPhoneNumber()==phoneNumber){
-            System.out.println("This Traveler was already registered");
-            System.out.println("Use other");
-            repeatTraveler=true;
+
+        do {
+            repeatTraveler = false;
+            System.out.println("Enter the phone number");
+            phoneNumber = input.nextLong();
+            input.nextLine();
+            for (int i = 0; i < travelers.size(); i++) {
+                if (travelers.get(i).getPhoneNumber() == phoneNumber) {
+                    System.out.println("This Traveler was already registered");
+                    System.out.println("Use other");
+                    repeatTraveler = true;
                 }
             }
-            }while(repeatTraveler == true );
-        
+        } while (repeatTraveler == true);
+
         System.out.println("Write the email");
         email = input.nextLine();
 
         System.out.println("Enter the birth date");
         birthDate = input.nextLine();
 
-       
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
     }
-    
-    /*private static void createFile() {
-        File chickenList = new File("chickenList.json");
+
+    private static void createFile() {
+        File chickenList = new File("travelerList.json");
         try {
             PrintWriter writer = new PrintWriter(chickenList);
             writer.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
         }
-    }*/
-    
-    
+    }
 
     private static void saveTraveler(Traveler traveler) {
         File travelerList = new File("travelerList.csv");
@@ -157,7 +156,7 @@ public class AirportTaxiScheduling {
         String birthDate = traveler.getBirthDate();
         try {
             PrintWriter writer = new PrintWriter(new FileWriter(travelerList, true));
-            writer.println("");     
+            writer.println("");
             writer.print(name + ";");
             writer.print(adress + ";");
             writer.print(phoneNumber + ";");
@@ -189,7 +188,7 @@ public class AirportTaxiScheduling {
         }
     }*/
 
-    /*private static void readJsonFile(ArrayList<Chicken> chickens, int position[]) {
+ /*private static void readJsonFile(ArrayList<Chicken> chickens, int position[]) {
         String json = ""; 
         Gson gson = new Gson();
         Chicken chicken = new Chicken();
