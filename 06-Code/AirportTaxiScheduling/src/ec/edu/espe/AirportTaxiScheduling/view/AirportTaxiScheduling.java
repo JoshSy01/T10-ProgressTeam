@@ -1,5 +1,6 @@
 package ec.edu.espe.AirportTaxiScheduling.view;
 
+import com.google.gson.Gson;
 import ec.edu.espe.AirportTaxiScheduling.model.Money;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import java.io.*;
@@ -15,15 +16,31 @@ import java.util.Scanner;
  * @author ProgressTeam,DCCO-ESPE
  */
 public class AirportTaxiScheduling {
+    
+    public static void saveData(ArrayList<Traveler> travelers) {
+        Gson gson = new Gson();
+        String json = gson.toJson(travelers);
+        File file = new File("travelerList.json");
+        try ( FileWriter fw = new FileWriter(file);) {
+            fw.write(json);
+            System.out.println("\n");
+        } catch (Exception e) {
+            System.out.println("A problem occurred while saving the data ");
+        }
+    }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
+        ArrayList<Traveler> travelersJs = new ArrayList<Traveler>();
+        storeFileJson(travelersJs);
+        saveData(travelersJs);
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+        
         Traveler traveler = new Traveler();
         Scanner input = new Scanner(System.in);
+        
         int position[] = new int[1];
         boolean exit = false;
         int option;
-        position[0] = 0;
 
         //readJsonFile(travelers,position);
         //System.out.println(position[0]); 
@@ -40,14 +57,16 @@ public class AirportTaxiScheduling {
             try {
                 System.out.println("Digit an option: ");
                 option = input.nextInt();
+                position[0]=travelersJs.size();
 
                 switch (option) {
                     case 1:
                         createFile();
                         enterTraveler(travelers, traveler, position);
                         saveTraveler(travelers.get(position[0]));
-                        //saveTravelersToJson(travelers);
-                        position[0]++;
+                        travelersJs = travelers;
+                        saveData(travelersJs); //json
+                        
                         break;
                     case 2:
                         long phoneNumber;
@@ -70,14 +89,14 @@ public class AirportTaxiScheduling {
                         }
                         break;
                     case 3:{
-                        FileReader chickenread = null;
+                        FileReader travelerread = null;
                         String linea;
                         System.out.println("===============================");
                         System.out.println("      TRAVELES DATA        ");
                         System.out.println("===============================");
                         File file = new File("travelerList.csv");
-                        chickenread = new FileReader(file);
-                        BufferedReader BR = new BufferedReader(chickenread);
+                        travelerread = new FileReader(file);
+                        BufferedReader BR = new BufferedReader(travelerread);
                         while ((linea = BR.readLine()) != null) {
                             System.out.println(linea);
 
@@ -85,14 +104,14 @@ public class AirportTaxiScheduling {
                     }
                         break;
                         case 4: {
-                        FileReader chickenread = null;
+                        FileReader travelerread = null;
                         String linea;
                         System.out.println("================================");
                         System.out.println("           PAYMENTS        ");
                         System.out.println("================================");
                         File file = new File("cash.csv");
-                        chickenread = new FileReader(file);
-                        BufferedReader BR = new BufferedReader(chickenread);
+                        travelerread = new FileReader(file);
+                        BufferedReader BR = new BufferedReader(travelerread);
                         while ((linea = BR.readLine()) != null) {
                             System.out.println(linea);
 
@@ -122,7 +141,7 @@ public class AirportTaxiScheduling {
         System.out.println(traveler);
     }
 
-    private static void enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
+    public static void enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
         String name;
         String adress;
         long phoneNumber;
@@ -258,4 +277,34 @@ private static void createpayments(Scanner input, String name, String adress) {
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
-    }}
+    }
+    public static void storeFileJson(ArrayList<Traveler> travelers) {
+        Gson gson = new Gson();
+        String jsonFile = "";
+        String[] jsonTraveler;
+
+        try ( Scanner scFile = new Scanner(new File("travelerList.json"))) {
+            while (scFile.hasNextLine()) {
+                jsonFile += scFile.nextLine();
+            }
+
+            jsonFile = jsonFile.replace("[", "");
+            jsonFile = jsonFile.replace("]", "");
+
+            jsonTraveler = jsonFile.split("},");
+
+            for (int i = 0; i < jsonTraveler.length; i++) {
+                if (i < jsonTraveler.length - 1) {
+                    travelers.add(gson.fromJson(jsonTraveler[i] + "}", Traveler.class));
+                } else {
+                    travelers.add(gson.fromJson(jsonTraveler[i], Traveler.class));
+                }
+            }
+            System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+            System.out.println("Data successfully uploaded");
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Error: File not open or found");
+        }
+    }
+}
