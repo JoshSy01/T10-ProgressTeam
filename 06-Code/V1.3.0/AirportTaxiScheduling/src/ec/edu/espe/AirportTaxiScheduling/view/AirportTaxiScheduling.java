@@ -1,9 +1,9 @@
 package ec.edu.espe.AirportTaxiScheduling.view;
 
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
+import com.google.gson.Gson;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -14,9 +14,23 @@ import java.util.logging.Logger;
  * @author ProgressTeam,DCCO-ESPE
  */
 public class AirportTaxiScheduling {
+    
+    public static void saveData(ArrayList<Traveler> travelers) {
+        Gson gson = new Gson();
+        String json = gson.toJson(travelers);
+        File file = new File("travelerList.json");
+        try ( FileWriter fw = new FileWriter(file);) {
+            fw.write(json);
+            System.out.println("\n");
+        } catch (Exception e) {
+            System.out.println("A problem occurred while saving the data ");
+        }
+    }
 
     public static void main(String[] args) {
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+        travelers = storeFileJson();
+        
         Traveler traveler = new Traveler();
         Scanner input = new Scanner(System.in);
         int position[] = new int[1];
@@ -41,10 +55,10 @@ public class AirportTaxiScheduling {
 
                 switch (option) {
                     case 1:
-                        createFile();
-                        enterTraveler(travelers, traveler, position);
-                        saveTraveler(travelers.get(position[0]));
-                        //saveTravelersToJson(travelers);
+                        
+                        travelers = enterTraveler(travelers, traveler, position);
+                        saveData(travelers);
+                        
                         position[0]++;
                         break;
                     case 2:
@@ -98,18 +112,13 @@ public class AirportTaxiScheduling {
         System.out.println(traveler);
     }
 
-    private static void enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
+    public static ArrayList<Traveler> enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
         String name;
         String adress;
         long phoneNumber;
         String email;
         String birthDate;
         boolean repeatTraveler;
-        int day;
-        int month;
-        int year;
-        boolean validoFecha = false;
-        Scanner scan = new Scanner(System.in);
 
         Scanner input = new Scanner(System.in);
 
@@ -119,50 +128,30 @@ public class AirportTaxiScheduling {
         System.out.println("Write the adress");
         adress = input.nextLine();
 
-        do {
+        //do {
             repeatTraveler = false;
             System.out.println("Enter the phone number");
             phoneNumber = input.nextLong();
             input.nextLine();
-            for (int i = 0; i < travelers.size(); i++) {
-                if (travelers.get(i).getPhoneNumber() == phoneNumber) {
-                    System.out.println("This Traveler was already registered");
-                    System.out.println("Use other");
-                    repeatTraveler = true;
-                }
-            }
-        } while (repeatTraveler == true);
+            //for (int i = 0; i < travelers.size(); i++) {
+                //if (travelers.get(i).getPhoneNumber() == phoneNumber) {
+                    //System.out.println("This Traveler was already registered");
+                    //System.out.println("Use other");
+                    //repeatTraveler = true;
+                //}
+            //}
+        //} while (repeatTraveler == true);
 
         System.out.println("Write the email");
         email = input.nextLine();
 
-        
-        do {
-            System.out.println("Enter the birth date");
-            System.out.print("day: ");
-            day = scan.nextInt();
-            System.out.print("month: ");
-            month = scan.nextInt();
-            System.out.print("year: ");
-            year = scan.nextInt();
+        System.out.println("Enter the birth date");
+        birthDate = input.nextLine();
 
-            if ((day > 0 && day < 32) &&  (month > 0 && month < 13) && (year > 1921 && year < 2023)) {
-                validoFecha = true;
-            }
-            if (validoFecha == true) {
-                System.out.println("La fecha es correcta");
-
-            } else {
-                System.out.println("La fecha es incorrecta");
-                System.out.println("Reenter the date");
-            }
-        } while (validoFecha == false);
-
-        Date date = new Date(day, month, year);
-
-        birthDate = (date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
+        
+        return travelers;
     }
 
     private static void createFile() {
@@ -196,6 +185,40 @@ public class AirportTaxiScheduling {
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
+    }
+    
+    public static ArrayList<Traveler> storeFileJson() {
+        Gson gson = new Gson();
+
+        ArrayList<Traveler> travelers = new ArrayList<>();
+        String jsonFile = "";
+        String[] jsonTraveler;
+
+        try ( Scanner scFile = new Scanner(new File("travelerList.json"))) {
+            while (scFile.hasNextLine()) {
+                jsonFile += scFile.nextLine();
+            }
+
+            jsonFile = jsonFile.replace("[", "");
+            jsonFile = jsonFile.replace("]", "");
+
+            jsonTraveler = jsonFile.split("},");
+
+            for (int i = 0; i < jsonTraveler.length; i++) {
+                if (i < jsonTraveler.length - 1) {
+                    travelers.add(gson.fromJson(jsonTraveler[i] + "}", Traveler.class));
+                } else {
+                    travelers.add(gson.fromJson(jsonTraveler[i], Traveler.class));
+                }
+            }
+            System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+            System.out.println("Data successfully uploaded");
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Error: File not open or found");
+        }
+
+        return travelers;
     }
 
     /*private static void saveTravelersToJson(ArrayList<Traveler> travelers) {
