@@ -21,7 +21,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/AirportTaxiScheduling/JavaApplication2/nbproject/private/
-/06-Code/AirportTaxiScheduling/nbproject/private/
-/06-Code/AirportTaxiScheduling/build/
-/06-Code/AirportTaxiScheduling/dist/
+/06-Code/V1.3.0/AirportTaxiScheduling/build/
+/06-Code/V1.3.0/AirportTaxiScheduling/dist/
+/06-Code/V1.3.0/AirportTaxiScheduling/nbproject/private/
