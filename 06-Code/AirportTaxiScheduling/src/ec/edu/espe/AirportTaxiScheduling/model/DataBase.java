@@ -4,10 +4,15 @@
  */
 package ec.edu.espe.AirportTaxiScheduling.model;
 
+import java.util.ArrayList;
+import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 /**
  *
  * @author ProgressTeam,DCCO-ESPE
  */
 public class DataBase {
+    private int id;
+    private ArrayList<Traveler> travelers;
+    
     
 }

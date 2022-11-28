@@ -13,12 +13,14 @@ public class TaxiDriver {
     private String plateNumber;
     private long  phoneNumber;
     private String email;
+    private DataBase dataBase;
     
     public TaxiDriver() {
         this.Drivername = "";
         this.plateNumber = "";
         this.phoneNumber = 0;
         this.email = "";
+        this.dataBase = dataBase;
     }
     
     public TaxiDriver(String Drivername, String plateNumber, long phoneNumber, String email) {
@@ -26,6 +28,7 @@ public class TaxiDriver {
         this.plateNumber = plateNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.dataBase = dataBase;
     }
 
     /**
@@ -82,6 +85,19 @@ public class TaxiDriver {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+    /**
+     * @return the database
+     */
+    public DataBase getDatabase() {
+        return dataBase;
+    }
+
+    /**
+     * @param dataBase the database to set
+     */
+    public void setDatabase(DataBase dataBase) {
+        this.dataBase = dataBase;
     }
     
 }
