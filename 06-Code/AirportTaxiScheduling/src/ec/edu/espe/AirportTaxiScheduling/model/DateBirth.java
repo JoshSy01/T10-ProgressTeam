@@ -8,15 +8,27 @@ package ec.edu.espe.AirportTaxiScheduling.model;
  *
  * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
  */
-public class Date {
+public class DateBirth {
+
     private int day;
     private int month;
     private int year;
+    
+    public DateBirth() {
+        this.day = 0;
+        this.month = 0;
+        this.year = 0;
+    }
 
-    public Date(int day, int month, int year) {
+    public DateBirth(int day, int month, int year) {
         this.day = day;
         this.month = month;
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "DateBirth{" + "day=" + day + ", month=" + month + ", year=" + year + '}';
     }
 
     /**
