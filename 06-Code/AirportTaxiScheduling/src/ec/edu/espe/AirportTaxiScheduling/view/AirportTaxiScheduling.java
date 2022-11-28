@@ -1,6 +1,6 @@
 package ec.edu.espe.AirportTaxiScheduling.view;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import ec.edu.espe.AirportTaxiScheduling.model.DateBirth;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import ec.edu.espe.AirportTaxiScheduling.model.TravelerPayments;
@@ -19,10 +19,7 @@ import java.util.Scanner;
 public class AirportTaxiScheduling {
 
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        ArrayList<Traveler> travelersJs = new ArrayList<Traveler>();
-        storeFileJson(travelersJs);
-        //saveData(travelersJs);
+    public static void main(String[] args) throws FileNotFoundException, IOException {  
 
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
@@ -32,7 +29,9 @@ public class AirportTaxiScheduling {
         int position[] = new int[1];
         boolean exit = false;
         int option;
-
+        position[0] = 0;
+        travelers=readFile();
+        
         while (!exit) {
             System.out.println("ProgressTeam");
             System.out.println("Menu");
@@ -49,18 +48,15 @@ public class AirportTaxiScheduling {
                 position[0] = travelers.size();
 
                 switch (option) {
-                    case 1:
-                        //createFile();
+                    case 1:                     
                         enterTraveler(travelers, traveler, position);
-                        saveTraveler(travelers.get(position[0]));
-                        travelersJs = travelers;
-                        saveData(travelersJs); //json
+                        saveTraveler(travelers.get(position[0]));                   
                         position[0] = travelers.size();
                         break;
                     case 2:
                         long phoneNumber;
                         int found = 0;
-                        if (travelersJs.size() != 0) {
+                        if (travelers.size() != 0) {
                             System.out.println("What is the phone number of the traveler?");
                             phoneNumber = input.nextLong();
                             String phoneNumberS = String.valueOf(phoneNumber);
@@ -93,6 +89,7 @@ public class AirportTaxiScheduling {
                     }
                     break;
                     case 5:
+                        storeFileJson(travelers);
                         System.out.println("You exit was success");
                         exit = true;
                         break;
@@ -141,15 +138,24 @@ public class AirportTaxiScheduling {
         }
     }
     
-    public static void saveData(ArrayList<Traveler> travelers) {
+    private static void storeFileJson(ArrayList<Traveler> travelers) {
+        
+        File travelerListFile = new File("travelerList.json");
         Gson gson = new Gson();
-        String json = gson.toJson(travelers);
-        File file = new File("travelerList.json");
-        try ( FileWriter fw = new FileWriter(file);) {
-            fw.write(json);
-            System.out.println("\n");
-        } catch (Exception e) {
-            System.out.println("A problem occurred while saving the data ");
+        JsonArray travelersJsArray = new JsonArray(); 
+        
+        for (int i = 0; i < travelers.size(); i++) {
+            gson.toJsonTree(travelers.get(i));
+            travelersJsArray.add(gson.toJsonTree(travelers.get(i)));
+        }
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(travelerListFile, false));
+            writer.print(travelersJsArray);
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
         }
     }
 
@@ -295,36 +301,30 @@ public class AirportTaxiScheduling {
         }
     }
 
-    public static void storeFileJson(ArrayList<Traveler> travelers) {
+    public static ArrayList<Traveler> readFile() {
+         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
         Gson gson = new Gson();
-        String jsonFile = "";
-        String[] jsonTraveler;
+        JsonArray travelersJsArray = new JsonArray();
+        File travelerList = new File("travelerList.json");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(travelerList));
+            String line = "";
+            String json = "";
+            while ((line = reader.readLine()) != null) {
+                json += line;
+            }       
 
-        try ( Scanner scFile = new Scanner(new File("travelerList.json"))) {
-            while (scFile.hasNextLine()) {
-                jsonFile += scFile.nextLine();
-            }
-
-            jsonFile = jsonFile.replace("[", "");
-            jsonFile = jsonFile.replace("]", "");
-
-            jsonTraveler = jsonFile.split("},");
-
-            for (int i = 0; i < jsonTraveler.length; i++) {
-                if (i < jsonTraveler.length - 1) {
-                    travelers.add(gson.fromJson(jsonTraveler[i] + "}", Traveler.class
-                    ));
-
-                } else {
-                    travelers.add(gson.fromJson(jsonTraveler[i], Traveler.class
-                    ));
-                }
-            }
-            System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-            System.out.println("Data successfully uploaded");
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("Error: File not open or found");
-        }
+            travelersJsArray = gson.fromJson(json, JsonArray.class);          
+             
+            for (int i = 0; i < travelersJsArray.size() ; i++) {
+                travelers.add(i,gson.fromJson(travelersJsArray.get(i), Traveler.class));
+            }                                               
+            reader.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }  
+        return travelers;
     }
 }
