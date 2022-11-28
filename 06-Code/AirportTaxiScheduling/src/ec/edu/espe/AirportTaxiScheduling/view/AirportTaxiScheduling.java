@@ -2,8 +2,8 @@ package ec.edu.espe.AirportTaxiScheduling.view;
 
 import com.google.gson.Gson;
 import ec.edu.espe.AirportTaxiScheduling.model.DateBirth;
-import ec.edu.espe.AirportTaxiScheduling.model.Money;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
+import ec.edu.espe.AirportTaxiScheduling.model.TravelerPayments;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,8 +33,6 @@ public class AirportTaxiScheduling {
         boolean exit = false;
         int option;
 
-        //readJsonFile(travelers,position);
-        //System.out.println(position[0]); 
         while (!exit) {
             System.out.println("ProgressTeam");
             System.out.println("Menu");
@@ -84,36 +82,14 @@ public class AirportTaxiScheduling {
                             System.out.println("No travelers registered yet");
                         }
                         break;
-                    case 3: {
-
-                        FileReader travelerread = null;
-                        String linea;
-                        System.out.println("===============================");
-                        System.out.println("      TRAVELES DATA        ");
-                        System.out.println("===============================");
-                        File file = new File("travelerList.csv");
-                        travelerread = new FileReader(file);
-                        BufferedReader BR = new BufferedReader(travelerread);
-                        while ((linea = BR.readLine()) != null) {
-                            System.out.println(linea);
-
-                        }
+                    case 3:  {
+                        readFileTravelerList();
                     }
                     break;
 
                     case 4: {
-                        FileReader travelerread = null;
-                        String linea;
-                        System.out.println("================================");
-                        System.out.println("           PAYMENTS        ");
-                        System.out.println("================================");
-                        File file = new File("cash.csv");
-                        travelerread = new FileReader(file);
-                        BufferedReader BR = new BufferedReader(travelerread);
-                        while ((linea = BR.readLine()) != null) {
-                            System.out.println(linea);
+                         readFilePayments();
 
-                        }
                     }
                     break;
                     case 5:
@@ -133,6 +109,36 @@ public class AirportTaxiScheduling {
             }
         }
 
+    }
+
+    private static void readFileTravelerList() throws IOException, FileNotFoundException {
+        FileReader travelerread = null;
+        String linea;
+        System.out.println("===============================");
+        System.out.println("      TRAVELES DATA        ");
+        System.out.println("===============================");
+        File file = new File("travelerList.csv");
+        travelerread = new FileReader(file);
+        BufferedReader BR = new BufferedReader(travelerread);
+        while ((linea = BR.readLine()) != null) {
+            System.out.println(linea);
+            
+        }
+    }
+    
+     private static void readFilePayments() throws IOException, FileNotFoundException {
+        FileReader travelerread = null;
+        String linea;
+        System.out.println("===============================");
+        System.out.println("              PAYMENTS        ");
+        System.out.println("===============================");
+        File file = new File("payments.csv");
+        travelerread = new FileReader(file);
+        BufferedReader BR = new BufferedReader(travelerread);
+        while ((linea = BR.readLine()) != null) {
+            System.out.println(linea);
+            
+        }
     }
     
     public static void saveData(ArrayList<Traveler> travelers) {
@@ -162,8 +168,7 @@ public class AirportTaxiScheduling {
         int day;
         int month;
         int year;
-        int value;
-        Money cash;
+        float payment;
         String gmail = "@gmail.com";
 
         boolean validoFecha = false;
@@ -231,35 +236,31 @@ public class AirportTaxiScheduling {
         } while (validoFecha == false);
 
         DateBirth date = new DateBirth(day, month, year);
-        System.out.println(date.getDay());
-        System.out.println(date.getMonth());
-        System.out.println(date.getYear());
+        System.out.println("Write the payment");
+        payment = input.nextFloat();
+        TravelerPayments payments  = new TravelerPayments(name , adress, payment);
         birthDate = (date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
         
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
-        createpayments(input, name, adress);
 
+        savepayments(payments);
     }
 
-    private static void createpayments(Scanner input, String name, String adress) {
-        int value;
-        Money cash;
+    private static void savepayments(TravelerPayments payments) {
         DateFormat dateFormat = new SimpleDateFormat(" d MMM yyyy, HH:mm:ss z");
         String dateActual = dateFormat.format(new Date());
-        System.out.println("Write the cash");
-        value = input.nextInt();
-        cash = new Money(name, adress, value);
-        File List = new File("Cash.csv");
+        File List = new File("payments.csv");
         try {
             PrintWriter writer = new PrintWriter(new FileWriter(List, true));
             writer.println("NAME" + ";" + "ADRESS" + ";" + "PAYMENT" + ";" + "DATE");
-            writer.println(name + ";" + adress + ";" + value + ";" + dateActual);
+            writer.println( payments.getName() + ";" + payments.getAdress() + ";" + payments.getPayment() + ";" + dateActual);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
     }
+
 
     private static void createFile() {
         File chickenList = new File("travelerList.json");
