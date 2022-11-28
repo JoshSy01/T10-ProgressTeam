@@ -9,5 +9,79 @@ package ec.edu.espe.AirportTaxiScheduling.model;
  * @author ProgressTeam,DCCO-ESPE
  */
 public class TaxiDriver {
+    private String Drivername;
+    private String plateNumber;
+    private long  phoneNumber;
+    private String email;
+    
+    public TaxiDriver() {
+        this.Drivername = "";
+        this.plateNumber = "";
+        this.phoneNumber = 0;
+        this.email = "";
+    }
+    
+    public TaxiDriver(String Drivername, String plateNumber, long phoneNumber, String email) {
+        this.Drivername = Drivername;
+        this.plateNumber = plateNumber;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    /**
+     * @return the Drivername
+     */
+    public String getDrivername() {
+        return Drivername;
+    }
+
+    /**
+     * @param Drivername the Drivername to set
+     */
+    public void setDrivername(String Drivername) {
+        this.Drivername = Drivername;
+    }
+
+    /**
+     * @return the plateNumber
+     */
+    public String getPlateNumber() {
+        return plateNumber;
+    }
+
+    /**
+     * @param plateNumber the plateNumber to set
+     */
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
+    }
+
+    /**
+     * @return the phoneNumber
+     */
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    /**
+     * @param phoneNumber the phoneNumber to set
+     */
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 }
