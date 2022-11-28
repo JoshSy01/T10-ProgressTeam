@@ -18,8 +18,7 @@ import java.util.Scanner;
  */
 public class AirportTaxiScheduling {
 
-
-    public static void main(String[] args) throws FileNotFoundException, IOException {  
+    public static void main(String[] args) throws FileNotFoundException, IOException {
 
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
@@ -30,12 +29,19 @@ public class AirportTaxiScheduling {
         boolean exit = false;
         int option;
         position[0] = 0;
-        travelers=readFile();
-        
+        travelers = readFileJson();
+
         while (!exit) {
-            System.out.println("ProgressTeam");
-            System.out.println("Menu");
-            System.out.println("Options:");
+            System.out.println("      ProgressTeam       ");
+            System.out.println("===============================");
+            System.out.println("    AIRPORT TAXI SCHEDULING    ");
+            System.out.println("          Menu Options         ");
+            System.out.println("    TAXI        ");
+            System.out.println("    .......________\n"
+                    + "    .. ___/____|____\\___\n"
+                    + "    .(_---_________ _---_)\n"
+                    + "    ...(o)...........(o)");
+            System.out.println("===============================");
             System.out.println("1.Enter traveler");
             System.out.println("2.Search traveler");
             System.out.println("3.Print all travelers");
@@ -48,48 +54,31 @@ public class AirportTaxiScheduling {
                 position[0] = travelers.size();
 
                 switch (option) {
-                    case 1:                     
-                        enterTraveler(travelers, traveler, position);
-                        saveTraveler(travelers.get(position[0]));                   
+                    case 1:
+                        enterTravelerData(travelers, traveler, position);
+                        saveFileTravelerCsv(travelers.get(position[0]));
                         position[0] = travelers.size();
+                        System.out.println("===============================");
                         break;
+
                     case 2:
-                        long phoneNumber;
-                        int found = 0;
-                        if (travelers.size() != 0) {
-                            System.out.println("What is the phone number of the traveler?");
-                            phoneNumber = input.nextLong();
-                            String phoneNumberS = String.valueOf(phoneNumber);
-                            FileReader travelerread = null;
-                            String linea;
-                            File file = new File("travelerList.csv");
-                            travelerread = new FileReader(file);
-                            BufferedReader BR = new BufferedReader(travelerread);
-                            while ((linea = BR.readLine()) != null) {
-                                if(linea.contains(phoneNumberS) == true){
-                                    System.out.println(linea);
-                                    found++; 
-                                }
-                            }
-                            if (found == 0) {
-                                System.out.println("Unregistered traveler");
-                            }
-                        } else {
-                            System.out.println("No travelers registered yet");
-                        }
+                        searchTraveler(travelers, input);
+                        System.out.println("===============================");
                         break;
-                    case 3:  {
+
+                    case 3:
                         readFileTravelerList();
-                    }
-                    break;
+                        System.out.println("===============================");
 
-                    case 4: {
-                         readFilePayments();
+                        break;
 
-                    }
-                    break;
+                    case 4:
+                        readFilePayments();
+                        System.out.println("===============================");
+
+                        break;
                     case 5:
-                        storeFileJson(travelers);
+                        saveFileJson(travelers);
                         System.out.println("You exit was success");
                         exit = true;
                         break;
@@ -108,42 +97,73 @@ public class AirportTaxiScheduling {
 
     }
 
+    private static void searchTraveler(ArrayList<Traveler> travelers, Scanner input) throws IOException {
+        long phoneNumber;
+        int found = 0;
+        System.out.println("===============================");
+        System.out.println("      SEARCH TRAVELER          ");
+        System.out.println("===============================");
+        if (travelers.size() != 0) {
+            System.out.println("What is the phone number of the traveler?");
+            phoneNumber = input.nextLong();
+            String phoneNumberS = String.valueOf(phoneNumber);
+            FileReader travelerread = null;
+            String dataLine;
+            File file = new File("travelerList.csv");
+            travelerread = new FileReader(file);
+            BufferedReader BR = new BufferedReader(travelerread);
+            while ((dataLine = BR.readLine()) != null) {
+                if (dataLine.contains(phoneNumberS) == true) {
+                    System.out.println("===============================");
+                    System.out.println(dataLine);
+                    found++;
+                }
+            }
+            if (found == 0) {
+                System.out.println("Unregistered traveler");
+            }
+        } else {
+            System.out.println("No travelers registered yet");
+        }
+    }
+
     private static void readFileTravelerList() throws IOException, FileNotFoundException {
         FileReader travelerread = null;
-        String linea;
+        String dataLine;
         System.out.println("===============================");
-        System.out.println("      TRAVELES DATA        ");
+        System.out.println("      TRAVELERS DATA        ");
         System.out.println("===============================");
+        System.out.println("NAME ; ADRESS ; PHONE NUMBER ; E-MAIL ; BIRTH DATE");
         File file = new File("travelerList.csv");
         travelerread = new FileReader(file);
         BufferedReader BR = new BufferedReader(travelerread);
-        while ((linea = BR.readLine()) != null) {
-            System.out.println(linea);
-            
+        while ((dataLine = BR.readLine()) != null) {
+            System.out.println(dataLine);
+
         }
     }
-    
-     private static void readFilePayments() throws IOException, FileNotFoundException {
+
+    private static void readFilePayments() throws IOException, FileNotFoundException {
         FileReader travelerread = null;
-        String linea;
+        String dataLine;
         System.out.println("===============================");
         System.out.println("              PAYMENTS        ");
         System.out.println("===============================");
         File file = new File("payments.csv");
         travelerread = new FileReader(file);
         BufferedReader BR = new BufferedReader(travelerread);
-        while ((linea = BR.readLine()) != null) {
-            System.out.println(linea);
-            
+        while ((dataLine = BR.readLine()) != null) {
+            System.out.println(dataLine);
+
         }
     }
-    
-    private static void storeFileJson(ArrayList<Traveler> travelers) {
-        
+
+    private static void saveFileJson(ArrayList<Traveler> travelers) {
+
         File travelerListFile = new File("travelerList.json");
         Gson gson = new Gson();
-        JsonArray travelersJsArray = new JsonArray(); 
-        
+        JsonArray travelersJsArray = new JsonArray();
+
         for (int i = 0; i < travelers.size(); i++) {
             gson.toJsonTree(travelers.get(i));
             travelersJsArray.add(gson.toJsonTree(travelers.get(i)));
@@ -159,11 +179,7 @@ public class AirportTaxiScheduling {
         }
     }
 
-    private static void printTraveler(Traveler traveler) {
-        System.out.println(traveler);
-    }
-
-    public static void enterTraveler(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
+    public static void enterTravelerData(ArrayList<Traveler> travelers, Traveler traveler, int position[]) {
         String name;
         String adress;
         long phoneNumber;
@@ -176,8 +192,11 @@ public class AirportTaxiScheduling {
         int year;
         float payment;
         String gmail = "@gmail.com";
+        System.out.println("===============================");
+        System.out.println("      ENTER TRAVELER DATA      ");
+        System.out.println("===============================");
 
-        boolean validoFecha = false;
+        boolean validDate = false;
         Scanner scan = new Scanner(System.in);
 
         Scanner input = new Scanner(System.in);
@@ -230,55 +249,44 @@ public class AirportTaxiScheduling {
             year = scan.nextInt();
 
             if ((day > 0 && day < 32) && (month > 0 && month < 13) && (year > 1921 && year < 2023)) {
-                validoFecha = true;
+                validDate = true;
             }
-            if (validoFecha == true) {
+            if (validDate == true) {
                 System.out.println("Date is correct");
 
             } else {
                 System.out.println("Date is not correct");
                 System.out.println("Reenter the date");
             }
-        } while (validoFecha == false);
+        } while (validDate == false);
 
         DateBirth date = new DateBirth(day, month, year);
         System.out.println("Write the payment");
         payment = input.nextFloat();
-        TravelerPayments payments  = new TravelerPayments(name , adress, payment);
+        TravelerPayments payments = new TravelerPayments(name, adress, payment);
         birthDate = (date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
-        
+
         traveler = new Traveler(name, adress, phoneNumber, email, birthDate);
         travelers.add(position[0], traveler);
 
-        savepayments(payments);
+        registerFilePayment(payments);
     }
 
-    private static void savepayments(TravelerPayments payments) {
+    private static void registerFilePayment(TravelerPayments payments) {
         DateFormat dateFormat = new SimpleDateFormat(" d MMM yyyy, HH:mm:ss z");
         String dateActual = dateFormat.format(new Date());
         File List = new File("payments.csv");
         try {
             PrintWriter writer = new PrintWriter(new FileWriter(List, true));
             writer.println("NAME" + ";" + "ADRESS" + ";" + "PAYMENT" + ";" + "DATE");
-            writer.println( payments.getName() + ";" + payments.getAdress() + ";" + payments.getPayment() + ";" + dateActual);
+            writer.println(payments.getName() + ";" + payments.getAdress() + ";" + payments.getPayment() + ";" + dateActual);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
     }
 
-
-    private static void createFile() {
-        File chickenList = new File("travelerList.json");
-        try {
-            PrintWriter writer = new PrintWriter(chickenList);
-            writer.close();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace(System.out);
-        }
-    }
-
-    private static void saveTraveler(Traveler traveler) {
+    private static void saveFileTravelerCsv(Traveler traveler) {
         File travelerList = new File("travelerList.csv");
         String name = traveler.getName();
         String adress = traveler.getAdress();
@@ -301,8 +309,8 @@ public class AirportTaxiScheduling {
         }
     }
 
-    public static ArrayList<Traveler> readFile() {
-         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+    public static ArrayList<Traveler> readFileJson() {
+        ArrayList<Traveler> travelers = new ArrayList<Traveler>();
         Gson gson = new Gson();
         JsonArray travelersJsArray = new JsonArray();
         File travelerList = new File("travelerList.json");
@@ -312,19 +320,19 @@ public class AirportTaxiScheduling {
             String json = "";
             while ((line = reader.readLine()) != null) {
                 json += line;
-            }       
+            }
 
-            travelersJsArray = gson.fromJson(json, JsonArray.class);          
-             
-            for (int i = 0; i < travelersJsArray.size() ; i++) {
-                travelers.add(i,gson.fromJson(travelersJsArray.get(i), Traveler.class));
-            }                                               
+            travelersJsArray = gson.fromJson(json, JsonArray.class);
+
+            for (int i = 0; i < travelersJsArray.size(); i++) {
+                travelers.add(i, gson.fromJson(travelersJsArray.get(i), Traveler.class));
+            }
             reader.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
-        }  
+        }
         return travelers;
     }
 }
