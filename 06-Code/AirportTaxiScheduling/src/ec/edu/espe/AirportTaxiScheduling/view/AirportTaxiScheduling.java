@@ -36,7 +36,7 @@ public class AirportTaxiScheduling {
             System.out.println("===============================");
             System.out.println("    AIRPORT TAXI SCHEDULING    ");
             System.out.println("          Menu Options         ");
-            System.out.println("    TAXI        ");
+            System.out.println("              TAXI        ");
             System.out.println("    .......________\n"
                     + "    .. ___/____|____\\___\n"
                     + "    .(_---_________ _---_)\n"
@@ -204,26 +204,30 @@ public class AirportTaxiScheduling {
         System.out.println("Enter the name");
         name = input.nextLine();
 
+        System.out.println("");
+        
         System.out.println("Write the adress");
         adress = input.nextLine();
 
+        System.out.println("");
+        
         do {
             repeatTraveler = false;
             System.out.println("Enter the phone number");
             numberOfPhone = input.nextLine();
             input.nextLine();
-            for (int x = 0; x <= 1; x++) {
-                String regex = "\\d{10}";
 
+            String regex = "\\d{10}";
+
+            while (numberOfPhone.matches(regex) == false) {
                 System.out.println("The number is: " + numberOfPhone);
                 System.out.println("Is the above phone number valid? " + numberOfPhone.matches(regex));
-                System.out.println();
-                if (numberOfPhone.matches(regex) == false) {
-                    System.out.println("Enter the phone number");
-                    numberOfPhone = input.nextLine();
-                    input.nextLine();
-                }
+                System.out.println("");
+                System.out.println("Enter the phone number");
+                numberOfPhone = input.nextLine();
+                input.nextLine();
             }
+
             phoneNumber = Long.parseLong(numberOfPhone);
             for (int i = 0; i < travelers.size(); i++) {
                 if (travelers.get(i).getPhoneNumber() == phoneNumber) {
