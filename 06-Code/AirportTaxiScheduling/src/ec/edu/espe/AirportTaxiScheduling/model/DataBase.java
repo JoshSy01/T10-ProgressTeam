@@ -263,4 +263,35 @@ public class DataBase {
         }
     }
    
+   public static ArrayList<Traveler> readFileJson() {
+        ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+        Gson gson = new Gson();
+        JsonArray travelersJsArray = new JsonArray();
+        File travelerList = new File("travelerList.json");
+        if(isFileEmpty(travelerList)==false){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(travelerList));
+            String line = "";
+            String json = "";
+            while ((line = reader.readLine()) != null) {
+                json += line;
+            }
+
+            travelersJsArray = gson.fromJson(json, JsonArray.class);
+
+            for (int i = 0; i < travelersJsArray.size(); i++) {
+                travelers.add(i, gson.fromJson(travelersJsArray.get(i), Traveler.class));
+            }
+            reader.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }}
+        return travelers;
+    }
+  
+   public static boolean isFileEmpty(File file) {
+        return file.length() == 0;
+    }
   } 
