@@ -41,8 +41,8 @@ public class AirportTaxiScheduling {
         ArrayList<TaxiDriver> taxiDriverInfo = new ArrayList<TaxiDriver>();
         TaxiDriver taxiDriver = new TaxiDriver();
         Scanner input = new Scanner(System.in);
-        
-        travelers=readFileJson();
+
+        travelers = readFileJson();
         taxiDriverInfo = readFileJsonTaxiDriver();
         System.out.println("Taxi Driver size: " + taxiDriverInfo.size());
         int position[] = new int[1];
@@ -61,10 +61,10 @@ public class AirportTaxiScheduling {
                     + "    .(_---_________ _---_)\n"
                     + "    ...(o)...........(o)");
             System.out.println("===============================");
-            System.out.println("1.TaxiDriver");
+            System.out.println("1.TAXIDRIVER");
             System.out.println("2.DATABASE");
             System.out.println("3.ACCOUNTING");
-            System.out.println("4.Exit");
+            System.out.println("4.EXIT");
 
             try {
                 System.out.println("Digit an option: ");
@@ -74,8 +74,9 @@ public class AirportTaxiScheduling {
                 switch (option) {
                     case 1:
 
-                        while (!exit) {
-                            System.out.println("      TAXIDRIVER       ");
+                        do {
+                            System.out.println("===============================");
+                            System.out.println("             TAXIDRIVER       ");
                             System.out.println("===============================");
                             System.out.println("1.ADD TAXI DRIVER");
                             System.out.println("2.REMOVE TAXI DRIVER");
@@ -90,7 +91,7 @@ public class AirportTaxiScheduling {
                                     case 1:
                                         taxiDriverInfo = readFileJsonTaxiDriver();
                                         if (taxiDriverInfo.isEmpty()) {
-                                            
+
                                             enterTaxiDriverData(taxiDriverInfo, taxiDriver, position);
                                             position[0] = taxiDriverInfo.size();
                                             saveTaxiDriverFileJson(taxiDriverInfo);
@@ -124,8 +125,6 @@ public class AirportTaxiScheduling {
                                         break;
 
                                     case 4:
-                                        System.out.println("You exit was success");
-                                        exit = true;
                                         break;
                                     default:
                                         System.out.println("Nonexistent option");
@@ -137,29 +136,31 @@ public class AirportTaxiScheduling {
                                 System.out.println("Write any character and press enter");
                                 input.next();
                             }
-                        }
+                        } while (option != 4);
 
                         break;
 
                     case 2:
 
-                        while (!exit) {
-                            System.out.println("      DATE BASE       ");
+                        do {
+                            System.out.println("===============================");
+                            System.out.println("            DATE BASE       ");
                             System.out.println("===============================");
                             System.out.println("1.ADD TRAVELER");
                             System.out.println("2.SEARCH TRAVELERR");
                             System.out.println("3.VIEW TRAVELER");
-                            System.out.println("4.VIEW TRAVELER PAYMENTS ");
-                            System.out.println("5.Exit");
+                            System.out.println("4.RETURN");
 
                             try {
                                 System.out.println("Digit an option: ");
                                 option = input.nextInt();
+                                position[0]=travelers.size();
 
                                 switch (option) {
                                     case 1:
                                         enterTravelerData(travelers, traveler, position);
                                         saveFileTravelerCsv(travelers.get(position[0]));
+                                        saveFileJson(travelers);
                                         position[0] = travelers.size();
                                         System.out.println("===============================");
                                         break;
@@ -175,14 +176,8 @@ public class AirportTaxiScheduling {
                                         System.out.println("===============================");
                                         break;
                                     case 4:
-                                        readFilePayments();
-                                        System.out.println("===============================");
                                         break;
-                                    case 5:
-                                        saveFileJson(travelers);
-                                        System.out.println("You exit was success");
-                                        exit = true;
-                                        break;
+
                                     default:
                                         System.out.println("Nonexistent option");
                                         break;
@@ -193,16 +188,17 @@ public class AirportTaxiScheduling {
                                 System.out.println("Write any character and press enter");
                                 input.next();
                             }
-                        }
+                        } while (option != 4);
 
                         break;
 
-                    case 3:  
+                    case 3:
                         do {
-                            System.out.println("     ACCOUNTING       ");
+                            System.out.println("===============================");
+                            System.out.println("           ACCOUNTING       ");
                             System.out.println("===============================");
                             System.out.println("1.VIEW TRAVELER PAYMENTS ");
-                            System.out.println("2.Exit");
+                            System.out.println("2.RETURN");
 
                             try {
                                 System.out.println("Digit an option: ");
@@ -214,7 +210,6 @@ public class AirportTaxiScheduling {
                                         System.out.println("===============================");
                                         break;
                                     case 2:
-                                        exit = true;
                                         break;
                                     default:
                                         System.out.println("Nonexistent option");
@@ -226,8 +221,8 @@ public class AirportTaxiScheduling {
                                 System.out.println("Write any character and press enter");
                                 input.next();
                             }
-                        } while (!exit);                  
-                        break;                     
+                        } while (option != 2);
+                        break;
                     case 4:
                         System.out.println("You exit was success");
                         exit = true;

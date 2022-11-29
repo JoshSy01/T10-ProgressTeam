@@ -268,6 +268,7 @@ public class DataBase {
         Gson gson = new Gson();
         JsonArray travelersJsArray = new JsonArray();
         File travelerList = new File("travelerList.json");
+        if(isFileEmpty(travelerList)==false){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(travelerList));
             String line = "";
@@ -286,9 +287,11 @@ public class DataBase {
             ex.printStackTrace(System.out);
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
-        }
+        }}
         return travelers;
     }
   
-   
+   public static boolean isFileEmpty(File file) {
+        return file.length() == 0;
+    }
   } 
