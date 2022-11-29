@@ -15,6 +15,7 @@ import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.enterTaxiDriver
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveTaxiDriverFileJson;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.enterTravelerData;
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.readFileJson;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.cleanTaxiDriverJson;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.readFileJsonTaxiDriver;
 import java.io.BufferedReader;
@@ -41,6 +42,7 @@ public class AirportTaxiScheduling {
         TaxiDriver taxiDriver = new TaxiDriver();
         Scanner input = new Scanner(System.in);
         
+        travelers=readFileJson();
         taxiDriverInfo = readFileJsonTaxiDriver();
         System.out.println("Taxi Driver size: " + taxiDriverInfo.size());
         int position[] = new int[1];
@@ -61,6 +63,7 @@ public class AirportTaxiScheduling {
             System.out.println("===============================");
             System.out.println("1.TaxiDriver");
             System.out.println("2.DATABASE");
+            System.out.println("3.ACCOUNTING");
             System.out.println("4.Exit");
 
             try {
@@ -194,9 +197,37 @@ public class AirportTaxiScheduling {
 
                         break;
 
-                    case 3:
+                    case 3:  
+                        do {
+                            System.out.println("     ACCOUNTING       ");
+                            System.out.println("===============================");
+                            System.out.println("1.VIEW TRAVELER PAYMENTS ");
+                            System.out.println("2.Exit");
 
-                        break;
+                            try {
+                                System.out.println("Digit an option: ");
+                                option = input.nextInt();
+
+                                switch (option) {
+                                    case 1:
+                                        readFilePayments();
+                                        System.out.println("===============================");
+                                        break;
+                                    case 2:
+                                        exit = true;
+                                        break;
+                                    default:
+                                        System.out.println("Nonexistent option");
+                                        break;
+                                }
+                            } catch (InputMismatchException e) {
+                                System.out.println("Incorrect dataType");
+                                System.out.println("If you don't see the menu again");
+                                System.out.println("Write any character and press enter");
+                                input.next();
+                            }
+                        } while (!exit);                  
+                        break;                     
                     case 4:
                         System.out.println("You exit was success");
                         exit = true;
