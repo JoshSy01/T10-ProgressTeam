@@ -12,10 +12,11 @@ import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.saveFileTravelerC
 import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.searchTraveler;
 import ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.enterTaxiDriverData;
-import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveFileTaxiDriverCsv;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveTaxiDriverFileJson;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.enterTravelerData;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.cleanTaxiDriverJson;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.readFileJsonTaxiDriver;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,7 +40,9 @@ public class AirportTaxiScheduling {
         ArrayList<TaxiDriver> taxiDriverInfo = new ArrayList<TaxiDriver>();
         TaxiDriver taxiDriver = new TaxiDriver();
         Scanner input = new Scanner(System.in);
-
+        
+        taxiDriverInfo = readFileJsonTaxiDriver();
+        System.out.println("Taxi Driver size: " + taxiDriverInfo.size());
         int position[] = new int[1];
         boolean exit = false;
         int option;
@@ -82,9 +85,10 @@ public class AirportTaxiScheduling {
 
                                 switch (option) {
                                     case 1:
+                                        taxiDriverInfo = readFileJsonTaxiDriver();
                                         if (taxiDriverInfo.isEmpty()) {
+                                            
                                             enterTaxiDriverData(taxiDriverInfo, taxiDriver, position);
-                                            saveFileTaxiDriverCsv(taxiDriverInfo.get(position[0]));
                                             position[0] = taxiDriverInfo.size();
                                             saveTaxiDriverFileJson(taxiDriverInfo);
                                         } else {
@@ -94,14 +98,7 @@ public class AirportTaxiScheduling {
                                         break;
 
                                     case 2:
-                                        File file = new File("taxiDriverInfo.json");
-
-                                        if (file.delete()) {
-
-                                            System.out.println("The file has been successfully deleted");
-                                        } else {
-                                            System.out.println("The file cannot be deleted");
-                                        }
+                                        cleanTaxiDriverJson();
                                         break;
 
                                     case 3:
