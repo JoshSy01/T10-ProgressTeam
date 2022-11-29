@@ -4,6 +4,14 @@
  */
 package ec.edu.espe.AirportTaxiScheduling.model;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
@@ -68,4 +76,17 @@ public class TravelerPayments {
         this.payment = payment;
     }
 
+    public static void registerFilePayment(TravelerPayments payments) {
+        DateFormat dateFormat = new SimpleDateFormat(" d MMM yyyy, HH:mm:ss z");
+        String dateActual = dateFormat.format(new Date());
+        File List = new File("payments.csv");
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(List, true));
+            writer.println("NAME" + ";" + "ADRESS" + ";" + "PAYMENT" + ";" + "DATE");
+            writer.println(payments.getName() + ";" + payments.getAdress() + ";" + payments.getPayment() + ";" + dateActual);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+    }
 }

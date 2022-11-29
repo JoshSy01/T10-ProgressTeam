@@ -4,12 +4,18 @@
  */
 package ec.edu.espe.AirportTaxiScheduling.view;
 
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.readFilePayments;
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.readFileTravelerList;
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.saveFileJson;
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.saveFileTravelerCsv;
+import static ec.edu.espe.AirportTaxiScheduling.model.DataBase.searchTraveler;
 import ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.readFileJsonTaxiDriver;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.enterTaxiDriverData;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveFileTaxiDriverCsv;
 import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveTaxiDriverFileJson;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
+import static ec.edu.espe.AirportTaxiScheduling.view.AirportTaxiScheduling.enterTravelerData;
 import static ec.edu.espe.AirportTaxiScheduling.view.AirportTaxiScheduling.readFileJson;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -40,6 +46,7 @@ public class AirportTaxiScheduling2 {
         travelers = readFileJson();
         taxiDriverInfo = readFileJsonTaxiDriver();
         System.out.println("size: " + taxiDriverInfo.size());
+        travelers = readFileJson();
 
         while (!exit) {
             System.out.println("      ProgressTeam       ");
@@ -139,20 +146,28 @@ public class AirportTaxiScheduling2 {
 
                                 switch (option) {
                                     case 1:
-
+                                        enterTravelerData(travelers, traveler, position);
+                                        saveFileTravelerCsv(travelers.get(position[0]));
+                                        position[0] = travelers.size();
+                                        System.out.println("===============================");
                                         break;
 
                                     case 2:
+                                        searchTraveler(travelers, input);
+                                        System.out.println("===============================");
 
                                         break;
 
                                     case 3:
-
+                                        readFileTravelerList();
+                                        System.out.println("===============================");
                                         break;
                                     case 4:
-
+                                        readFilePayments();
+                                        System.out.println("===============================");
                                         break;
                                     case 5:
+                                        saveFileJson(travelers);
                                         System.out.println("You exit was success");
                                         exit = true;
                                         break;
