@@ -4,6 +4,11 @@
  */
 package ec.edu.espe.AirportTaxiScheduling.view;
 
+import ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.readFileJsonTaxiDriver;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.enterTaxiDriverData;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveFileTaxiDriverCsv;
+import static ec.edu.espe.AirportTaxiScheduling.model.TaxiDriver.saveTaxiDriverFileJson;
 import ec.edu.espe.AirportTaxiScheduling.model.Traveler;
 import static ec.edu.espe.AirportTaxiScheduling.view.AirportTaxiScheduling.readFileJson;
 import java.io.FileNotFoundException;
@@ -22,13 +27,19 @@ public class AirportTaxiScheduling2 {
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
         Traveler traveler = new Traveler();
+        
+        ArrayList<TaxiDriver> taxiDriverInfo = new ArrayList<TaxiDriver>();
+        TaxiDriver taxiDriver = new TaxiDriver();
         Scanner input = new Scanner(System.in);
+        
 
         int position[] = new int[1];
         boolean exit = false;
         int option;
         position[0] = 0;
         travelers = readFileJson();
+        taxiDriverInfo = readFileJsonTaxiDriver();
+        System.out.println("size: " + taxiDriverInfo.size());
 
         while (!exit) {
             System.out.println("      ProgressTeam       ");
@@ -48,7 +59,7 @@ public class AirportTaxiScheduling2 {
             try {
                 System.out.println("Digit an option: ");
                 option = input.nextInt();
-                position[0] = travelers.size();
+                position[0] = taxiDriverInfo.size();
 
                 switch (option) {
                     case 1:
@@ -59,7 +70,8 @@ public class AirportTaxiScheduling2 {
                             System.out.println("1.ADD TAXI DRIVER");
                             System.out.println("2.REMOVE TAXI DRIVER");
                             System.out.println("3.VIEW TAXI DRIVER");
-                            System.out.println("4.Exit");
+                            System.out.println("4.SAVE TAXI DRIVER AS JSON");
+                            System.out.println("5.Exit");
 
                             try {
                                 System.out.println("Digit an option: ");
@@ -67,7 +79,14 @@ public class AirportTaxiScheduling2 {
 
                                 switch (option) {
                                     case 1:
-
+                                        if(taxiDriverInfo.isEmpty()){
+                                            enterTaxiDriverData(taxiDriverInfo, taxiDriver, position);
+                                            saveFileTaxiDriverCsv(taxiDriverInfo.get(position[0]));
+                                            position[0] = taxiDriverInfo.size();
+                                        }else{
+                                            System.out.println("A Taxi Driver is registered");
+                                        }
+                                        
                                         break;
 
                                     case 2:
@@ -79,6 +98,12 @@ public class AirportTaxiScheduling2 {
                                         break;
 
                                     case 4:
+                                        if(taxiDriverInfo.size() == 1){
+                                            saveTaxiDriverFileJson(taxiDriverInfo);
+                                        }
+                                        break;
+                                        
+                                    case 5:
                                         System.out.println("You exit was success");
                                         exit = true;
                                         break;

@@ -4,6 +4,18 @@
  */
 package ec.edu.espe.AirportTaxiScheduling.model;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author ProgressTeam,DCCO-ESPE
@@ -13,14 +25,12 @@ public class TaxiDriver {
     private String plateNumber;
     private long  phoneNumber;
     private String email;
-    private DataBase dataBase;
     
     public TaxiDriver() {
         this.Drivername = "";
         this.plateNumber = "";
         this.phoneNumber = 0;
         this.email = "";
-        this.dataBase = dataBase;
     }
     
     public TaxiDriver(String Drivername, String plateNumber, long phoneNumber, String email) {
@@ -28,7 +38,6 @@ public class TaxiDriver {
         this.plateNumber = plateNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.dataBase = dataBase;
     }
 
     /**
@@ -86,18 +95,136 @@ public class TaxiDriver {
     public void setEmail(String email) {
         this.email = email;
     }
-    /**
-     * @return the database
-     */
-    public DataBase getDatabase() {
-        return dataBase;
-    }
+    
+    
+    
+    public static ArrayList<TaxiDriver> readFileJsonTaxiDriver() {
+        ArrayList<TaxiDriver> taxiDriver = new ArrayList<TaxiDriver>();
+        Gson gson = new Gson();
+        JsonArray taxiDriverJsArray = new JsonArray();
+        File taxiDriverInfo = new File("taxiDriverInfo.json");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(taxiDriverInfo));
+            String line = "";
+            String json = "";
+            while ((line = reader.readLine()) != null) {
+                json += line;
+            }
 
-    /**
-     * @param dataBase the database to set
-     */
-    public void setDatabase(DataBase dataBase) {
-        this.dataBase = dataBase;
+            taxiDriverJsArray = gson.fromJson(json, JsonArray.class);
+
+            for (int i = 0; i < taxiDriverJsArray.size(); i++) {
+                taxiDriver.add(i, gson.fromJson(taxiDriverJsArray.get(i), TaxiDriver.class));
+            }
+            reader.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
+        return taxiDriver;
+    }
+    public static void enterTaxiDriverData(ArrayList<TaxiDriver> taxiDriverInfo, TaxiDriver taxiDriver, int position[]) {
+        String name;
+        String plateNumber;
+        long phoneNumber;
+        String numberOfPhone;
+        String email;
+        boolean repeatTraveler;
+        String gmail = "@gmail.com";
+        System.out.println("===============================");
+        System.out.println("      ENTER TAXI DRIVER DATA      ");
+        System.out.println("===============================");
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the name");
+        name = input.nextLine();
+
+        System.out.println("");
+        
+        System.out.println("Enter the planeNumber");
+        plateNumber = input.nextLine();
+
+        System.out.println("");
+        
+        do {
+            repeatTraveler = false;
+            System.out.println("Enter the phone number");
+            numberOfPhone = input.nextLine();
+            input.nextLine();
+
+            String regex = "\\d{10}";
+
+            while (numberOfPhone.matches(regex) == false) {
+                System.out.println("The number is: " + numberOfPhone);
+                System.out.println("Is the above phone number valid? " + numberOfPhone.matches(regex));
+                System.out.println("");
+                System.out.println("Enter the phone number");
+                numberOfPhone = input.nextLine();
+                input.nextLine();
+            }
+
+            phoneNumber = Long.parseLong(numberOfPhone);
+            for (int i = 0; i < taxiDriverInfo.size(); i++) {
+                if (taxiDriverInfo.get(i).getPhoneNumber() == phoneNumber) {
+                    System.out.println("This Traveler was already registered");
+                    System.out.println("Use other");
+                    repeatTraveler = true;
+                }
+            }
+        } while (repeatTraveler == true);
+
+        System.out.println("Write the email (@ gmail.com)");
+
+        email = input.nextLine();
+        email = (email + gmail);
+        System.out.println("Email-->>" + email);
+
+
+        taxiDriver = new TaxiDriver(name, plateNumber, phoneNumber, email);
+        taxiDriverInfo.add(position[0], taxiDriver);
+    }
+    
+    public static void saveFileTaxiDriverCsv(TaxiDriver taxiDriver) {
+        File taxiDriverFile = new File("taxiDriverInfo.csv");
+        String name = taxiDriver.getDrivername();
+        String plateNumber = taxiDriver.getPlateNumber();
+        long phoneNumber = taxiDriver.getPhoneNumber();
+        String email = taxiDriver.getEmail();
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(taxiDriverFile, true));
+            writer.println("");
+            writer.print(name + ";");
+            writer.print(plateNumber + ";");
+            writer.print(phoneNumber + ";");
+            writer.print(email + ";");
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
+    }
+    
+    public static void saveTaxiDriverFileJson(ArrayList<TaxiDriver> taxiDriver) {
+
+        File taxiDriverFile = new File("taxiDriverInfo.json");
+        Gson gson = new Gson();
+        JsonArray taxiDriverInfo = new JsonArray();
+
+        for (int i = 0; i < taxiDriver.size(); i++) {
+            gson.toJsonTree(taxiDriver.get(i));
+            taxiDriverInfo.add(gson.toJsonTree(taxiDriver.get(i)));
+        }
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(taxiDriverFile, false));
+            writer.print(taxiDriverInfo);
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
     }
     
 }
