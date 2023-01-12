@@ -27,87 +27,109 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlAirportTaxiSheduling = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         mnubAirportTaxiScheduling = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        miAbout = new javax.swing.JMenuItem();
+        mitAbout = new javax.swing.JMenuItem();
         miExit = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
+        mitAddTaxiDriver = new javax.swing.JMenuItem();
+        mitViewTaxiDriver = new javax.swing.JMenuItem();
+        mitUpdateTaxiDriver = new javax.swing.JMenuItem();
+        mitDeleteTaxiDriver = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         mitAddTraveler = new javax.swing.JMenuItem();
         mitViewTraveler = new javax.swing.JMenuItem();
         mitUpdateTraveler = new javax.swing.JMenuItem();
         mitDeleteTraveler = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
+        mitAccounting = new javax.swing.JMenuItem();
+        mitReminder = new javax.swing.JMenuItem();
+        mitCalculateTripPrice = new javax.swing.JMenuItem();
+        mitHistory = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mitContactSupport = new javax.swing.JMenuItem();
+        mitCommonProblem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airport Taxi Scheduling");
         setAlwaysOnTop(true);
 
-        pnlAirportTaxiSheduling.setBackground(new java.awt.Color(64, 65, 60));
-        pnlAirportTaxiSheduling.setToolTipText("Taxi");
-
         jLabel1.setText("Team Progress for Sheduling your travels");
 
-        javax.swing.GroupLayout pnlAirportTaxiShedulingLayout = new javax.swing.GroupLayout(pnlAirportTaxiSheduling);
-        pnlAirportTaxiSheduling.setLayout(pnlAirportTaxiShedulingLayout);
-        pnlAirportTaxiShedulingLayout.setHorizontalGroup(
-            pnlAirportTaxiShedulingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAirportTaxiShedulingLayout.createSequentialGroup()
-                .addGap(123, 123, 123)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(267, 267, 267)
                 .addComponent(jLabel1)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
-        pnlAirportTaxiShedulingLayout.setVerticalGroup(
-            pnlAirportTaxiShedulingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAirportTaxiShedulingLayout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jLabel1)
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         mnubAirportTaxiScheduling.setToolTipText("Airport Taxi Scheduling");
 
         jMenu1.setText("Airport Taxi Sheduling");
 
-        miAbout.setText("About");
-        miAbout.addActionListener(new java.awt.event.ActionListener() {
+        mitAbout.setText("About");
+        mitAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miAboutActionPerformed(evt);
+                mitAboutActionPerformed(evt);
             }
         });
-        jMenu1.add(miAbout);
+        jMenu1.add(mitAbout);
 
         miExit.setText("Exit");
+        miExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miExitActionPerformed(evt);
+            }
+        });
         jMenu1.add(miExit);
 
         mnubAirportTaxiScheduling.add(jMenu1);
 
         jMenu4.setText("TaxiDriver");
 
-        jMenuItem4.setText("Add driver");
-        jMenu4.add(jMenuItem4);
+        mitAddTaxiDriver.setText("Add Taxi driver");
+        mitAddTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitAddTaxiDriverActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mitAddTaxiDriver);
 
-        jMenuItem11.setText("View driver");
-        jMenu4.add(jMenuItem11);
+        mitViewTaxiDriver.setText("View Taxi driver");
+        mitViewTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitViewTaxiDriverActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mitViewTaxiDriver);
 
-        jMenuItem12.setText("Update driver");
-        jMenu4.add(jMenuItem12);
+        mitUpdateTaxiDriver.setText("Update Taxi driver");
+        mitUpdateTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitUpdateTaxiDriverActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mitUpdateTaxiDriver);
 
-        jMenuItem13.setText("Delete driver");
-        jMenu4.add(jMenuItem13);
+        mitDeleteTaxiDriver.setText("Delete Taxi driver");
+        mitDeleteTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitDeleteTaxiDriverActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mitDeleteTaxiDriver);
 
         mnubAirportTaxiScheduling.add(jMenu4);
 
@@ -149,27 +171,57 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
         jMenu3.setText("Services");
 
-        jMenuItem5.setText("Accounting");
-        jMenu3.add(jMenuItem5);
+        mitAccounting.setText("Accounting");
+        mitAccounting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitAccountingActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mitAccounting);
 
-        jMenuItem6.setText("Reminder");
-        jMenu3.add(jMenuItem6);
+        mitReminder.setText("Reminder");
+        mitReminder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitReminderActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mitReminder);
 
-        jMenuItem16.setText("Calculate trip price");
-        jMenu3.add(jMenuItem16);
+        mitCalculateTripPrice.setText("Calculate trip price");
+        mitCalculateTripPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitCalculateTripPriceActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mitCalculateTripPrice);
 
-        jMenuItem19.setText("History");
-        jMenu3.add(jMenuItem19);
+        mitHistory.setText("History");
+        mitHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitHistoryActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mitHistory);
 
         mnubAirportTaxiScheduling.add(jMenu3);
 
         jMenu2.setText("Help");
 
-        jMenuItem17.setText("Contact Support");
-        jMenu2.add(jMenuItem17);
+        mitContactSupport.setText("Contact Support");
+        mitContactSupport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitContactSupportActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mitContactSupport);
 
-        jMenuItem3.setText("Common Problems");
-        jMenu2.add(jMenuItem3);
+        mitCommonProblem.setText("Common Problems");
+        mitCommonProblem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitCommonProblemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mitCommonProblem);
 
         mnubAirportTaxiScheduling.add(jMenu2);
 
@@ -179,23 +231,23 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlAirportTaxiSheduling, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlAirportTaxiSheduling, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void miAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAboutActionPerformed
+    private void mitAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAboutActionPerformed
         FrmAbout about;
         about = new FrmAbout();
         about.setVisible(true);
-    }//GEN-LAST:event_miAboutActionPerformed
+            this.dispose();
+
+    }//GEN-LAST:event_mitAboutActionPerformed
 
     private void mitAddTravelerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAddTravelerActionPerformed
         // TODO add your handling code here:
@@ -223,11 +275,95 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
     private void mitDeleteTravelerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitDeleteTravelerActionPerformed
         // TODO add your handling code here:
-         FrmDeleteTraveler frDeleteTraveler;
-    frDeleteTraveler =  new FrmDeleteTraveler();
-    frDeleteTraveler.setVisible(true);
+         FrmDeleteTraveler frmDeleteTraveler;
+    frmDeleteTraveler =  new FrmDeleteTraveler();
+    frmDeleteTraveler.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_mitDeleteTravelerActionPerformed
+
+    private void miExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miExitActionPerformed
+            this.dispose();
+    }//GEN-LAST:event_miExitActionPerformed
+
+    private void mitAccountingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAccountingActionPerformed
+        // TODO add your handling code here:
+        FrmAccounting frmAccounting;
+    frmAccounting =  new FrmAccounting();
+    frmAccounting.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitAccountingActionPerformed
+
+    private void mitAddTaxiDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAddTaxiDriverActionPerformed
+        // TODO add your handling code here:
+         FrmAddTaxiDriver frmAddTaxiDriver;
+    frmAddTaxiDriver =  new FrmAddTaxiDriver();
+    frmAddTaxiDriver.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitAddTaxiDriverActionPerformed
+
+    private void mitViewTaxiDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitViewTaxiDriverActionPerformed
+        // TODO add your handling code here:
+         FrmViewTaxiDriver frmViewTaxiDriver;
+    frmViewTaxiDriver =  new FrmViewTaxiDriver();
+    frmViewTaxiDriver.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitViewTaxiDriverActionPerformed
+
+    private void mitUpdateTaxiDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitUpdateTaxiDriverActionPerformed
+        // TODO add your handling code here:
+        FrmUpdateTaxiDriver frmUpdateTaxiDriver;
+    frmUpdateTaxiDriver =  new FrmUpdateTaxiDriver();
+    frmUpdateTaxiDriver.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitUpdateTaxiDriverActionPerformed
+
+    private void mitDeleteTaxiDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitDeleteTaxiDriverActionPerformed
+        // TODO add your handling code here:
+        FrmDeleteTaxiDriver frmDeleteTaxiDriver;
+    frmDeleteTaxiDriver =  new FrmDeleteTaxiDriver();
+    frmDeleteTaxiDriver.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitDeleteTaxiDriverActionPerformed
+
+    private void mitReminderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitReminderActionPerformed
+        // TODO add your handling code here:
+        FrmReminder frmReminder;
+    frmReminder =  new FrmReminder();
+    frmReminder.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitReminderActionPerformed
+
+    private void mitCalculateTripPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitCalculateTripPriceActionPerformed
+        // TODO add your handling code here:
+        FrmCalculateTripPrice frmCalculateTripPrice;
+    frmCalculateTripPrice =  new FrmCalculateTripPrice();
+    frmCalculateTripPrice.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitCalculateTripPriceActionPerformed
+
+    private void mitHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitHistoryActionPerformed
+        // TODO add your handling code here:
+        FrmHistory frmHistory;
+    frmHistory =  new FrmHistory();
+    frmHistory.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitHistoryActionPerformed
+
+    private void mitContactSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitContactSupportActionPerformed
+        // TODO add your handling code here:
+        FrmContactSupport frmContactSupport;
+    frmContactSupport =  new FrmContactSupport();
+    frmContactSupport.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitContactSupportActionPerformed
+
+    private void mitCommonProblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitCommonProblemActionPerformed
+        // TODO add your handling code here:
+        FrmCommonProblems frmCommonProblems;
+    frmCommonProblems =  new FrmCommonProblems();
+    frmCommonProblems.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_mitCommonProblemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,23 +410,23 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem miAbout;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem miExit;
+    private javax.swing.JMenuItem mitAbout;
+    private javax.swing.JMenuItem mitAccounting;
+    private javax.swing.JMenuItem mitAddTaxiDriver;
     private javax.swing.JMenuItem mitAddTraveler;
+    private javax.swing.JMenuItem mitCalculateTripPrice;
+    private javax.swing.JMenuItem mitCommonProblem;
+    private javax.swing.JMenuItem mitContactSupport;
+    private javax.swing.JMenuItem mitDeleteTaxiDriver;
     private javax.swing.JMenuItem mitDeleteTraveler;
+    private javax.swing.JMenuItem mitHistory;
+    private javax.swing.JMenuItem mitReminder;
+    private javax.swing.JMenuItem mitUpdateTaxiDriver;
     private javax.swing.JMenuItem mitUpdateTraveler;
+    private javax.swing.JMenuItem mitViewTaxiDriver;
     private javax.swing.JMenuItem mitViewTraveler;
     private javax.swing.JMenuBar mnubAirportTaxiScheduling;
-    private javax.swing.JPanel pnlAirportTaxiSheduling;
     // End of variables declaration//GEN-END:variables
 }
