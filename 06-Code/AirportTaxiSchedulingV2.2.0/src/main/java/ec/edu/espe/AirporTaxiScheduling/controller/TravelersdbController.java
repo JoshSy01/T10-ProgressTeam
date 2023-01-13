@@ -114,4 +114,5 @@ public class TravelersdbController {
         result.forEach(d -> objects.add(gson.fromJson(d.toJson(), Traveler.class)));
         return objects;
     }
+
 }

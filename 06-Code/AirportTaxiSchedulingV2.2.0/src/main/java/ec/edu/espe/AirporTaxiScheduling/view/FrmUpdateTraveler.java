@@ -4,9 +4,15 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 
 /**
  *
@@ -33,8 +39,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableOfTravelers = new javax.swing.JTable();
         label7 = new java.awt.Label();
         bt2 = new javax.swing.JButton();
         label3 = new java.awt.Label();
@@ -42,7 +46,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         txt2 = new javax.swing.JTextField();
         sp3 = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
-        bt1 = new javax.swing.JButton();
         label2 = new java.awt.Label();
         sp1 = new javax.swing.JSpinner();
         txt0 = new javax.swing.JTextField();
@@ -58,6 +61,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         rb1 = new javax.swing.JRadioButton();
         rb2 = new javax.swing.JRadioButton();
         bt5 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableOfTravelers = new javax.swing.JTable();
+        bt1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,34 +75,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        tableOfTravelers.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tableOfTravelers);
 
         label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         label7.setText("BirthDate:");
@@ -140,13 +118,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
 
         jLabel3.setText("DAY");
-
-        bt1.setText("Show All Travelers");
-        bt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt1ActionPerformed(evt);
-            }
-        });
 
         label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         label2.setText("Id: ");
@@ -262,49 +233,81 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             }
         });
 
+        tableOfTravelers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableOfTravelers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableOfTravelersMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableOfTravelers);
+
+        bt1.setText("Show All Travelers");
+        bt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
+                .addGap(136, 136, 136)
+                .addComponent(jLabel1)
+                .addContainerGap(384, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(58, 58, 58)
-                                        .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(14, 14, 14))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58)
+                                .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,13 +342,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                 .addGap(27, 27, 27)
                                 .addComponent(rb1)
                                 .addGap(83, 83, 83)
-                                .addComponent(rb2))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton1)
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(rb2))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,7 +372,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,11 +398,11 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -427,15 +426,15 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             if (traveler.getPhoneNumber() != 0) {
                 txt1.setText(traveler.getName());
                 txt2.setText(Long.toString(traveler.getPhoneNumber()));
-                if(traveler.getMail().contains("@gmail.com")==true){
+                if (traveler.getMail().contains("@gmail.com") == true) {
                     txt3.setText(traveler.getMail().replaceAll("@gmail.com", ""));
                     rb1.setSelected(true);
                     rb2.setSelected(false);
-                }else if(traveler.getMail().contains("@hotmail.com")){
+                } else if (traveler.getMail().contains("@hotmail.com")) {
                     txt3.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
                     rb1.setSelected(false);
                     rb2.setSelected(true);
-                }else{
+                } else {
                     txt3.setText("");
                 }
                 txt4.setText(Float.toString(traveler.getOutstandingBalance()));
@@ -460,6 +459,46 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_bt2ActionPerformed
+
+    private void findTable(int id) {
+
+        Traveler traveler = new Traveler();
+        traveler = TravelersdbController.findDocumentdb(traveler, id);
+        if (traveler.getPhoneNumber() != 0) {
+            txt0.setText(String.valueOf(id));
+            txt1.setText(traveler.getName());
+            txt2.setText(Long.toString(traveler.getPhoneNumber()));
+            if (traveler.getMail().contains("@gmail.com") == true) {
+                txt3.setText(traveler.getMail().replaceAll("@gmail.com", ""));
+                rb1.setSelected(true);
+                rb2.setSelected(false);
+            } else if (traveler.getMail().contains("@hotmail.com")) {
+                txt3.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
+                rb1.setSelected(false);
+                rb2.setSelected(true);
+            } else {
+                txt3.setText("");
+            }
+            txt4.setText(Float.toString(traveler.getOutstandingBalance()));
+            sp1.setValue(traveler.getBirthdayDay());
+            sp2.setValue(traveler.getYear());
+            sp3.setValue(traveler.getBirthdayMonth());
+            bt4.setEnabled(true);
+            txt1.setEditable(true);
+            txt2.setEditable(true);
+            txt3.setEditable(true);
+            txt4.setEditable(true);
+            sp1.setEnabled(true);
+            sp2.setEnabled(true);
+            sp3.setEnabled(true);
+            rb1.setEnabled(true);
+            rb2.setEnabled(true);
+            txt0.setEditable(false);
+            bt2.setEnabled(false);
+        } else {
+            cleanPanel();
+        }
+    }
 
     private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
         // TODO add your handling code here:
@@ -486,10 +525,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_sp3KeyTyped
-
-    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt1ActionPerformed
 
     private void sp1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp1KeyTyped
         int validNumber = evt.getKeyChar();
@@ -568,6 +603,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             traveler.setBirthdayMonth((int) sp3.getValue());
             traveler.setYear((int) sp2.getValue());
             TravelersdbController.updateDocumentdb(traveler, traveler.getId());
+            viewAllDocument();
             cleanPanel();
         }
     }//GEN-LAST:event_bt4ActionPerformed
@@ -592,7 +628,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         rb1.setEnabled(false);
         rb2.setEnabled(false);
     }
-    
+
     private void rb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb1ActionPerformed
 
     }//GEN-LAST:event_rb1ActionPerformed
@@ -601,7 +637,21 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         cleanPanel();
         txt0.setEditable(true);
         bt2.setEnabled(true);
+        bt4.setEnabled(false);
     }//GEN-LAST:event_bt5ActionPerformed
+
+    private void tableOfTravelersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableOfTravelersMouseClicked
+        int id;
+        int row = tableOfTravelers.rowAtPoint(evt.getPoint());
+        id = Integer.parseInt(tableOfTravelers.getValueAt(row, 0).toString());
+        findTable(id);
+        bt2.setEnabled(false);
+        txt0.setEditable(false);
+    }//GEN-LAST:event_tableOfTravelersMouseClicked
+
+    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+        viewAllDocument();
+    }//GEN-LAST:event_bt1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -629,6 +679,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmUpdateTraveler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -638,6 +689,32 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
     }
 
+    public void viewAllDocument() {
+        Traveler traveler = new Traveler();
+        ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+        MongoClient mongoClient = TravelersdbController.conection();
+        MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
+        MongoCollection<Document> collection = database.getCollection("Travelers");
+        String[] titles = {"Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday DD/MM"};
+        String[] travelerString = new String[6];
+        DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
+        tableOfTravelers.setModel(tableOfTravelersM);
+        TravelersdbController.loadFromDatabase(travelers, database, "Travelers");
+        for (int i = 0; i < travelers.size(); i++) {
+            travelerString[0] = "" + travelers.get(i).getId() + "";
+            travelerString[1] = "" + travelers.get(i).getName() + "";
+            travelerString[2] = "" + travelers.get(i).getPhoneNumber() + "";
+            travelerString[3] = "" + travelers.get(i).getMail() + "";
+            travelerString[4] = "" + travelers.get(i).getOutstandingBalance() + "";
+            travelerString[5] = "" + travelers.get(i).getBirthdayDay() + " / " + travelers.get(i).getBirthdayMonth() + "";
+
+            tableOfTravelersM.addRow(travelerString);
+        }
+
+        tableOfTravelers.setModel(tableOfTravelersM);
+        tableOfTravelers.setDefaultEditor(Object.class, null);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt1;
     private javax.swing.JButton bt2;
