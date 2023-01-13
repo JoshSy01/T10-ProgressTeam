@@ -4,17 +4,37 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import ec.edu.espe.AirporTaxiScheduling.controller.MongoData;
+import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.view.AirportTaxiScheduling;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
+ * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
  */
 public class FrmViewTaxiDriver extends javax.swing.JFrame {
-
+    DefaultTableModel model = new DefaultTableModel();
     /**
-     * Creates new form frmViewdriver
+     * Creates new form TaxiAirportSystem
      */
+ private void mostTable() {
+        model.addColumn("C.I");
+        model.addColumn("Name");
+        model.addColumn("Number");
+        model.addColumn("Age");
+        model.addColumn("Adress");
+        model.addColumn("Email");
+        model.addColumn("Gender");
+        model.addColumn("Vehicle Marck");
+        model.addColumn("Vehicle Plate");
+        model.addColumn("Vehicle Year");
+        this.tbFind.setModel(model);
+  }
     public FrmViewTaxiDriver() {
         initComponents();
+           mostTable();
     }
 
     /**
@@ -26,13 +46,35 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnBACK = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbFind = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        txtCI = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("VIEW TAXIDRIVER");
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel1.setText("VIEW TAXI DRIVER");
 
         btnBACK.setText("<BACK");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
@@ -41,25 +83,92 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 255, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 136, Short.MAX_VALUE)
+        );
+
+        tbFind.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tbFind);
+
+        jLabel2.setText("Enter CI:");
+
+        jButton1.setText("SEARCH");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBACK)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(173, 173, 173))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(391, 391, 391)
+                                        .addComponent(jButton1))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(btnBACK)
+                                        .addGap(248, 248, 248)
+                                        .addComponent(jLabel1)))
+                                .addGap(28, 28, 28))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(38, 38, 38))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(97, 97, 97)))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(btnBACK))
-                .addContainerGap(253, Short.MAX_VALUE))
+                    .addComponent(btnBACK)
+                    .addComponent(jLabel1))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -70,7 +179,10 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,11 +190,34 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
 
     private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
         // TODO add your handling code here:
-           AirportTaxiScheduling airportTaxiScheduling;
-        airportTaxiScheduling = new AirportTaxiScheduling();
-        this.setVisible(false);
-        airportTaxiScheduling.setVisible(true);
+          AirportTaxiScheduling airportTaxiSheduling = new AirportTaxiScheduling();
+        airportTaxiSheduling.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnBACKActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         TaxiDriver driver = new TaxiDriver( txtCI.getText(),"", "", "", "", "", "", "", "", "");
+        driver = MongoData.findDriver(driver);
+
+        String[] Datos = new String[10];
+        Datos[0] = driver.getCI();
+        Datos[1] = driver.getName();
+        Datos[2] = driver.getPhoneNumber();
+        Datos[3] = driver.getAge();
+        Datos[4] = driver.getAdress();
+        Datos[5] = driver.getEmail();
+        Datos[6] = driver.getGender();
+        Datos[7] = driver.getVehicleMark();
+        Datos[8] = driver.getVehiclePlate();
+        Datos[9] =driver.getVehicleYear(); 
+        
+        txtCI.setText("");
+         model.addRow(Datos);
+                         JOptionPane.showMessageDialog(this, "Driver view succesfull");
+
+                                          
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,9 +245,6 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmViewTaxiDriver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -124,7 +256,15 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBACK;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbFind;
+    private javax.swing.JTextField txtCI;
     // End of variables declaration//GEN-END:variables
 }
