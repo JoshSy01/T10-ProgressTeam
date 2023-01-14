@@ -25,7 +25,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         model.addColumn("Number");
         model.addColumn("Age");
         model.addColumn("Adress");
-        model.addColumn("Email");
+        model.addColumn("Mail");
         model.addColumn("Gender");
         model.addColumn("Vehicle Marck");
         model.addColumn("Vehicle Plate");
@@ -197,16 +197,16 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         TaxiDriver driver = new TaxiDriver( txtCI.getText(),"", "", "", "", "", "", "", "", "");
+         TaxiDriver driver = new TaxiDriver( txtCI.getText(),"", 0, "", "", "", "", "", "", "");
         driver = MongoData.findDriver(driver);
 
         String[] Datos = new String[10];
         Datos[0] = driver.getCI();
         Datos[1] = driver.getName();
-        Datos[2] = driver.getPhoneNumber();
+        Datos[2] = String.valueOf(driver.getPhoneNumber());
         Datos[3] = driver.getAge();
         Datos[4] = driver.getAdress();
-        Datos[5] = driver.getEmail();
+        Datos[5] = driver.getMail();
         Datos[6] = driver.getGender();
         Datos[7] = driver.getVehicleMark();
         Datos[8] = driver.getVehiclePlate();

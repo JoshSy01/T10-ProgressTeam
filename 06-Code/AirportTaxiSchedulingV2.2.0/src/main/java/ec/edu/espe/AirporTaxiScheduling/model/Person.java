@@ -10,46 +10,28 @@ package ec.edu.espe.AirporTaxiScheduling.model;
  */
 public abstract class Person {
 
-    private int id;
+    
     private String name;
     private long phoneNumber;
     private String mail;
-    private float outstandingBalance;
 
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", mail=" + mail + ", outstandingBalance=" + outstandingBalance + '}';
+        return "Person{" + "name=" + getName() + ", phoneNumber=" + getPhoneNumber() + ", mail=" + getMail() + '}';
     }
-
+      
     public Person() {
-        this.id = 0;
         this.name = "";
         this.phoneNumber = 0;
-        this.mail = "";
-        this.outstandingBalance = 0.0F;
+        this.mail = "";     
     }
 
-    public Person(int id, String name, long phoneNumber, String mail, float outstandingBalance) {
-        this.id = id;
+    public Person(String name, long phoneNumber, String mail) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.mail = mail;
-        this.outstandingBalance = outstandingBalance;
     }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
     /**
      * @return the name
@@ -93,18 +75,6 @@ public abstract class Person {
         this.mail = mail;
     }
 
-    /**
-     * @return the outstandingBalance
-     */
-    public float getOutstandingBalance() {
-        return outstandingBalance;
-    }
-
-    /**
-     * @param outstandingBalance the outstandingBalance to set
-     */
-    public void setOutstandingBalance(float outstandingBalance) {
-        this.outstandingBalance = outstandingBalance;
-    }
+    
 
 }

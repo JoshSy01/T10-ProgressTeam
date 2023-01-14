@@ -275,7 +275,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                 String gmail = "@hotmail.com";
                 Datos[5]=(txtEmail.getText()+gmail);
             }
-        TaxiDriver driver = new TaxiDriver(Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9]);
+        TaxiDriver driver = new TaxiDriver(Datos[0], Datos[1], Long.parseLong(Datos[2]), Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9]);
         MongoData.insertDriver(driver);
                 JOptionPane.showMessageDialog(this, "Successfully Added Driver");
         txtCI.setText("");
@@ -283,7 +283,6 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         txtPhoneNumber.setText("");
         txtEmail.setText("");
         txtVehiclePlate.setText("");
-        spnAge.setValue("");
         cmbAdress.setSelectedIndex(0);
         cmbGender.setSelectedIndex(0);
         cmbVehicleMarck.setSelectedIndex(0);

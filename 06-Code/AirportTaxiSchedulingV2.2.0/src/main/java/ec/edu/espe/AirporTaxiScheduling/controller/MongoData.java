@@ -3,6 +3,7 @@ package ec.edu.espe.AirporTaxiScheduling.controller;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -10,6 +11,8 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import java.util.ArrayList;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -36,7 +39,7 @@ public class MongoData {
                         .append("phoneNumber", driver.getPhoneNumber())
                         .append("age", driver.getAge())
                         .append("adress", driver.getAdress())
-                        .append("email", driver.getEmail())
+                        .append("email", driver.getMail())
                         .append("gender", driver.getGender())
                         .append("vehicleMark", driver.getVehicleMark())
                         .append("vehiclePlate", driver.getVehiclePlate())
@@ -88,7 +91,7 @@ public class MongoData {
                 Updates.set("phoneNumber", driver.getPhoneNumber()),
                 Updates.set("age", driver.getAge()),
                 Updates.set("adress", driver.getAdress()),
-                Updates.set("email", driver.getEmail()),
+                Updates.set("email", driver.getMail()),
                 Updates.set("gender", driver.getGender()),
                 Updates.set("vehicleMark", driver.getVehicleMark()),
                 Updates.set("vehiclePlate", driver.getVehiclePlate()),
@@ -130,6 +133,14 @@ public class MongoData {
         }
 
         return driver;
+    }
+    
+    public static ArrayList<TaxiDriver> loadFromDatabase(ArrayList<TaxiDriver> objects, MongoDatabase database, String collectionName) {
+        Gson gson = new Gson();
+        MongoCollection<Document> objectsCollection = database.getCollection(collectionName);
+        FindIterable<Document> result = objectsCollection.find(Filters.gt("id", 0));
+        result.forEach(d -> objects.add(gson.fromJson(d.toJson(), TaxiDriver.class)));
+        return objects;
     }
     
 }

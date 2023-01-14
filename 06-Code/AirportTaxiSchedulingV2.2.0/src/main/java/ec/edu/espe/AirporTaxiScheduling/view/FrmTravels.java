@@ -6,7 +6,9 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import ec.edu.espe.AirporTaxiScheduling.controller.DataBaseManager;
 import ec.edu.espe.AirporTaxiScheduling.controller.FileManager;
+import ec.edu.espe.AirporTaxiScheduling.controller.MongoData;
 import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import java.awt.event.KeyEvent;
@@ -35,8 +37,9 @@ public class FrmTravels extends javax.swing.JFrame {
     Travel travel = new Travel();
     DataBaseManager dataBaseManager = new DataBaseManager();
     Traveler traveler = new Traveler();
+    ArrayList<TaxiDriver> taxiDrivers = new ArrayList<TaxiDriver>();
+    TaxiDriver taxiDriver = new TaxiDriver();
     ArrayList<Traveler> travelers = new ArrayList<Traveler>();
-    DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
 
     String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
     String databaseName = "AirportTaxiScheduling";
@@ -44,6 +47,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
     public FrmTravels() {
         initComponents();
+        loadDriverCombo();
         loadTravelerCombo();
         loadTarifs();
     }
@@ -457,7 +461,9 @@ public class FrmTravels extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCleanActionPerformed
 
     private void btnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainMenuActionPerformed
-        //AirportTaxiSheduling
+        AirportTaxiScheduling mainMenu = new AirportTaxiScheduling();
+        this.setVisible(false);
+        mainMenu.setVisible(true);
     }//GEN-LAST:event_btnMainMenuActionPerformed
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
@@ -518,17 +524,15 @@ public class FrmTravels extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAddressKeyTyped
 
     private void cmbDriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbDriverMouseClicked
-        String selected = cmbDriver.getSelectedItem().toString();
 
-        JOptionPane.showMessageDialog(null, "You are selected" + selected);
     }//GEN-LAST:event_cmbDriverMouseClicked
 
     private void cmbDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDriverActionPerformed
-
+        lblDriver.setText(cmbDriver.getSelectedItem().toString());
     }//GEN-LAST:event_cmbDriverActionPerformed
 
     private void cmbTravelerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTravelerActionPerformed
-
+        lblTraveler.setText(cmbTraveler.getSelectedItem().toString());
     }//GEN-LAST:event_cmbTravelerActionPerformed
 
     private void chkbAnnotationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbAnnotationActionPerformed
@@ -655,20 +659,21 @@ public class FrmTravels extends javax.swing.JFrame {
     private void viewTravels() {
         cleanForm();
         dataBaseManager = DataBaseManager.connectToDatabase(uri, databaseName, dataBaseManager);
+        ArrayList<Travel> travelsView = new ArrayList<Travel>();
+        Travel travelView = new Travel();
         String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
         String[] travelsString = new String[7];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
-        jtblTravels.setModel(tableOfTravels);
-        DataBaseManager.loadFromDatabase(travels, dataBaseManager.getDatabase(), collectionName);
+        DataBaseManager.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
 
-        for (int i = 0; i < travels.size(); i++) {
-            travelsString[0] = "" + travels.get(i).getId() + "";
-            travelsString[1] = "" + travels.get(i).getDriver() + "";
-            travelsString[2] = "" + travels.get(i).getTraveler() + "";
-            travelsString[3] = "" + travels.get(i).getAddress() + "";
-            travelsString[4] = "" + travels.get(i).getDateOfOcurrence() + "";
-            travelsString[5] = "" + travels.get(i).getPrice() + "";
-            travelsString[6] = "" + String.valueOf(travels.get(i).isPayed()) + "";
+        for (int i = 0; i < travelsView.size(); i++) {
+            travelsString[0] = "" + travelsView.get(i).getId() + "";
+            travelsString[1] = "" + travelsView.get(i).getDriver() + "";
+            travelsString[2] = "" + travelsView.get(i).getTraveler() + "";
+            travelsString[3] = "" + travelsView.get(i).getAddress() + "";
+            travelsString[4] = "" + travelsView.get(i).getDateOfOcurrence() + "";
+            travelsString[5] = "" + travelsView.get(i).getPrice() + "";
+            travelsString[6] = "" + String.valueOf(travelsView.get(i).isPayed()) + "";
             tableOfTravels.addRow(travelsString);
         }
 
@@ -691,7 +696,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
     private void loadTravelerCombo() {
         dataBaseManager = DataBaseManager.connectToDatabase(uri, databaseName, dataBaseManager);
-
+        DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
         TravelersdbController.loadFromDatabase(travelers, dataBaseManager.getDatabase(), "Travelers");
         comboBoxModel.addElement(null);
 
@@ -703,6 +708,19 @@ public class FrmTravels extends javax.swing.JFrame {
 
     private void loadTarifs() {
 
+    }
+
+    private void loadDriverCombo() {
+
+        dataBaseManager = DataBaseManager.connectToDatabase(uri, databaseName, dataBaseManager);
+        DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
+        MongoData.loadFromDatabase(taxiDrivers, dataBaseManager.getDatabase(), "TaxiDriver");
+        comboBoxModel.addElement(null);
+
+        for (int i = 0; i < taxiDrivers.size(); i++) {
+            comboBoxModel.addElement(taxiDrivers.get(i).getName() + " " + String.valueOf((taxiDrivers.get(i).getPhoneNumber())));
+        }
+        cmbDriver.setModel(comboBoxModel);
     }
 
 }

@@ -5,25 +5,31 @@ package ec.edu.espe.AirporTaxiScheduling.model;
  *
  * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
  */
-public class TaxiDriver {
-    private String CI;
-    private String name;
-    private String phoneNumber;
+public class TaxiDriver extends Person{
+    private String CI;   
     private String age;
-    private String adress;
-    private String email;
+    private String adress; 
     private String gender;
     private String vehicleMark;
     private String vehiclePlate;
     private String vehicleYear;
 
-    public TaxiDriver(String CI, String name, String phoneNumber, String age, String adress, String email, String gender, String vehicleMark, String vehiclePlate, String vehicleYear) {
+     public TaxiDriver() {
+        super("",0,"");
+        this.CI = "";
+        this.age = "";
+        this.adress = "";
+        this.gender = "";
+        this.vehicleMark = "";
+        this.vehiclePlate = "";
+        this.vehicleYear = "";
+    }
+     
+    public TaxiDriver(String CI, String name, long phoneNumber, String age, String adress, String mail, String gender, String vehicleMark, String vehiclePlate, String vehicleYear) {
+        super(name,phoneNumber,mail);
         this.CI = CI;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
         this.age = age;
         this.adress = adress;
-        this.email = email;
         this.gender = gender;
         this.vehicleMark = vehicleMark;
         this.vehiclePlate = vehiclePlate;
@@ -42,35 +48,7 @@ public class TaxiDriver {
      */
     public void setCI(String CI) {
         this.CI = CI;
-    }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return the phoneNumber
-     */
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    /**
-     * @param phoneNumber the phoneNumber to set
-     */
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    }  
 
     /**
      * @return the age
@@ -98,20 +76,6 @@ public class TaxiDriver {
      */
     public void setAdress(String adress) {
         this.adress = adress;
-    }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     /**

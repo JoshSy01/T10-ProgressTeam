@@ -134,7 +134,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
         // TODO add your handling code here:
         int option = JOptionPane.showConfirmDialog(this, "Do you want to continue?");
         if (option == 0) {
-        TaxiDriver driver = new TaxiDriver( txtCIdelete.getText(),"", "", "", "", "", "", "", "", "");
+        TaxiDriver driver = new TaxiDriver( txtCIdelete.getText(),"",0 , "", "", "", "", "", "", "");
             MongoData.deleteDriver(driver);
             JOptionPane.showMessageDialog(this, "Driver succesfully removed");
             txtCIdelete.setText("");
