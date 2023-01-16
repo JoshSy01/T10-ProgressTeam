@@ -4,15 +4,38 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.model.Travel;
+import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import ec.edu.espe.AirporTaxiScheduling.view.AirportTaxiScheduling;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
+ * @author Sebastian Verdugo,ProgressTeam,DCCO-ESPE
  */
 public class FrmHistory extends javax.swing.JFrame {
 
     /**
      * Creates new form frmHistory
      */
+    ArrayList<Travel> travels = new ArrayList<Travel>();
+    Travel travel = new Travel();
+    /*DataBaseManager dataBaseManager = new DataBaseManager();*/
+    Traveler traveler = new Traveler();
+    ArrayList<TaxiDriver> taxiDrivers = new ArrayList<TaxiDriver>();
+    TaxiDriver taxiDriver = new TaxiDriver();
+    ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+
+    String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
+    String databaseName = "AirportTaxiScheduling";
+    String collectionName = "Travels";
+    
     public FrmHistory() {
         initComponents();
     }
@@ -27,9 +50,26 @@ public class FrmHistory extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        grpReminders = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnBACK = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        btmCreatePDF = new javax.swing.JButton();
+        btmOpenPDF = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        lblTraveler = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btmFind = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jtblTravels = new javax.swing.JTable();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -44,8 +84,6 @@ public class FrmHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("History");
-
         btnBACK.setText("<BACK");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,35 +91,184 @@ public class FrmHistory extends javax.swing.JFrame {
             }
         });
 
+        jSeparator2.setToolTipText("reminders options");
+
+        btmCreatePDF.setText("Create PDF");
+        btmCreatePDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmCreatePDFActionPerformed(evt);
+            }
+        });
+
+        btmOpenPDF.setText("Open PDF");
+        btmOpenPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmOpenPDFActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel12.setText("Traveler:");
+
+        lblTraveler.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        jLabel1.setText("HISTORY");
+
+        txtId.setToolTipText("the ID of the traveler");
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel10.setText("· Want you want to do?");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel9.setText("Welcome to the Service for Taxi Drivers");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel7.setText("Enter the ID:");
+
+        btmFind.setText("Find");
+        btmFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmFindActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel13.setText("Travels");
+
+        jSeparator3.setToolTipText("reminders options");
+
+        jtblTravels.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jtblTravels);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBACK)
-                .addGap(68, 68, 68)
-                .addComponent(jLabel1)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(btmOpenPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(119, 119, 119)
+                                .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel10))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBACK)
+                                .addGap(65, 65, 65)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jLabel1))
+                                    .addComponent(jLabel9))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lblTraveler, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jSeparator1)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(562, 562, 562))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(594, 594, 594))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane3)
+                .addGap(562, 562, 562))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1))
+                        .addGap(16, 16, 16)
+                        .addComponent(btnBACK))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnBACK)))
-                .addContainerGap(252, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTraveler, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btmOpenPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,6 +285,33 @@ public class FrmHistory extends javax.swing.JFrame {
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
     }//GEN-LAST:event_btnBACKActionPerformed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0' || c>'9'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void btmFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmFindActionPerformed
+
+        if (txtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Error, Id field is empty");
+        } else {
+            int takeId = Integer.valueOf(txtId.getText());           
+            Travel travel = new Travel();
+            traveler = TravelersdbController.findDocumentdb(traveler, takeId);
+            lblTraveler.setText(traveler.getName());
+        }
+    }//GEN-LAST:event_btmFindActionPerformed
+
+    private void btmOpenPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmOpenPDFActionPerformed
+
+    }//GEN-LAST:event_btmOpenPDFActionPerformed
+
+    private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
+
+    }//GEN-LAST:event_btmCreatePDFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,9 +350,47 @@ public class FrmHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmCreatePDF;
+    private javax.swing.JButton btmFind;
+    private javax.swing.JButton btmOpenPDF;
     private javax.swing.JButton btnBACK;
+    private javax.swing.ButtonGroup grpReminders;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTable jtblTravels;
+    private javax.swing.JLabel lblTraveler;
+    private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
+
+    private void viewTravels() {
+        /*dataBaseManager = DataBaseManager.connectToDatabase(uri, databaseName, dataBaseManager);
+        ArrayList<Travel> travelsView = new ArrayList<Travel>();
+        Travel travelView = new Travel();
+        String[] titles = {"N°", "Driver", "Address", "DateOfOccurrence"};
+        String[] travelsString = new String[4];
+        DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
+        DataBaseManager.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+
+        for (int i = 0; i < travelsView.size(); i++) {
+            travelsString[0] = "" + travelsView.get(i).getId() + "";// AQUI HACE EL NUMERO DE TRAVELS
+            travelsString[1] = "" + travelsView.get(i).getDriver() + "";
+            travelsString[2] = "" + travelsView.get(i).getAddress() + "";
+            travelsString[3] = "" + travelsView.get(i).getDateOfOcurrence() + "";
+            tableOfTravels.addRow(travelsString);
+        }
+
+        jtblTravels.setModel(tableOfTravels);
+        jtblTravels.setDefaultEditor(Object.class, null);*/
+    }
 }
