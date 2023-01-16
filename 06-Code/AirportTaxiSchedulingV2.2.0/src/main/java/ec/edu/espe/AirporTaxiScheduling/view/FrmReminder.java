@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jefferson Ulco,ProgressTeam,DCCO-ESPE
+ * @author Sebastian Verdugo,ProgressTeam,DCCO-ESPE
  */
 public class FrmReminder extends javax.swing.JFrame {
     final String emailFrom = "progressteam2003@gmail.com";
@@ -45,10 +45,10 @@ public class FrmReminder extends javax.swing.JFrame {
         subject = lblOption.getText();
         content = txtmailContent.getText();
         
-        mProperties.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host
-        mProperties.put("mail.smtp.port", "587"); //TLS Port
-        mProperties.put("mail.smtp.auth", "true"); //enable authentication
-        mProperties.put("mail.smtp.starttls.enable", "true"); //enable STARTTLS
+        mProperties.put("mail.smtp.host", "smtp.gmail.com");
+        mProperties.put("mail.smtp.port", "587");
+        mProperties.put("mail.smtp.auth", "true"); 
+        mProperties.put("mail.smtp.starttls.enable", "true");
     
     
     mSession = Session.getDefaultInstance(mProperties, new javax.mail.Authenticator() {

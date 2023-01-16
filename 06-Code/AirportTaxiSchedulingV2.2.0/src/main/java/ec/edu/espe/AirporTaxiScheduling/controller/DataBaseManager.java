@@ -10,6 +10,8 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
+import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import ec.edu.espe.AirporTaxiScheduling.utils.Errors;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.bson.BsonDocument;
@@ -93,6 +95,23 @@ public class DataBaseManager {
         result.forEach(d -> objects.add(gson.fromJson(d.toJson(), Travel.class)));
         return objects;
     }
+    
+    /*public static Travel findDocumentdb(MongoDatabase database,Travel travel, int idFinder){
+        MongoCollection<Document> collection = database.getCollection("Travels");
+        Bson filter = Filters.and(Filters.all("id", idFinder));
+        MongoCursor<Document> cursor = collection.find(filter).iterator();
+        if(collection.find(filter).first() != null){
+            Document document = collection.find(filter).first();
+            travel.setDriver(document.getString("driver"));
+            travel.setTraveler(document.getString("traveler"));
+            travel.setAddress(document.getString("adress"));
+            travel.setDateOfOcurrence(document.getDate("dateOfOcurrence"));
+        }else{
+            Errors.messege();
+        }
+        
+        return travel;
+    }*/
 
     /**
      * @return the mongoClient
