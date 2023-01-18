@@ -21,9 +21,12 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.PdfPTable;
+import java.awt.print.PrinterException;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.MessageFormat;
 import java.util.List;
+import javax.swing.JTable;
 
 /**
  *
@@ -304,7 +307,14 @@ public class FrmHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_btmFindActionPerformed
 
     private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
-        
+         MessageFormat header = new MessageFormat("History Travels of AirportTaxiScheduling(Progress Team)");
+        MessageFormat footer = new MessageFormat("page {0,number,integer}");
+
+        try {
+            tblTravels.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException e) {
+            e.getMessage();
+        }
     }//GEN-LAST:event_btmCreatePDFActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
