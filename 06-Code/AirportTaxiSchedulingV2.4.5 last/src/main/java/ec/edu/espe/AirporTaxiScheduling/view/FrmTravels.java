@@ -45,6 +45,8 @@ public class FrmTravels extends javax.swing.JFrame {
     String databaseName = "AirportTaxiScheduling";
     String collectionName = "Travels";
 
+    boolean travelerPayed;
+    
     public FrmTravels() {
         initComponents();
         loadDriverCombo();
@@ -63,6 +65,13 @@ public class FrmTravels extends javax.swing.JFrame {
 
         btngPayed = new javax.swing.ButtonGroup();
         jCalendarTheme1 = new com.toedter.plaf.JCalendarTheme();
+        pnlButtons = new javax.swing.JPanel();
+        btnBack = new javax.swing.JButton();
+        btnClean = new javax.swing.JButton();
+        btnMainMenu = new javax.swing.JButton();
+        btnAccept = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         pnlInput = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -92,14 +101,86 @@ public class FrmTravels extends javax.swing.JFrame {
         lblTraveler = new javax.swing.JLabel();
         lblDateOfOcurrence = new javax.swing.JLabel();
         btnSetDate = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
-        btnClean = new javax.swing.JButton();
-        btnMainMenu = new javax.swing.JButton();
-        btnAccept = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnBack.setText("<-- Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnClean.setText("Clean");
+        btnClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanActionPerformed(evt);
+            }
+        });
+
+        btnMainMenu.setText("Main menu");
+        btnMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainMenuActionPerformed(evt);
+            }
+        });
+
+        btnAccept.setText("Accept");
+        btnAccept.setEnabled(false);
+        btnAccept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcceptActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setText("Delete");
+        btnDelete.setEnabled(false);
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setText("Update");
+        btnUpdate.setEnabled(false);
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlButtonsLayout = new javax.swing.GroupLayout(pnlButtons);
+        pnlButtons.setLayout(pnlButtonsLayout);
+        pnlButtonsLayout.setHorizontalGroup(
+            pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlButtonsLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnMainMenu)
+                .addGap(38, 38, 38)
+                .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(btnUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDelete)
+                .addGap(43, 43, 43)
+                .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+        pnlButtonsLayout.setVerticalGroup(
+            pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlButtonsLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClean)
+                    .addComponent(btnAccept)
+                    .addComponent(btnMainMenu)
+                    .addComponent(btnBack)
+                    .addComponent(btnDelete)
+                    .addComponent(btnUpdate))
+                .addGap(22, 22, 22))
+        );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Travels");
@@ -250,145 +331,84 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setText("<-- Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        btnClean.setText("Clean");
-        btnClean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCleanActionPerformed(evt);
-            }
-        });
-
-        btnMainMenu.setText("Main menu");
-        btnMainMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMainMenuActionPerformed(evt);
-            }
-        });
-
-        btnAccept.setText("Accept");
-        btnAccept.setEnabled(false);
-        btnAccept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcceptActionPerformed(evt);
-            }
-        });
-
-        btnDelete.setText("Delete");
-        btnDelete.setEnabled(false);
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnUpdate.setText("Update");
-        btnUpdate.setEnabled(false);
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnlInputLayout = new javax.swing.GroupLayout(pnlInput);
         pnlInput.setLayout(pnlInputLayout);
         pnlInputLayout.setHorizontalGroup(
             pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInputLayout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(27, 27, 27)
-                .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
-            .addGroup(pnlInputLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addComponent(chkbAnnotation)
+                .addGap(25, 25, 25)
+                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(txtPnlAnnotation, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(rbtnPayed)
-                        .addGap(29, 29, 29)
-                        .addComponent(rbtnNoPayed)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInputLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnMainMenu)
-                        .addGap(38, 38, 38)
-                        .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDelete)
-                        .addGap(43, 43, 43)
-                        .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlInputLayout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addComponent(btnWiewTravels)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(pnlInputLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
                         .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(lblDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85))
-                            .addGroup(pnlInputLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cmbTraveler, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblTraveler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(44, 44, 44))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInputLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(chkbReminder)
-                        .addGap(160, 160, 160))
+                                .addComponent(lblTraveler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addGap(168, 168, 168)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7)))
+                        .addGap(27, 27, 27)
+                        .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(72, 72, 72))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInputLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chkbReminder)
+                .addGap(301, 301, 301))
+            .addGroup(pnlInputLayout.createSequentialGroup()
+                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addGap(26, 26, 26)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
+                        .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addComponent(chkbAnnotation)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPnlAnnotation, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(41, 41, 41)
+                                .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlInputLayout.createSequentialGroup()
+                                        .addGap(163, 163, 163)
+                                        .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlInputLayout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(btnSetDate))))))
                     .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(41, 41, 41)
-                        .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnSetDate))
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(297, 297, 297)
+                        .addComponent(btnWiewTravels))
+                    .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addGap(188, 188, 188)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addGap(211, 211, 211)
+                                .addComponent(rbtnPayed)
+                                .addGap(29, 29, 29)
+                                .addComponent(rbtnNoPayed)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInputLayout.setVerticalGroup(
             pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,7 +419,7 @@ public class FrmTravels extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addComponent(jLabel7))
                     .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cmbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,7 +445,7 @@ public class FrmTravels extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(chkbAnnotation)
                     .addComponent(txtPnlAnnotation, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -433,21 +453,16 @@ public class FrmTravels extends javax.swing.JFrame {
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtnPayed)
                     .addComponent(rbtnNoPayed, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnWiewTravels))
-                .addGap(18, 18, 18)
-                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClean)
-                    .addComponent(btnAccept)
-                    .addComponent(btnMainMenu)
-                    .addComponent(btnBack)
-                    .addComponent(btnDelete)
-                    .addComponent(btnUpdate))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlInputLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(btnWiewTravels))
+                    .addGroup(pnlInputLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -456,7 +471,9 @@ public class FrmTravels extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlButtons, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -464,7 +481,9 @@ public class FrmTravels extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -499,11 +518,18 @@ public class FrmTravels extends javax.swing.JFrame {
                     || !btngPayed.isSelected(btngPayed.getSelection())) {
                 JOptionPane.showMessageDialog(null, "Error, some fields are empty ");
             } else {
-                    int idTraveler;
-                idTraveler=obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
+                int idTraveler;
+                Traveler traveler1 = new Traveler();
+                idTraveler = obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
+                traveler1 = TravelersdbController.findDocumentdb(traveler, idTraveler);
                 dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
                 TraveldbController.loadFromDatabase(travels, dataBaseManager.getDatabase(), collectionName);
-                travel = new Travel(Generator.generateId(), cmbDriver.getSelectedItem().toString(),idTraveler,cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtPnlAnnotation.getToolTipText(), btngPayed.isSelected(rbtnPayed.getModel()));
+                travel = new Travel(Generator.generateId(), cmbDriver.getSelectedItem().toString(), idTraveler, cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtPnlAnnotation.getToolTipText(), btngPayed.isSelected(rbtnPayed.getModel()));
+                if (travel.isPayed() == false) {
+                    traveler1.setOutstandingBalance(travel.getPrice() + traveler1.getOutstandingBalance());
+                    TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+                }
+
                 travels.add(travel);
                 FileManager.addTravelsToJson(travels);
                 TraveldbController.createOperation(travel, dataBaseManager.getDatabase(), collectionName);
@@ -586,8 +612,10 @@ public class FrmTravels extends javax.swing.JFrame {
         String payed = jtblTravels.getValueAt(row, 6).toString();
         if (payed.equals("true")) {
             btngPayed.setSelected(rbtnPayed.getModel(), true);
+            travelerPayed = true;
         } else {
             btngPayed.setSelected(rbtnNoPayed.getModel(), true);
+            travelerPayed = false;
         }
         btnUpdate.setEnabled(true);
         btnDelete.setEnabled(true);
@@ -654,6 +682,8 @@ public class FrmTravels extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -696,6 +726,7 @@ public class FrmTravels extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblTraveler;
     private javax.swing.JLabel lblid;
+    private javax.swing.JPanel pnlButtons;
     private javax.swing.JPanel pnlInput;
     private javax.swing.JRadioButton rbtnNoPayed;
     private javax.swing.JRadioButton rbtnPayed;
@@ -741,8 +772,10 @@ public class FrmTravels extends javax.swing.JFrame {
 
     private void updateTravel() {
         int idTraveler;
-                idTraveler=obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
-        travel = new Travel(Integer.parseInt(lblid.getText()),cmbDriver.getSelectedItem().toString(), idTraveler ,cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtPnlAnnotation.getToolTipText(), btngPayed.isSelected(rbtnPayed.getModel()));
+        Traveler traveler1 = new Traveler();
+        idTraveler = obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
+        traveler1 = TravelersdbController.findDocumentdb(traveler1, idTraveler);
+        travel = new Travel(Integer.parseInt(lblid.getText()), cmbDriver.getSelectedItem().toString(), idTraveler, cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtPnlAnnotation.getToolTipText(), btngPayed.isSelected(rbtnPayed.getModel()));
         MongoCollection<Document> travelsCollection = dataBaseManager.getDatabase().getCollection(collectionName);
 
         FindIterable<Document> result = travelsCollection.find(Filters.eq("id", travel.getId()));
@@ -751,6 +784,20 @@ public class FrmTravels extends javax.swing.JFrame {
         travelsCollection.updateOne(result.first(), Updates.set("address", travel.getAddress()));
         travelsCollection.updateOne(result.first(), Updates.set("dateOfOcurrence", travel.getDateOfOcurrence()));
         travelsCollection.updateOne(result.first(), Updates.set("price", travel.getPrice()));
+
+        if(travel.isPayed()==true){
+            if(travelerPayed == false){
+                traveler1.setOutstandingBalance(traveler1.getOutstandingBalance() - travel.getPrice());
+                TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+            }
+            
+        }else{
+            if(travelerPayed == true){
+                traveler1.setOutstandingBalance(traveler1.getOutstandingBalance() + travel.getPrice());
+                TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+            }
+        }
+        
     }
 
     private void loadTravelerCombo() {
@@ -795,7 +842,7 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         }
         idTraveler = Integer.valueOf(character);
-        return idTraveler;  
+        return idTraveler;
     }
 
 }

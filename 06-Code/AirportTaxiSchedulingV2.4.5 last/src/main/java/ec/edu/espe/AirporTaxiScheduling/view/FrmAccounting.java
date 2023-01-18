@@ -4,11 +4,30 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
+import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.model.Travel;
+import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
 public class FrmAccounting extends javax.swing.JFrame {
+
+    ArrayList<Travel> travels = new ArrayList<Travel>();
+    Travel travel = new Travel();
+    TraveldbController dataBaseManager = new TraveldbController();
+    Traveler traveler = new Traveler();
+    ArrayList<TaxiDriver> taxiDrivers = new ArrayList<TaxiDriver>();
+    TaxiDriver taxiDriver = new TaxiDriver();
+    ArrayList<Traveler> travelers = new ArrayList<Traveler>();
+
+    String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
+    String databaseName = "AirportTaxiScheduling";
+    String collectionName = "Travels";
 
     /**
      * Creates new form frmAccounting
@@ -29,6 +48,13 @@ public class FrmAccounting extends javax.swing.JFrame {
         pnlAccounting = new javax.swing.JPanel();
         btnBACK = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jtblTravels = new javax.swing.JTable();
+        btnWiewTravels = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        tf1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tf2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,25 +67,95 @@ public class FrmAccounting extends javax.swing.JFrame {
 
         jLabel1.setText("ACCOUNTING");
 
+        jtblTravels.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"
+            }
+        ));
+        jtblTravels.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtblTravelsMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jtblTravels);
+
+        btnWiewTravels.setText("Ver las carreras existentes");
+        btnWiewTravels.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWiewTravelsActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Total de dinero cobrado:");
+
+        tf1.setEditable(false);
+        tf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Saldo pendiente a cobrar: ");
+
+        tf2.setEditable(false);
+        tf2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlAccountingLayout = new javax.swing.GroupLayout(pnlAccounting);
         pnlAccounting.setLayout(pnlAccountingLayout);
         pnlAccountingLayout.setHorizontalGroup(
             pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnBACK)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(151, 151, 151))
+            .addGroup(pnlAccountingLayout.createSequentialGroup()
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnBACK)
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel1))
+                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnWiewTravels)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlAccountingLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlAccountingLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         pnlAccountingLayout.setVerticalGroup(
             pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAccountingLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBACK)
                     .addComponent(jLabel1))
-                .addGap(0, 239, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(btnWiewTravels)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -78,11 +174,81 @@ public class FrmAccounting extends javax.swing.JFrame {
 
     private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
         // TODO add your handling code here:
-           AirportTaxiScheduling airportTaxiScheduling;
+        AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
     }//GEN-LAST:event_btnBACKActionPerformed
+
+    private void jtblTravelsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblTravelsMouseClicked
+
+    }//GEN-LAST:event_jtblTravelsMouseClicked
+
+    private void btnWiewTravelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWiewTravelsActionPerformed
+        float totalPayed = 0;
+        float outsB = 0;
+        totalPayed = viewTravels(totalPayed);
+        outsB = outstandingBalance(outsB);
+        tf1.setText(Float.toString(totalPayed));
+        tf2.setText(Float.toString(outsB));
+    }//GEN-LAST:event_btnWiewTravelsActionPerformed
+
+    private void tf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf1ActionPerformed
+
+    private void tf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf2ActionPerformed
+
+    private float viewTravels(float totalPayed) {
+        cleanForm();
+        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+        ArrayList<Travel> travelsView = new ArrayList<Travel>();
+        Travel travelView = new Travel();
+        String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
+        String[] travelsString = new String[7];
+        DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
+        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+
+        for (int i = 0; i < travelsView.size(); i++) {
+            travelsString[0] = "" + travelsView.get(i).getId() + "";
+            travelsString[1] = "" + travelsView.get(i).getDriver() + "";
+            travelsString[2] = "" + travelsView.get(i).getTraveler() + "";
+            travelsString[3] = "" + travelsView.get(i).getAddress() + "";
+            travelsString[4] = "" + travelsView.get(i).getDateOfOcurrence() + "";
+            travelsString[5] = "" + travelsView.get(i).getPrice() + "";
+            travelsString[6] = "" + String.valueOf(travelsView.get(i).isPayed()) + "";
+            tableOfTravels.addRow(travelsString);
+            if (travelsView.get(i).isPayed() == true) {
+                totalPayed += (travelsView.get(i).getPrice());
+            }
+
+        }
+
+        jtblTravels.setModel(tableOfTravels);
+        jtblTravels.setDefaultEditor(Object.class, null);
+        return totalPayed;
+    }
+    
+    private float outstandingBalance(float outsB){
+        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+        ArrayList<Travel> travelsView = new ArrayList<Travel>();
+        Travel travelView = new Travel();
+        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        for (int i = 0; i < travelsView.size(); i++) {
+            
+            if (travelsView.get(i).isPayed() == false) {
+                outsB += (travelsView.get(i).getPrice());
+            }
+        }
+        return outsB;
+    }
+
+    private void cleanForm() {
+        DefaultTableModel tableOfTravels = new DefaultTableModel();
+        jtblTravels.setModel(tableOfTravels);
+    }
 
     /**
      * @param args the command line arguments
@@ -111,6 +277,8 @@ public class FrmAccounting extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -122,7 +290,14 @@ public class FrmAccounting extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBACK;
+    private javax.swing.JButton btnWiewTravels;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jtblTravels;
     private javax.swing.JPanel pnlAccounting;
+    private javax.swing.JTextField tf1;
+    private javax.swing.JTextField tf2;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,9 +35,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         label3 = new java.awt.Label();
         txt0 = new javax.swing.JTextField();
-        label6 = new java.awt.Label();
         label4 = new java.awt.Label();
-        txt4 = new javax.swing.JTextField();
         txt2 = new javax.swing.JTextField();
         rb1 = new javax.swing.JRadioButton();
         label7 = new java.awt.Label();
@@ -83,20 +81,8 @@ public class FrmAddTraveler extends javax.swing.JFrame {
             }
         });
 
-        label6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label6.setText("Ingress Outstanding Balance:");
-
         label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         label4.setText("Ingress the traveler phone number: ");
-
-        txt4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt4.setToolTipText("");
-        txt4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt4KeyTyped(evt);
-            }
-        });
 
         txt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txt2.setToolTipText("10 Digits");
@@ -228,10 +214,6 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack)
                         .addGap(151, 151, 151)
                         .addComponent(jLabel1))
@@ -295,10 +277,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rb1)
                         .addComponent(rb2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt4)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,7 +292,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bt5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
@@ -344,10 +323,6 @@ public class FrmAddTraveler extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txt0KeyTyped
-
-    private void txt4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4KeyTyped
-
-    }//GEN-LAST:event_txt4KeyTyped
 
     private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
         // TODO add your handling code here:
@@ -385,7 +360,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     }//GEN-LAST:event_txt1KeyTyped
 
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
-        if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty() || txt4.getText().isEmpty()) {
+        if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Error, some fields are empty ");
         } else {
             MongoClient mongoClient = TravelersdbController.conection();
@@ -405,7 +380,6 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                     String hotmail = "@hotmail.com";
                     traveler.setMail(txt3.getText() + hotmail);
                 }
-                traveler.setOutstandingBalance(Float.valueOf(txt4.getText()));
                 traveler.setBirthdayDay((int) sp1.getValue());
                 traveler.setBirthdayMonth((int) sp3.getValue());
                 traveler.setYear((int) sp2.getValue());
@@ -479,7 +453,6 @@ public class FrmAddTraveler extends javax.swing.JFrame {
         txt1.setText("");
         txt2.setText("");
         txt3.setText("");
-        txt4.setText("");
         sp1.setValue(1);
         sp3.setValue(1);
         sp2.setValue(2000);
@@ -498,7 +471,6 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     private java.awt.Label label3;
     private java.awt.Label label4;
     private java.awt.Label label5;
-    private java.awt.Label label6;
     private java.awt.Label label7;
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
@@ -509,6 +481,5 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     private javax.swing.JTextField txt1;
     private javax.swing.JTextField txt2;
     private javax.swing.JTextField txt3;
-    private javax.swing.JTextField txt4;
     // End of variables declaration//GEN-END:variables
 }
