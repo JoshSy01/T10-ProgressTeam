@@ -4,6 +4,7 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import ec.edu.espe.AirporTaxiScheduling.model.ReportProblem;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -60,7 +61,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
             }
         });
 
-        btnACCEPT.setText("ACEPAR");
+        btnACCEPT.setText("ACEPTAR");
         btnACCEPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnACCEPTActionPerformed(evt);
@@ -149,22 +150,15 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
     private void btnACCEPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACCEPTActionPerformed
         // TODO add your handling code here:
-          System.out.println("TLSEmail Start");
+        ReportProblem reportProblems = null;
+        System.out.println("TLSEmail Start");
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); 
         props.put("mail.smtp.port", "587"); 
         props.put("mail.smtp.auth", "true"); 
         props.put("mail.smtp.starttls.enable", "true"); 
 
-        /*
-        mProperties.put("mail.smtp.host", "smtp.gmail.com");
-        mProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        mProperties.setProperty("mail.smtp.starttls.enable", "true");
-        mProperties.setProperty("mail.smtp.port", "587");
-        mProperties.setProperty("mail.smtp.user",emailFrom);
-        mProperties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
-        mProperties.setProperty("mail.smtp.auth", "true");
-        */
+       
         Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
 
@@ -176,8 +170,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
         try{
             MimeMessage message = new MimeMessage(session);
             message.addRecipient(Message.RecipientType.TO, new InternetAddress("progressteam2003@gmail.com", true));
-         //   message.setSubject("Prueba");
-         //   message.setText("Blablabla");
+           
             message.setSubject(txtProblem.getText());
             message.setText(txtArea.getText());
 

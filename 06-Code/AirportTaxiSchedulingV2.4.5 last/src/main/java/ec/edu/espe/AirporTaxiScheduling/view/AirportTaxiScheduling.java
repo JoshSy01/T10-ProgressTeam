@@ -57,23 +57,24 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         setTitle("Airport Taxi Scheduling");
         setAlwaysOnTop(true);
 
-        jLabel1.setText("Team Progress for Sheduling your travels");
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        jLabel1.setText("Team Progress ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         mnubAirportTaxiScheduling.setToolTipText("Airport Taxi Scheduling");
@@ -240,11 +241,15 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -344,8 +349,8 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
     private void mitCalculateTripPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitCalculateTripPriceActionPerformed
         // TODO add your handling code here:
-        FrmCalculateTripPrice frmCalculateTripPrice;
-    frmCalculateTripPrice =  new FrmCalculateTripPrice();
+        FrmTarif frmCalculateTripPrice;
+    frmCalculateTripPrice =  new FrmTarif();
     frmCalculateTripPrice.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_mitCalculateTripPriceActionPerformed

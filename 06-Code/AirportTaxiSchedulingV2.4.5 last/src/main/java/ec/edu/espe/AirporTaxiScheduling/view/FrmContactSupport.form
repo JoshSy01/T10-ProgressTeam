@@ -115,7 +115,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnACCEPT">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ACEPAR"/>
+            <Property name="text" type="java.lang.String" value="ACEPTAR"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnACCEPTActionPerformed"/>

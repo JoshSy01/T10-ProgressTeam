@@ -53,6 +53,7 @@ public class FrmUserRegister extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +124,13 @@ public class FrmUserRegister extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("<REGRESAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,8 +138,10 @@ public class FrmUserRegister extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(jLabel1))
+                        .addGap(81, 81, 81)
+                        .addComponent(btnCreateUser)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnCancel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,17 +159,19 @@ public class FrmUserRegister extends javax.swing.JFrame {
                             .addComponent(txtFullName)
                             .addComponent(txtUserName)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(btnCreateUser)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnCancel)))
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel1)))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -256,6 +268,8 @@ public class FrmUserRegister extends javax.swing.JFrame {
                 users.add(user);
                 TraveldbController.createOne(user, userdbController.getDatabase(), collectionName);
                 JOptionPane.showMessageDialog(null, "El usuario ha sido creado con exito");
+                        clean();
+
             }
         }
     }//GEN-LAST:event_btnCreateUserActionPerformed
@@ -272,6 +286,14 @@ public class FrmUserRegister extends javax.swing.JFrame {
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        FrmUserLogin frmUserLogin; 
+       frmUserLogin = new FrmUserLogin();
+       this.setVisible(false);
+       frmUserLogin.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,6 +334,7 @@ public class FrmUserRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCreateUser;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -206,12 +206,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -222,18 +228,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="359" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="372" max="-2" attributes="0"/>
+                  <EmptySpace pref="140" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="151" max="32767" attributes="0"/>
+                  <EmptySpace pref="205" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -241,7 +247,10 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Team Progress for Sheduling your travels"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="36" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Team Progress "/>
           </Properties>
         </Component>
       </SubComponents>
