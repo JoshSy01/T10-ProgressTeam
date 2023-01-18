@@ -44,7 +44,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("<html>Dear Airport Taxi Scheduling user, from Progress Team we have this kind of customer service. For common problems that arise and how to solve them you can send a message to this email here: progressteam2003@gmail.com, and we will be happy to answer you as soon as possible. Or contact us through the phone numbers: '0999945031', '0996459938', '0995667373', '0960090320', and call us to schedule your appointment. We remain at your disposal for any questions you may have.<html>");
+        jLabel2.setText("<html>Estimado usuario de Airport Taxi Scheduling, desde Progress Team tenemos este tipo de atención al cliente. Para los problemas más comunes que surgen y cómo solucionarlos puede enviar un mensaje a este correo electrónico aquí: progressteam2003@gmail.com, y estaremos encantados de responderle lo antes posible. O póngase en contacto con nosotros a través de los números de teléfono '0999945031', '0996459938', '0995667373', '0960090320', y llámanos para concertar tu cita. Quedamos a su disposición para cualquier consulta.<html>");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

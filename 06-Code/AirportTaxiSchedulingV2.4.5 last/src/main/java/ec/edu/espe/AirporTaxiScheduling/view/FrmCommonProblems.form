@@ -107,7 +107,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Dear Airport Taxi Scheduling user, from Progress Team we have this kind of customer service. For common problems that arise and how to solve them you can send a message to this email here: progressteam2003@gmail.com, and we will be happy to answer you as soon as possible. Or contact us through the phone numbers: &apos;0999945031&apos;, &apos;0996459938&apos;, &apos;0995667373&apos;, &apos;0960090320&apos;, and call us to schedule your appointment. We remain at your disposal for any questions you may have.&lt;html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Estimado usuario de Airport Taxi Scheduling, desde Progress Team tenemos este tipo de atenci&#xf3;n al cliente. Para los problemas m&#xe1;s comunes que surgen y c&#xf3;mo solucionarlos puede enviar un mensaje a este correo electr&#xf3;nico aqu&#xed;: progressteam2003@gmail.com, y estaremos encantados de responderle lo antes posible. O p&#xf3;ngase en contacto con nosotros a trav&#xe9;s de los n&#xfa;meros de tel&#xe9;fono &apos;0999945031&apos;, &apos;0996459938&apos;, &apos;0995667373&apos;, &apos;0960090320&apos;, y ll&#xe1;manos para concertar tu cita. Quedamos a su disposici&#xf3;n para cualquier consulta.&lt;html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
         </Component>
