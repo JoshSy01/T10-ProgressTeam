@@ -51,25 +51,25 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("CONTAC SUPPORT");
+        jLabel1.setText("CONTACTAR AL SOPORTE");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
             }
         });
 
-        btnACCEPT.setText("ACCEPT");
+        btnACCEPT.setText("ACEPAR");
         btnACCEPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnACCEPTActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Problem:");
+        jLabel2.setText("Problema:");
 
-        jLabel3.setText("Contens:");
+        jLabel3.setText("Contenido:");
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -87,7 +87,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnBACK)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
                 .addGap(157, 157, 157))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,7 +182,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
             message.setText(txtArea.getText());
 
             Transport.send(message);
-            JOptionPane.showMessageDialog(this, "MESSAGE SENT SUCCESFULLY");
+            JOptionPane.showMessageDialog(this, "Mensaje enviado Exitosamente");
 
         }catch (MessagingException me){
             System.out.println("Exception: "+me);

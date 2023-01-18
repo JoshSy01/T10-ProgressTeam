@@ -4,28 +4,15 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
-import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
-import ec.edu.espe.AirporTaxiScheduling.view.AirportTaxiScheduling;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.PdfPTable;
 import java.awt.print.PrinterException;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.text.MessageFormat;
-import java.util.List;
 import javax.swing.JTable;
 
 /**
@@ -96,7 +83,7 @@ public class FrmHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
@@ -105,7 +92,7 @@ public class FrmHistory extends javax.swing.JFrame {
 
         jSeparator2.setToolTipText("reminders options");
 
-        btmCreatePDF.setText("Create PDF");
+        btmCreatePDF.setText("Crear PDF");
         btmCreatePDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmCreatePDFActionPerformed(evt);
@@ -113,11 +100,11 @@ public class FrmHistory extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel12.setText("Traveler:");
+        jLabel12.setText("Pasajero:");
 
         lblTraveler.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel1.setText("HISTORY");
+        jLabel1.setText("REPORTE");
 
         txtId.setToolTipText("the ID of the traveler");
         txtId.addActionListener(new java.awt.event.ActionListener() {
@@ -132,15 +119,15 @@ public class FrmHistory extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel10.setText("· Want you want to do?");
+        jLabel10.setText("¿Que le gustaria hacer?");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel9.setText("Welcome to the Service for Taxi Drivers");
+        jLabel9.setText("Bienvenido al servicio de Conductores de Taxi");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel7.setText("Enter the ID:");
+        jLabel7.setText("ID");
 
-        btmFind.setText("Find");
+        btmFind.setText("ENCONTRAR");
         btmFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmFindActionPerformed(evt);
@@ -148,7 +135,7 @@ public class FrmHistory extends javax.swing.JFrame {
         });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel13.setText("Travels");
+        jLabel13.setText("Viajes");
 
         jSeparator3.setToolTipText("reminders options");
 
@@ -160,7 +147,7 @@ public class FrmHistory extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Id Travel", "Driver", "Adress"
+                "Id Viaje", "Conductor", "Direccion"
             }
         ));
         jScrollPane3.setViewportView(tblTravels);
@@ -169,9 +156,27 @@ public class FrmHistory extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(594, 594, 594))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -188,40 +193,22 @@ public class FrmHistory extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator1)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(lblTraveler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(lblTraveler, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jSeparator1)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(562, 562, 562))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(594, 594, 594))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane3)
-                .addGap(562, 562, 562))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +255,9 @@ public class FrmHistory extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,14 +285,16 @@ public class FrmHistory extends javax.swing.JFrame {
     private void btmFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmFindActionPerformed
 
         if (txtId.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Error, Id field is empty");
+            JOptionPane.showMessageDialog(null, "Error, No se ingreso la ID");
         } else {
             int takeId = Integer.valueOf(txtId.getText());           
             Travel travel = new Travel();
             travel = TraveldbController.findDocumentdb(travel, takeId);
             lblTraveler.setText(travel.getTraveler());
+            
+            viewTravels(takeId);
         }
-        viewTravels();
+        
     }//GEN-LAST:event_btmFindActionPerformed
 
     private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
@@ -380,21 +371,28 @@ public class FrmHistory extends javax.swing.JFrame {
     private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 
-    private void viewTravels() {
+    private void viewTravels(int idFinder) {
         
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        String[] titles = {"Id Travel", "Driver", "Address"};
+        String[] titles = {"Id Viaje", "Conductor", "Direccion"};
         String[] travelsString = new String[3];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
         TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
 
         for (int i = 0; i < travelsView.size(); i++) {
-            travelsString[0] = "" + travelsView.get(i).getId() + "";
-            travelsString[1] = "" + travelsView.get(i).getDriver() + "";
-            travelsString[2] = "" + travelsView.get(i).getAddress() + "";
-            tableOfTravels.addRow(travelsString);
+            if(travelsView.get(i).getIdTraveler()==idFinder){
+                travelsString[0] = "" + travelsView.get(i).getId() + "";
+                travelsString[1] = "" + travelsView.get(i).getDriver() + "";
+                travelsString[2] = "" + travelsView.get(i).getAddress() + "";
+                tableOfTravels.addRow(travelsString);
+            }
+            
+            
+        }
+        if(travelsView.size()==0){
+            JOptionPane.showMessageDialog(null, "No se encontraron Viajes del pasajero");
         }
 
         tblTravels.setModel(tableOfTravels);

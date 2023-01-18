@@ -58,14 +58,14 @@ public class FrmAccounting extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("ACCOUNTING");
+        jLabel1.setText("CONTABILIDAD");
 
         jtblTravels.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,7 +75,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"
+                "Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"
             }
         ));
         jtblTravels.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +206,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
+        String[] titles = {"Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"};
         String[] travelsString = new String[7];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
         TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);

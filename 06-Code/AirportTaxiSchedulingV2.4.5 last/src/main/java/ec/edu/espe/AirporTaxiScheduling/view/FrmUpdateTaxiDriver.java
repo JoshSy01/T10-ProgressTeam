@@ -59,7 +59,7 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBack.setText("<BACK");
+        btnBack.setText("<REGRESAR");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -67,7 +67,7 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
         });
 
         btnAccept.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btnAccept.setText("ACCEPT");
+        btnAccept.setText("ACEPTAR");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
@@ -75,27 +75,27 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel1.setText("UPDATE DRIVER");
+        jLabel1.setText("ACTUALIZAR CONDUCTOR");
 
-        jLabel3.setText("Name:");
+        jLabel3.setText("Nombre:");
 
-        jLabel4.setText("PhoneNumber:");
+        jLabel4.setText("Numero de telefono:");
 
-        jLabel5.setText("Age:");
+        jLabel5.setText("Edad:");
 
-        jLabel6.setText("Adress:");
+        jLabel6.setText("Direccion");
 
         jLabel7.setText("C.I:");
 
         jLabel8.setText("Email:");
 
-        jLabel9.setText("Gender:");
+        jLabel9.setText("Genero:");
 
-        jLabel10.setText("vehicle Marck:");
+        jLabel10.setText("Marca del vehiculo:");
 
-        jLabel11.setText("vehicle Plate:");
+        jLabel11.setText("Placa del vehiculo");
 
-        jLabel12.setText("vehicle Year:");
+        jLabel12.setText("Año del vehiculo");
 
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -140,9 +140,6 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3)
@@ -163,16 +160,18 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
                                     .addComponent(txtEmail)
                                     .addComponent(cmbGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cmbVehicleMarck, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(spnAge, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtVehiclePlate)
-                                        .addComponent(cmbVehicleYear, 0, 88, Short.MAX_VALUE))
+                                    .addComponent(spnAge, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtVehiclePlate)
+                                    .addComponent(cmbVehicleYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(rbGmail)
                                         .addGap(18, 18, 18)
                                         .addComponent(rbHotmail))
-                                    .addComponent(btnAccept))))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                                    .addComponent(btnAccept)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabel1)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +281,7 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
             txtName.setEditable(true);
         } else {
             txtName.setEditable(false);
-            JOptionPane.showMessageDialog(this, c + " is not accepted here", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, c + " No es aceptado aquí", "Advartencia en el ingreso dde datos", JOptionPane.WARNING_MESSAGE);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_txtNameKeyTyped
 
@@ -292,7 +291,7 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
-                        JOptionPane.showMessageDialog(this, number + " only numbers", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
         if(txtCI.getText().length() >= 10){
@@ -306,7 +305,7 @@ public class FrmUpdateTaxiDriver extends javax.swing.JFrame {
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
-                        JOptionPane.showMessageDialog(this, number + " only numbers", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, number + " solo numeros", "Advertencia de ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
         if(txtPhoneNumber.getText().length() >= 10){

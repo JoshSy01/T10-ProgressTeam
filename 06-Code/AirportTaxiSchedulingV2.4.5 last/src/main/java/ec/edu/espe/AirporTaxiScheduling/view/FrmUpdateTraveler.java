@@ -65,9 +65,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("UPDATE TRAVELER");
+        jLabel1.setText("ACTUALIZAR PASAJERO");
 
-        jButton1.setText("<BACK");
+        jButton1.setText("<REGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -75,9 +75,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
 
         label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label7.setText("BirthDate:");
+        label7.setText("Cumpleaños");
 
-        bt2.setText("FIND");
+        bt2.setText("ENCONTRAR");
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
@@ -85,7 +85,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label3.setText("Traveler name:");
+        label3.setText("Nombre del Pasajero");
 
         txt2.setEditable(false);
         txt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -142,7 +142,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
 
         label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label4.setText("Traveler phone number: ");
+        label4.setText("Numero de telefono del Pasajero");
 
         txt1.setEditable(false);
         txt1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -160,7 +160,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
 
         label5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label5.setText("The traveler mail: ");
+        label5.setText("E-mail del Pasajero");
 
         jLabel4.setText("YEAR");
 
@@ -186,7 +186,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             }
         });
 
-        bt4.setText("UPDATE");
+        bt4.setText("ACTUALIZAR");
         bt4.setEnabled(false);
         bt4.setFocusPainted(false);
         bt4.setFocusable(false);
@@ -211,7 +211,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         rb2.setText("Hotmail");
         rb2.setEnabled(false);
 
-        bt5.setText("CLEAN");
+        bt5.setText("LIMPIAR");
         bt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt5ActionPerformed(evt);
@@ -223,7 +223,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday"
+                "Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños"
             }
         ) {
             Class[] types = new Class [] {
@@ -248,7 +248,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableOfTravelers);
 
-        bt1.setText("Show All Travelers");
+        bt1.setText("Mostrar a todos los Pasajeros");
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
@@ -264,7 +264,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(136, 136, 136)
                 .addComponent(jLabel1)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addContainerGap(335, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,7 +292,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                         .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,7 +321,8 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                 .addComponent(rb1)
                                 .addGap(83, 83, 83)
                                 .addComponent(rb2))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -351,14 +351,17 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(rb1)
-                        .addComponent(rb2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rb1)
+                            .addComponent(rb2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -377,7 +380,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 .addComponent(bt1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -393,7 +396,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
         if (txt0.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Error, Id field is empty");
+            JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
         } else {
             int takeId = Integer.valueOf(txt0.getText());
             Traveler traveler = new Traveler();
@@ -552,7 +555,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
         if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Error, Id field is empty");
+            JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
         } else {
             Traveler traveler = new Traveler();
             traveler.setId(Integer.valueOf(txt0.getText()));
@@ -659,7 +662,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         MongoClient mongoClient = TravelersdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
-        String[] titles = {"Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday DD/MM"};
+        String[] titles = {"Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños DD/MM"};
         String[] travelerString = new String[6];
         DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
         tableOfTravelers.setModel(tableOfTravelersM);

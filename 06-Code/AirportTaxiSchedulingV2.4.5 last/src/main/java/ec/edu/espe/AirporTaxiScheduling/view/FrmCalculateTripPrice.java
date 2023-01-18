@@ -35,9 +35,9 @@ public class FrmCalculateTripPrice extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("CALCULALTE TRIP");
+        jLabel1.setText("TARIFA");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
@@ -53,7 +53,7 @@ public class FrmCalculateTripPrice extends javax.swing.JFrame {
                 .addComponent(btnBACK)
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

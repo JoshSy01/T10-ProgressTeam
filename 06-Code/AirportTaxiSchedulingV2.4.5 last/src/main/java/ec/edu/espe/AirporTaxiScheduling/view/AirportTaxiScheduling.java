@@ -64,23 +64,23 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(267, 267, 267)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(130, 130, 130)
                 .addComponent(jLabel1)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         mnubAirportTaxiScheduling.setToolTipText("Airport Taxi Scheduling");
 
         jMenu1.setText("Airport Taxi Sheduling");
 
-        mitAbout.setText("About");
+        mitAbout.setText("Acerca de");
         mitAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitAboutActionPerformed(evt);
@@ -88,7 +88,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu1.add(mitAbout);
 
-        miExit.setText("Exit");
+        miExit.setText("Salir");
         miExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miExitActionPerformed(evt);
@@ -98,9 +98,9 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
         mnubAirportTaxiScheduling.add(jMenu1);
 
-        jMenu4.setText("TaxiDriver");
+        jMenu4.setText("Conductor");
 
-        mitAddTaxiDriver.setText("Add Taxi driver");
+        mitAddTaxiDriver.setText("Añadir conductor");
         mitAddTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitAddTaxiDriverActionPerformed(evt);
@@ -108,7 +108,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu4.add(mitAddTaxiDriver);
 
-        mitViewTaxiDriver.setText("View Taxi driver");
+        mitViewTaxiDriver.setText("Buscar conductor");
         mitViewTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitViewTaxiDriverActionPerformed(evt);
@@ -116,7 +116,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu4.add(mitViewTaxiDriver);
 
-        mitUpdateTaxiDriver.setText("Update Taxi driver");
+        mitUpdateTaxiDriver.setText("Actualizar conductor");
         mitUpdateTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitUpdateTaxiDriverActionPerformed(evt);
@@ -124,7 +124,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu4.add(mitUpdateTaxiDriver);
 
-        mitDeleteTaxiDriver.setText("Delete Taxi driver");
+        mitDeleteTaxiDriver.setText("Eliminar conductor");
         mitDeleteTaxiDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitDeleteTaxiDriverActionPerformed(evt);
@@ -134,9 +134,9 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
         mnubAirportTaxiScheduling.add(jMenu4);
 
-        jMenu5.setText("Traveler");
+        jMenu5.setText("Pasajero");
 
-        mitAddTraveler.setText("Add traveler");
+        mitAddTraveler.setText("Añadir pasajero");
         mitAddTraveler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitAddTravelerActionPerformed(evt);
@@ -144,7 +144,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu5.add(mitAddTraveler);
 
-        mitViewTraveler.setText("View travelers");
+        mitViewTraveler.setText("Buscar pasajero");
         mitViewTraveler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitViewTravelerActionPerformed(evt);
@@ -152,7 +152,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu5.add(mitViewTraveler);
 
-        mitUpdateTraveler.setText("Update traveler");
+        mitUpdateTraveler.setText("Actualizar pasajero");
         mitUpdateTraveler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitUpdateTravelerActionPerformed(evt);
@@ -160,7 +160,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu5.add(mitUpdateTraveler);
 
-        mitDeleteTraveler.setText("Delete travelers");
+        mitDeleteTraveler.setText("Eliminar pasajero");
         mitDeleteTraveler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitDeleteTravelerActionPerformed(evt);
@@ -170,9 +170,9 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
         mnubAirportTaxiScheduling.add(jMenu5);
 
-        jMenu3.setText("Services");
+        jMenu3.setText("Servicios");
 
-        mitTravel.setText("Travel");
+        mitTravel.setText("Viajes");
         mitTravel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitTravelActionPerformed(evt);
@@ -180,7 +180,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu3.add(mitTravel);
 
-        mitAccounting.setText("Accounting");
+        mitAccounting.setText("Contabilidad");
         mitAccounting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitAccountingActionPerformed(evt);
@@ -188,7 +188,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu3.add(mitAccounting);
 
-        mitReminder.setText("Reminder");
+        mitReminder.setText("Recordatorio");
         mitReminder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitReminderActionPerformed(evt);
@@ -196,7 +196,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu3.add(mitReminder);
 
-        mitCalculateTripPrice.setText("Calculate trip price");
+        mitCalculateTripPrice.setText("Tarifas");
         mitCalculateTripPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitCalculateTripPriceActionPerformed(evt);
@@ -204,7 +204,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu3.add(mitCalculateTripPrice);
 
-        mitHistory.setText("History");
+        mitHistory.setText("Reporte");
         mitHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitHistoryActionPerformed(evt);
@@ -214,9 +214,9 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
         mnubAirportTaxiScheduling.add(jMenu3);
 
-        jMenu2.setText("Help");
+        jMenu2.setText("Ayuda");
 
-        mitContactSupport.setText("Contact Support");
+        mitContactSupport.setText("Contactar al Soporte");
         mitContactSupport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitContactSupportActionPerformed(evt);
@@ -224,7 +224,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         });
         jMenu2.add(mitContactSupport);
 
-        mitCommonProblem.setText("Common Problems");
+        mitCommonProblem.setText("Problemas Comunes");
         mitCommonProblem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitCommonProblemActionPerformed(evt);

@@ -77,7 +77,7 @@
                   </Group>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -157,27 +157,27 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ADD DRIVER"/>
+        <Property name="text" type="java.lang.String" value="A&#xd1;ADIR CONDUCTOR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name:"/>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Phone Number:"/>
+        <Property name="text" type="java.lang.String" value="Numero de telefono:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Age:"/>
+        <Property name="text" type="java.lang.String" value="Edad:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Adress:"/>
+        <Property name="text" type="java.lang.String" value="Direccion:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -192,22 +192,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gender:"/>
+        <Property name="text" type="java.lang.String" value="Genero:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vehicle Mark:"/>
+        <Property name="text" type="java.lang.String" value="Marca del vehiculo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vehicle Plate:"/>
+        <Property name="text" type="java.lang.String" value="Placa del vehiculo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vehicle Year:"/>
+        <Property name="text" type="java.lang.String" value="A&#xf1;o del vehiculo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
@@ -289,7 +289,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;Back"/>
+        <Property name="text" type="java.lang.String" value="&lt;REGRESAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
@@ -297,7 +297,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegister">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ACCEPT"/>
+        <Property name="text" type="java.lang.String" value="ACEPTAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterActionPerformed"/>

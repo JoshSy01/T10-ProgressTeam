@@ -2,16 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ec.edu.espe.AirporTaxiScheduling.utils;
-
-import javax.swing.JOptionPane;
+package ec.edu.espe.AirporTaxiScheduling.model;
 
 /**
  *
  * @author Justin Villarroel, ProgressTeam, DCCO-ESPE
  */
-public class Error {
-    public static void messege(){
-        JOptionPane.showMessageDialog( null,"ID no encontrado");
-    }
+public class Taxi{
+    
 }

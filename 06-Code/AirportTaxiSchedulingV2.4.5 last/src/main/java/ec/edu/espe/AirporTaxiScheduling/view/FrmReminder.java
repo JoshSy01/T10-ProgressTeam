@@ -117,9 +117,9 @@ public class FrmReminder extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("REMINDER");
+        jLabel1.setText("RECORDATORIO");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
@@ -134,28 +134,28 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel10.setText("· Want you want to do?");
+        jLabel10.setText("¿Que desea hacer?");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel9.setText("Welcome to the Service for Taxi Drivers");
+        jLabel9.setText("Bienvenido al servicio de conductores de taxi");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel7.setText("Enter the ID:");
+        jLabel7.setText("ID:");
 
         jSeparator2.setToolTipText("reminders options");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel11.setText("Courtesy Reminders");
+        jLabel11.setText("Recordatorios de cortesia");
         jLabel11.setToolTipText("reminders options");
 
-        btmCancel.setText("Cancel");
+        btmCancel.setText("CANCELAR");
         btmCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmCancelActionPerformed(evt);
             }
         });
 
-        btmSend.setText("Send");
+        btmSend.setText("ENVIAR");
         btmSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmSendActionPerformed(evt);
@@ -163,7 +163,7 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        jLabel8.setText("Message:");
+        jLabel8.setText("Mensaje:");
 
         txtmailContent.setColumns(20);
         txtmailContent.setRows(5);
@@ -178,7 +178,7 @@ public class FrmReminder extends javax.swing.JFrame {
 
         lblMail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        btmFind.setText("Find");
+        btmFind.setText("ENCONTRAR");
         btmFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmFindActionPerformed(evt);
@@ -186,7 +186,7 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         grpReminders.add(rb3);
-        rb3.setText("Birthday");
+        rb3.setText("Cumpleaños");
         rb3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb3ActionPerformed(evt);
@@ -194,10 +194,10 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         grpReminders.add(rb4);
-        rb4.setText("Christmas");
+        rb4.setText("Navidad");
 
         grpReminders.add(rb5);
-        rb5.setText("New Year");
+        rb5.setText("Año nuevo");
         rb5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb5ActionPerformed(evt);
@@ -205,10 +205,10 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         grpReminders.add(rb6);
-        rb6.setText("Holy Week");
+        rb6.setText("Semana Santa");
 
         grpReminders.add(rb7);
-        rb7.setText("Carnival");
+        rb7.setText("Carnaval");
         rb7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb7ActionPerformed(evt);
@@ -216,10 +216,10 @@ public class FrmReminder extends javax.swing.JFrame {
         });
 
         grpReminders.add(rb8);
-        rb8.setText("May 24");
+        rb8.setText("24 de Mayo");
 
         grpReminders.add(rb9);
-        rb9.setText("Other");
+        rb9.setText("Otro");
         rb9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb9ActionPerformed(evt);
@@ -234,21 +234,21 @@ public class FrmReminder extends javax.swing.JFrame {
             }
         });
 
-        btmClean.setText("Clean");
+        btmClean.setText("Limpiar");
         btmClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmCleanActionPerformed(evt);
             }
         });
 
-        btmShow1.setText("Show Option");
+        btmShow1.setText("Mostrar la Opcion");
         btmShow1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmShow1ActionPerformed(evt);
             }
         });
 
-        lblOption1.setText("The option selected is:");
+        lblOption1.setText("La opcion seleccionada es:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -287,28 +287,24 @@ public class FrmReminder extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(rb3)
-                                            .addGap(83, 83, 83)
-                                            .addComponent(rb4))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(rb5)
-                                            .addGap(83, 83, 83)
-                                            .addComponent(rb6))
+                                            .addComponent(btmShow1)
+                                            .addGap(49, 49, 49)
+                                            .addComponent(btmClean))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(rb7)
-                                                .addComponent(rb10))
-                                            .addGap(70, 70, 70)
+                                                .addComponent(rb10)
+                                                .addComponent(rb3)
+                                                .addComponent(rb5))
+                                            .addGap(59, 59, 59)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(rb6)
+                                                .addComponent(rb4)
                                                 .addComponent(rb9)
-                                                .addComponent(rb8)))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(btmShow1)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btmClean)))
+                                                .addComponent(rb8))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(lblOption1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -333,7 +329,7 @@ public class FrmReminder extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmFind, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -438,7 +434,7 @@ public class FrmReminder extends javax.swing.JFrame {
 
     private void btmFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmFindActionPerformed
         if (txtId.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Error, Id field is empty");
+            JOptionPane.showMessageDialog(null, "Error, No se a ingresado la ID");
         } else {
             int takeId = Integer.valueOf(txtId.getText());
             Traveler traveler = new Traveler();
@@ -474,36 +470,36 @@ public class FrmReminder extends javax.swing.JFrame {
         Traveler traveler = new Traveler();
         traveler = TravelersdbController.findDocumentdb(traveler, takeId);
         if(rb3.isSelected()){
-            message = "Birthday";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Happy Birthday and that you remember that you will always be appreciated here.";
+            message = "Cumpleaños";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team te enviamos este mensaje para desearte un muy Feliz Cumpleaños y que recuerdes que aquí siempre serás apreciado.";
         }
         if(rb4.isSelected()){
-            message = "Christmas";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Merry Christmas and that you remember that you will always be appreciated here.";
+            message = "Navidad";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle una muy Feliz Navidad y que recuerde que aquí siempre será apreciado.";
         }
         if(rb5.isSelected()){
-            message = "New Year";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Happy New Year and that you remember that you will always be appreciated here.";
+            message = "Año nuevo";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Año Nuevo y que recuerde que aquí siempre será apreciado.";
         }
         if(rb6.isSelected()){
-            message = "Holy Week";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Holly Week and that you remember that you will always be appreciated here.";
+            message = "Semana Santa";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle una muy Feliz Semana y que recuerde que aquí siempre será apreciado.";
         }
         if(rb7.isSelected()){
-            message = "Carnival";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Happy Carnival and that you remember that you will always be appreciated here.";
+            message = "Carnaval";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Carnaval y que recuerde que aquí siempre será apreciado.";
         }
         if(rb8.isSelected()){
-            message = "May 24";
-            message2 = "Hi! Dear user, " + traveler.getName() + ", from Airport Taxi Scheduling, Progress Team send you this message to wish you a very Happy Indenpendence Day and that you remember that you will always be appreciated here.";
+            message = "24 de Mayo";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Día de la Independencia y que recuerde que aquí siempre será apreciado.";
         }
         if(rb9.isSelected()){
-            message = "Other";
+            message = "Otros";
             message2 = "";
         }
         if(rb10.isSelected()){
             message = "Halloween";
-            message2 = "Hi! Dear user, " + traveler.getName() + " from Airport Taxi Scheduling, we, Progress Team send you this message to wish you a very Happy Halloween and that you remember that you will always be appreciated here.";
+            message2 = "¡Hola! Estimado usuario, " + traveler.getName() + " desde Airport Taxi Scheduling, nosotros, el equipo de Progress te enviamos este mensaje para desearte un muy Feliz Halloween y que recuerdes que aquí siempre serás apreciado.";
         }
         lblOption.setText(message);
         txtmailContent.setText(message2);

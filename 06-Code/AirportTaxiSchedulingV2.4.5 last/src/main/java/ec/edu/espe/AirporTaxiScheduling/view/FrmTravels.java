@@ -67,11 +67,11 @@ public class FrmTravels extends javax.swing.JFrame {
         btngPayed = new javax.swing.ButtonGroup();
         jCalendarTheme1 = new com.toedter.plaf.JCalendarTheme();
         pnlButtons = new javax.swing.JPanel();
-        btnMainMenu = new javax.swing.JButton();
         btnAccept = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnClean = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        btnMainMenu = new javax.swing.JButton();
         pnlInput = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -101,18 +101,11 @@ public class FrmTravels extends javax.swing.JFrame {
         lblTraveler = new javax.swing.JLabel();
         lblDateOfOcurrence = new javax.swing.JLabel();
         btnSetDate = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        btnBACK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnMainMenu.setText("Main menu");
-        btnMainMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMainMenuActionPerformed(evt);
-            }
-        });
-
-        btnAccept.setText("Accept");
+        btnAccept.setText("ACEPTAR");
         btnAccept.setEnabled(false);
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +113,7 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setText("Update");
+        btnUpdate.setText("ACTUALIZAR");
         btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,18 +121,25 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         });
 
-        btnClean.setText("Clean");
+        btnClean.setText("LIMPIAR");
         btnClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCleanActionPerformed(evt);
             }
         });
 
-        btnDelete.setText("Delete");
+        btnDelete.setText("ELIMINAR");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnMainMenu.setText("Menu principal");
+        btnMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainMenuActionPerformed(evt);
             }
         });
 
@@ -148,44 +148,42 @@ public class FrmTravels extends javax.swing.JFrame {
         pnlButtonsLayout.setHorizontalGroup(
             pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlButtonsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlButtonsLayout.createSequentialGroup()
-                            .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(50, 50, 50))
-                        .addGroup(pnlButtonsLayout.createSequentialGroup()
-                            .addGroup(pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(32, 32, 32)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlButtonsLayout.createSequentialGroup()
-                        .addComponent(btnMainMenu)
-                        .addGap(51, 51, 51))))
+                        .addGap(0, 19, Short.MAX_VALUE)
+                        .addComponent(btnMainMenu))
+                    .addGroup(pnlButtonsLayout.createSequentialGroup()
+                        .addGroup(pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         pnlButtonsLayout.setVerticalGroup(
             pnlButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlButtonsLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
+                .addGap(197, 197, 197)
                 .addComponent(btnMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128)
+                .addGap(97, 97, 97)
                 .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
+                .addGap(81, 81, 81)
                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addGap(82, 82, 82)
                 .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Travels");
+        jLabel1.setText("VIAJES");
 
-        jLabel2.setText("Driver:");
+        jLabel2.setText("Conductor");
 
-        jLabel3.setText("Traveler:");
+        jLabel3.setText("Pasajero");
 
         txtAddress.setToolTipText("City and streets");
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -219,11 +217,11 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Address:");
+        jLabel4.setText("Direccion");
 
-        jLabel5.setText("Date of Ocurrence:");
+        jLabel5.setText("Fecha de Aparicion");
 
-        jLabel6.setText("Price:");
+        jLabel6.setText("Presio:");
 
         chkbReminder.setText("Stablih Reminder");
 
@@ -232,7 +230,7 @@ public class FrmTravels extends javax.swing.JFrame {
         jTextArea1.setEnabled(false);
         txtPnlAnnotation.setViewportView(jTextArea1);
 
-        chkbAnnotation.setText("Include annotation");
+        chkbAnnotation.setText("Incluir Anotacion");
         chkbAnnotation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkbAnnotationActionPerformed(evt);
@@ -240,10 +238,10 @@ public class FrmTravels extends javax.swing.JFrame {
         });
 
         btngPayed.add(rbtnPayed);
-        rbtnPayed.setText("Payed");
+        rbtnPayed.setText("Pagado");
 
         btngPayed.add(rbtnNoPayed);
-        rbtnNoPayed.setText("No payed");
+        rbtnNoPayed.setText("No pagado");
 
         jdtechDateofOcurrence.setModel(new javax.swing.SpinnerDateModel());
         jdtechDateofOcurrence.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -264,13 +262,13 @@ public class FrmTravels extends javax.swing.JFrame {
 
         jtblTravels.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"
             }
         ));
         jtblTravels.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -304,7 +302,7 @@ public class FrmTravels extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Place", "Tarif"
+                "Lugar", "Tarifa"
             }
         ) {
             Class[] types = new Class [] {
@@ -329,10 +327,10 @@ public class FrmTravels extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setText("<-- Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        btnBACK.setText("<REGRESAR");
+        btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                btnBACKActionPerformed(evt);
             }
         });
 
@@ -343,7 +341,7 @@ public class FrmTravels extends javax.swing.JFrame {
             .addGroup(pnlInputLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInputLayout.createSequentialGroup()
+                    .addGroup(pnlInputLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(cmbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,8 +357,8 @@ public class FrmTravels extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(lblTraveler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(pnlInputLayout.createSequentialGroup()
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
+                                .addComponent(btnBACK)
+                                .addGap(96, 96, 96)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7)))
@@ -373,11 +371,6 @@ public class FrmTravels extends javax.swing.JFrame {
                 .addGap(301, 301, 301))
             .addGroup(pnlInputLayout.createSequentialGroup()
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInputLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInputLayout.createSequentialGroup()
                         .addGap(271, 271, 271)
                         .addComponent(btnWiewTravels, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -400,6 +393,12 @@ public class FrmTravels extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlInputLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlInputLayout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(41, 41, 41)
@@ -407,22 +406,22 @@ public class FrmTravels extends javax.swing.JFrame {
                                 .addGap(40, 40, 40)
                                 .addComponent(btnSetDate)
                                 .addGap(18, 18, 18)
-                                .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                                .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         pnlInputLayout.setVerticalGroup(
             pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInputLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel7)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInputLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
+                        .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel7)
+                        .addComponent(btnBACK)))
+                .addGap(35, 35, 35)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cmbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -443,7 +442,7 @@ public class FrmTravels extends javax.swing.JFrame {
                         .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSetDate))
                     .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(chkbReminder)
                 .addGap(18, 18, 18)
                 .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,8 +472,8 @@ public class FrmTravels extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(pnlInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlButtons, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(pnlButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,18 +483,14 @@ public class FrmTravels extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pnlInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(pnlButtons, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(pnlButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        FrmTravelsMenu travelsMenu = new FrmTravelsMenu();
-        this.setVisible(false);
-        travelsMenu.setVisible(rootPaneCheckingEnabled);
-    }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
         cleanForm();
@@ -518,7 +513,7 @@ public class FrmTravels extends javax.swing.JFrame {
                     || jdtechDateofOcurrence.getDate() == null
                     || lblPrice.getText().isEmpty()
                     || !btngPayed.isSelected(btngPayed.getSelection())) {
-                JOptionPane.showMessageDialog(null, "Error, some fields are empty ");
+                JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios ");
             } else {
                 int idTraveler;
                 Traveler traveler1 = new Traveler();
@@ -544,11 +539,11 @@ public class FrmTravels extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAcceptActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int option = JOptionPane.showConfirmDialog(this, "Are you sure about that?");
+        int option = JOptionPane.showConfirmDialog(this, "Esta seguro de eso?");
         JOptionPane.showMessageDialog(this, "", String.valueOf(option), JOptionPane.WARNING_MESSAGE);
         if (option == 0) {
             TraveldbController.deleteOne(dataBaseManager.getDatabase(), collectionName, Integer.parseInt(lblid.getText()));
-            JOptionPane.showMessageDialog(null, "Document delete successfully");
+            JOptionPane.showMessageDialog(null, "Viaje eliminado Exitosamente");
             cleanForm();
         }
 
@@ -571,7 +566,7 @@ public class FrmTravels extends javax.swing.JFrame {
         }
 
         if (!(Character.isDigit(character)) && !(Character.isAlphabetic(character)) && (character != KeyEvent.VK_BACK_SPACE) && (character != KeyEvent.VK_DELETE) && (character != KeyEvent.VK_SPACE) && !(Character.isDigit(character)) && !(character != KeyEvent.VK_ENTER)) {
-            JOptionPane.showMessageDialog(this, character + "is not accepted for Address", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, character + "No es aceptado como direccion", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
             evt.consume();
         }
 
@@ -657,6 +652,14 @@ public class FrmTravels extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSetDateActionPerformed
 
+    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+        // TODO add your handling code here:
+        AirportTaxiScheduling airportTaxiScheduling;
+        airportTaxiScheduling = new AirportTaxiScheduling();
+        this.setVisible(false);
+        airportTaxiScheduling.setVisible(true);
+    }//GEN-LAST:event_btnBACKActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -697,7 +700,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccept;
-    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnBACK;
     private javax.swing.JButton btnClean;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnMainMenu;
@@ -752,7 +755,7 @@ public class FrmTravels extends javax.swing.JFrame {
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
+        String[] titles = {"Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"};
         String[] travelsString = new String[7];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
         TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
@@ -779,7 +782,7 @@ public class FrmTravels extends javax.swing.JFrame {
         if (txtAddress.getText().isEmpty()
                 || lblPrice.getText().isEmpty()
                 || !btngPayed.isSelected(btngPayed.getSelection())) {
-            JOptionPane.showMessageDialog(null, "Error, some fields are empty ");
+            JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios ");
         } else {
             idTraveler = obtainIdTraveler(lblTraveler.getText());
             traveler1 = TravelersdbController.findDocumentdb(traveler1, idTraveler);

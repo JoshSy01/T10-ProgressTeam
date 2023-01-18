@@ -61,25 +61,25 @@ public class FrmViewTraveler extends javax.swing.JFrame {
         bt1 = new javax.swing.JButton();
         bt5 = new javax.swing.JButton();
 
-        jLabel1.setText("VIEW TRAVELER");
+        jLabel1.setText("BUSCAR PASAJEROS");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("YEAR");
+        jLabel4.setText("AÑO");
 
         label6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label6.setText("Outstanding Balance:");
+        label6.setText("Saldo Pendiente");
 
         label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label4.setText("Traveler phone number: ");
+        label4.setText("Numero de telefono del Pasajero");
 
         label5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label5.setText("The traveler mail: ");
+        label5.setText("E-mail del Pasajero");
 
         txt4.setEditable(false);
         txt4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -135,7 +135,7 @@ public class FrmViewTraveler extends javax.swing.JFrame {
         });
 
         label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label7.setText("BirthDate:");
+        label7.setText("Cumpleaños");
 
         sp3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sp3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 0));
@@ -167,12 +167,12 @@ public class FrmViewTraveler extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("MONTH");
+        jLabel2.setText("MES");
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label3.setText("Traveler name:");
+        label3.setText("Nombre del Pasajero");
 
-        jLabel3.setText("DAY");
+        jLabel3.setText("DIA");
 
         txt0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txt0.setToolTipText("Ingress for create traveler, search traveler or delete traveler :)");
@@ -193,7 +193,7 @@ public class FrmViewTraveler extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday"
+                "Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños"
             }
         ) {
             Class[] types = new Class [] {
@@ -218,21 +218,21 @@ public class FrmViewTraveler extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableOfTravelers);
 
-        bt2.setText("FIND");
+        bt2.setText("ENCONTRAR");
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
             }
         });
 
-        bt1.setText("Show All Travelers");
+        bt1.setText("Mostrar a todos los Pasajeros");
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
             }
         });
 
-        bt5.setText("CLEAN");
+        bt5.setText("LIMPIAR");
         bt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt5ActionPerformed(evt);
@@ -313,7 +313,7 @@ public class FrmViewTraveler extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(bt1)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -512,7 +512,7 @@ public class FrmViewTraveler extends javax.swing.JFrame {
         MongoClient mongoClient = TravelersdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
-        String[] titles = {"Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday DD/MM"};
+        String[] titles = {"Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños DD/MM"};
         String[] travelerString = new String[6];
         DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
         tableOfTravelers.setModel(tableOfTravelersM);

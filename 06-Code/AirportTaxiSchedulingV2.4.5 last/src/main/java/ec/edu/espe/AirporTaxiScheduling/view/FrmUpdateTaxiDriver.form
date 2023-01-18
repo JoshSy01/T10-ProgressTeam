@@ -33,10 +33,6 @@
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -58,11 +54,9 @@
                                   <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="cmbGender" alignment="0" max="32767" attributes="0"/>
                                   <Component id="cmbVehicleMarck" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="spnAge" min="-2" pref="61" max="-2" attributes="0"/>
-                                      <Component id="txtVehiclePlate" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="cmbVehicleYear" alignment="0" pref="88" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="spnAge" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="txtVehiclePlate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cmbVehicleYear" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="rbGmail" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -71,10 +65,14 @@
                                   <Component id="btnAccept" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -151,7 +149,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;BACK"/>
+        <Property name="text" type="java.lang.String" value="&lt;REGRESAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
@@ -162,7 +160,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ACCEPT"/>
+        <Property name="text" type="java.lang.String" value="ACEPTAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAcceptActionPerformed"/>
@@ -173,27 +171,27 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial Black" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="UPDATE DRIVER"/>
+        <Property name="text" type="java.lang.String" value="ACTUALIZAR CONDUCTOR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name:"/>
+        <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="PhoneNumber:"/>
+        <Property name="text" type="java.lang.String" value="Numero de telefono:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Age:"/>
+        <Property name="text" type="java.lang.String" value="Edad:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Adress:"/>
+        <Property name="text" type="java.lang.String" value="Direccion"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -208,22 +206,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gender:"/>
+        <Property name="text" type="java.lang.String" value="Genero:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
-        <Property name="text" type="java.lang.String" value="vehicle Marck:"/>
+        <Property name="text" type="java.lang.String" value="Marca del vehiculo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="vehicle Plate:"/>
+        <Property name="text" type="java.lang.String" value="Placa del vehiculo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="vehicle Year:"/>
+        <Property name="text" type="java.lang.String" value="A&#xf1;o del vehiculo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtName">
