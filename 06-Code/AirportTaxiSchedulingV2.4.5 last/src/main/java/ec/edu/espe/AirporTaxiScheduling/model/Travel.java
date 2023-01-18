@@ -17,6 +17,7 @@ public class Travel {
     private float price;
     private String annotation; 
     private boolean payed;
+    
 
     
   

@@ -10,7 +10,9 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
+import ec.edu.espe.AirporTaxiScheduling.utils.Errors;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
@@ -89,9 +91,29 @@ public class TraveldbController {
           objects.remove(i); 
         }   
         MongoCollection<Document> objectsCollection = database.getCollection(collectionName);
-        FindIterable<Document> result = objectsCollection.find(Filters.gt("id", 0));
+        FindIterable<Document> result = objectsCollection.find(Filters.gt("idTraveler", 0));
         result.forEach(d -> objects.add(gson.fromJson(d.toJson(), Travel.class)));
         return objects;
+    }
+    
+    public static Travel findDocumentdb(Travel travel, int idFinder){
+        MongoClient mongoClient = TravelersdbController.conection();
+        MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
+        MongoCollection<Document> collection = database.getCollection("Travels");
+        Bson filter = Filters.and(Filters.all("idTraveler", idFinder));
+        MongoCursor<Document> cursor = collection.find(filter).iterator();
+        if(collection.find(filter).first() != null){
+            Document document = collection.find(filter).first();
+            travel.setDriver(document.getString("driver"));
+            travel.setTraveler(document.getString("traveler"));
+            travel.setAddress(document.getString("adress"));
+            travel.setPrice(Float.valueOf(Double.toString(document.getDouble("price"))));
+            travel.setPayed(document.getBoolean("payed"));
+        }else{
+            Errors.messege();
+        }
+        
+        return travel;
     }
 
     /**
