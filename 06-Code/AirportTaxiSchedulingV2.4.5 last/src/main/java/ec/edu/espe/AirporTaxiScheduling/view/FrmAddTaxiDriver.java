@@ -60,27 +60,27 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel1.setText("ADD DRIVER");
+        jLabel1.setText("AÑADIR CONDUCTOR");
 
-        jLabel3.setText("Name:");
+        jLabel3.setText("Nombre:");
 
-        jLabel4.setText("Phone Number:");
+        jLabel4.setText("Numero de telefono:");
 
-        jLabel5.setText("Age:");
+        jLabel5.setText("Edad:");
 
-        jLabel6.setText("Adress:");
+        jLabel6.setText("Direccion:");
 
         jLabel7.setText("C.I:");
 
         jLabel8.setText("Email:");
 
-        jLabel9.setText("Gender:");
+        jLabel9.setText("Genero:");
 
-        jLabel11.setText("Vehicle Mark:");
+        jLabel11.setText("Marca del vehiculo");
 
-        jLabel12.setText("Vehicle Plate:");
+        jLabel12.setText("Placa del vehiculo");
 
-        jLabel13.setText("Vehicle Year:");
+        jLabel13.setText("Año del vehiculo:");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,14 +121,14 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
 
         cmbVehicleMarck.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toyota", "Nissan", "Jac", "Cherry", "Other" }));
 
-        btnBack.setText("<Back");
+        btnBack.setText("<REGRESAR");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
 
-        btnRegister.setText("ACCEPT");
+        btnRegister.setText("ACEPTAR");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -188,7 +188,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(rbHotmail))))
                     .addComponent(jLabel1))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +297,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
             txtName.setEditable(true);
         } else {
             txtName.setEditable(false);
-            JOptionPane.showMessageDialog(this, c + " is not accepted here", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, c + " No es aceptada aquí", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
         }
      }//GEN-LAST:event_txtNameKeyTyped
 
@@ -319,7 +319,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
-                        JOptionPane.showMessageDialog(this, number + " only numbers", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
         if(txtCI.getText().length() >= 10){
@@ -333,7 +333,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
-        JOptionPane.showMessageDialog(this, number + " only numbers", "Warning on input data", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
         if(txtPhoneNumber.getText().length() >= 10){

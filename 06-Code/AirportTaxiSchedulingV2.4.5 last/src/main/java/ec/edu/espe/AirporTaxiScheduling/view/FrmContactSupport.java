@@ -4,6 +4,7 @@
  */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import ec.edu.espe.AirporTaxiScheduling.model.ReportProblem;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -51,25 +52,25 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("CONTAC SUPPORT");
+        jLabel1.setText("CONTACTAR AL SOPORTE");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
             }
         });
 
-        btnACCEPT.setText("ACCEPT");
+        btnACCEPT.setText("ACEPTAR");
         btnACCEPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnACCEPTActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Problem:");
+        jLabel2.setText("Problema:");
 
-        jLabel3.setText("Contens:");
+        jLabel3.setText("Contenido:");
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -87,7 +88,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnBACK)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
                 .addGap(157, 157, 157))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -149,22 +150,15 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
     private void btnACCEPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACCEPTActionPerformed
         // TODO add your handling code here:
-          System.out.println("TLSEmail Start");
+        ReportProblem reportProblems = null;
+        System.out.println("TLSEmail Start");
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); 
         props.put("mail.smtp.port", "587"); 
         props.put("mail.smtp.auth", "true"); 
         props.put("mail.smtp.starttls.enable", "true"); 
 
-        /*
-        mProperties.put("mail.smtp.host", "smtp.gmail.com");
-        mProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        mProperties.setProperty("mail.smtp.starttls.enable", "true");
-        mProperties.setProperty("mail.smtp.port", "587");
-        mProperties.setProperty("mail.smtp.user",emailFrom);
-        mProperties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
-        mProperties.setProperty("mail.smtp.auth", "true");
-        */
+       
         Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
 
@@ -176,13 +170,12 @@ public class FrmContactSupport extends javax.swing.JFrame {
         try{
             MimeMessage message = new MimeMessage(session);
             message.addRecipient(Message.RecipientType.TO, new InternetAddress("progressteam2003@gmail.com", true));
-         //   message.setSubject("Prueba");
-         //   message.setText("Blablabla");
+           
             message.setSubject(txtProblem.getText());
             message.setText(txtArea.getText());
 
             Transport.send(message);
-            JOptionPane.showMessageDialog(this, "MESSAGE SENT SUCCESFULLY");
+            JOptionPane.showMessageDialog(this, "Mensaje enviado Exitosamente");
 
         }catch (MessagingException me){
             System.out.println("Exception: "+me);

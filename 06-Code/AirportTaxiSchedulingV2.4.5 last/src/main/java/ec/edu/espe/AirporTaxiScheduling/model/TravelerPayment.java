@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
-public class TravelerPayments {
+public class TravelerPayment {
    TaxiDriver taxiDriver;
    Traveler traveler;
     Travel travel;

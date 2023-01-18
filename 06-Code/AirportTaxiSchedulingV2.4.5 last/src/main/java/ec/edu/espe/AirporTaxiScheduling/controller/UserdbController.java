@@ -1,3 +1,4 @@
+
 package ec.edu.espe.AirporTaxiScheduling.controller;
 
 import com.google.gson.Gson;
@@ -6,14 +7,11 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import ec.edu.espe.AirporTaxiScheduling.model.Travel;
+import ec.edu.espe.AirporTaxiScheduling.model.User;
 import ec.edu.espe.AirporTaxiScheduling.utils.DataBaseManager;
-import ec.edu.espe.AirporTaxiScheduling.utils.Error;
 import java.util.ArrayList;
-import java.util.Scanner;
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
 import org.bson.Document;
@@ -23,19 +21,13 @@ import org.bson.conversions.Bson;
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
-public class TraveldbController extends DataBaseManager{
+public class UserdbController extends DataBaseManager{
 
+    
     private MongoClient mongoClient;
     private MongoDatabase database;
-
-    public TraveldbController() {
-        this.mongoClient = null;
-        this.database = null;
-    }
-
-    private static Scanner scan = new Scanner(System.in);
-
-    public static TraveldbController connectToDatabase(String uri, String databaseName, TraveldbController dataBaseManager) {
+  
+     public static UserdbController connectToDatabase(String uri, String databaseName, UserdbController dataBaseManager) {
 
         try {
             dataBaseManager.setMongoClient(MongoClients.create(uri));
@@ -49,56 +41,27 @@ public class TraveldbController extends DataBaseManager{
         }
         return dataBaseManager;
     }
-
+    
     public static void createOne(Object object, MongoDatabase database, String collectionName) {
-        MongoCollection<Document> travelsCollection = database.getCollection(collectionName);
+         MongoCollection<Document> travelsCollection = database.getCollection(collectionName);
         Gson gson = new Gson();
 
         String jsonString = gson.toJson(object);
         Document document = Document.parse(jsonString);
         travelsCollection.insertOne(document);
-
-    }  
-
-    public static void deleteOne(MongoDatabase database, String collectionName, int idFinder) { ///unusable
-        MongoCollection<Document> collection = database.getCollection(collectionName);
-
-        Bson filter = Filters.and(Filters.eq("id", idFinder));
-
-        collection.deleteOne(filter);
-
     }
-
-    public static ArrayList<Travel> load(ArrayList<Travel> objects, MongoDatabase database, String collectionName) {
+  
+      public static ArrayList<User> loadFromDatabase(ArrayList<User> objects, MongoDatabase database, String collectionName) {
         Gson gson = new Gson(); 
         for (int i = 0; i < objects.size(); i++) {
           objects.remove(i); 
         }   
         MongoCollection<Document> objectsCollection = database.getCollection(collectionName);
-        FindIterable<Document> result = objectsCollection.find(Filters.gt("idTraveler", 0));
-        result.forEach(d -> objects.add(gson.fromJson(d.toJson(), Travel.class)));
+        FindIterable<Document> result = objectsCollection.find(Filters.gt("phoneNumber", 0));
+        result.forEach(d -> objects.add(gson.fromJson(d.toJson(), User.class)));
         return objects;
-    }
-    
-    public static Travel findDocumentdb(Travel travel, int idFinder){
-        MongoClient mongoClient = TravelersdbController.conection();
-        MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
-        MongoCollection<Document> collection = database.getCollection("Travels");
-        Bson filter = Filters.and(Filters.all("idTraveler", idFinder));
-        MongoCursor<Document> cursor = collection.find(filter).iterator();
-        if(collection.find(filter).first() != null){
-            Document document = collection.find(filter).first();
-            travel.setDriver(document.getString("driver"));
-            travel.setTraveler(document.getString("traveler"));
-            travel.setAddress(document.getString("adress"));
-            travel.setPrice(Float.valueOf(Double.toString(document.getDouble("price"))));
-            travel.setPayed(document.getBoolean("payed"));
-        }else{
-            Error.messege();
-        }
-        
-        return travel;
-    }
+    }   
+
 
     /**
      * @return the mongoClient
@@ -128,6 +91,7 @@ public class TraveldbController extends DataBaseManager{
         this.database = database;
     }
 
+
     @Override
     public void create(Object object, MongoDatabase database, String collectionName) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -135,11 +99,6 @@ public class TraveldbController extends DataBaseManager{
 
     @Override
     public void read(MongoDatabase database) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void update() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -153,4 +112,10 @@ public class TraveldbController extends DataBaseManager{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+ 
+    
 }

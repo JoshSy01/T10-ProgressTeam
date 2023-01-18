@@ -64,9 +64,9 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("DELETE TRAVELER");
+        jLabel1.setText("ELIMINAR PASAJERO");
 
-        btnBack.setText("<BACK");
+        btnBack.setText("<REGRESAR");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -74,9 +74,9 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
         });
 
         label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label7.setText("BirthDate:");
+        label7.setText("Fecha de Cumpleaños");
 
-        bt2.setText("FIND");
+        bt2.setText("ENCONTRAR");
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
@@ -84,7 +84,7 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
         });
 
         label6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label6.setText("Outstanding Balance:");
+        label6.setText("Saldo Pendiente");
 
         sp3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sp3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 0));
@@ -107,10 +107,10 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
         });
 
         label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label4.setText("Traveler phone number: ");
+        label4.setText("Numero de telefono del Pasajero");
 
         label5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label5.setText("The traveler mail: ");
+        label5.setText("E-mail del Pasajero");
 
         sp2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sp2.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 0));
@@ -132,7 +132,7 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("MONTH");
+        jLabel2.setText("MES");
 
         txt3.setEditable(false);
         txt3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -145,7 +145,7 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
         });
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label3.setText("Traveler name:");
+        label3.setText("Nombre y Apellido el Pasajero");
 
         txt2.setEditable(false);
         txt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -162,10 +162,10 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("DAY");
+        jLabel3.setText("DIA");
 
         label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label2.setText("Id: ");
+        label2.setText("ID");
 
         txt0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txt0.setToolTipText("Ingress for create traveler, search traveler or delete traveler :)");
@@ -196,9 +196,9 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("YEAR");
+        jLabel4.setText("AÑO");
 
-        bt3.setText("DELETE");
+        bt3.setText("ELIMINAR");
         bt3.setEnabled(false);
         bt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,14 +206,14 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
             }
         });
 
-        bt5.setText("CLEAN");
+        bt5.setText("LIMPIAR");
         bt5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt5ActionPerformed(evt);
             }
         });
 
-        bt1.setText("Show All Travelers");
+        bt1.setText("MOSTRAR A TODOS LOS PASAJEROS");
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
@@ -225,7 +225,7 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday"
+                "ID", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños"
             }
         ) {
             Class[] types = new Class [] {
@@ -279,11 +279,13 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(65, 65, 65)
                                 .addComponent(sp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(393, 393, 393)
-                        .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnBack)
@@ -316,8 +318,8 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -606,7 +608,7 @@ public class FrmDeleteTraveler extends javax.swing.JFrame {
         MongoClient mongoClient = TravelersdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
-        String[] titles = {"Id", "Name", "Phone Number", "Mail", "Outstanding Balance", "Birthday DD/MM"};
+        String[] titles = {"Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños DD/MM"};
         String[] travelerString = new String[6];
         DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
         tableOfTravelers.setModel(tableOfTravelersM);

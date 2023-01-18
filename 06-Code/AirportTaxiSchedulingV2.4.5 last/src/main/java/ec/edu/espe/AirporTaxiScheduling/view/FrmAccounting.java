@@ -8,7 +8,10 @@ import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import java.awt.print.PrinterException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -52,20 +55,21 @@ public class FrmAccounting extends javax.swing.JFrame {
         jtblTravels = new javax.swing.JTable();
         btnWiewTravels = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        tf1 = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        tf2 = new javax.swing.JTextField();
+        txtOutstanding = new javax.swing.JTextField();
+        btmCreatePDF = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("ACCOUNTING");
+        jLabel1.setText("CONTABILIDAD");
 
         jtblTravels.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,7 +79,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"
+                "Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"
             }
         ));
         jtblTravels.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,19 +98,27 @@ public class FrmAccounting extends javax.swing.JFrame {
 
         jLabel2.setText("Total de dinero cobrado:");
 
-        tf1.setEditable(false);
-        tf1.addActionListener(new java.awt.event.ActionListener() {
+        txtTotal.setEditable(false);
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf1ActionPerformed(evt);
+                txtTotalActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Saldo pendiente a cobrar: ");
 
-        tf2.setEditable(false);
-        tf2.addActionListener(new java.awt.event.ActionListener() {
+        txtOutstanding.setEditable(false);
+        txtOutstanding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf2ActionPerformed(evt);
+                txtOutstandingActionPerformed(evt);
+            }
+        });
+
+        btmCreatePDF.setText("Crear PDF");
+        btmCreatePDF.setEnabled(false);
+        btmCreatePDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmCreatePDFActionPerformed(evt);
             }
         });
 
@@ -127,13 +139,17 @@ public class FrmAccounting extends javax.swing.JFrame {
                             .addComponent(btnWiewTravels)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlAccountingLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(tf1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlAccountingLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tf2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtOutstanding, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(132, 132, 132)
+                                .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         pnlAccountingLayout.setVerticalGroup(
@@ -145,17 +161,23 @@ public class FrmAccounting extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(61, 61, 61)
                 .addComponent(btnWiewTravels)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtOutstanding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,31 +207,43 @@ public class FrmAccounting extends javax.swing.JFrame {
     }//GEN-LAST:event_jtblTravelsMouseClicked
 
     private void btnWiewTravelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWiewTravelsActionPerformed
+btmCreatePDF.setEnabled(true);
         float totalPayed = 0;
         float outsB = 0;
         totalPayed = viewTravels(totalPayed);
         outsB = outstandingBalance(outsB);
-        tf1.setText(Float.toString(totalPayed));
-        tf2.setText(Float.toString(outsB));
+        txtTotal.setText(Float.toString(totalPayed));
+        txtOutstanding.setText(Float.toString(outsB));
     }//GEN-LAST:event_btnWiewTravelsActionPerformed
 
-    private void tf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf1ActionPerformed
+    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf1ActionPerformed
+    }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void tf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf2ActionPerformed
+    private void txtOutstandingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOutstandingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf2ActionPerformed
+    }//GEN-LAST:event_txtOutstandingActionPerformed
+
+    private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
+        MessageFormat header = new MessageFormat("Accouting of travels");
+        MessageFormat footer = new MessageFormat(" Total: "+txtTotal.getText()+" Outstanding Balance: "+txtOutstanding.getText()+" page {0,number,integer}");
+
+        try {
+           jtblTravels.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException e) {
+            e.getMessage();
+        }
+    }//GEN-LAST:event_btmCreatePDFActionPerformed
 
     private float viewTravels(float totalPayed) {
         cleanForm();
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
+        String[] titles = {"Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado"};
         String[] travelsString = new String[7];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
-        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
 
         for (int i = 0; i < travelsView.size(); i++) {
             travelsString[0] = "" + travelsView.get(i).getId() + "";
@@ -235,7 +269,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
         for (int i = 0; i < travelsView.size(); i++) {
             
             if (travelsView.get(i).isPayed() == false) {
@@ -279,6 +313,10 @@ public class FrmAccounting extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -289,6 +327,7 @@ public class FrmAccounting extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmCreatePDF;
     private javax.swing.JButton btnBACK;
     private javax.swing.JButton btnWiewTravels;
     private javax.swing.JLabel jLabel1;
@@ -297,7 +336,7 @@ public class FrmAccounting extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jtblTravels;
     private javax.swing.JPanel pnlAccounting;
-    private javax.swing.JTextField tf1;
-    private javax.swing.JTextField tf2;
+    private javax.swing.JTextField txtOutstanding;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

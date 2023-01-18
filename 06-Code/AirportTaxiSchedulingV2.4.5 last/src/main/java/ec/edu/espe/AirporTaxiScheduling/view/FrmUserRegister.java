@@ -1,8 +1,13 @@
-
 package ec.edu.espe.AirporTaxiScheduling.view;
 
+import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.UserdbController;
+import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.User;
+import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
+import ec.edu.espe.AirporTaxiScheduling.utils.Generator;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,9 +18,14 @@ public class FrmUserRegister extends javax.swing.JFrame {
     /**
      * Creates new form FrmUserRegister
      */
-    
     ArrayList<User> users = new ArrayList<User>();
-   //  User user = new User();
+    User user = new User();
+    UserdbController userdbController = new UserdbController();
+    String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
+    String databaseName = "AirportTaxiScheduling";
+    String collectionName = "Users";
+
+    //  User user = new User();
     public FrmUserRegister() {
         initComponents();
     }
@@ -40,6 +50,10 @@ public class FrmUserRegister extends javax.swing.JFrame {
         txtPassword = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         btnCreateUser = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtUserName = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +109,28 @@ public class FrmUserRegister extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setText("Cancelar");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Nombre de usuario:");
+
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserNameActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("<REGRESAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,8 +138,10 @@ public class FrmUserRegister extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(jLabel1))
+                        .addGap(81, 81, 81)
+                        .addComponent(btnCreateUser)
+                        .addGap(42, 42, 42)
+                        .addComponent(btnCancel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,23 +149,29 @@ public class FrmUserRegister extends javax.swing.JFrame {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4))
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtPassword)
                             .addComponent(txtPhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                             .addComponent(txtMail)
-                            .addComponent(txtFullName)))
+                            .addComponent(txtFullName)
+                            .addComponent(txtUserName)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(btnCreateUser)))
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel1)))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -140,12 +184,18 @@ public class FrmUserRegister extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(btnCreateUser)
+                    .addComponent(jLabel5)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateUser)
+                    .addComponent(btnCancel))
                 .addGap(34, 34, 34))
         );
 
@@ -180,11 +230,11 @@ public class FrmUserRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFullNameKeyTyped
 
     private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
-     
+
     }//GEN-LAST:event_txtPhoneNumberActionPerformed
 
     private void txtPhoneNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneNumberKeyTyped
-       int validNumber = evt.getKeyChar();
+        int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if (!number) {
             evt.consume();
@@ -195,16 +245,55 @@ public class FrmUserRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPhoneNumberKeyTyped
 
     private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyTyped
-         int key = evt.getKeyChar();
+        int key = evt.getKeyChar();
         boolean validCharacters = (key >= 65 && key <= 90) || (key >= 97 && key <= 122) || (key == 32) || (key >= 48 && key <= 57);
-        if (!validCharacters) {          
-            evt.consume();        
+        if (!validCharacters) {
+            evt.consume();
         }
     }//GEN-LAST:event_txtPasswordKeyTyped
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
-//    user = new User(txtFullName.getText(),txtMail.getText(),txt, password)
+        int option = JOptionPane.showConfirmDialog(this, "Do you want to continue?");
+        if (option == 0) {
+            if (txtFullName.getText().isEmpty()
+                    || txtMail.getText().isEmpty()
+                    || txtPassword.getText().isEmpty()
+                    || txtPhoneNumber.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
+            } else {
+
+                userdbController = UserdbController.connectToDatabase(uri, databaseName, userdbController);
+                //TraveldbController.load(users, userdbController.getDatabase(), collectionName);
+                user = new User(txtFullName.getText(), txtMail.getText(), Long.parseLong(txtPhoneNumber.getText()), txtUserName.getText(), txtPassword.getText());
+                users.add(user);
+                TraveldbController.createOne(user, userdbController.getDatabase(), collectionName);
+                JOptionPane.showMessageDialog(null, "El usuario ha sido creado con exito");
+                        clean();
+
+            }
+        }
     }//GEN-LAST:event_btnCreateUserActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+
+        FrmUserLogin login = new FrmUserLogin();
+        this.setVisible(false);
+
+        login.setVisible(true);
+        clean();
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        FrmUserLogin frmUserLogin; 
+       frmUserLogin = new FrmUserLogin();
+       this.setVisible(false);
+       frmUserLogin.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +321,7 @@ public class FrmUserRegister extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmUserRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -242,16 +332,27 @@ public class FrmUserRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCreateUser;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtMail;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhoneNumber;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    private void clean() {
+        txtFullName.setText("");
+        txtMail.setText("");
+        txtPassword.setText("");
+        txtPhoneNumber.setText("");
+    }
 }

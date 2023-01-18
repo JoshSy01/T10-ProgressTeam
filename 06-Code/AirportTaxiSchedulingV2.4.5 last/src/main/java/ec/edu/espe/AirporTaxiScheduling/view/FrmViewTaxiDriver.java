@@ -21,15 +21,15 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
      */
  private void mostTable() {
         model.addColumn("C.I");
-        model.addColumn("Name");
-        model.addColumn("Number");
-        model.addColumn("Age");
-        model.addColumn("Adress");
-        model.addColumn("Mail");
-        model.addColumn("Gender");
-        model.addColumn("Vehicle Marck");
-        model.addColumn("Vehicle Plate");
-        model.addColumn("Vehicle Year");
+        model.addColumn("Nombre");
+        model.addColumn("Numero de Telefono");
+        model.addColumn("Edad");
+        model.addColumn("Direccion");
+        model.addColumn("E-mail");
+        model.addColumn("Genero");
+        model.addColumn("Marca del vehiculo");
+        model.addColumn("Placa ddel vehiculo");
+        model.addColumn("Año del vehiculo");
         this.tbFind.setModel(model);
   }
     public FrmViewTaxiDriver() {
@@ -74,9 +74,9 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        jLabel1.setText("VIEW TAXI DRIVER");
+        jLabel1.setText("MOSTRAR CONDUCTOR");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
@@ -107,9 +107,9 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbFind);
 
-        jLabel2.setText("Enter CI:");
+        jLabel2.setText("Ingrese C.L");
 
-        jButton1.setText("SEARCH");
+        jButton1.setText("BUSCAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -123,32 +123,28 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(391, 391, 391)
-                                        .addComponent(jButton1))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(btnBACK)
-                                        .addGap(248, 248, 248)
-                                        .addComponent(jLabel1)))
+                                .addComponent(btnBACK)
+                                .addGap(248, 248, 248)
+                                .addComponent(jLabel1)
                                 .addGap(28, 28, 28))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(38, 38, 38))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
-                                        .addGap(97, 97, 97)))))
+                                        .addGap(54, 54, 54))
+                                    .addComponent(txtCI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(36, 36, 36)))
+                                .addGap(81, 81, 81)))
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +158,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1)))
@@ -175,14 +171,16 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -214,7 +212,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
         
         txtCI.setText("");
          model.addRow(Datos);
-                         JOptionPane.showMessageDialog(this, "Driver view succesfull");
+                         JOptionPane.showMessageDialog(this, "Conductor encontrado exitosamente");
 
                                           
     }//GEN-LAST:event_jButton1ActionPerformed
