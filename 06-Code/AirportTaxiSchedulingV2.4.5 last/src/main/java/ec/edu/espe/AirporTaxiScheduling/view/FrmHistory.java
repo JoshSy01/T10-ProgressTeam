@@ -388,7 +388,7 @@ public class FrmHistory extends javax.swing.JFrame {
         String[] titles = {"Id Travel", "Driver", "Address"};
         String[] travelsString = new String[3];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
-        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
 
         for (int i = 0; i < travelsView.size(); i++) {
             travelsString[0] = "" + travelsView.get(i).getId() + "";

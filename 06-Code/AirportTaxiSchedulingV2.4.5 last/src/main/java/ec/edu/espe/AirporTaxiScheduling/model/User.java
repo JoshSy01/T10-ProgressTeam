@@ -8,7 +8,7 @@ package ec.edu.espe.AirporTaxiScheduling.model;
 public class User {
         private String fullName;
         private String mail;
-        private Long phonenumber;
+        private long phoneNumber;
    private String userName;
    private String password;
 
@@ -17,12 +17,18 @@ public class User {
         return "User{" + "fullName=" + getFullName() + ", mail=" + getMail() + ", phonenumber=" + getPhonenumber() + ", userName=" + getUserName() + ", password=" + getPassword() + '}';
     }
 
-  
+  public User() {
+        this.fullName = "";
+        this.mail = "";
+        this.phoneNumber= 0;
+        this.userName = "";
+        this.password = "";
+    }
  
-    public User(String fullName, String mail, Long phonenumber, String userName, String password) {
+    public User(String fullName, String mail, long phonenumber, String userName, String password) {
         this.fullName = fullName;
         this.mail = mail;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phonenumber;
         this.userName = userName;
         this.password = password;
     }
@@ -88,17 +94,17 @@ public class User {
     }
 
     /**
-     * @return the phonenumber
+     * @return the phoneNumber
      */
-    public Long getPhonenumber() {
-        return phonenumber;
+    public long getPhonenumber() {
+        return phoneNumber;
     }
 
     /**
-     * @param phonenumber the phonenumber to set
+     * @param phonenumber the phoneNumber to set
      */
-    public void setPhonenumber(Long phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhonenumber(long phonenumber) {
+        this.phoneNumber = phonenumber;
     }
 
  

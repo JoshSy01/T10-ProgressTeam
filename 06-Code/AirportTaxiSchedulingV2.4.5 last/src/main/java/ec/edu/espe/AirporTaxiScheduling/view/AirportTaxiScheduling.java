@@ -43,7 +43,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         mitViewTraveler = new javax.swing.JMenuItem();
         mitUpdateTraveler = new javax.swing.JMenuItem();
         mitDeleteTraveler = new javax.swing.JMenuItem();
-        mnuTravel = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         mitTravel = new javax.swing.JMenuItem();
         mitAccounting = new javax.swing.JMenuItem();
@@ -170,9 +169,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         jMenu5.add(mitDeleteTraveler);
 
         mnubAirportTaxiScheduling.add(jMenu5);
-
-        mnuTravel.setText("Travel");
-        mnubAirportTaxiScheduling.add(mnuTravel);
 
         jMenu3.setText("Services");
 
@@ -379,8 +375,8 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
     }//GEN-LAST:event_mitCommonProblemActionPerformed
 
     private void mitTravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitTravelActionPerformed
-        FrmTravelsMenu travelsMenu = new FrmTravelsMenu();
-        travelsMenu.setVisible(true);
+        FrmTravels travelsMain = new FrmTravels();
+        travelsMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_mitTravelActionPerformed
 
@@ -447,7 +443,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
     private javax.swing.JMenuItem mitUpdateTraveler;
     private javax.swing.JMenuItem mitViewTaxiDriver;
     private javax.swing.JMenuItem mitViewTraveler;
-    private javax.swing.JMenu mnuTravel;
     private javax.swing.JMenuBar mnubAirportTaxiScheduling;
     // End of variables declaration//GEN-END:variables
 }

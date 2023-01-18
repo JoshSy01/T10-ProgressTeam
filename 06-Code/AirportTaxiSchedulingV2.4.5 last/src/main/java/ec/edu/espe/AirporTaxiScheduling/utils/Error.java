@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  *
  * @author Justin Villarroel, ProgressTeam, DCCO-ESPE
  */
-public class Errors {
+public class Error {
     public static void messege(){
         JOptionPane.showMessageDialog( null,"Id not found");
     }

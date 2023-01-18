@@ -10,9 +10,8 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
-import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
-import ec.edu.espe.AirporTaxiScheduling.utils.Errors;
+import ec.edu.espe.AirporTaxiScheduling.utils.Error;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import org.bson.Document;
@@ -65,7 +64,7 @@ public class TravelersdbController {
             traveler.setBirthdayMonth((int) document.get("birthdayMonth"));
             traveler.setYear((int)document.get("birthdayYear"));
         }else{
-            Errors.messege();
+            Error.messege();
         }
         
         return traveler;
@@ -81,7 +80,7 @@ public class TravelersdbController {
             collection.deleteOne(filter);
             JOptionPane.showMessageDialog( null,"Document delete successfully");
         }else{
-            Errors.messege();
+            Error.messege();
         }
     }
     
@@ -103,7 +102,7 @@ public class TravelersdbController {
             collection.updateOne(query, updates);
             JOptionPane.showMessageDialog( null,"Document updated successfully");
         }else{
-            Errors.messege();
+            Error.messege();
         }
     }
     

@@ -209,7 +209,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         String[] titles = {"Id", "Driver", "Traveler", "Address", "DateOfOccurrence", "Price", "Payed"};
         String[] travelsString = new String[7];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);
-        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
 
         for (int i = 0; i < travelsView.size(); i++) {
             travelsString[0] = "" + travelsView.get(i).getId() + "";
@@ -235,7 +235,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
-        TraveldbController.loadFromDatabase(travelsView, dataBaseManager.getDatabase(), collectionName);
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
         for (int i = 0; i < travelsView.size(); i++) {
             
             if (travelsView.get(i).isPayed() == false) {
