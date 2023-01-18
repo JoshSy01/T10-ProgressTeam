@@ -42,7 +42,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         label7 = new java.awt.Label();
         bt2 = new javax.swing.JButton();
         label3 = new java.awt.Label();
-        label6 = new java.awt.Label();
         txt2 = new javax.swing.JTextField();
         sp3 = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
@@ -54,7 +53,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         label5 = new java.awt.Label();
         jLabel4 = new javax.swing.JLabel();
         sp2 = new javax.swing.JSpinner();
-        txt4 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txt3 = new javax.swing.JTextField();
         bt4 = new javax.swing.JButton();
@@ -88,9 +86,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         label3.setText("Traveler name:");
-
-        label6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        label6.setText("Outstanding Balance:");
 
         txt2.setEditable(false);
         txt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -176,16 +171,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         sp2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 sp2KeyTyped(evt);
-            }
-        });
-
-        txt4.setEditable(false);
-        txt4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt4.setToolTipText("");
-        txt4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt4KeyTyped(evt);
             }
         });
 
@@ -330,15 +315,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                 .addGap(393, 393, 393)
                                 .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
                                 .addComponent(rb1)
                                 .addGap(83, 83, 83)
@@ -374,16 +353,12 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                     .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt4)
-                            .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(rb1)
                         .addComponent(rb2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -402,7 +377,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 .addComponent(bt1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -437,7 +412,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 } else {
                     txt3.setText("");
                 }
-                txt4.setText(Float.toString(traveler.getOutstandingBalance()));
                 sp1.setValue(traveler.getBirthdayDay());
                 sp2.setValue(traveler.getYear());
                 sp3.setValue(traveler.getBirthdayMonth());
@@ -445,7 +419,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 txt1.setEditable(true);
                 txt2.setEditable(true);
                 txt3.setEditable(true);
-                txt4.setEditable(true);
                 sp1.setEnabled(true);
                 sp2.setEnabled(true);
                 sp3.setEnabled(true);
@@ -479,7 +452,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             } else {
                 txt3.setText("");
             }
-            txt4.setText(Float.toString(traveler.getOutstandingBalance()));
             sp1.setValue(traveler.getBirthdayDay());
             sp2.setValue(traveler.getYear());
             sp3.setValue(traveler.getBirthdayMonth());
@@ -487,7 +459,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             txt1.setEditable(true);
             txt2.setEditable(true);
             txt3.setEditable(true);
-            txt4.setEditable(true);
             sp1.setEnabled(true);
             sp2.setEnabled(true);
             sp3.setEnabled(true);
@@ -575,16 +546,12 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_sp2KeyTyped
 
-    private void txt4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4KeyTyped
-
-    }//GEN-LAST:event_txt4KeyTyped
-
     private void txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt3ActionPerformed
 
     }//GEN-LAST:event_txt3ActionPerformed
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
-        if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty() || txt4.getText().isEmpty()) {
+        if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Error, Id field is empty");
         } else {
             Traveler traveler = new Traveler();
@@ -598,7 +565,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                 String gmail = "@hotmail.com";
                 traveler.setMail(txt3.getText() + gmail);
             }
-            traveler.setOutstandingBalance(Float.valueOf(txt4.getText()));
             traveler.setBirthdayDay((int) sp1.getValue());
             traveler.setBirthdayMonth((int) sp3.getValue());
             traveler.setYear((int) sp2.getValue());
@@ -614,14 +580,12 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         txt1.setText("");
         txt2.setText("");
         txt3.setText("");
-        txt4.setText("");
         sp1.setValue(1);
         sp3.setValue(1);
         sp2.setValue(2000);
         txt1.setEditable(false);
         txt2.setEditable(false);
         txt3.setEditable(false);
-        txt4.setEditable(false);
         sp1.setEnabled(false);
         sp2.setEnabled(false);
         sp3.setEnabled(false);
@@ -731,7 +695,6 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
     private java.awt.Label label3;
     private java.awt.Label label4;
     private java.awt.Label label5;
-    private java.awt.Label label6;
     private java.awt.Label label7;
     private javax.swing.JRadioButton rb1;
     private javax.swing.JRadioButton rb2;
@@ -743,6 +706,5 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
     private javax.swing.JTextField txt1;
     private javax.swing.JTextField txt2;
     private javax.swing.JTextField txt3;
-    private javax.swing.JTextField txt4;
     // End of variables declaration//GEN-END:variables
 }
