@@ -223,7 +223,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
         jLabel6.setText("Presio:");
 
-        chkbReminder.setText("Stablih Reminder");
+        chkbReminder.setText("Recordatorios");
 
         txtaAnnotation.setColumns(20);
         txtaAnnotation.setRows(5);
