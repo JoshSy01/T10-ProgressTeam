@@ -37,7 +37,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
 
         jLabel1.setText("PROBLEMAS COMUNES");
 
-        btnBACK.setText("<BACK");
+        btnBACK.setText("<REGRESAR");
         btnBACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBACKActionPerformed(evt);
