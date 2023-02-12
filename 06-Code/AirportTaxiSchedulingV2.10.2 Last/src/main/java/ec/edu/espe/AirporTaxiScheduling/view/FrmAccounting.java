@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.AirporTaxiScheduling.view;
 
 import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
-import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
-import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import ec.edu.espe.AirporTaxiScheduling.model.TravelerPayment;
 import java.awt.print.PrinterException;
 import java.text.MessageFormat;

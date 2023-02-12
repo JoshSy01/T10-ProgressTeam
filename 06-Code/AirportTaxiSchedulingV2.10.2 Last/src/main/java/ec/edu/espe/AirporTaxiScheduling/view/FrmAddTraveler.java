@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.AirporTaxiScheduling.view;
 
 import com.mongodb.client.MongoClient;
@@ -9,7 +6,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
@@ -33,20 +30,20 @@ public class FrmAddTraveler extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        txt0 = new javax.swing.JTextField();
-        txt2 = new javax.swing.JTextField();
-        rb1 = new javax.swing.JRadioButton();
-        sp1 = new javax.swing.JSpinner();
-        sp2 = new javax.swing.JSpinner();
+        txtId = new javax.swing.JTextField();
+        txtPhoneNumber = new javax.swing.JTextField();
+        rbGmail = new javax.swing.JRadioButton();
+        spDay = new javax.swing.JSpinner();
+        spYear = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        rb2 = new javax.swing.JRadioButton();
-        txt3 = new javax.swing.JTextField();
-        txt1 = new javax.swing.JTextField();
-        sp3 = new javax.swing.JSpinner();
-        bt1 = new javax.swing.JButton();
-        bt5 = new javax.swing.JButton();
+        rbHotmail = new javax.swing.JRadioButton();
+        txtEmail = new javax.swing.JTextField();
+        txtNameAndSurname = new javax.swing.JTextField();
+        spMonth = new javax.swing.JSpinner();
+        btCreate = new javax.swing.JButton();
+        btClean = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -64,56 +61,56 @@ public class FrmAddTraveler extends javax.swing.JFrame {
             }
         });
 
-        txt0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt0.setToolTipText("Ingrese el Id del pasajero que desee buscar :)");
-        txt0.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt0.addActionListener(new java.awt.event.ActionListener() {
+        txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtId.setToolTipText("Ingrese el Id del pasajero que desee buscar :)");
+        txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt0ActionPerformed(evt);
+                txtIdActionPerformed(evt);
             }
         });
-        txt0.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt0KeyTyped(evt);
+                txtIdKeyTyped(evt);
             }
         });
 
-        txt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt2.setToolTipText("Solo 10 digitos");
-        txt2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt2.addActionListener(new java.awt.event.ActionListener() {
+        txtPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtPhoneNumber.setToolTipText("Solo 10 digitos");
+        txtPhoneNumber.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt2ActionPerformed(evt);
+                txtPhoneNumberActionPerformed(evt);
             }
         });
-        txt2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtPhoneNumber.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt2KeyTyped(evt);
+                txtPhoneNumberKeyTyped(evt);
             }
         });
 
-        buttonGroup1.add(rb1);
-        rb1.setSelected(true);
-        rb1.setText("Gmail");
-        rb1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbGmail);
+        rbGmail.setSelected(true);
+        rbGmail.setText("Gmail");
+        rbGmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rb1ActionPerformed(evt);
+                rbGmailActionPerformed(evt);
             }
         });
 
-        sp1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
-        sp1.setToolTipText("");
-        sp1.addKeyListener(new java.awt.event.KeyAdapter() {
+        spDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+        spDay.setToolTipText("");
+        spDay.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                sp1KeyTyped(evt);
+                spDayKeyTyped(evt);
             }
         });
 
-        sp2.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
-        sp2.setToolTipText("");
-        sp2.addKeyListener(new java.awt.event.KeyAdapter() {
+        spYear.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
+        spYear.setToolTipText("");
+        spYear.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                sp2KeyTyped(evt);
+                spYearKeyTyped(evt);
             }
         });
 
@@ -123,51 +120,51 @@ public class FrmAddTraveler extends javax.swing.JFrame {
 
         jLabel4.setText("AÑO");
 
-        buttonGroup1.add(rb2);
-        rb2.setText("Hotmail");
+        buttonGroup1.add(rbHotmail);
+        rbHotmail.setText("Hotmail");
 
-        txt3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt3.setToolTipText("Solo la primera parte del E-mail");
-        txt3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt3.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtEmail.setToolTipText("Solo la primera parte del E-mail");
+        txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt3ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
-        txt1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txt1.setToolTipText("Primero el nombre, despues el Apellido");
-        txt1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txt1.addActionListener(new java.awt.event.ActionListener() {
+        txtNameAndSurname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNameAndSurname.setToolTipText("Primero el nombre, despues el Apellido");
+        txtNameAndSurname.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNameAndSurname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt1ActionPerformed(evt);
+                txtNameAndSurnameActionPerformed(evt);
             }
         });
-        txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNameAndSurname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt1KeyTyped(evt);
+                txtNameAndSurnameKeyTyped(evt);
             }
         });
 
-        sp3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
-        sp3.setToolTipText("");
-        sp3.addKeyListener(new java.awt.event.KeyAdapter() {
+        spMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+        spMonth.setToolTipText("");
+        spMonth.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                sp3KeyTyped(evt);
+                spMonthKeyTyped(evt);
             }
         });
 
-        bt1.setText("CREAR");
-        bt1.addActionListener(new java.awt.event.ActionListener() {
+        btCreate.setText("CREAR");
+        btCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt1ActionPerformed(evt);
+                btCreateActionPerformed(evt);
             }
         });
 
-        bt5.setText("LIMPAIR");
-        bt5.addActionListener(new java.awt.event.ActionListener() {
+        btClean.setText("LIMPIAR");
+        btClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt5ActionPerformed(evt);
+                btCleanActionPerformed(evt);
             }
         });
 
@@ -197,16 +194,16 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack)
                         .addGap(151, 151, 151)
@@ -218,7 +215,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(17, 17, 17)
-                                        .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -226,7 +223,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(30, 30, 30)
                                                 .addComponent(jLabel3))
-                                            .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +232,7 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                                                 .addComponent(jLabel2))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(65, 65, 65)
-                                                .addComponent(sp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(41, 41, 41)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -243,18 +240,18 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                                                 .addComponent(jLabel4))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(40, 40, 40)
-                                                .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(157, 157, 157)
-                                        .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
-                                .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rb1)
+                                .addComponent(rbGmail)
                                 .addGap(83, 83, 83)
-                                .addComponent(rb2)))))
+                                .addComponent(rbHotmail)))))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -266,21 +263,21 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                     .addComponent(btnBack))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rb1)
-                    .addComponent(rb2)
-                    .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbGmail)
+                    .addComponent(rbHotmail)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -289,14 +286,14 @@ public class FrmAddTraveler extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bt5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addComponent(btClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
 
@@ -310,81 +307,81 @@ public class FrmAddTraveler extends javax.swing.JFrame {
         airportTaxiScheduling.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void txt0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt0ActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
 
-    }//GEN-LAST:event_txt0ActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
-    private void txt0KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt0KeyTyped
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if (!number) {
             evt.consume();
         }
-        if (txt0.getText().length() >= 7) {
+        if (txtId.getText().length() >= 7) {
             evt.consume();
         }
-    }//GEN-LAST:event_txt0KeyTyped
+    }//GEN-LAST:event_txtIdKeyTyped
 
-    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
+    private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt2ActionPerformed
+    }//GEN-LAST:event_txtPhoneNumberActionPerformed
 
-    private void txt2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2KeyTyped
+    private void txtPhoneNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneNumberKeyTyped
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if (!number) {
             evt.consume();
         }
-        if (txt2.getText().length() >= 10) {
+        if (txtPhoneNumber.getText().length() >= 10) {
             evt.consume();
         }
-    }//GEN-LAST:event_txt2KeyTyped
+    }//GEN-LAST:event_txtPhoneNumberKeyTyped
 
-    private void rb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb1ActionPerformed
+    private void rbGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbGmailActionPerformed
 
-    }//GEN-LAST:event_rb1ActionPerformed
+    }//GEN-LAST:event_rbGmailActionPerformed
 
-    private void txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt3ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
 
-    }//GEN-LAST:event_txt3ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
+    private void txtNameAndSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameAndSurnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt1ActionPerformed
+    }//GEN-LAST:event_txtNameAndSurnameActionPerformed
 
-    private void txt1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyTyped
+    private void txtNameAndSurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameAndSurnameKeyTyped
         int key = evt.getKeyChar();
         boolean letters = (key >= 65 && key <= 90) || (key >= 97 && key <= 122) || (key == 32);
         if (!letters) {
             evt.consume();
         }
-    }//GEN-LAST:event_txt1KeyTyped
+    }//GEN-LAST:event_txtNameAndSurnameKeyTyped
 
-    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
-        if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty()) {
+    private void btCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCreateActionPerformed
+        if (txtId.getText().isEmpty() || txtNameAndSurname.getText().isEmpty() || txtPhoneNumber.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Error, some fields are empty ");
         } else {
-            MongoClient mongoClient = TravelersdbController.conection();
+            MongoClient mongoClient = TravelerdbController.conection();
             MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
             MongoCollection<Document> collection = database.getCollection("Travelers");
-            Bson filter = Filters.and(Filters.all("id", Integer.valueOf(txt0.getText())));
+            Bson filter = Filters.and(Filters.all("id", Integer.valueOf(txtId.getText())));
             MongoCursor<Document> cursor = collection.find(filter).iterator();
             if (collection.find(filter).first() == null) {
                 Traveler traveler = new Traveler();
-                traveler.setId(Integer.valueOf(txt0.getText()));
-                traveler.setName(txt1.getText());
-                traveler.setPhoneNumber(Integer.valueOf(txt2.getText()));
-                if (rb1.isSelected() == true) {
+                traveler.setId(Integer.valueOf(txtId.getText()));
+                traveler.setName(txtNameAndSurname.getText());
+                traveler.setPhoneNumber(Integer.valueOf(txtPhoneNumber.getText()));
+                if (rbGmail.isSelected() == true) {
                     String gmail = "@gmail.com";
-                    traveler.setMail(txt3.getText() + gmail);
+                    traveler.setMail(txtEmail.getText() + gmail);
                 } else {
                     String hotmail = "@hotmail.com";
-                    traveler.setMail(txt3.getText() + hotmail);
+                    traveler.setMail(txtEmail.getText() + hotmail);
                 }
-                traveler.setBirthdayDay((int) sp1.getValue());
-                traveler.setBirthdayMonth((int) sp3.getValue());
-                traveler.setYear((int) sp2.getValue());
-                TravelersdbController.uploadDocumentMdb(traveler);
+                traveler.setBirthdayDay((int) spDay.getValue());
+                traveler.setBirthdayMonth((int) spMonth.getValue());
+                traveler.setYear((int) spYear.getValue());
+                TravelerdbController.uploadDocumentMdb(traveler);
                 cleanPanel();
                 JOptionPane.showMessageDialog(null, "Pasajero Creado Exitosamente");
             } else {
@@ -392,51 +389,51 @@ public class FrmAddTraveler extends javax.swing.JFrame {
             }
 
         }
-    }//GEN-LAST:event_bt1ActionPerformed
+    }//GEN-LAST:event_btCreateActionPerformed
 
-    private void sp1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp1KeyTyped
+    private void spDayKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spDayKeyTyped
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
         }
-        if(txt2.getText().length() >= 2){
+        if(txtPhoneNumber.getText().length() >= 2){
             evt.consume();
         }
-    }//GEN-LAST:event_sp1KeyTyped
+    }//GEN-LAST:event_spDayKeyTyped
 
-    private void sp3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp3KeyTyped
+    private void spMonthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spMonthKeyTyped
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
         }
-        if(txt2.getText().length() >= 2){
+        if(txtPhoneNumber.getText().length() >= 2){
             evt.consume();
         }
-    }//GEN-LAST:event_sp3KeyTyped
+    }//GEN-LAST:event_spMonthKeyTyped
 
-    private void sp2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp2KeyTyped
+    private void spYearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spYearKeyTyped
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
         if(!number){
             evt.consume();
         }
-        if(txt2.getText().length() >= 4){
+        if(txtPhoneNumber.getText().length() >= 4){
             evt.consume();
         }
-    }//GEN-LAST:event_sp2KeyTyped
+    }//GEN-LAST:event_spYearKeyTyped
 
-    private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
+    private void btCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCleanActionPerformed
         cleanPanel();
-    }//GEN-LAST:event_bt5ActionPerformed
+    }//GEN-LAST:event_btCleanActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
 
-        try ( MongoClient mongoClient = TravelersdbController.conection()) {
+        try ( MongoClient mongoClient = TravelerdbController.conection()) {
             MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
             JOptionPane.showMessageDialog(null, "Conection successfully");
             java.awt.EventQueue.invokeLater(new Runnable() {
@@ -450,18 +447,18 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     }
 
     private void cleanPanel() {
-        txt0.setText("");
-        txt1.setText("");
-        txt2.setText("");
-        txt3.setText("");
-        sp1.setValue(1);
-        sp3.setValue(1);
-        sp2.setValue(2000);
+        txtId.setText("");
+        txtNameAndSurname.setText("");
+        txtPhoneNumber.setText("");
+        txtEmail.setText("");
+        spDay.setValue(1);
+        spMonth.setValue(1);
+        spYear.setValue(2000);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt1;
-    private javax.swing.JButton bt5;
+    private javax.swing.JButton btClean;
+    private javax.swing.JButton btCreate;
     private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
@@ -473,14 +470,14 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton rb1;
-    private javax.swing.JRadioButton rb2;
-    private javax.swing.JSpinner sp1;
-    private javax.swing.JSpinner sp2;
-    private javax.swing.JSpinner sp3;
-    private javax.swing.JTextField txt0;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
-    private javax.swing.JTextField txt3;
+    private javax.swing.JRadioButton rbGmail;
+    private javax.swing.JRadioButton rbHotmail;
+    private javax.swing.JSpinner spDay;
+    private javax.swing.JSpinner spMonth;
+    private javax.swing.JSpinner spYear;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNameAndSurname;
+    private javax.swing.JTextField txtPhoneNumber;
     // End of variables declaration//GEN-END:variables
 }

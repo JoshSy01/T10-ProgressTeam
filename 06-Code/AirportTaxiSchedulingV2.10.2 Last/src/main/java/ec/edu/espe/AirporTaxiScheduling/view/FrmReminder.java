@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.AirporTaxiScheduling.view;
 
-import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import java.util.Properties;
 import javax.mail.Message;
@@ -12,7 +9,6 @@ import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
@@ -443,7 +439,7 @@ public class FrmReminder extends javax.swing.JFrame {
         } else {
             int takeId = Integer.valueOf(txtId.getText());
             Traveler traveler = new Traveler();
-            traveler = TravelersdbController.findDocumentdb(traveler, takeId);
+            traveler = TravelerdbController.findDocumentdb(traveler, takeId);
             lblMail.setText(traveler.getMail());
         }  
     }//GEN-LAST:event_btmFindActionPerformed
@@ -473,7 +469,7 @@ public class FrmReminder extends javax.swing.JFrame {
         String message2 = null;
         int takeId = Integer.valueOf(txtId.getText());
         Traveler traveler = new Traveler();
-        traveler = TravelersdbController.findDocumentdb(traveler, takeId);
+        traveler = TravelerdbController.findDocumentdb(traveler, takeId);
         if(rb3.isSelected()){
             message = "Cumpleaños";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team te enviamos este mensaje para desearte un muy Feliz Cumpleaños y que recuerdes que aquí siempre serás apreciado.";

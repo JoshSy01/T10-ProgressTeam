@@ -1,7 +1,5 @@
 package ec.edu.espe.AirporTaxiScheduling.model;
 
-import java.util.Date;
-
 /**
  *
  * @author Justin Villarroel, ProgressTeam, DCCO-ESPE

@@ -22,7 +22,7 @@ import org.bson.types.ObjectId;
  *
  * @author Justin Villarroel, ProgressTeam, DCCO-ESPE
  */
-public class TravelersdbController {
+public class TravelerdbController {
     static public MongoClient conection(){
         String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
         MongoClient mongoClient = MongoClients.create(uri);
@@ -30,7 +30,7 @@ public class TravelersdbController {
     }
     
     static public void uploadDocumentMdb(Traveler traveler){
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         String status = "done";
         MongoCollection<Document> collection = database.getCollection("Travelers");
@@ -49,7 +49,7 @@ public class TravelersdbController {
     }
     
     public static Traveler findDocumentdb(Traveler traveler, int idFinder){
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
         Bson filter = Filters.and(Filters.all("id", idFinder));
@@ -71,7 +71,7 @@ public class TravelersdbController {
     }
     
     public static void deleteDocument(int idFinder){
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
         Bson filter = Filters.and(Filters.all("id", idFinder));
@@ -85,7 +85,7 @@ public class TravelersdbController {
     }
     
     public static void updateDocumentdb(Traveler traveler, int idFinder){
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
         Bson query = Filters.eq("id", idFinder);

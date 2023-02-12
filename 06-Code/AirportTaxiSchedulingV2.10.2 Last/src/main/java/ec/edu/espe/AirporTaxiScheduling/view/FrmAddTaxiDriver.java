@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.AirporTaxiScheduling.view;
 
 import ec.edu.espe.AirporTaxiScheduling.controller.TaxiDriverdbController;
@@ -260,24 +256,23 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         Datos[0] = txtCI.getText();
         Datos[1] = txtName.getText();
         Datos[2] = txtPhoneNumber.getText();
-        Datos[3] = spnAge.getValue().toString();//---->revisar
+        Datos[3] = spnAge.getValue().toString();
         Datos[4] = cmbAdress.getSelectedItem().toString();
-      //  Datos[5] = txtEmail.getText();
         Datos[6] = cmbGender.getSelectedItem().toString();
         Datos[7] = cmbVehicleMarck.getSelectedItem().toString();
         Datos[8] = txtVehiclePlate.getText();
         Datos[9] = cmbVehicleYear.getSelectedItem().toString();
 
-         if(rbGmail.isSelected()==true){
-                String gmail = "@gmail.com";
-                Datos[5]=(txtEmail.getText()+gmail);
-            }else{
-                String gmail = "@hotmail.com";
-                Datos[5]=(txtEmail.getText()+gmail);
-            }
+        if (rbGmail.isSelected() == true) {
+            String gmail = "@gmail.com";
+            Datos[5] = (txtEmail.getText() + gmail);
+        } else {
+            String gmail = "@hotmail.com";
+            Datos[5] = (txtEmail.getText() + gmail);
+        }
         TaxiDriver driver = new TaxiDriver(Datos[0], Datos[1], Long.parseLong(Datos[2]), Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9]);
         TaxiDriverdbController.insertDriver(driver);
-                JOptionPane.showMessageDialog(this, "Successfully Added Driver");
+        JOptionPane.showMessageDialog(this, "Successfully Added Driver");
         txtCI.setText("");
         txtName.setText("");
         txtPhoneNumber.setText("");
@@ -317,26 +312,26 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
         // TODO add your handling code here:
         int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
-        if(!number){
+        if (!number) {
             evt.consume();
-                        JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
-        if(txtCI.getText().length() >= 10){
+        if (txtCI.getText().length() >= 10) {
             evt.consume();
         }
     }//GEN-LAST:event_txtCIKeyTyped
 
     private void txtPhoneNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneNumberKeyTyped
         // TODO add your handling code here:
-         int validNumber = evt.getKeyChar();
+        int validNumber = evt.getKeyChar();
         boolean number = validNumber >= 48 && validNumber <= 57;
-        if(!number){
+        if (!number) {
             evt.consume();
-        JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, number + " Solo numeros", "Advertencia en el ingreso de datos", JOptionPane.WARNING_MESSAGE);
 
         }
-        if(txtPhoneNumber.getText().length() >= 10){
+        if (txtPhoneNumber.getText().length() >= 10) {
             evt.consume();
         }
     }//GEN-LAST:event_txtPhoneNumberKeyTyped

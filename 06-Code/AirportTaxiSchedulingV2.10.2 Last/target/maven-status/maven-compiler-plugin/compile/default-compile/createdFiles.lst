@@ -20,6 +20,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$10.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$15.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$6.class
+ec\edu\espe\AirporTaxiScheduling\controller\TravelerdbController.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$12.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmHistory$6.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin$6.class
@@ -134,7 +135,6 @@ ec\edu\espe\AirporTaxiScheduling\model\Reminder.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$15.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$2.class
-ec\edu\espe\AirporTaxiScheduling\controller\TravelersdbController.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$15.class
 ec\edu\espe\AirporTaxiScheduling\model\Service.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin$3.class

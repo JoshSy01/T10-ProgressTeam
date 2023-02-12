@@ -1,6 +1,5 @@
 package ec.edu.espe.AirporTaxiScheduling.view;
 
-import com.google.gson.Gson;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
@@ -8,7 +7,7 @@ import com.mongodb.client.model.Updates;
 import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
 import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
 import ec.edu.espe.AirporTaxiScheduling.controller.TaxiDriverdbController;
-import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
@@ -19,7 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 import ec.edu.espe.AirporTaxiScheduling.utils.Generator;
-import javax.swing.DefaultListModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -526,13 +524,13 @@ public class FrmTravels extends javax.swing.JFrame {
                 int idTraveler;
                 Traveler traveler1 = new Traveler();
                 idTraveler = obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
-                traveler1 = TravelersdbController.findDocumentdb(traveler, idTraveler);
+                traveler1 = TravelerdbController.findDocumentdb(traveler, idTraveler);
                 dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
                 TraveldbController.load(travels, dataBaseManager.getDatabase(), collectionName);
                 travel = new Travel(Generator.generateId(), cmbDriver.getSelectedItem().toString(), idTraveler, cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtaAnnotation.getText(), btngPayed.isSelected(rbtnPayed.getModel()));
                 if (travel.isPayed() == false) {
                     traveler1.setOutstandingBalance(travel.getPrice() + traveler1.getOutstandingBalance());
-                    TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+                    TravelerdbController.updateDocumentdb(traveler1, idTraveler);
                 }
 
                 travels.add(travel);
@@ -825,7 +823,7 @@ public class FrmTravels extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios ");
         } else {
             idTraveler = obtainIdTraveler(lblTraveler.getText());
-            traveler1 = TravelersdbController.findDocumentdb(traveler1, idTraveler);
+            traveler1 = TravelerdbController.findDocumentdb(traveler1, idTraveler);
 
             travel = new Travel(Integer.parseInt(lblid.getText()), lblDriver.getText(), idTraveler, lblTraveler.getText(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtaAnnotation.getText(), btngPayed.isSelected(rbtnPayed.getModel()));
 
@@ -843,13 +841,13 @@ public class FrmTravels extends javax.swing.JFrame {
             if (travel.isPayed() == true) {
                 if (travelerPayed == false) {
                     traveler1.setOutstandingBalance(traveler1.getOutstandingBalance() - travel.getPrice());
-                    TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+                    TravelerdbController.updateDocumentdb(traveler1, idTraveler);
                 }
 
             } else {
                 if (travelerPayed == true) {
                     traveler1.setOutstandingBalance(traveler1.getOutstandingBalance() + travel.getPrice());
-                    TravelersdbController.updateDocumentdb(traveler1, idTraveler);
+                    TravelerdbController.updateDocumentdb(traveler1, idTraveler);
                 }
             }
         }
@@ -859,7 +857,7 @@ public class FrmTravels extends javax.swing.JFrame {
     private void loadTravelerCombo() {
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
-        TravelersdbController.loadFromDatabase(travelers, dataBaseManager.getDatabase(), "Travelers");
+        TravelerdbController.loadFromDatabase(travelers, dataBaseManager.getDatabase(), "Travelers");
         comboBoxModel.addElement("");
 
         for (int i = 0; i < travelers.size(); i++) {

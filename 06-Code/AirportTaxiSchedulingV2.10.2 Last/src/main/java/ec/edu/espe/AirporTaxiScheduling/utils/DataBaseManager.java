@@ -5,7 +5,7 @@ import com.mongodb.client.MongoDatabase;
 
 /**
  *
- * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
+ * @author Progress Team, DCCO-ESPE
  */
 public abstract class DataBaseManager {
 

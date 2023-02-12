@@ -13,7 +13,6 @@ import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.utils.DataBaseManager;
 import ec.edu.espe.AirporTaxiScheduling.utils.Error;
 import java.util.ArrayList;
-import java.util.Scanner;
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
 import org.bson.Document;
@@ -33,7 +32,6 @@ public class TraveldbController extends DataBaseManager{
         this.database = null;
     }
 
-    private static Scanner scan = new Scanner(System.in);
 
     public static TraveldbController connectToDatabase(String uri, String databaseName, TraveldbController dataBaseManager) {
 
@@ -81,7 +79,7 @@ public class TraveldbController extends DataBaseManager{
     }
     
     public static Travel findDocumentdb(Travel travel, int idFinder){
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travels");
         Bson filter = Filters.and(Filters.all("idTraveler", idFinder));
@@ -91,7 +89,7 @@ public class TraveldbController extends DataBaseManager{
             travel.setDriver(document.getString("driver"));
             travel.setTraveler(document.getString("traveler"));
             travel.setAddress(document.getString("adress"));
-            travel.setPrice(Float.valueOf(Double.toString(document.getDouble("price"))));
+            travel.setPrice(Float.parseFloat(Double.toString(document.getDouble("price"))));
             travel.setPayed(document.getBoolean("payed"));
         }else{
             Error.message();
@@ -130,27 +128,27 @@ public class TraveldbController extends DataBaseManager{
 
     @Override
     public void create(Object object, MongoDatabase database, String collectionName) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     @Override
     public void read(MongoDatabase database) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     @Override
     public void delete(MongoDatabase database, String collectionName, int idFinder) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     @Override
     public void loadFromDatabase() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     
     }
 
 }

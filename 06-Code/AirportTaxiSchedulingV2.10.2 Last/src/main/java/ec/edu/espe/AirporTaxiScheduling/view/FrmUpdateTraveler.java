@@ -7,7 +7,7 @@ package ec.edu.espe.AirporTaxiScheduling.view;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.AirporTaxiScheduling.controller.TravelersdbController;
+import ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -400,7 +400,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
         } else {
             int takeId = Integer.valueOf(txt0.getText());
             Traveler traveler = new Traveler();
-            traveler = TravelersdbController.findDocumentdb(traveler, takeId);
+            traveler = TravelerdbController.findDocumentdb(traveler, takeId);
             if (traveler.getPhoneNumber() != 0) {
                 txt1.setText(traveler.getName());
                 txt2.setText(Long.toString(traveler.getPhoneNumber()));
@@ -439,7 +439,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
     private void findTable(int id) {
 
         Traveler traveler = new Traveler();
-        traveler = TravelersdbController.findDocumentdb(traveler, id);
+        traveler = TravelerdbController.findDocumentdb(traveler, id);
         if (traveler.getPhoneNumber() != 0) {
             txt0.setText(String.valueOf(id));
             txt1.setText(traveler.getName());
@@ -571,7 +571,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
             traveler.setBirthdayDay((int) sp1.getValue());
             traveler.setBirthdayMonth((int) sp3.getValue());
             traveler.setYear((int) sp2.getValue());
-            TravelersdbController.updateDocumentdb(traveler, traveler.getId());
+            TravelerdbController.updateDocumentdb(traveler, traveler.getId());
             viewAllDocument();
             cleanPanel();
         }
@@ -659,14 +659,14 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
     public void viewAllDocument() {
         Traveler traveler = new Traveler();
         ArrayList<Traveler> travelers = new ArrayList<Traveler>();
-        MongoClient mongoClient = TravelersdbController.conection();
+        MongoClient mongoClient = TravelerdbController.conection();
         MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
         MongoCollection<Document> collection = database.getCollection("Travelers");
         String[] titles = {"Id", "Nombre", "Numero de Telefono", "E-mail", "Saldo Pendiente", "Cumpleaños DD/MM"};
         String[] travelerString = new String[6];
         DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
         tableOfTravelers.setModel(tableOfTravelersM);
-        TravelersdbController.loadFromDatabase(travelers, database, "Travelers");
+        TravelerdbController.loadFromDatabase(travelers, database, "Travelers");
         for (int i = 0; i < travelers.size(); i++) {
             travelerString[0] = "" + travelers.get(i).getId() + "";
             travelerString[1] = "" + travelers.get(i).getName() + "";
