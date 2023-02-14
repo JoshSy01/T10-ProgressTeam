@@ -98,6 +98,8 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                               }
                     });
 
+                    spnAge.setModel(new javax.swing.SpinnerNumberModel(18, 16, 100, 1));
+
                     cmbAdress.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quito", "Ibarra", "Riombamba", "Pifo", "Puembo", "Tumbaco", "Sangolqui", "Calderon", "Carcelen", "Carapungo" }));
 
                     txtCI.setToolTipText("Ingrese los 10 digitos de su cedula");
@@ -312,7 +314,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                     cmbGender.setSelectedIndex(0);
                     cmbVehicleMarck.setSelectedIndex(0);
                     cmbVehicleYear.setSelectedIndex(0);
-                    spnAge.setValue(0);
+                    spnAge.setValue(18);
           }
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
