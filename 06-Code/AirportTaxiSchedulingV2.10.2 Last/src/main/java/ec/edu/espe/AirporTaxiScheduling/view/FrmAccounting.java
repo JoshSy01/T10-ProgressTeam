@@ -1,9 +1,9 @@
-
 package ec.edu.espe.AirporTaxiScheduling.view;
 
 import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.TravelerPayment;
+import ec.edu.espe.AirporTaxiScheduling.utils.AccountingController;
 import java.awt.print.PrinterException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -198,13 +198,14 @@ public class FrmAccounting extends javax.swing.JFrame {
     }//GEN-LAST:event_jtblTravelsMouseClicked
 
     private void btnWiewTravelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWiewTravelsActionPerformed
-btmCreatePDF.setEnabled(true);
+        btmCreatePDF.setEnabled(true);
         float totalPayed = 0;
-        float outsB = 0;
+        float outsBalance = 0;
         totalPayed = viewTravels(totalPayed);
-        outsB = calculateOutstandingBalance(outsB);
+        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+        outsBalance = AccountingController.calculateOutstandingBalance(outsBalance,dataBaseManager,collectionName);
         txtTotal.setText(Float.toString(totalPayed));
-        txtOutstanding.setText(Float.toString(outsB));
+        txtOutstanding.setText(Float.toString(outsBalance));
     }//GEN-LAST:event_btnWiewTravelsActionPerformed
 
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
@@ -217,10 +218,10 @@ btmCreatePDF.setEnabled(true);
 
     private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
         MessageFormat header = new MessageFormat("Accouting of travels");
-        MessageFormat footer = new MessageFormat(" Total: "+txtTotal.getText()+" Outstanding Balance: "+txtOutstanding.getText()+" page {0,number,integer}");
+        MessageFormat footer = new MessageFormat(" Total: " + txtTotal.getText() + " Outstanding Balance: " + txtOutstanding.getText() + " page {0,number,integer}");
 
         try {
-           jtblTravels.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+            jtblTravels.print(JTable.PrintMode.FIT_WIDTH, header, footer);
         } catch (PrinterException e) {
             e.getMessage();
         }
@@ -253,19 +254,6 @@ btmCreatePDF.setEnabled(true);
         jtblTravels.setModel(tableOfTravels);
         jtblTravels.setDefaultEditor(Object.class, null);
         return totalPayed;
-    }
-    
-    private float calculateOutstandingBalance(float outsB){
-        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
-        ArrayList<Travel> travelsView = new ArrayList<Travel>();
-        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
-        for (int i = 0; i < travelsView.size(); i++) {
-            
-            if (travelsView.get(i).isPayed() == false) {
-                outsB += (travelsView.get(i).getPrice());
-            }
-        }
-        return outsB;
     }
 
     private void cleanForm() {
