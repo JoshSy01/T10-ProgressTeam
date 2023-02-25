@@ -3,7 +3,7 @@ package ec.edu.espe.AirporTaxiScheduling.view;
 import ec.edu.espe.AirporTaxiScheduling.controller.TraveldbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.TravelerPayment;
-import ec.edu.espe.AirporTaxiScheduling.utils.AccountingController;
+import ec.edu.espe.AirporTaxiScheduling.controller.AccountingController;
 import java.awt.print.PrinterException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -50,6 +50,9 @@ public class FrmAccounting extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtOutstanding = new javax.swing.JTextField();
         btmCreatePDF = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtflostPercent = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,6 +116,10 @@ public class FrmAccounting extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Porcentaje perdido");
+
+        jLabel5.setText("%");
+
         javax.swing.GroupLayout pnlAccountingLayout = new javax.swing.GroupLayout(pnlAccounting);
         pnlAccounting.setLayout(pnlAccountingLayout);
         pnlAccountingLayout.setHorizontalGroup(
@@ -128,19 +135,25 @@ public class FrmAccounting extends javax.swing.JFrame {
                         .addGap(64, 64, 64)
                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnWiewTravels)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlAccountingLayout.createSequentialGroup()
-                                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlAccountingLayout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlAccountingLayout.createSequentialGroup()
+                            .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlAccountingLayout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(20, 20, 20)
+                                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlAccountingLayout.createSequentialGroup()
+                                    .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtOutstanding, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(132, 132, 132)
-                                .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jLabel4))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtOutstanding, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(pnlAccountingLayout.createSequentialGroup()
+                                            .addComponent(txtflostPercent, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jLabel5))))))))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         pnlAccountingLayout.setVerticalGroup(
@@ -152,23 +165,27 @@ public class FrmAccounting extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(61, 61, 61)
                 .addComponent(btnWiewTravels)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlAccountingLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
+                        .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(txtOutstanding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(47, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59))))
+                        .addGap(29, 29, 29)
+                        .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtflostPercent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(23, 23, 23))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,6 +200,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
@@ -199,13 +217,32 @@ public class FrmAccounting extends javax.swing.JFrame {
 
     private void btnWiewTravelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWiewTravelsActionPerformed
         btmCreatePDF.setEnabled(true);
-        float totalPayed = 0;
-        float outsBalance = 0;
-        totalPayed = viewTravels(totalPayed);
+        float totalValue;
+        float outsBalance;
+        float lostPercent;
+        ArrayList<Float> payedValues = new ArrayList<Float>();
+        ArrayList<Float> outsValues = new ArrayList<Float>();
+
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
-        outsBalance = AccountingController.calculateOutstandingBalance(outsBalance,dataBaseManager,collectionName);
-        txtTotal.setText(Float.toString(totalPayed));
+
+        ArrayList<Travel> travelsView = new ArrayList<Travel>();
+        TraveldbController.load(travelsView, dataBaseManager.getDatabase(), collectionName);
+        for (int i = 0; i < travelsView.size(); i++) {
+
+            if (travelsView.get(i).isPayed() == false) {
+                outsValues.add((travelsView.get(i).getPrice()));
+            }
+            if (travelsView.get(i).isPayed() == true) {
+                payedValues.add(travelsView.get(i).getPrice());
+            }
+        }
+        totalValue = AccountingController.calculateTotal(payedValues);
+        outsBalance = AccountingController.calculateTotal(outsValues);
+        lostPercent = AccountingController.calculateLostPercent(totalValue, outsBalance);
+        viewTravels();
+        txtTotal.setText(Float.toString(totalValue));
         txtOutstanding.setText(Float.toString(outsBalance));
+        txtflostPercent.setText(Float.toString(lostPercent));
     }//GEN-LAST:event_btnWiewTravelsActionPerformed
 
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
@@ -227,7 +264,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btmCreatePDFActionPerformed
 
-    private float viewTravels(float totalPayed) {
+    private void viewTravels() {
         cleanForm();
         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
@@ -245,15 +282,12 @@ public class FrmAccounting extends javax.swing.JFrame {
             travelsString[5] = "" + travelsView.get(i).getPrice() + "";
             travelsString[6] = "" + String.valueOf(travelsView.get(i).isPayed()) + "";
             tableOfTravels.addRow(travelsString);
-            if (travelsView.get(i).isPayed() == true) {
-                totalPayed += (travelsView.get(i).getPrice());
-            }
 
         }
 
         jtblTravels.setModel(tableOfTravels);
         jtblTravels.setDefaultEditor(Object.class, null);
-        return totalPayed;
+
     }
 
     private void cleanForm() {
@@ -310,10 +344,13 @@ public class FrmAccounting extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jtblTravels;
     private javax.swing.JPanel pnlAccounting;
     private javax.swing.JTextField txtOutstanding;
     private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtflostPercent;
     // End of variables declaration//GEN-END:variables
 }
