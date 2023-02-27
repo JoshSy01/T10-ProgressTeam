@@ -55,6 +55,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setTitle("Airport Taxi Scheduling");
                     setAlwaysOnTop(true);
+                    setResizable(false);
 
                     jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
 
