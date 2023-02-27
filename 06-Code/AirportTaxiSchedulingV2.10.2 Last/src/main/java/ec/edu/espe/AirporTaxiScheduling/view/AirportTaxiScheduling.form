@@ -246,11 +246,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
-              <Image iconType="3" name="/ec/edu/espe/AirporTaxiScheduling/view/TAXI AIPORT.png"/>
-=======
               <Image iconType="3" name="/images/TAXI AIPORT.png"/>
->>>>>>> 5404f3ed0acb61947caa20eaaf7eed63729d621f
             </Property>
           </Properties>
         </Component>

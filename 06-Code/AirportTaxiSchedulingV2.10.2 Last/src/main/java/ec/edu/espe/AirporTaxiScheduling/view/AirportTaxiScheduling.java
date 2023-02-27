@@ -52,20 +52,12 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         mitContactSupport = new javax.swing.JMenuItem();
         mitCommonProblem = new javax.swing.JMenuItem();
 
-<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airport Taxi Scheduling");
         setAlwaysOnTop(true);
+        setResizable(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/AirporTaxiScheduling/view/TAXI AIPORT.png"))); // NOI18N
-=======
-                    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-                    setTitle("Airport Taxi Scheduling");
-                    setAlwaysOnTop(true);
-                    setResizable(false);
-
-                    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
->>>>>>> 5404f3ed0acb61947caa20eaaf7eed63729d621f
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -414,6 +406,10 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
                               java.util.logging.Logger.getLogger(AirportTaxiScheduling.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                     }
+                    //</editor-fold>
+                    //</editor-fold>
+                    //</editor-fold>
+                    //</editor-fold>
                     //</editor-fold>
                     //</editor-fold>
                     //</editor-fold>
