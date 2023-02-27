@@ -52,11 +52,20 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
         mitContactSupport = new javax.swing.JMenuItem();
         mitCommonProblem = new javax.swing.JMenuItem();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airport Taxi Scheduling");
         setAlwaysOnTop(true);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/AirporTaxiScheduling/view/TAXI AIPORT.png"))); // NOI18N
+=======
+                    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                    setTitle("Airport Taxi Scheduling");
+                    setAlwaysOnTop(true);
+                    setResizable(false);
+
+                    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
+>>>>>>> 5404f3ed0acb61947caa20eaaf7eed63729d621f
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
