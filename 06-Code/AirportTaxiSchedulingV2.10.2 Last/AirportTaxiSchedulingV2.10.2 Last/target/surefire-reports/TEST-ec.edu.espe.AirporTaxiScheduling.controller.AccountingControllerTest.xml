@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="2" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="2" failures="2" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
@@ -62,21 +62,21 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateLostPercent" time="0.004">
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal" time="0.001">
+    <failure message="Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null
+	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingController.calculateTotal(AccountingController.java:22)
+	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal(AccountingControllerTest.java:60)
+</failure>
+    <system-out>calculateTotal
+</system-out>
+  </testcase>
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateLostPercent" time="0.002">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
 	at org.junit.jupiter.api.Assertions.fail(Assertions.java:109)
 	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateLostPercent(AccountingControllerTest.java:49)
 </failure>
     <system-out>calculateLostPercent
-</system-out>
-  </testcase>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal" time="0">
-    <failure message="Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null
-	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingController.calculateTotal(AccountingController.java:22)
-	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal(AccountingControllerTest.java:60)
-</failure>
-    <system-out>calculateTotal
 </system-out>
   </testcase>
 </testsuite>
