@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="2" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.04" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV2.10.2 Last"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV2.10.2 Last"/>
+    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
@@ -62,21 +62,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal" time="0.001">
-    <failure message="Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;java.util.ArrayList.size()&quot; because &quot;values&quot; is null
-	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingController.calculateTotal(AccountingController.java:22)
-	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateTotal(AccountingControllerTest.java:60)
-</failure>
-    <system-out>calculateTotal
-</system-out>
-  </testcase>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateLostPercent" time="0.002">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
-	at org.junit.jupiter.api.Assertions.fail(Assertions.java:109)
-	at ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest.testCalculateLostPercent(AccountingControllerTest.java:49)
-</failure>
-    <system-out>calculateLostPercent
-</system-out>
-  </testcase>
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateLostPercent" time="0.04"/>
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateTotal" time="0"/>
 </testsuite>

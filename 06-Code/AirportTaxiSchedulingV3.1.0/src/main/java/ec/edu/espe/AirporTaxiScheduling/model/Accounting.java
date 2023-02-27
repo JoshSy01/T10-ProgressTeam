@@ -1,28 +1,49 @@
-
 package ec.edu.espe.AirporTaxiScheduling.model;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
-public class Accounting extends Service{
+public class Accounting extends Service {
+
+    private ArrayList<Float> values;
     private float totalValue;
-   private float outstandingBalance;
-  private TravelerPayment travelerPayment;
-  
+    private float payedValues;
+    private float outsValues;
+    private float percentageLost;
+
     public Accounting() {
+        this.values = null;
         this.totalValue = 0.0F;
-        this.outstandingBalance = 0;
-        this.travelerPayment = null;
+        this.payedValues = 0.0F;
+        this.outsValues = 0.0F;
+        this.percentageLost=0.0F;
     }
-
-    public Accounting(float totalValue, float outstandingBalance, TravelerPayment travelerPayment) {
-        this.totalValue = totalValue;
-        this.outstandingBalance = outstandingBalance;
-        this.travelerPayment = travelerPayment;
-    }
-
     
+    public Accounting(ArrayList<Float> values, float totalValue, float payedValues, float outsValues,float percentageLost) {
+        this.values = values;
+        this.totalValue = totalValue;
+        this.payedValues = payedValues;
+        this.outsValues = outsValues;
+        this.percentageLost=percentageLost;
+    }
+    
+    /**
+     * @return the values
+     */
+    public ArrayList<Float> getValues() {
+        return values;
+    }
+
+    /**
+     * @param values the values to set
+     */
+    public void setValues(ArrayList<Float> values) {
+        this.values = values;
+    }
+
     /**
      * @return the totalValue
      */
@@ -38,35 +59,43 @@ public class Accounting extends Service{
     }
 
     /**
-     * @return the outstandingBalance
+     * @return the payedValues
      */
-    public float getOutstandingBalance() {
-        return outstandingBalance;
+    public float getPayedValues() {
+        return payedValues;
     }
 
     /**
-     * @param outstandingBalance the outstandingBalance to set
+     * @param payedValues the payedValues to set
      */
-    public void setOutstandingBalance(float outstandingBalance) {
-        this.outstandingBalance = outstandingBalance;
+    public void setPayedValues(float payedValues) {
+        this.payedValues = payedValues;
     }
 
     /**
-     * @return the travelerPayment
+     * @return the outsValues
      */
-    public TravelerPayment getTravelerPayment() {
-        return travelerPayment;
+    public float getOutsValues() {
+        return outsValues;
     }
 
     /**
-     * @param travelerPayment the travelerPayment to set
+     * @param outsValues the outsValues to set
      */
-    public void setTravelerPayment(TravelerPayment travelerPayment) {
-        this.travelerPayment = travelerPayment;
+    public void setOutsValues(float outsValues) {
+        this.outsValues = outsValues;
     }
-    
- 
-    
+
+    public float getPercentageLost() {
+        return percentageLost;
+    }
+
+    public void setPercentageLost(float percentageLost) {
+        this.percentageLost = percentageLost;
+    }
+
    
+
    
+
 }

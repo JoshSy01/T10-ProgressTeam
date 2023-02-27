@@ -58,7 +58,7 @@ public class TraveldbController extends DataBaseManager{
 
     }  
 
-    public static void deleteOne(MongoDatabase database, String collectionName, int idFinder) { ///unusable
+    public static void deleteOne(MongoDatabase database, String collectionName, int idFinder) { 
         MongoCollection<Document> collection = database.getCollection(collectionName);
 
         Bson filter = Filters.and(Filters.eq("id", idFinder));

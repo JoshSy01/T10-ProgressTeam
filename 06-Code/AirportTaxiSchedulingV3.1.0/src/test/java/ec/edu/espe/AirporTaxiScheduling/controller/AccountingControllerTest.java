@@ -1,38 +1,21 @@
 
 package ec.edu.espe.AirporTaxiScheduling.controller;
 
+import ec.edu.espe.AirporTaxiScheduling.model.Accounting;
+import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
 import java.util.ArrayList;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+
+
 
 /**
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
 public class AccountingControllerTest {
-    
-    public AccountingControllerTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
+   
 
     /**
      * Test of calculateLostPercent method, of class AccountingController.
@@ -40,13 +23,18 @@ public class AccountingControllerTest {
     @Test
     public void testCalculateLostPercent() {
         System.out.println("calculateLostPercent");
-        float payedValues = 0.0F;
-        float outsValues = 0.0F;
-        float expResult = 0.0F;
+         ArrayList<Accounting> valuesTestList = new ArrayList<Accounting>();
+       FileManager.readJson(valuesTestList, "testValuesForCalculateTolal.json");
+        for (int i = 0; i < valuesTestList.size(); i++) {
+          float payedValues = valuesTestList.get(i).getPayedValues();
+        float outsValues = valuesTestList.get(i).getOutsValues();
+        float expResult = valuesTestList.get(i).getPercentageLost();
         float result = AccountingController.calculateLostPercent(payedValues, outsValues);
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0);   
+            
+        }
+      
+        
     }
 
     /**
@@ -55,12 +43,16 @@ public class AccountingControllerTest {
     @Test
     public void testCalculateTotal() {
         System.out.println("calculateTotal");
-        ArrayList<Float> values = null;
-        float expResult = 0.0F;
+        
+        ArrayList<Accounting> valuesTestList = new ArrayList<Accounting>();
+        FileManager.readJson(valuesTestList, "testValuesForCalculateTolal.json");
+        for (int i = 0; i < valuesTestList.size(); i++) {              
+        ArrayList<Float> values = valuesTestList.get(i).getValues();
+        float expResult = valuesTestList.get(i).getTotalValue();
         float result = AccountingController.calculateTotal(values);
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0);         
+        }
+       
     }
     
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class AccountingController {
 
-    public static float calculateLostPercent(float payedValues, float outsValues) {
+   public static float calculateLostPercent(float payedValues, float outsValues) {
         float lostPercent;
         lostPercent = (outsValues / (payedValues + outsValues)) * 100;
         lostPercent = (float) Math.round(lostPercent * 100F) / 100F;
@@ -22,7 +22,7 @@ public class AccountingController {
         for (int i = 0; i < values.size(); i++) {
             total += values.get(i);
         }
-
+            
         return total;
 
     }

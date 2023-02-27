@@ -504,11 +504,13 @@ public class FrmTravels extends javax.swing.JFrame {
                                         if (travel.isPayed() == false) {
                                                   traveler1.setOutstandingBalance(travel.getPrice() + traveler1.getOutstandingBalance());
                                                   TravelerdbController.updateDocumentdb(traveler1, idTraveler);
+                                                  TraveldbController.createOne(travel, dataBaseManager.getDatabase(), "UncollectedTravels");
                                         }
 
                                         travels.add(travel);
                                         FileManager.addTravelsToJson(travels);
                                         TraveldbController.createOne(travel, dataBaseManager.getDatabase(), collectionName);
+                                        
                                         if (travel.isPayed()) {
 
                                         }

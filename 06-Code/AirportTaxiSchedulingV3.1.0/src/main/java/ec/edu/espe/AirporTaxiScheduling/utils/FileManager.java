@@ -1,6 +1,8 @@
 package ec.edu.espe.AirporTaxiScheduling.utils;
 
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+import ec.edu.espe.AirporTaxiScheduling.model.Accounting;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +11,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +24,7 @@ import java.util.ArrayList;
  */
 public class FileManager extends DataPersistence {
 
-    private static Gson gson = new Gson();
+    private static Gson normalGson = new Gson();
 
     @Override
     public void save() {
@@ -30,7 +37,7 @@ public class FileManager extends DataPersistence {
 
         JsonArray jsonArray = new JsonArray();
         for (int i = 0; i < travels.size(); i++) {
-            jsonArray.add(gson.toJsonTree(travels.get(i)));
+            jsonArray.add(normalGson.toJsonTree(travels.get(i)));
         }
 
         try {
@@ -73,6 +80,51 @@ public class FileManager extends DataPersistence {
             ex.printStackTrace(System.out);
         }
         return travels;
+    }
+
+     private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+ 
+    public static void editJson(Accounting accounting, String jsonName) {
+        File fileJson = new File(jsonName);
+        ArrayList<Accounting> valuesTestList = new ArrayList<>();
+        valuesTestList = readJson(valuesTestList, jsonName);
+        valuesTestList.add(accounting);
+        String json = gson.toJson(valuesTestList);
+
+        try ( FileWriter writer = new FileWriter(fileJson)) {
+            writer.write(json);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+    }
+
+    public static ArrayList<Accounting> readJson(ArrayList<Accounting> valuesTestList, String fileJson) {
+        Gson gson = new Gson();
+        File file = new File(fileJson);
+        if (file.length() == 0) {
+            try ( FileWriter writer = new FileWriter(fileJson)) {
+                writer.write("[]");
+            } catch (IOException ex1) {
+                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } else {
+            try {
+                Reader reader = Files.newBufferedReader(Paths.get(fileJson));
+                TypeToken<ArrayList<Accounting>> type = new TypeToken<ArrayList<Accounting>>() {
+                };
+                valuesTestList = gson.fromJson(reader, type.getType());
+                reader.close();
+            } catch (FileNotFoundException ex) {
+                System.out.println("File not Found");
+            } catch (IOException ex) {
+                System.out.println("IOException");
+            }
+        }
+
+        return valuesTestList;
     }
 
 }
