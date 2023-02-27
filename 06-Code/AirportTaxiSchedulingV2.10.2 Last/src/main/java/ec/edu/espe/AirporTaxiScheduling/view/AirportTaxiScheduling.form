@@ -245,7 +245,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV2.10.2 Last\src\main\resource\images\TAXI AIPORT.png"/>
+              <Image iconType="3" name="/ec/edu/espe/AirporTaxiScheduling/view/TAXI AIPORT.png"/>
             </Property>
           </Properties>
         </Component>
