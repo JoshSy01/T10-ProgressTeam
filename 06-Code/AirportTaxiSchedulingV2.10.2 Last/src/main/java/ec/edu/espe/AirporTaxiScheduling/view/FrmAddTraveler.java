@@ -24,281 +24,279 @@ public class FrmAddTraveler extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+          // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+          private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
-        txtId = new javax.swing.JTextField();
-        txtPhoneNumber = new javax.swing.JTextField();
-        rbGmail = new javax.swing.JRadioButton();
-        spDay = new javax.swing.JSpinner();
-        spYear = new javax.swing.JSpinner();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        rbHotmail = new javax.swing.JRadioButton();
-        txtEmail = new javax.swing.JTextField();
-        txtNameAndSurname = new javax.swing.JTextField();
-        spMonth = new javax.swing.JSpinner();
-        btCreate = new javax.swing.JButton();
-        btClean = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+                    buttonGroup1 = new javax.swing.ButtonGroup();
+                    jLabel1 = new javax.swing.JLabel();
+                    btnBack = new javax.swing.JButton();
+                    txtId = new javax.swing.JTextField();
+                    txtPhoneNumber = new javax.swing.JTextField();
+                    rbGmail = new javax.swing.JRadioButton();
+                    spDay = new javax.swing.JSpinner();
+                    spYear = new javax.swing.JSpinner();
+                    jLabel2 = new javax.swing.JLabel();
+                    jLabel3 = new javax.swing.JLabel();
+                    jLabel4 = new javax.swing.JLabel();
+                    rbHotmail = new javax.swing.JRadioButton();
+                    txtEmail = new javax.swing.JTextField();
+                    txtNameAndSurname = new javax.swing.JTextField();
+                    spMonth = new javax.swing.JSpinner();
+                    btCreate = new javax.swing.JButton();
+                    btClean = new javax.swing.JButton();
+                    jLabel5 = new javax.swing.JLabel();
+                    jLabel6 = new javax.swing.JLabel();
+                    jLabel7 = new javax.swing.JLabel();
+                    jLabel8 = new javax.swing.JLabel();
+                    jLabel9 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("AÑADIR PASAJERO");
+                    jLabel1.setText("AÑADIR PASAJERO");
 
-        btnBack.setText("<REGRESAR");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        btnBackActionPerformed(evt);
+                              }
+                    });
 
-        txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtId.setToolTipText("Ingrese el Id del pasajero que desee buscar :)");
-        txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
-            }
-        });
-        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtIdKeyTyped(evt);
-            }
-        });
+                    txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtId.setToolTipText("Ingrese el Id del pasajero que desee buscar :)");
+                    txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtId.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        txtIdActionPerformed(evt);
+                              }
+                    });
+                    txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        txtIdKeyTyped(evt);
+                              }
+                    });
 
-        txtPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtPhoneNumber.setToolTipText("Solo 10 digitos");
-        txtPhoneNumber.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPhoneNumberActionPerformed(evt);
-            }
-        });
-        txtPhoneNumber.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPhoneNumberKeyTyped(evt);
-            }
-        });
+                    txtPhoneNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtPhoneNumber.setToolTipText("Solo 10 digitos");
+                    txtPhoneNumber.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        txtPhoneNumberActionPerformed(evt);
+                              }
+                    });
+                    txtPhoneNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        txtPhoneNumberKeyTyped(evt);
+                              }
+                    });
 
-        buttonGroup1.add(rbGmail);
-        rbGmail.setSelected(true);
-        rbGmail.setText("Gmail");
-        rbGmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbGmailActionPerformed(evt);
-            }
-        });
+                    buttonGroup1.add(rbGmail);
+                    rbGmail.setSelected(true);
+                    rbGmail.setText("Gmail");
+                    rbGmail.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        rbGmailActionPerformed(evt);
+                              }
+                    });
 
-        spDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
-        spDay.setToolTipText("");
-        spDay.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                spDayKeyTyped(evt);
-            }
-        });
+                    spDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+                    spDay.setToolTipText("");
+                    spDay.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        spDayKeyTyped(evt);
+                              }
+                    });
 
-        spYear.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
-        spYear.setToolTipText("");
-        spYear.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                spYearKeyTyped(evt);
-            }
-        });
+                    spYear.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
+                    spYear.setToolTipText("");
+                    spYear.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        spYearKeyTyped(evt);
+                              }
+                    });
 
-        jLabel2.setText("MES");
+                    jLabel2.setText("MES");
 
-        jLabel3.setText("DIA");
+                    jLabel3.setText("DIA");
 
-        jLabel4.setText("AÑO");
+                    jLabel4.setText("AÑO");
 
-        buttonGroup1.add(rbHotmail);
-        rbHotmail.setText("Hotmail");
+                    buttonGroup1.add(rbHotmail);
+                    rbHotmail.setText("Hotmail");
 
-        txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmail.setToolTipText("Solo la primera parte del E-mail");
-        txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
-            }
-        });
+                    txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtEmail.setToolTipText("Solo la primera parte del E-mail");
+                    txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtEmail.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        txtEmailActionPerformed(evt);
+                              }
+                    });
 
-        txtNameAndSurname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtNameAndSurname.setToolTipText("Primero el nombre, despues el Apellido");
-        txtNameAndSurname.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtNameAndSurname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameAndSurnameActionPerformed(evt);
-            }
-        });
-        txtNameAndSurname.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNameAndSurnameKeyTyped(evt);
-            }
-        });
+                    txtNameAndSurname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtNameAndSurname.setToolTipText("Primero el nombre, despues el Apellido");
+                    txtNameAndSurname.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtNameAndSurname.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        txtNameAndSurnameActionPerformed(evt);
+                              }
+                    });
+                    txtNameAndSurname.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        txtNameAndSurnameKeyTyped(evt);
+                              }
+                    });
 
-        spMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
-        spMonth.setToolTipText("");
-        spMonth.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                spMonthKeyTyped(evt);
-            }
-        });
+                    spMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+                    spMonth.setToolTipText("");
+                    spMonth.addKeyListener(new java.awt.event.KeyAdapter() {
+                              public void keyTyped(java.awt.event.KeyEvent evt) {
+                                        spMonthKeyTyped(evt);
+                              }
+                    });
 
-        btCreate.setText("CREAR");
-        btCreate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCreateActionPerformed(evt);
-            }
-        });
+                    btCreate.setText("CREAR");
+                    btCreate.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        btCreateActionPerformed(evt);
+                              }
+                    });
 
-        btClean.setText("LIMPIAR");
-        btClean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCleanActionPerformed(evt);
-            }
-        });
+                    btClean.setText("LIMPIAR");
+                    btClean.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        btCleanActionPerformed(evt);
+                              }
+                    });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("ID");
+                    jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                    jLabel5.setText("ID");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Nombre y Apellido");
+                    jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                    jLabel6.setText("Nombre y Apellido");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Numero de telefono");
+                    jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                    jLabel7.setText("Numero de telefono");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("E-Mail");
+                    jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                    jLabel8.setText("E-Mail");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Cumpleaños");
+                    jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                    jLabel9.setText("Cumpleaños");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addComponent(btCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                    getContentPane().setLayout(layout);
+                    layout.setHorizontalGroup(
+                              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                        .addGap(23, 23, 23)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(30, 30, 30)
-                                                .addComponent(jLabel3))
-                                            .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(80, 80, 80)
-                                                .addComponent(jLabel2))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(65, 65, 65)
-                                                .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(41, 41, 41)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(56, 56, 56)
-                                                .addComponent(jLabel4))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(40, 40, 40)
-                                                .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(157, 157, 157)
-                                        .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rbGmail)
-                                .addGap(83, 83, 83)
-                                .addComponent(rbHotmail)))))
-                .addContainerGap(85, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(btnBack))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbGmail)
-                    .addComponent(rbHotmail)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btClean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addGap(19, 19, 19))
-        );
+                                                  .addGroup(layout.createSequentialGroup()
+                                                            .addGap(27, 27, 27)
+                                                            .addComponent(jLabel7)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(jLabel6)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addGroup(layout.createSequentialGroup()
+                                                            .addGap(51, 51, 51)
+                                                            .addComponent(jLabel5)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(btnBack)
+                                                            .addGap(151, 151, 151)
+                                                            .addComponent(jLabel1))
+                                                  .addGroup(layout.createSequentialGroup()
+                                                            .addGap(32, 32, 32)
+                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                      .addGroup(layout.createSequentialGroup()
+                                                                                .addComponent(jLabel8)
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                .addComponent(rbGmail)
+                                                                                .addGap(83, 83, 83)
+                                                                                .addComponent(rbHotmail))
+                                                                      .addGroup(layout.createSequentialGroup()
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                          .addGroup(layout.createSequentialGroup()
+                                                                                                    .addComponent(jLabel9)
+                                                                                                    .addGap(19, 19, 19)
+                                                                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                              .addGroup(layout.createSequentialGroup()
+                                                                                                                        .addGap(30, 30, 30)
+                                                                                                                        .addComponent(jLabel3))
+                                                                                                              .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                          .addComponent(btCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                          .addGroup(layout.createSequentialGroup()
+                                                                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                              .addGroup(layout.createSequentialGroup()
+                                                                                                                        .addGap(80, 80, 80)
+                                                                                                                        .addComponent(jLabel2))
+                                                                                                              .addGroup(layout.createSequentialGroup()
+                                                                                                                        .addGap(65, 65, 65)
+                                                                                                                        .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                    .addGap(41, 41, 41)
+                                                                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                              .addGroup(layout.createSequentialGroup()
+                                                                                                                        .addGap(56, 56, 56)
+                                                                                                                        .addComponent(jLabel4))
+                                                                                                              .addGroup(layout.createSequentialGroup()
+                                                                                                                        .addGap(40, 40, 40)
+                                                                                                                        .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                                          .addGroup(layout.createSequentialGroup()
+                                                                                                    .addGap(152, 152, 152)
+                                                                                                    .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addContainerGap(90, Short.MAX_VALUE))
+                    );
+                    layout.setVerticalGroup(
+                              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(jLabel1)
+                                                  .addComponent(btnBack))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(jLabel5))
+                                        .addGap(11, 11, 11)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(jLabel6)
+                                                  .addComponent(txtNameAndSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                  .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(jLabel7))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(rbGmail)
+                                                  .addComponent(rbHotmail)
+                                                  .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(jLabel8))
+                                        .addGap(5, 5, 5)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(jLabel3)
+                                                  .addComponent(jLabel2)
+                                                  .addComponent(jLabel4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(jLabel9))
+                                        .addGap(38, 38, 38)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                  .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                  .addComponent(btCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addContainerGap(16, Short.MAX_VALUE))
+                    );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                    pack();
+          }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         AirportTaxiScheduling airportTaxiScheduling;
@@ -456,28 +454,28 @@ public class FrmAddTraveler extends javax.swing.JFrame {
         spYear.setValue(2000);
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btClean;
-    private javax.swing.JButton btCreate;
-    private javax.swing.JButton btnBack;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton rbGmail;
-    private javax.swing.JRadioButton rbHotmail;
-    private javax.swing.JSpinner spDay;
-    private javax.swing.JSpinner spMonth;
-    private javax.swing.JSpinner spYear;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtNameAndSurname;
-    private javax.swing.JTextField txtPhoneNumber;
-    // End of variables declaration//GEN-END:variables
+          // Variables declaration - do not modify//GEN-BEGIN:variables
+          private javax.swing.JButton btClean;
+          private javax.swing.JButton btCreate;
+          private javax.swing.JButton btnBack;
+          private javax.swing.ButtonGroup buttonGroup1;
+          private javax.swing.JLabel jLabel1;
+          private javax.swing.JLabel jLabel2;
+          private javax.swing.JLabel jLabel3;
+          private javax.swing.JLabel jLabel4;
+          private javax.swing.JLabel jLabel5;
+          private javax.swing.JLabel jLabel6;
+          private javax.swing.JLabel jLabel7;
+          private javax.swing.JLabel jLabel8;
+          private javax.swing.JLabel jLabel9;
+          private javax.swing.JRadioButton rbGmail;
+          private javax.swing.JRadioButton rbHotmail;
+          private javax.swing.JSpinner spDay;
+          private javax.swing.JSpinner spMonth;
+          private javax.swing.JSpinner spYear;
+          private javax.swing.JTextField txtEmail;
+          private javax.swing.JTextField txtId;
+          private javax.swing.JTextField txtNameAndSurname;
+          private javax.swing.JTextField txtPhoneNumber;
+          // End of variables declaration//GEN-END:variables
 }

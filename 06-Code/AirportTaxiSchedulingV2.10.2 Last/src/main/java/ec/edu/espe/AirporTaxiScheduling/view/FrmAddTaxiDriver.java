@@ -197,7 +197,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                                                                                 .addGap(18, 18, 18)
                                                                                 .addComponent(rbHotmail))))
                                                   .addComponent(jLabel1))
-                                        .addContainerGap(24, Short.MAX_VALUE))
+                                        .addContainerGap(176, Short.MAX_VALUE))
                     );
                     layout.setVerticalGroup(
                               layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
