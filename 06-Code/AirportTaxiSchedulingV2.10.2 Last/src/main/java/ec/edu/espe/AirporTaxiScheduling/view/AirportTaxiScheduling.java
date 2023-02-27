@@ -56,7 +56,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     setTitle("Airport Taxi Scheduling");
                     setAlwaysOnTop(true);
 
-                    jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\justi\\OneDrive\\Documentos\\OOP Progress Team\\T10-ProgressTeam\\06-Code\\AirportTaxiSchedulingV2.10.2 Last\\src\\main\\resource\\images\\TAXI AIPORT.png")); // NOI18N
+                    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
 
                     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                     jPanel1.setLayout(jPanel1Layout);

@@ -230,7 +230,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jLabel2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -245,7 +245,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV2.10.2 Last\src\main\resource\images\TAXI AIPORT.png"/>
+              <Image iconType="3" name="/images/TAXI AIPORT.png"/>
             </Property>
           </Properties>
         </Component>
