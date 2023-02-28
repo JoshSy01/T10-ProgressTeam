@@ -1,43 +1,44 @@
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Accounting.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Service.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmViewTaxiDriver.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAddTaxiDriver.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\User.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\Generator.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\Error.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAbout.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TravelerdbController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmTarif.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TaxiDriverdbController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmTravels.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\DataBaseManager.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmReminder.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUncollectedTravel.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\DataPersistence.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\TravelerPayment.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TarifDbController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Travel.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Person.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Reminder.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TraveldbController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\ReportProblem.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\TaxiDriver.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Traveler.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\UserdbController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Tarif.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmContactSupport.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\AccountingController.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmHistory.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmCommonProblems.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Taxi.java
-D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\FileManager.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\TaxiDriver.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TraveldbController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\ReportProblem.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmTarif.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TravelerdbController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmReminder.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\UserdbController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Taxi.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\FileManager.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TaxiDriverdbController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAddTaxiDriver.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUncollectedTravel.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmTravels.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Person.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\Error.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Accounting.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\AccountingController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Tarif.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\TravelerPayment.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Traveler.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\TarifSingleton.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Service.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\Generator.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\DataPersistence.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmAbout.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\User.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmViewTaxiDriver.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmHistory.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmCommonProblems.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Reminder.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\controller\TarifDbController.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\utils\DataBaseManager.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\model\Travel.java
+C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0\src\main\java\ec\edu\espe\AirporTaxiScheduling\view\FrmContactSupport.java

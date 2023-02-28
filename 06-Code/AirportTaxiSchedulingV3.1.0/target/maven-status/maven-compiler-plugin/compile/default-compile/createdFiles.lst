@@ -55,6 +55,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmViewTaxiDriver$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$8.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$7.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$1.class
+ec\edu\espe\AirporTaxiScheduling\model\TarifSingleton.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$14.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister$11.class
