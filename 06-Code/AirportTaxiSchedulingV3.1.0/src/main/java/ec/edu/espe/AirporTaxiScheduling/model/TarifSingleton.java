@@ -11,7 +11,7 @@ private static TarifSingleton instance;
         this.tarifValue = 0.40F;
     }
     
-    public void modifyTax(float tarifValue){
+    public void modifyValue(float tarifValue){
         this.tarifValue = tarifValue;
     }
     

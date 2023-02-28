@@ -17,6 +17,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver$2.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$13.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting$7.class
 ec\edu\espe\AirporTaxiScheduling\utils\DataPersistence.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmUser$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$6.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$5.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$3.class
@@ -40,6 +41,8 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$13.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$6.class
 ec\edu\espe\AirporTaxiScheduling\utils\Generator.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmHistory$5.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$10.class
+ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$20.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$1.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$19.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$5.class
@@ -64,6 +67,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$5.class
 ec\edu\espe\AirporTaxiScheduling\model\Taxi.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$11.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver$1.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmUser$2.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$11.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin$2.class
@@ -80,6 +84,7 @@ ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$15.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$15.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$9.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister$9.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$7.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$8.class
@@ -109,6 +114,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting$2.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister$10.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver$2.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$1.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmUncollectedTravel$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$14.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$7.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTaxiDriver$6.class
@@ -118,11 +124,13 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$10.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$17.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$14.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$8.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmUser$1.class
 ec\edu\espe\AirporTaxiScheduling\model\Accounting.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$12.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$15.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver$5.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmUser.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmCommonProblems$1.class
 ec\edu\espe\AirporTaxiScheduling\utils\Error.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTaxiDriver$6.class
@@ -176,6 +184,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$14.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$2.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$7.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$11.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmHistory$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler$12.class
@@ -183,6 +192,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmAddTaxiDriver$10.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$5.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler.class
+ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$24.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$12.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$9.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$3.class
