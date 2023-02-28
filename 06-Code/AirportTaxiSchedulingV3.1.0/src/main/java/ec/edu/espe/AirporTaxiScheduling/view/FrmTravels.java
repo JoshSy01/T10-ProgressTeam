@@ -79,7 +79,6 @@ public class FrmTravels extends javax.swing.JFrame {
                     jLabel4 = new javax.swing.JLabel();
                     jLabel5 = new javax.swing.JLabel();
                     jLabel6 = new javax.swing.JLabel();
-                    chkbReminder = new javax.swing.JCheckBox();
                     txtPnlAnnotation = new javax.swing.JScrollPane();
                     txtaAnnotation = new javax.swing.JTextArea();
                     chkbAnnotation = new javax.swing.JCheckBox();
@@ -103,6 +102,7 @@ public class FrmTravels extends javax.swing.JFrame {
                     btnAccept = new javax.swing.JButton();
                     btnDelete = new javax.swing.JButton();
                     btnClean = new javax.swing.JButton();
+                    jButton1 = new javax.swing.JButton();
 
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setResizable(false);
@@ -151,8 +151,6 @@ public class FrmTravels extends javax.swing.JFrame {
                     jLabel5.setText("Fecha de Aparicion");
 
                     jLabel6.setText("Presio:");
-
-                    chkbReminder.setText("Recordatorios");
 
                     txtaAnnotation.setColumns(20);
                     txtaAnnotation.setRows(5);
@@ -293,6 +291,13 @@ public class FrmTravels extends javax.swing.JFrame {
                               }
                     });
 
+                    jButton1.setText("Mostrar Tarifas");
+                    jButton1.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        jButton1ActionPerformed(evt);
+                              }
+                    });
+
                     javax.swing.GroupLayout pnlInputLayout = new javax.swing.GroupLayout(pnlInput);
                     pnlInput.setLayout(pnlInputLayout);
                     pnlInputLayout.setHorizontalGroup(
@@ -331,51 +336,50 @@ public class FrmTravels extends javax.swing.JFrame {
                                         .addGap(29, 29, 29)
                                         .addComponent(rbtnNoPayed)
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                              .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInputLayout.createSequentialGroup()
-                                                  .addGap(14, 14, 14)
-                                                  .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                      .addGap(12, 12, 12)
-                                                                      .addComponent(jLabel4)
-                                                                      .addGap(18, 18, 18)
-                                                                      .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                      .addComponent(jLabel5)
-                                                                      .addGap(41, 41, 41)
-                                                                      .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                      .addGap(40, 40, 40)
-                                                                      .addComponent(btnSetDate)
-                                                                      .addGap(18, 18, 18)
-                                                                      .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                      .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                                          .addComponent(chkbAnnotation)
-                                                                                          .addGap(18, 18, 18)
-                                                                                          .addComponent(txtPnlAnnotation, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                                          .addComponent(jLabel6)
-                                                                                          .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                          .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                                    .addComponent(chkbReminder)
-                                                                                                    .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                                                              .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                              .addGap(30, 30, 30)
-                                                                                                              .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
-                                                                      .addGap(18, 18, 18)
-                                                                      .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                                                                .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                .addComponent(btnAccept, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                                        .addGroup(pnlInputLayout.createSequentialGroup()
-                                                  .addContainerGap()
-                                                  .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                            .addGroup(pnlInputLayout.createSequentialGroup()
-                                                                      .addComponent(btnWiewTravels, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                      .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                      .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                              .addGroup(pnlInputLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                  .addGroup(pnlInputLayout.createSequentialGroup()
+                                                            .addGap(20, 20, 20)
+                                                            .addComponent(jLabel4)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addGroup(pnlInputLayout.createSequentialGroup()
+                                                            .addGap(8, 8, 8)
+                                                            .addComponent(jLabel5)
+                                                            .addGap(41, 41, 41)
+                                                            .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(40, 40, 40)
+                                                            .addComponent(btnSetDate)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addGroup(pnlInputLayout.createSequentialGroup()
+                                                            .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                      .addGroup(pnlInputLayout.createSequentialGroup()
+                                                                                .addComponent(chkbAnnotation)
+                                                                                .addGap(18, 18, 18)
+                                                                                .addComponent(txtPnlAnnotation, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                      .addGroup(pnlInputLayout.createSequentialGroup()
+                                                                                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                                          .addGroup(pnlInputLayout.createSequentialGroup()
+                                                                                                    .addComponent(jLabel6)
+                                                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                    .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                    .addGap(38, 38, 38))
+                                                                                          .addGroup(pnlInputLayout.createSequentialGroup()
+                                                                                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                                    .addGap(31, 31, 31)))
+                                                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                                            .addGap(18, 18, 18)
+                                                            .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                      .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                                                      .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                      .addComponent(btnAccept, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInputLayout.createSequentialGroup()
+                                                            .addComponent(btnWiewTravels, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     );
                     pnlInputLayout.setVerticalGroup(
                               pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,15 +414,18 @@ public class FrmTravels extends javax.swing.JFrame {
                                                             .addComponent(jdtechDateofOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addComponent(btnSetDate))
                                                   .addComponent(lblDateOfOcurrence, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkbReminder)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                                         .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                   .addGroup(pnlInputLayout.createSequentialGroup()
-                                                            .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                      .addComponent(jLabel6)
+                                                            .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                                       .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                      .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                      .addGroup(pnlInputLayout.createSequentialGroup()
+                                                                                .addComponent(jButton1)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                                .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                          .addComponent(jLabel6)
+                                                                                          .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addGap(34, 34, 34)))
                                                             .addGroup(pnlInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                       .addGroup(pnlInputLayout.createSequentialGroup()
                                                                                 .addGap(30, 30, 30)
@@ -473,7 +480,6 @@ public class FrmTravels extends javax.swing.JFrame {
 
           private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
                     int option = JOptionPane.showConfirmDialog(this, "Esta seguro de eso?");
-                    JOptionPane.showMessageDialog(this, "", String.valueOf(option), JOptionPane.WARNING_MESSAGE);
                     if (option == 0) {
                               TraveldbController.deleteOne(dataBaseManager.getDatabase(), collectionName, Integer.parseInt(lblid.getText()));
                               JOptionPane.showMessageDialog(null, "Viaje eliminado Exitosamente");
@@ -510,7 +516,7 @@ public class FrmTravels extends javax.swing.JFrame {
                                         travels.add(travel);
                                         FileManager.addTravelsToJson(travels);
                                         TraveldbController.createOne(travel, dataBaseManager.getDatabase(), collectionName);
-                                        
+
                                         if (travel.isPayed()) {
 
                                         }
@@ -550,6 +556,10 @@ public class FrmTravels extends javax.swing.JFrame {
 
           private void btnWiewTravelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWiewTravelsActionPerformed
                     viewTravels();
+                    TableRowSorter<TableModel> sorter = new TableRowSorter<>(jtblTravels.getModel());
+                    sorter.setSortKeys(Collections.singletonList(new RowSorter.SortKey(1, SortOrder.DESCENDING)));
+                    jtblTravels.setRowSorter(sorter);
+                    jtblTravels.repaint();
           }//GEN-LAST:event_btnWiewTravelsActionPerformed
 
           private void jtblTravelsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblTravelsMouseClicked
@@ -651,6 +661,31 @@ public class FrmTravels extends javax.swing.JFrame {
 
           }//GEN-LAST:event_txtAddressActionPerformed
 
+          private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                    ArrayList<Tarif> tarifs = new ArrayList<Tarif>();
+                    MongoClient mongoClient = TarifDbController.conection();
+                    MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
+                    String[] titles = {"Direccion salida", "Direccion llegada", "Valor a pagar"};
+                    String[] TarifString = new String[3];
+                    DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
+                    jtblTarifs.setModel(tableOfTravelersM);
+                    TarifDbController.loadFromDatabase(tarifs, database, "Tarifs");
+                    for (int i = 0; i < tarifs.size(); i++) {
+                              TarifString[0] = "" + tarifs.get(i).getExitAdress() + "";
+                              TarifString[1] = "" + tarifs.get(i).getArrivalAdress() + "";
+                              TarifString[2] = "" + tarifs.get(i).getValueToPay() + "";
+
+                              tableOfTravelersM.addRow(TarifString);
+                    }
+
+                    jtblTarifs.setModel(tableOfTravelersM);
+                    jtblTarifs.setDefaultEditor(Object.class, null);
+                    TableRowSorter<TableModel> sorter = new TableRowSorter<>(jtblTarifs.getModel());
+                    sorter.setSortKeys(Collections.singletonList(new RowSorter.SortKey(1, SortOrder.DESCENDING)));
+                    jtblTarifs.setRowSorter(sorter);
+                    jtblTarifs.repaint();
+          }//GEN-LAST:event_jButton1ActionPerformed
+
           /**
            * @param args the command line arguments
            */
@@ -699,9 +734,9 @@ public class FrmTravels extends javax.swing.JFrame {
           private javax.swing.JButton btnWiewTravels;
           private javax.swing.ButtonGroup btngPayed;
           private javax.swing.JCheckBox chkbAnnotation;
-          private javax.swing.JCheckBox chkbReminder;
           private javax.swing.JComboBox<String> cmbDriver;
           private javax.swing.JComboBox<String> cmbTraveler;
+          private javax.swing.JButton jButton1;
           private com.toedter.plaf.JCalendarTheme jCalendarTheme1;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;
@@ -738,7 +773,6 @@ public class FrmTravels extends javax.swing.JFrame {
                     cmbDriver.setSelectedIndex(0);
                     cmbTraveler.setSelectedIndex(0);
                     txtaAnnotation.setText("");
-                    chkbReminder.setSelected(false);
                     chkbAnnotation.setSelected(false);
                     txtaAnnotation.setEnabled(false);
                     rbtnPayed.setSelected(false);
@@ -831,29 +865,7 @@ public class FrmTravels extends javax.swing.JFrame {
           }
 
           private void loadTarifs() {
-                    Tarif tarif = new Tarif();
-                    ArrayList<Tarif> tarifs = new ArrayList<Tarif>();
-                    MongoClient mongoClient = TarifDbController.conection();
-                    MongoDatabase database = mongoClient.getDatabase("AirportTaxiScheduling");
-                    String[] titles = {"Direccion salida", "Direccion llegada", "Valor a pagar"};
-                    String[] TarifString = new String[3];
-                    DefaultTableModel tableOfTravelersM = new DefaultTableModel(null, titles);
-                    jtblTarifs.setModel(tableOfTravelersM);
-                    TarifDbController.loadFromDatabase(tarifs, database, "Tarifs");
-                    for (int i = 0; i < tarifs.size(); i++) {
-                              TarifString[0] = "" + tarifs.get(i).getExitAdress() + "";
-                              TarifString[1] = "" + tarifs.get(i).getArrivalAdress() + "";
-                              TarifString[2] = "" + tarifs.get(i).getValueToPay() + "";
 
-                              tableOfTravelersM.addRow(TarifString);
-                    }
-
-                    jtblTarifs.setModel(tableOfTravelersM);
-                    jtblTarifs.setDefaultEditor(Object.class, null);
-                    TableRowSorter<TableModel> sorter = new TableRowSorter<>(jtblTarifs.getModel());
-                    sorter.setSortKeys(Collections.singletonList(new RowSorter.SortKey(1, SortOrder.DESCENDING)));
-                    jtblTarifs.setRowSorter(sorter);
-                    jtblTarifs.repaint();
           }
 
           private void loadDriverCombo() {

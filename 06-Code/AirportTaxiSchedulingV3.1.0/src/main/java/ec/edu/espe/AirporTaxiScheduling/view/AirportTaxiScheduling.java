@@ -53,6 +53,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     mitReminder = new javax.swing.JMenuItem();
                     mitCalculateTripPrice = new javax.swing.JMenuItem();
                     mitHistory = new javax.swing.JMenuItem();
+                    mitUncollectedTravel = new javax.swing.JMenuItem();
                     jMenu2 = new javax.swing.JMenu();
                     mitContactSupport = new javax.swing.JMenuItem();
                     mitCommonProblem = new javax.swing.JMenuItem();
@@ -223,6 +224,14 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                               }
                     });
                     jMenu3.add(mitHistory);
+
+                    mitUncollectedTravel.setText("Viajes a Pagar");
+                    mitUncollectedTravel.addActionListener(new java.awt.event.ActionListener() {
+                              public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                        mitUncollectedTravelActionPerformed(evt);
+                              }
+                    });
+                    jMenu3.add(mitUncollectedTravel);
 
                     mnubAirportTaxiScheduling.add(jMenu3);
 
@@ -409,6 +418,12 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     System.exit(0);
           }//GEN-LAST:event_exitMenuMouseClicked
 
+          private void mitUncollectedTravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitUncollectedTravelActionPerformed
+                    FrmUncollectedTravel uncollectedTravel = new FrmUncollectedTravel();
+                    uncollectedTravel.setVisible(true);
+                    this.dispose();
+          }//GEN-LAST:event_mitUncollectedTravelActionPerformed
+
           /**
            * @param args the command line arguments
            */
@@ -474,6 +489,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
           private javax.swing.JMenuItem mitHistory;
           private javax.swing.JMenuItem mitReminder;
           private javax.swing.JMenuItem mitTravel;
+          private javax.swing.JMenuItem mitUncollectedTravel;
           private javax.swing.JMenuItem mitUpdateTaxiDriver;
           private javax.swing.JMenuItem mitUpdateTraveler;
           private javax.swing.JMenuItem mitViewTaxiDriver;

@@ -228,7 +228,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                                                                                 .addComponent(jLabel2)
                                                                                 .addGap(109, 109, 109)
                                                                                 .addComponent(jLabel10)))))
-                                        .addContainerGap(175, Short.MAX_VALUE))
+                                        .addContainerGap(43, Short.MAX_VALUE))
                     );
                     layout.setVerticalGroup(
                               layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

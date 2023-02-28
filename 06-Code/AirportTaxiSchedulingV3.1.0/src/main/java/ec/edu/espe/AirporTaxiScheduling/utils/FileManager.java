@@ -24,107 +24,105 @@ import java.util.logging.Logger;
  */
 public class FileManager extends DataPersistence {
 
-    private static Gson normalGson = new Gson();
+          private static Gson normalGson = new Gson();
 
-    @Override
-    public void save() {
+          @Override
+          public void save() {
 
-    }
+          }
 
-    public static void addTravelsToJson(ArrayList<Travel> travels) {
+          public static void addTravelsToJson(ArrayList<Travel> travels) {
 
-        File travelsListFile = new File("travelsList.json");
+                    File travelsListFile = new File("travelsList.json");
 
-        JsonArray jsonArray = new JsonArray();
-        for (int i = 0; i < travels.size(); i++) {
-            jsonArray.add(normalGson.toJsonTree(travels.get(i)));
-        }
+                    JsonArray jsonArray = new JsonArray();
+                    for (int i = 0; i < travels.size(); i++) {
+                              jsonArray.add(normalGson.toJsonTree(travels.get(i)));
+                    }
 
-        try {
-            PrintWriter writer = new PrintWriter(new FileWriter(travelsListFile, false));
-            writer.print(jsonArray);
-            writer.close();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace(System.out);
-        } catch (IOException ex) {
-            ex.printStackTrace(System.out);
-        }
-    }
+                    try {
+                              PrintWriter writer = new PrintWriter(new FileWriter(travelsListFile, false));
+                              writer.print(jsonArray);
+                              writer.close();
+                    } catch (FileNotFoundException ex) {
+                              ex.printStackTrace(System.out);
+                    } catch (IOException ex) {
+                              ex.printStackTrace(System.out);
+                    }
+          }
 
-    @Override
-    public void load() {
-    }
+          @Override
+          public void load() {
+          }
 
-    public static ArrayList<Travel> loadFromJsonFile() {
-        ArrayList<Travel> travels = new ArrayList<Travel>();
-        Gson gson = new Gson();
-        JsonArray jsonArray = new JsonArray();
-        File travelsListJson = new File("travelsList.json");
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(travelsListJson));
-            String lineOfTheFile = "";
-            String json = "";
-            while ((lineOfTheFile = reader.readLine()) != null) {
-                json += lineOfTheFile;
-            }
+          public static ArrayList<Travel> loadFromJsonFile() {
+                    ArrayList<Travel> travels = new ArrayList<Travel>();
+                    Gson gson = new Gson();
+                    JsonArray jsonArray = new JsonArray();
+                    File travelsListJson = new File("travelsList.json");
+                    try {
+                              BufferedReader reader = new BufferedReader(new FileReader(travelsListJson));
+                              String lineOfTheFile = "";
+                              String json = "";
+                              while ((lineOfTheFile = reader.readLine()) != null) {
+                                        json += lineOfTheFile;
+                              }
 
-            jsonArray = gson.fromJson(json, JsonArray.class);
+                              jsonArray = gson.fromJson(json, JsonArray.class);
 
-            for (int i = 0; i < jsonArray.size(); i++) {
-                travels.add(i, gson.fromJson(jsonArray.get(i), Travel.class));
-            }
-            reader.close();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace(System.out);
-        } catch (IOException ex) {
-            ex.printStackTrace(System.out);
-        }
-        return travels;
-    }
+                              for (int i = 0; i < jsonArray.size(); i++) {
+                                        travels.add(i, gson.fromJson(jsonArray.get(i), Travel.class));
+                              }
+                              reader.close();
+                    } catch (FileNotFoundException ex) {
+                              ex.printStackTrace(System.out);
+                    } catch (IOException ex) {
+                              ex.printStackTrace(System.out);
+                    }
+                    return travels;
+          }
 
-     private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+          private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
- 
-    public static void editJson(Accounting accounting, String jsonName) {
-        File fileJson = new File(jsonName);
-        ArrayList<Accounting> valuesTestList = new ArrayList<>();
-        valuesTestList = readJson(valuesTestList, jsonName);
-        valuesTestList.add(accounting);
-        String json = gson.toJson(valuesTestList);
+          public static void editJson(Accounting accounting, String jsonName) {
+                    File fileJson = new File(jsonName);
+                    ArrayList<Accounting> valuesTestList = new ArrayList<>();
+                    valuesTestList = readJson(valuesTestList, jsonName);
+                    valuesTestList.add(accounting);
+                    String json = gson.toJson(valuesTestList);
 
-        try ( FileWriter writer = new FileWriter(fileJson)) {
-            writer.write(json);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace(System.out);
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
-    }
+                    try ( FileWriter writer = new FileWriter(fileJson)) {
+                              writer.write(json);
+                    } catch (FileNotFoundException e) {
+                              e.printStackTrace(System.out);
+                    } catch (IOException e) {
+                              e.printStackTrace(System.out);
+                    }
+          }
 
-    public static ArrayList<Accounting> readJson(ArrayList<Accounting> valuesTestList, String fileJson) {
-        Gson gson = new Gson();
-        File file = new File(fileJson);
-        if (file.length() == 0) {
-            try ( FileWriter writer = new FileWriter(fileJson)) {
-                writer.write("[]");
-            } catch (IOException ex1) {
-                Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        } else {
-            try {
-                Reader reader = Files.newBufferedReader(Paths.get(fileJson));
-                TypeToken<ArrayList<Accounting>> type = new TypeToken<ArrayList<Accounting>>() {
-                };
-                valuesTestList = gson.fromJson(reader, type.getType());
-                reader.close();
-            } catch (FileNotFoundException ex) {
-                System.out.println("File not Found");
-            } catch (IOException ex) {
-                System.out.println("IOException");
-            }
-        }
+          public static ArrayList<Accounting> readJson(ArrayList<Accounting> valuesTestList, String fileJson) {
+                    Gson gson = new Gson();
+                    File file = new File(fileJson);
+                    if (file.length() == 0) {
+                              try ( FileWriter writer = new FileWriter(fileJson)) {
+                                        writer.write("[]");
+                              } catch (IOException ex1) {
+                                        Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex1);
+                              }
+                    } else {
+                              try {
+                                        Reader reader = Files.newBufferedReader(Paths.get(fileJson));
+                                        TypeToken<ArrayList<Accounting>> type = new TypeToken<ArrayList<Accounting>>() {
+                                        };
+                                        valuesTestList = gson.fromJson(reader, type.getType());
+                                        reader.close();
+                              } catch (FileNotFoundException ex) {
+                                        System.out.println("File not Found");
+                              } catch (IOException ex) {
+                                        System.out.println("IOException");
+                              }
+                    }
 
-        return valuesTestList;
-    }
-
+                    return valuesTestList;
+          }
 }
