@@ -126,10 +126,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmUserLogin.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmReminder.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmHistory$3.class
-<<<<<<< HEAD
-=======
 ec\edu\espe\AirporTaxiScheduling\model\Reminder.class
->>>>>>> 352d854b5334062fec33a28365cffe87ce73f23c
 ec\edu\espe\AirporTaxiScheduling\view\FrmAccounting$4.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$15.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTraveler$2.class
