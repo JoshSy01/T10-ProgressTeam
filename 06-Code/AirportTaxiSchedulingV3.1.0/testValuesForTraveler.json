@@ -1,0 +1,27 @@
+[
+    {
+        "idFinder": 2,
+        "traveler": {
+            "id": 2,
+            "name": "Justin Villarroel",
+            "phoneNumber": 996459938,
+            "mail": "justinv2023@hotmail.com",
+            "outstandingBalance": 72.4,
+            "birthdayDay": 6,
+            "birthdayMonth": 9,
+            "year": 2003
+        }
+    }, {
+        "idFinder": 6,
+        "traveler": {
+            "id": 6,
+            "name": "Leonardo Yaranga",
+            "phoneNumber": 995667373,
+            "mail": "leonardo.yaranga@hotmail.com",
+            "outstandingBalance": 50,
+            "birthdayDay": 17,
+            "birthdayMonth": 11,
+            "year": 2003
+        }
+    }
+]

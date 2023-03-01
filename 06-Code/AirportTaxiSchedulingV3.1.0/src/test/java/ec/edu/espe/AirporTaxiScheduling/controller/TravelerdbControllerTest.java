@@ -2,7 +2,10 @@ package ec.edu.espe.AirporTaxiScheduling.controller;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
+import ec.edu.espe.AirporTaxiScheduling.model.TravelerTest;
+import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -45,11 +48,17 @@ public class TravelerdbControllerTest {
           @Test
           public void testFindDocumentdb() {
                     System.out.println("findDocumentdb");
-                    Traveler traveler = new Traveler();
-                    int idFinder = 6;
-                    Traveler expResult = new Traveler(6, "Leonardo Yaranga", 995667373, "leonardo.yaranga@hotmail.com", 50, 17, 11, 2003);
-                    Traveler result = TravelerdbController.findDocumentdb(traveler, idFinder);
-                    assertEquals(expResult, result);
+                    ArrayList<TravelerTest> valuesTestList = new ArrayList<TravelerTest>();
+                    valuesTestList = FileManager.readJsonTraveler(valuesTestList, "testValuesForTraveler.json");
+                    for (int i = 0; i < valuesTestList.size(); i++) {
+                              Traveler traveler = new Traveler();
+                              int idFinder = valuesTestList.get(i).getIdFinder();
+                              Traveler expResult = valuesTestList.get(i).getTraveler();
+                              Traveler result = TravelerdbController.findDocumentdb(traveler, idFinder);
+                              assertEquals(expResult, result);
+                              
+                    }
+                    
           }
 
 }
