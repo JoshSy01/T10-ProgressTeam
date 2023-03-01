@@ -2,6 +2,7 @@ package ec.edu.espe.AirporTaxiScheduling.view;
 
 import ec.edu.espe.AirporTaxiScheduling.controller.TaxiDriverdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.utils.Validation;
 import ec.edu.espe.AirporTaxiScheduling.view.AirportTaxiScheduling;
 import javax.swing.JOptionPane;
 
@@ -132,7 +133,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
               // TODO add your handling code here:
               if (txtCIdelete.getText().length() == 10) {
-                        if (TaxiDriverdbController.IdValidation(txtCIdelete.getText())) {
+                        if (Validation.IdValidation(txtCIdelete.getText())) {
                                   int option = JOptionPane.showConfirmDialog(this, "Do you want to continue?");
                                   if (option == 0) {
                                             TaxiDriver driver = new TaxiDriver(txtCIdelete.getText(), "", 0, "", "", "", "", "", "", "");

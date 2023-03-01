@@ -2,6 +2,7 @@ package ec.edu.espe.AirporTaxiScheduling.view;
 
 import ec.edu.espe.AirporTaxiScheduling.controller.TaxiDriverdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
+import ec.edu.espe.AirporTaxiScheduling.utils.Validation;
 import ec.edu.espe.AirporTaxiScheduling.view.AirportTaxiScheduling;
 import javax.swing.JOptionPane;
 
@@ -310,7 +311,7 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Por favor, complete los campos vacios");
               } else {
                         if (txtCI.getText().length() == 10) {
-                                  if (TaxiDriverdbController.IdValidation(txtCI.getText())) {
+                                  if (Validation.IdValidation(txtCI.getText())) {
                                             if (txtPhoneNumber.getText().length() < 9) {
                                                       JOptionPane.showMessageDialog(null, "Numero de telefono ingresado esta incorrecto, vuelva a ingresar");
                                             } else {

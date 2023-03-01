@@ -497,12 +497,12 @@ public class FrmTravels extends javax.swing.JFrame {
                                       || txtAddress.getText().isEmpty()
                                       || jdtechDateofOcurrence.getDate() == null
                                       || lblPrice.getText().isEmpty()
-                                      || !btngPayed.isSelected(btngPayed.getSelection())) {
+                                      || !btngPayed.isSelected(btngPayed.getSelection())|| ((rbtnPayed.isSelected() == false) && (rbtnNoPayed.isSelected() == false))) {
                                         JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios ");
                               } else {
                                         int idTraveler;
                                         Traveler traveler1 = new Traveler();
-                                        idTraveler = obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
+                                        idTraveler = Generator.obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
                                         traveler1 = TravelerdbController.findDocumentdb(traveler, idTraveler);
                                         dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
                                         TraveldbController.load(travels, dataBaseManager.getDatabase(), collectionName);
@@ -819,7 +819,7 @@ public class FrmTravels extends javax.swing.JFrame {
                             || !btngPayed.isSelected(btngPayed.getSelection())) {
                               JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios ");
                     } else {
-                              idTraveler = obtainIdTraveler(lblTraveler.getText());
+                              idTraveler = Generator.obtainIdTraveler(lblTraveler.getText());
                               traveler1 = TravelerdbController.findDocumentdb(traveler1, idTraveler);
 
                               travel = new Travel(Integer.parseInt(lblid.getText()), lblDriver.getText(), idTraveler, lblTraveler.getText(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtaAnnotation.getText(), btngPayed.isSelected(rbtnPayed.getModel()));
@@ -881,19 +881,6 @@ public class FrmTravels extends javax.swing.JFrame {
                     cmbDriver.setModel(comboBoxModel);
           }
 
-          private int obtainIdTraveler(String obtainId) {
-                    int n = 5;
-                    int idTraveler;
-                    String id = obtainId.length() < n ? obtainId : obtainId.substring(0, n);
-                    char[] posicions = id.toCharArray();
-                    String character = "";
-                    for (int i = 0; i < id.length(); i++) {
-                              if (Character.isDigit(posicions[i])) {
-                                        character += posicions[i];
-                              }
-                    }
-                    idTraveler = Integer.valueOf(character);
-                    return idTraveler;
-          }
+          
 
 }

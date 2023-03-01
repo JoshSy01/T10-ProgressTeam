@@ -56,6 +56,7 @@ public class TravelerdbController {
         MongoCursor<Document> cursor = collection.find(filter).iterator();
         if(collection.find(filter).first() != null){
             Document document = collection.find(filter).first();
+            traveler.setId(document.getInteger("id"));
             traveler.setName(document.getString("name"));
             traveler.setPhoneNumber(document.getLong("phoneNumber"));
             traveler.setMail(document.getString("mail"));
