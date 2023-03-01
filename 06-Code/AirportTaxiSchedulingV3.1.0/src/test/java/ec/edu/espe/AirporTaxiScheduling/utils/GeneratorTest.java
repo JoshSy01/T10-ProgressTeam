@@ -1,5 +1,8 @@
 package ec.edu.espe.AirporTaxiScheduling.utils;
 
+import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
+import ec.edu.espe.AirporTaxiScheduling.model.ObtainIdClass;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,10 +41,15 @@ public class GeneratorTest {
           @Test
           public void testObtainIdTraveler() {
                     System.out.println("obtainIdTraveler");
-                    String obtainId = "4 Joshua Barreno 930903903";
-                    int expResult = 4;
-                    int result = Generator.obtainIdTraveler(obtainId);
-                    assertEquals(expResult, result);
+                    ArrayList<ObtainIdClass> valuesTestList = new ArrayList<ObtainIdClass>();
+                    valuesTestList = FileManager.readJsonId(valuesTestList, "testValuesForObtainId.json");
+                    for (int i = 0; i < valuesTestList.size(); i++) {
+                              String obtainId = valuesTestList.get(i).getObtainId();
+                              int expResult = valuesTestList.get(i).getId();
+                              int result = Generator.obtainIdTraveler(obtainId);
+                              assertEquals(expResult, result);
+                    }
+                  
           }
 
 }
