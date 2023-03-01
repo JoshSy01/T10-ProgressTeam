@@ -1,6 +1,8 @@
 package ec.edu.espe.AirporTaxiScheduling.controller;
 
 import com.mongodb.client.MongoClient;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.MongoDatabase;
 import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
@@ -20,27 +22,24 @@ import static org.junit.Assert.*;
  */
 public class TravelerdbControllerTest {
 
-    public TravelerdbControllerTest() {
-    }
+          public TravelerdbControllerTest() {
+          }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
+          @BeforeClass
+          public static void setUpClass() {
+          }
 
-    @AfterClass
-    public static void tearDownClass() {
-    }
+          @AfterClass
+          public static void tearDownClass() {
+          }
 
-    @Before
-    public void setUp() {
-    }
+          @Before
+          public void setUp() {
+          }
 
-    @After
-    public void tearDown() {
-    }
-
- 
-  
+          @After
+          public void tearDown() {
+          }
 
           /**
            * Test of findDocumentdb method, of class TravelerdbController.
@@ -56,9 +55,10 @@ public class TravelerdbControllerTest {
                               Traveler expResult = valuesTestList.get(i).getTraveler();
                               Traveler result = TravelerdbController.findDocumentdb(traveler, idFinder);
                               assertEquals(expResult, result);
-                              
+
                     }
-                    
+
           }
 
+          
 }

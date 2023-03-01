@@ -1,7 +1,5 @@
 package ec.edu.espe.AirporTaxiScheduling.utils;
 
-import ec.edu.espe.AirporTaxiScheduling.controller.AccountingController;
-import ec.edu.espe.AirporTaxiScheduling.model.Accounting;
 import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
 import java.util.ArrayList;
 import org.junit.After;
