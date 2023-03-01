@@ -1,5 +1,6 @@
 package ec.edu.espe.AirporTaxiScheduling.model;
 
+import ec.edu.espe.AirporTaxiScheduling.controller.ISubscribedTraveler;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -7,7 +8,7 @@ import java.util.Iterator;
  *
  * @author Leonardo Yaranga,Progress Team, DCCO-ESPE
  */
-abstract class PendingTask {
+public abstract class PendingTask {
 
      protected boolean payed;
     protected float travelPrice;

@@ -4,7 +4,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
+    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
@@ -62,7 +62,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateLostPercent" time="0.048">
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateLostPercent" time="0.049">
     <error message="com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]" type="com.google.gson.JsonSyntaxException">com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
 	at com.google.gson.Gson.fromJson(Gson.java:1229)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
@@ -106,7 +106,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Unterminated array at 
     <system-out>calculateLostPercent
 </system-out>
   </testcase>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateTotal" time="0.001">
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateTotal" time="0">
     <error message="com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]" type="com.google.gson.JsonSyntaxException">com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
 	at com.google.gson.Gson.fromJson(Gson.java:1229)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)

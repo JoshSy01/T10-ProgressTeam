@@ -1,5 +1,7 @@
 
-package ec.edu.espe.AirporTaxiScheduling.model;
+package ec.edu.espe.AirporTaxiScheduling.controller;
+
+import ec.edu.espe.AirporTaxiScheduling.model.PendingTask;
 
 /**
  *

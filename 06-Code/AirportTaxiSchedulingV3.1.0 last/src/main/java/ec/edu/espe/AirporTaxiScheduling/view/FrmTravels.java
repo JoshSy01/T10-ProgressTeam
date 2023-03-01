@@ -12,7 +12,7 @@ import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
 import ec.edu.espe.AirporTaxiScheduling.controller.TaxiDriverdbController;
 import ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbController;
 import ec.edu.espe.AirporTaxiScheduling.model.Payment;
-import ec.edu.espe.AirporTaxiScheduling.model.SubscribedTraveler;
+import ec.edu.espe.AirporTaxiScheduling.controller.SubscribedTraveler;
 import ec.edu.espe.AirporTaxiScheduling.model.Tarif;
 import ec.edu.espe.AirporTaxiScheduling.model.TaxiDriver;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
@@ -524,7 +524,7 @@ public class FrmTravels extends javax.swing.JFrame {
                                       
                                         if (chkbPayment.isSelected()) {
                                             Payment payment =new Payment();
-                                            SubscribedTraveler subscribedTraveler=new SubscribedTraveler(traveler1.getName(), traveler1.getName());
+                                            SubscribedTraveler subscribedTraveler=new SubscribedTraveler(traveler1.getName(), traveler1.getMail());
                                            payment.addSubsTraveler(subscribedTraveler); 
                                            payment.setTravelPrice(travel.getPrice());
                                            payment.setPayed(travel.isPayed());

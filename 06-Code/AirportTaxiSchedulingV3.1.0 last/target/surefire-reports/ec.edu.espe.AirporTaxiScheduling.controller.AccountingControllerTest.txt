@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.073 sec <<< FAILURE!
-testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.048 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.085 sec <<< FAILURE!
+testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.049 sec  <<< ERROR!
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
 	at com.google.gson.Gson.fromJson(Gson.java:1229)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
@@ -43,7 +43,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Unterminated array at 
 	at com.google.gson.Gson.fromJson(Gson.java:1214)
 	... 29 more
 
-testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0 sec  <<< ERROR!
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
 	at com.google.gson.Gson.fromJson(Gson.java:1229)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
