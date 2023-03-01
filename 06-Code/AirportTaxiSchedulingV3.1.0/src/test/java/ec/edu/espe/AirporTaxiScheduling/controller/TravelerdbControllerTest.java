@@ -1,10 +1,5 @@
 package ec.edu.espe.AirporTaxiScheduling.controller;
 
-import com.mongodb.client.MongoClient;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
 import ec.edu.espe.AirporTaxiScheduling.model.Traveler;
 import ec.edu.espe.AirporTaxiScheduling.model.TravelerTest;
 import ec.edu.espe.AirporTaxiScheduling.utils.FileManager;
