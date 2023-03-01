@@ -18,8 +18,3 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-
-/06-Code/AirportTaxiSchedulingV2.0.1/target/
-/06-Code/AirportTaxiSchedulingV2.2.0/target/

@@ -1,0 +1,21 @@
+[
+  {
+    "values": [
+      45.0
+    ],
+    "totalValue": 45.0,
+    "payedValues": 45.0,
+    "outsValues": 50.0,
+    "percentageLost":53.62
+  },
+  {
+    "values": [
+      25.0,
+      25.0
+    ],
+    "totalValue": 59.0,
+    "payedValues": 45.0,
+    "outsValues": 50.0,
+    "percentageLost":52.63
+  }
+]
