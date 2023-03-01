@@ -1,15 +1,25 @@
 -------------------------------------------------------------------------------
-Test set: ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest
+Test set: ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.131 sec <<< FAILURE!
-testObtainIdTraveler(ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest)  Time elapsed: 0.081 sec  <<< ERROR!
-java.lang.NumberFormatException: For input string: ""
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:675)
-	at java.base/java.lang.Integer.valueOf(Integer.java:992)
-	at ec.edu.espe.AirporTaxiScheduling.utils.Generator.obtainIdTraveler(Generator.java:30)
-	at ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest.testObtainIdTraveler(GeneratorTest.java:49)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0 sec  <<< ERROR!
+com.google.gson.JsonSyntaxException: java.lang.NumberFormatException: For input string: "ksi"
+	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:333)
+	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:323)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.readIntoField(ReflectiveTypeAdapterFactory.java:212)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$FieldReflectionAdapter.readField(ReflectiveTypeAdapterFactory.java:431)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:391)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.readIntoField(ReflectiveTypeAdapterFactory.java:212)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$FieldReflectionAdapter.readField(ReflectiveTypeAdapterFactory.java:431)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:391)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40)
+	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:82)
+	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
+	at com.google.gson.Gson.fromJson(Gson.java:1214)
+	at com.google.gson.Gson.fromJson(Gson.java:1124)
+	at com.google.gson.Gson.fromJson(Gson.java:1094)
+	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJsonTraveler(FileManager.java:171)
+	at ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest.testFindDocumentdb(TravelerdbControllerTest.java:46)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
@@ -39,7 +49,11 @@ java.lang.NumberFormatException: For input string: ""
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.NumberFormatException: For input string: "ksi"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:735)
+	at com.google.gson.stream.JsonReader.nextLong(JsonReader.java:975)
+	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:331)
+	... 44 more
 
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
->>>>>>> 5836392ce87d74274594248284016074ea9d035a

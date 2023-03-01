@@ -1,15 +1,10 @@
 -------------------------------------------------------------------------------
-Test set: ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest
+Test set: ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.131 sec <<< FAILURE!
-testObtainIdTraveler(ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest)  Time elapsed: 0.081 sec  <<< ERROR!
-java.lang.NumberFormatException: For input string: ""
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:675)
-	at java.base/java.lang.Integer.valueOf(Integer.java:992)
-	at ec.edu.espe.AirporTaxiScheduling.utils.Generator.obtainIdTraveler(Generator.java:30)
-	at ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest.testObtainIdTraveler(GeneratorTest.java:49)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+testTotalTarif(ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)" because "instance" is null
+	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:46)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
@@ -40,6 +35,3 @@ java.lang.NumberFormatException: For input string: ""
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
->>>>>>> 5836392ce87d74274594248284016074ea9d035a
