@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.002" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" time="0" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
@@ -62,19 +62,9 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.002">
-    <error message="Range [9, 10) out of bounds for length 0" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
-	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
-	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
-	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
-	at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
-	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4602)
-	at java.base/java.lang.String.substring(String.java:2715)
-	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:26)
-	at ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.testIdValidation(ValidationTest.java:43)
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" name="testTotalTarif" time="0">
+    <error message="Cannot invoke &quot;ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)&quot; because &quot;instance&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)&quot; because &quot;instance&quot; is null
+	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:46)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
@@ -105,7 +95,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>IdValidation
+    <system-out>totalTarif
 </system-out>
   </testcase>
 </testsuite>

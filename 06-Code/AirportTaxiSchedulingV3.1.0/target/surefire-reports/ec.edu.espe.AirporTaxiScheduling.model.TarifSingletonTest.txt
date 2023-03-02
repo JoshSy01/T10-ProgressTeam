@@ -1,14 +1,10 @@
 -------------------------------------------------------------------------------
-Test set: ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest
+Test set: ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.773 sec <<< FAILURE!
-testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 1.773 sec  <<< FAILURE!
-java.lang.AssertionError: expected: ec.edu.espe.AirporTaxiScheduling.model.Traveler<Traveler{id=6Person{name=Leonardo Yaranga, phoneNumber=995667373, mail=leonardo.yaranga@hotmail.com}, outstandingBalance=50.0, birthdayDay=17, birthdayMonth=11, year=2003}> but was: ec.edu.espe.AirporTaxiScheduling.model.Traveler<Traveler{id=6Person{name=Leonardo Yaranga, phoneNumber=995667373, mail=leonardo.yaranga@hotmail.com}, outstandingBalance=50.0, birthdayDay=17, birthdayMonth=11, year=2003}>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest.testFindDocumentdb(TravelerdbControllerTest.java:52)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+testTotalTarif(ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)" because "instance" is null
+	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:46)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)

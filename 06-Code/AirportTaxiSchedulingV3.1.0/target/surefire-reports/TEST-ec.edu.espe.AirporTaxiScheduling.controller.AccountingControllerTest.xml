@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="2" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.168" errors="0" skipped="0">
+<testsuite tests="2" failures="2" name="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" time="0.183" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\CPU\OneDrive\Documentos\OOP\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -12,14 +12,14 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="user.script" value=""/>
-    <property name="user.country" value="ES"/>
+    <property name="user.country" value="EC"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\jeffe\OneDrive\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
+    <property name="user.dir" value="C:\Users\CPU\OneDrive\Documentos\OOP\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\jeffe\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\CPU\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -30,7 +30,7 @@
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="stdout.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\jeffe\AppData\Local\Microsoft\WindowsApps;C:\Users\jeffe\AppData\Local\Programs\mongosh\;C:\Users\jeffe\.dotnet\tools;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\mongosh;C:\Users\CPU\AppData\Local\Microsoft\WindowsApps;C:\Users\CPU\.dotnet\tools;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="63.0"/>
@@ -38,15 +38,15 @@
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
     <property name="library.jansi.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\jeffe"/>
+    <property name="user.home" value="C:\Users\CPU"/>
     <property name="user.timezone" value="America/Guayaquil"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="19"/>
-    <property name="user.name" value="jeffe"/>
+    <property name="user.name" value="CPU"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="19"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-19"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,7 +62,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateLostPercent" time="0.167">
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateLostPercent" time="0.183">
     <failure message="expected:&lt;53.62&gt; but was:&lt;52.63&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;53.62&gt; but was:&lt;52.63&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -98,7 +98,7 @@
     <system-out>calculateLostPercent
 </system-out>
   </testcase>
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateTotal" time="0.001">
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest" name="testCalculateTotal" time="0">
     <failure message="expected:&lt;59.0&gt; but was:&lt;50.0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;59.0&gt; but was:&lt;50.0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
