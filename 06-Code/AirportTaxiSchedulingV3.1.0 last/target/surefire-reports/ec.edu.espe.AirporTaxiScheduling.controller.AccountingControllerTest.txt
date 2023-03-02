@@ -1,10 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.073 sec <<< FAILURE!
-testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.048 sec  <<< ERROR!
-com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
-	at com.google.gson.Gson.fromJson(Gson.java:1229)
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.116 sec <<< FAILURE!
+testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.072 sec  <<< ERROR!
+java.lang.NumberFormatException: For input string: "IND"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:735)
+	at com.google.gson.stream.JsonReader.nextDouble(JsonReader.java:920)
+	at com.google.gson.Gson$2.read(Gson.java:425)
+	at com.google.gson.Gson$2.read(Gson.java:419)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.readIntoField(ReflectiveTypeAdapterFactory.java:212)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$FieldReflectionAdapter.readField(ReflectiveTypeAdapterFactory.java:431)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:391)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40)
+	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:82)
+	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
+	at com.google.gson.Gson.fromJson(Gson.java:1214)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
 	at com.google.gson.Gson.fromJson(Gson.java:1094)
 	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJson(FileManager.java:120)
@@ -34,18 +46,22 @@ com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonExcepti
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
-	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1657)
-	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:485)
-	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:422)
-	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:81)
+
+testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NumberFormatException: For input string: "IND"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:735)
+	at com.google.gson.stream.JsonReader.nextDouble(JsonReader.java:920)
+	at com.google.gson.Gson$2.read(Gson.java:425)
+	at com.google.gson.Gson$2.read(Gson.java:419)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.readIntoField(ReflectiveTypeAdapterFactory.java:212)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$FieldReflectionAdapter.readField(ReflectiveTypeAdapterFactory.java:431)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:391)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40)
+	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:82)
 	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
 	at com.google.gson.Gson.fromJson(Gson.java:1214)
-	... 29 more
-
-testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.001 sec  <<< ERROR!
-com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
-	at com.google.gson.Gson.fromJson(Gson.java:1229)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
 	at com.google.gson.Gson.fromJson(Gson.java:1094)
 	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJson(FileManager.java:120)
@@ -75,12 +91,4 @@ com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonExcepti
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
-	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1657)
-	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:485)
-	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:422)
-	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:81)
-	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
-	at com.google.gson.Gson.fromJson(Gson.java:1214)
-	... 29 more
 

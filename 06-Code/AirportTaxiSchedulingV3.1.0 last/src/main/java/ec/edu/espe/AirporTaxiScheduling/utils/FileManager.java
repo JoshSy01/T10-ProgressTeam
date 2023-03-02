@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.AirporTaxiScheduling.model.Accounting;
 import ec.edu.espe.AirporTaxiScheduling.model.IdValidatorClass;
 import ec.edu.espe.AirporTaxiScheduling.model.ObtainIdClass;
+import ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton;
 import ec.edu.espe.AirporTaxiScheduling.model.Travel;
 import ec.edu.espe.AirporTaxiScheduling.model.TravelerTest;
 import java.io.BufferedReader;
@@ -128,8 +129,8 @@ public class FileManager extends DataPersistence {
 
                     return valuesTestList;
           }
-          
-          public static ArrayList<IdValidatorClass> readJsonIdValidator (ArrayList<IdValidatorClass> valuesTestList, String fileJson) {
+
+          public static ArrayList<IdValidatorClass> readJsonIdValidator(ArrayList<IdValidatorClass> valuesTestList, String fileJson) {
                     Gson gson = new Gson();
                     File file = new File(fileJson);
                     if (file.length() == 0) {
@@ -154,7 +155,8 @@ public class FileManager extends DataPersistence {
 
                     return valuesTestList;
           }
-          public static ArrayList<TravelerTest> readJsonTraveler (ArrayList<TravelerTest> valuesTestList, String fileJson) {
+
+          public static ArrayList<TravelerTest> readJsonTraveler(ArrayList<TravelerTest> valuesTestList, String fileJson) {
                     Gson gson = new Gson();
                     File file = new File(fileJson);
                     if (file.length() == 0) {
@@ -179,7 +181,8 @@ public class FileManager extends DataPersistence {
 
                     return valuesTestList;
           }
-          public static ArrayList<ObtainIdClass> readJsonId (ArrayList<ObtainIdClass> valuesTestList, String fileJson) {
+
+          public static ArrayList<ObtainIdClass> readJsonId(ArrayList<ObtainIdClass> valuesTestList, String fileJson) {
                     Gson gson = new Gson();
                     File file = new File(fileJson);
                     if (file.length() == 0) {
@@ -192,6 +195,32 @@ public class FileManager extends DataPersistence {
                               try {
                                         Reader reader = Files.newBufferedReader(Paths.get(fileJson));
                                         TypeToken<ArrayList<ObtainIdClass>> type = new TypeToken<ArrayList<ObtainIdClass>>() {
+                                        };
+                                        valuesTestList = gson.fromJson(reader, type.getType());
+                                        reader.close();
+                              } catch (FileNotFoundException ex) {
+                                        System.out.println("File not Found");
+                              } catch (IOException ex) {
+                                        System.out.println("IOException");
+                              }
+                    }
+
+                    return valuesTestList;
+          }
+
+          public static ArrayList<TarifSingleton> readJsonTarif (ArrayList<TarifSingleton> valuesTestList, String fileJson) {
+                    Gson gson = new Gson();
+                    File file = new File(fileJson);
+                    if (file.length() == 0) {
+                              try ( FileWriter writer = new FileWriter(fileJson)) {
+                                        writer.write("[]");
+                              } catch (IOException ex1) {
+                                        Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex1);
+                              }
+                    } else {
+                              try {
+                                        Reader reader = Files.newBufferedReader(Paths.get(fileJson));
+                                        TypeToken<ArrayList<TarifSingleton>> type = new TypeToken<ArrayList<TarifSingleton>>() {
                                         };
                                         valuesTestList = gson.fromJson(reader, type.getType());
                                         reader.close();
