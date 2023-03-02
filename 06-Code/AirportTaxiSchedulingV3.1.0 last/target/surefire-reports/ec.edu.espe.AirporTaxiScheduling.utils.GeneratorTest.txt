@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE!
-testObtainIdTraveler(ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest)  Time elapsed: 0.009 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.071 sec <<< FAILURE!
+testObtainIdTraveler(ec.edu.espe.AirporTaxiScheduling.utils.GeneratorTest)  Time elapsed: 0.047 sec  <<< ERROR!
 java.lang.NumberFormatException: For input string: ""
 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
 	at java.base/java.lang.Integer.parseInt(Integer.java:675)

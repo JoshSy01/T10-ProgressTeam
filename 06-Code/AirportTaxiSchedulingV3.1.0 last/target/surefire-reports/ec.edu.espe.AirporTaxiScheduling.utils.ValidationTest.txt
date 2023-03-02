@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
-testIdValidation(ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest)  Time elapsed: 0.002 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.065 sec <<< FAILURE!
+testIdValidation(ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest)  Time elapsed: 0.042 sec  <<< ERROR!
 java.lang.NumberFormatException: For input string: "h"
 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
 	at java.base/java.lang.Integer.parseInt(Integer.java:665)

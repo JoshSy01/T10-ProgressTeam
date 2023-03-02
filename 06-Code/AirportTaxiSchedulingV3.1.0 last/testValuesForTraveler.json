@@ -180,4 +180,16 @@
             "year": "2022"
         }
     }
+    {
+        "idFinder": 100,
+        "traveler":null
+    }
+     {
+        "idFinder": k,
+        "traveler":null
+    }
+    {
+        "idFinder": #,
+        "traveler":null
+    }
 ]

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
-testTotalTarif(ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest)  Time elapsed: 0 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.044 sec <<< FAILURE!
+testTotalTarif(ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest)  Time elapsed: 0.021 sec  <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)" because "instance" is null
 	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:43)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
