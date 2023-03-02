@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.116 sec <<< FAILURE!
 testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.072 sec  <<< ERROR!
 java.lang.NumberFormatException: For input string: "IND"
@@ -17,6 +18,12 @@ java.lang.NumberFormatException: For input string: "IND"
 	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:82)
 	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
 	at com.google.gson.Gson.fromJson(Gson.java:1214)
+=======
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.064 sec <<< FAILURE!
+testCalculateLostPercent(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.04 sec  <<< ERROR!
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
+	at com.google.gson.Gson.fromJson(Gson.java:1229)
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
 	at com.google.gson.Gson.fromJson(Gson.java:1094)
 	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJson(FileManager.java:120)
@@ -62,6 +69,14 @@ java.lang.NumberFormatException: For input string: "IND"
 	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:82)
 	at com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:61)
 	at com.google.gson.Gson.fromJson(Gson.java:1214)
+<<<<<<< HEAD
+=======
+	... 29 more
+
+testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0 sec  <<< ERROR!
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated array at line 21 column 4 path $[2]
+	at com.google.gson.Gson.fromJson(Gson.java:1229)
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
 	at com.google.gson.Gson.fromJson(Gson.java:1094)
 	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJson(FileManager.java:120)

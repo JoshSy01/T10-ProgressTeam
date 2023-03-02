@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="1" failures="1" name="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" time="0.069" errors="0" skipped="0">
+=======
+<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" time="0.021" errors="1" skipped="0">
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
+<<<<<<< HEAD
     <property name="maven.multiModuleProjectDirectory" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+=======
+    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,8 +24,13 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="test" value="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<<<<<<< HEAD
     <property name="user.dir" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
+=======
+    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\justi\AppData\Local\Temp\"/>
@@ -63,6 +76,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" name="testTotalTarif" time="0.069">
     <failure message="expected:&lt;6.12&gt; but was:&lt;6.1200004&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;6.12&gt; but was:&lt;6.1200004&gt;
 	at org.junit.Assert.fail(Assert.java:88)
@@ -70,6 +84,11 @@
 	at org.junit.Assert.assertEquals(Assert.java:575)
 	at org.junit.Assert.assertEquals(Assert.java:700)
 	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:51)
+=======
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest" name="testTotalTarif" time="0.021">
+    <error message="Cannot invoke &quot;ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)&quot; because &quot;instance&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;ec.edu.espe.AirporTaxiScheduling.model.TarifSingleton.totalTarif(float)&quot; because &quot;instance&quot; is null
+	at ec.edu.espe.AirporTaxiScheduling.model.TarifSingletonTest.testTotalTarif(TarifSingletonTest.java:43)
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)

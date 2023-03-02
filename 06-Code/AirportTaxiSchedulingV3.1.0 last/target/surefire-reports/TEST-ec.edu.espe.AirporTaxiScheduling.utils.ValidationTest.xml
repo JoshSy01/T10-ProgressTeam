@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.098" errors="1" skipped="0">
+=======
+<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.042" errors="1" skipped="0">
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
+<<<<<<< HEAD
     <property name="maven.multiModuleProjectDirectory" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+=======
+    <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,8 +24,13 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="test" value="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<<<<<<< HEAD
     <property name="user.dir" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
+=======
+    <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\justi\AppData\Local\Temp\"/>
@@ -63,6 +76,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.098">
     <error message="Range [9, 10) out of bounds for length 5" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for length 5
 	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
@@ -75,6 +89,14 @@
 	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4602)
 	at java.base/java.lang.String.substring(String.java:2715)
 	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:26)
+=======
+  <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.042">
+    <error message="For input string: &quot;h&quot;" type="java.lang.NumberFormatException">java.lang.NumberFormatException: For input string: &quot;h&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:665)
+	at java.base/java.lang.Integer.parseInt(Integer.java:781)
+	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:11)
+>>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.testIdValidation(ValidationTest.java:48)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
