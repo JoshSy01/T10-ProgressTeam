@@ -183,9 +183,9 @@ public class FrmUserLogin extends javax.swing.JFrame {
         }
         if (access) {
             AirportTaxiScheduling airportTaxiScheduling = new AirportTaxiScheduling();
+             JOptionPane.showMessageDialog(null, "Acceso concedido");
                 this.setVisible(false);
                 airportTaxiScheduling.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Acceso concedido");
         }else{JOptionPane.showMessageDialog(null, "Error, el usuario o clave son incorrectos");}
         
         

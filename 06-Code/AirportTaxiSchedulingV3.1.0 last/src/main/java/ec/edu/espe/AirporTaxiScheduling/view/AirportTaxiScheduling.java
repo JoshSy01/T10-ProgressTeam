@@ -52,7 +52,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     jMenu2 = new javax.swing.JMenu();
                     mitContactSupport = new javax.swing.JMenuItem();
                     mitCommonProblem = new javax.swing.JMenuItem();
-                    exitMenu = new javax.swing.JMenu();
 
                     jMenu6.setText("jMenu6");
 
@@ -67,7 +66,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setTitle("Airport Taxi Scheduling");
                     setAlwaysOnTop(true);
-                    setResizable(false);
 
                     jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TAXI AIPORT.png"))); // NOI18N
 
@@ -250,14 +248,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
                     mnubAirportTaxiScheduling.add(jMenu2);
 
-                    exitMenu.setText("Salir");
-                    exitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-                              public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                        exitMenuMouseClicked(evt);
-                              }
-                    });
-                    mnubAirportTaxiScheduling.add(exitMenu);
-
                     setJMenuBar(mnubAirportTaxiScheduling);
 
                     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,7 +265,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))
                     );
 
-                    setSize(new java.awt.Dimension(661, 377));
+                    pack();
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
@@ -409,10 +399,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
               this.dispose();
     }//GEN-LAST:event_mitTravelActionPerformed
 
-          private void exitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMenuMouseClicked
-                    System.exit(0);
-          }//GEN-LAST:event_exitMenuMouseClicked
-
           private void mitUncollectedTravelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitUncollectedTravelActionPerformed
                     FrmUncollectedTravel uncollectedTravel = new FrmUncollectedTravel();
                     uncollectedTravel.setVisible(true);
@@ -431,7 +417,6 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
           }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JMenu exitMenu;
           private javax.swing.JLabel jLabel2;
           private javax.swing.JMenu jMenu1;
           private javax.swing.JMenu jMenu2;
