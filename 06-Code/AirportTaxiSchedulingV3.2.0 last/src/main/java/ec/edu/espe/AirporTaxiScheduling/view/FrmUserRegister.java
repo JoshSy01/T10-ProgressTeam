@@ -259,8 +259,8 @@ public class FrmUserRegister extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
             } else {
 
-                userdbController = UserdbController.connectToDatabase(uri, databaseName, userdbController);
-                //TraveldbController.load(users, userdbController.getDatabase(), collectionName);
+                userdbController = UserdbController.connectToDatabase( userdbController);
+               
                 user = new User(txtFullName.getText(), txtMail.getText(), Long.parseLong(txtPhoneNumber.getText()), txtUserName.getText(), txtPassword.getText());
                 users.add(user);
                 TraveldbController.createOne(user, userdbController.getDatabase(), collectionName);

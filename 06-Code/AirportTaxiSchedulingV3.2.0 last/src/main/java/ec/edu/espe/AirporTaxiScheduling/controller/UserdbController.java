@@ -27,7 +27,11 @@ public class UserdbController extends DataBaseManager{
     private MongoClient mongoClient;
     private MongoDatabase database;
   
-     public static UserdbController connectToDatabase(String uri, String databaseName, UserdbController dataBaseManager) {
+   private static final String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
+    private static final String databaseName = "AirportTaxiScheduling";
+  
+    
+    public static UserdbController connectToDatabase (UserdbController dataBaseManager) {
 
         try {
             dataBaseManager.setMongoClient(MongoClients.create(uri));

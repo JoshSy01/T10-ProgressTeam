@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
-testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
+testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0.003 sec  <<< ERROR!
 com.google.gson.JsonSyntaxException: java.lang.NumberFormatException: For input string: "ksi"
 	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:333)
 	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:323)

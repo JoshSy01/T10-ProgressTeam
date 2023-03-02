@@ -171,9 +171,8 @@ public class FrmUserLogin extends javax.swing.JFrame {
         String pass = pssfPassword.getText();
         boolean access=false;
         UserdbController userdbController = new UserdbController();
-        String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
-        String databaseName = "AirportTaxiScheduling";
-        userdbController = UserdbController.connectToDatabase(uri, databaseName, userdbController);
+       
+        userdbController = UserdbController.connectToDatabase( userdbController);
         UserdbController.loadFromDatabase(users, userdbController.getDatabase(), "Users");
 
         for (int i = 0; i < users.size(); i++) {

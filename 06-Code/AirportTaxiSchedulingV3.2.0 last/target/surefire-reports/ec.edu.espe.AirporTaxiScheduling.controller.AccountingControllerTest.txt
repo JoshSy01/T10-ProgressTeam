@@ -47,7 +47,7 @@ java.lang.NumberFormatException: For input string: "IND"
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testCalculateTotal(ec.edu.espe.AirporTaxiScheduling.controller.AccountingControllerTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NumberFormatException: For input string: "IND"
 	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
 	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
