@@ -1,13 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE!
-testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0.077 sec  <<< ERROR!
-=======
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.065 sec <<< FAILURE!
-testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0.044 sec  <<< ERROR!
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+testFindDocumentdb(ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest)  Time elapsed: 0 sec  <<< ERROR!
 com.google.gson.JsonSyntaxException: java.lang.NumberFormatException: For input string: "ksi"
 	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:333)
 	at com.google.gson.internal.bind.TypeAdapters$11.read(TypeAdapters.java:323)
@@ -23,7 +18,7 @@ com.google.gson.JsonSyntaxException: java.lang.NumberFormatException: For input 
 	at com.google.gson.Gson.fromJson(Gson.java:1214)
 	at com.google.gson.Gson.fromJson(Gson.java:1124)
 	at com.google.gson.Gson.fromJson(Gson.java:1094)
-	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJsonTraveler(FileManager.java:171)
+	at ec.edu.espe.AirporTaxiScheduling.utils.FileManager.readJsonTraveler(FileManager.java:173)
 	at ec.edu.espe.AirporTaxiScheduling.controller.TravelerdbControllerTest.testFindDocumentdb(TravelerdbControllerTest.java:46)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)

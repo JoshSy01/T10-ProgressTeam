@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.158 sec <<< FAILURE!
-testIdValidation(ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest)  Time elapsed: 0.098 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE!
+testIdValidation(ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest)  Time elapsed: 0.002 sec  <<< ERROR!
 java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for length 5
 	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
 	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
@@ -15,15 +14,6 @@ java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for lengt
 	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4602)
 	at java.base/java.lang.String.substring(String.java:2715)
 	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:26)
-=======
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.065 sec <<< FAILURE!
-testIdValidation(ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest)  Time elapsed: 0.042 sec  <<< ERROR!
-java.lang.NumberFormatException: For input string: "h"
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:665)
-	at java.base/java.lang.Integer.parseInt(Integer.java:781)
-	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:11)
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.testIdValidation(ValidationTest.java:48)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)

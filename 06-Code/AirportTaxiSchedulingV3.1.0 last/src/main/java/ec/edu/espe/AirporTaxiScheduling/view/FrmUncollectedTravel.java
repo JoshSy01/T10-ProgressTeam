@@ -23,8 +23,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
            * Creates new form FrmUncollectedTravel
            */
           TraveldbController dataBaseManager = new TraveldbController();
-          String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
-          String databaseName = "AirportTaxiScheduling";
+          
           String collectionName = "UncollectedTravels";
 
           public FrmUncollectedTravel() {
@@ -245,7 +244,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
 
           private void viewTravels() {
                     cleanForm();
-                    dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                    dataBaseManager = TraveldbController.connectToDatabase(dataBaseManager);
                     ArrayList<Travel> travelsView = new ArrayList<>();
                     String[] titles = {"Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado", "Nota"};
                     String[] travelsString = new String[8];
@@ -274,7 +273,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
           }
 
           private void payTravel(String travelId) {
-                    dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                    dataBaseManager = TraveldbController.connectToDatabase(dataBaseManager);
                     int travelIdentifier = Integer.parseInt(travelId);
                     ArrayList<Travel> travelsView = new ArrayList<Travel>();
 

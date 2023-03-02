@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD:06-Code/AirportTaxiSchedulingV3.1.0/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
 <testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.002" errors="1" skipped="0">
-=======
-<<<<<<< HEAD
-<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.098" errors="1" skipped="0">
-=======
-<testsuite tests="1" failures="0" name="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" time="0.042" errors="1" skipped="0">
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
->>>>>>> 695217ff8aff1ca36429a51fe4f29b359c05ac8c:06-Code/AirportTaxiSchedulingV3.1.0 last/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="19.0.1+10-21"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-<<<<<<< HEAD:06-Code/AirportTaxiSchedulingV3.1.0/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\CPU\OneDrive\Documentos\OOP\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
-=======
-<<<<<<< HEAD
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
-=======
     <property name="maven.multiModuleProjectDirectory" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
->>>>>>> 695217ff8aff1ca36429a51fe4f29b359c05ac8c:06-Code/AirportTaxiSchedulingV3.1.0 last/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -28,34 +12,25 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="user.script" value=""/>
-    <property name="user.country" value="EC"/>
+    <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-<<<<<<< HEAD:06-Code/AirportTaxiSchedulingV3.1.0/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
-    <property name="user.dir" value="C:\Users\CPU\OneDrive\Documentos\OOP\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0"/>
-=======
-<<<<<<< HEAD
-    <property name="user.dir" value="C:\Users\justi\OneDrive\Documentos\OOP Progress Team\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
->>>>>>> 695217ff8aff1ca36429a51fe4f29b359c05ac8c:06-Code/AirportTaxiSchedulingV3.1.0 last/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
-    <property name="java.vm.compressedOopsMode" value="32-bit"/>
-=======
     <property name="user.dir" value="D:\Leonardo Yaranga\Escritorio\POO\T10-ProgressTeam\06-Code\AirportTaxiSchedulingV3.1.0 last"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
     <property name="java.runtime.version" value="19.0.1+10-21"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\CPU\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\Admin\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="stderr.encoding" value="Cp1252"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="os.name" value="Windows 11"/>
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="stdout.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\mongosh;C:\Users\CPU\AppData\Local\Microsoft\WindowsApps;C:\Users\CPU\.dotnet\tools;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Sublime Text 3;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\.dotnet\tools;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="63.0"/>
@@ -63,15 +38,15 @@
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
     <property name="library.jansi.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\CPU"/>
+    <property name="user.home" value="C:\Users\Admin"/>
     <property name="user.timezone" value="America/Guayaquil"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="19"/>
-    <property name="user.name" value="CPU"/>
+    <property name="user.name" value="Admin"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="19"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar clean install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-19"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -87,14 +62,8 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD:06-Code/AirportTaxiSchedulingV3.1.0/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
   <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.002">
-    <error message="Range [9, 10) out of bounds for length 0" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for length 0
-=======
-<<<<<<< HEAD
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.098">
     <error message="Range [9, 10) out of bounds for length 5" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: Range [9, 10) out of bounds for length 5
->>>>>>> 695217ff8aff1ca36429a51fe4f29b359c05ac8c:06-Code/AirportTaxiSchedulingV3.1.0 last/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
 	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
 	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
 	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
@@ -105,19 +74,7 @@
 	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4602)
 	at java.base/java.lang.String.substring(String.java:2715)
 	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:26)
-<<<<<<< HEAD:06-Code/AirportTaxiSchedulingV3.1.0/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
-	at ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.testIdValidation(ValidationTest.java:43)
-=======
-=======
-  <testcase classname="ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest" name="testIdValidation" time="0.042">
-    <error message="For input string: &quot;h&quot;" type="java.lang.NumberFormatException">java.lang.NumberFormatException: For input string: &quot;h&quot;
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-	at java.base/java.lang.Integer.parseInt(Integer.java:665)
-	at java.base/java.lang.Integer.parseInt(Integer.java:781)
-	at ec.edu.espe.AirporTaxiScheduling.utils.Validation.IdValidation(Validation.java:11)
->>>>>>> c229f949d3e34db51a558e807d2e9e8b1811d376
 	at ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.testIdValidation(ValidationTest.java:48)
->>>>>>> 695217ff8aff1ca36429a51fe4f29b359c05ac8c:06-Code/AirportTaxiSchedulingV3.1.0 last/target/surefire-reports/TEST-ec.edu.espe.AirporTaxiScheduling.utils.ValidationTest.xml
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)

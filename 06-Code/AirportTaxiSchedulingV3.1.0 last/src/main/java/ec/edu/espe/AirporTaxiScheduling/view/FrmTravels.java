@@ -47,8 +47,7 @@ public class FrmTravels extends javax.swing.JFrame {
           TaxiDriver taxiDriver = new TaxiDriver();
           ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
-          String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
-          String databaseName = "AirportTaxiScheduling";
+          
           String collectionName = "Travels";
 
           boolean travelerPayed;
@@ -518,7 +517,7 @@ public class FrmTravels extends javax.swing.JFrame {
                                         Traveler traveler1 = new Traveler();
                                         idTraveler = Generator.obtainIdTraveler(cmbTraveler.getSelectedItem().toString());
                                         traveler1 = TravelerdbController.findDocumentdb(traveler, idTraveler);
-                                        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                                        dataBaseManager = TraveldbController.connectToDatabase( dataBaseManager);
                                         TraveldbController.load(travels, dataBaseManager.getDatabase(), collectionName);
                                         travel = new Travel(Generator.generateId(), cmbDriver.getSelectedItem().toString(), idTraveler, cmbTraveler.getSelectedItem().toString(), txtAddress.getText(), jdtechDateofOcurrence.getDate(), Float.parseFloat(lblPrice.getText()), txtaAnnotation.getText(), btngPayed.isSelected(rbtnPayed.getModel()));
                                       
@@ -815,7 +814,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
           private void viewTravels() {
                     cleanForm();
-                    dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                    dataBaseManager = TraveldbController.connectToDatabase( dataBaseManager);
                     ArrayList<Travel> travelsView = new ArrayList<Travel>();
                     Travel travelView = new Travel();
                     String[] titles = {"Id", "Conductor", "Pasajero", "Direccion", "Fecha", "Precio", "Pagado", "Nota"};
@@ -881,7 +880,7 @@ public class FrmTravels extends javax.swing.JFrame {
           }
 
           private void loadTravelerCombo() {
-                    dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                    dataBaseManager = TraveldbController.connectToDatabase(dataBaseManager);
                     DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
                     TravelerdbController.loadFromDatabase(travelers, dataBaseManager.getDatabase(), "Travelers");
                     comboBoxModel.addElement("");
@@ -899,7 +898,7 @@ public class FrmTravels extends javax.swing.JFrame {
 
           private void loadDriverCombo() {
 
-                    dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+                    dataBaseManager = TraveldbController.connectToDatabase(dataBaseManager);
                     DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel();
                     TaxiDriverdbController.loadFromDatabase(taxiDrivers, dataBaseManager.getDatabase(), "TaxiDriver");
                     comboBoxModel.addElement("");

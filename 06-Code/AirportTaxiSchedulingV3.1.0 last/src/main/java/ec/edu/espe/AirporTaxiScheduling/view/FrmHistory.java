@@ -31,8 +31,7 @@ public class FrmHistory extends javax.swing.JFrame {
     TaxiDriver taxiDriver = new TaxiDriver();
     ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
-    String uri = "mongodb+srv://lyaranga:tortilla@espe2210-oopsw7996.77wv341.mongodb.net/?retryWrites=true&w=majority";
-    String databaseName = "AirportTaxiScheduling";
+    
     String collectionName = "Travels";
 
     /**
@@ -382,7 +381,7 @@ public class FrmHistory extends javax.swing.JFrame {
 
     private void viewTravels(int idFinder) {
         
-        dataBaseManager = TraveldbController.connectToDatabase(uri, databaseName, dataBaseManager);
+        dataBaseManager = TraveldbController.connectToDatabase( dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
         Travel travelView = new Travel();
         String[] titles = {"Id Viaje", "Conductor", "Direccion"};

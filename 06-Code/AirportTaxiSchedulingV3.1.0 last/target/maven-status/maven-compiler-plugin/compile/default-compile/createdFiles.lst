@@ -42,7 +42,6 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmReminder$6.class
 ec\edu\espe\AirporTaxiScheduling\utils\Generator.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmHistory$5.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$10.class
-ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$20.class
 ec\edu\espe\AirporTaxiScheduling\view\AirportTaxiScheduling$1.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$19.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTravels$5.class
@@ -89,6 +88,7 @@ ec\edu\espe\AirporTaxiScheduling\view\FrmUpdateTraveler.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmTarif$9.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUserRegister$9.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmAddTraveler$7.class
+ec\edu\espe\AirporTaxiScheduling\utils\FileManager$5.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmViewTraveler$8.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmUncollectedTravel$3.class
 ec\edu\espe\AirporTaxiScheduling\view\FrmDeleteTaxiDriver$3.class
