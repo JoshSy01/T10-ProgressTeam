@@ -12,7 +12,6 @@ public abstract class PendingTask {
 
      protected boolean payed;
     protected float travelPrice;
-    private Travel travel;
     private ArrayList subsTravelers=new ArrayList();
 
     public PendingTask() {
@@ -27,9 +26,9 @@ public abstract class PendingTask {
           }
 
           public void notifySubsTraveler(Object args) {
-                    Iterator i = subsTravelers.iterator();
-                    while (i.hasNext()) {
-                              ISubscribedTraveler subsTraveler = (ISubscribedTraveler) i.next();
+                    Iterator iterator = subsTravelers.iterator();
+                    while (iterator.hasNext()) {
+                              ISubscribedTraveler subsTraveler = (ISubscribedTraveler) iterator.next();
                               subsTraveler.notifyUncollectedTravels(this, args);
                     }
           }

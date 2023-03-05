@@ -68,7 +68,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="btnBACK" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
@@ -95,17 +95,17 @@
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="rb7" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbCarnival" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbHalloween" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbBirthDay" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbNewYear" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="rb6" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb4" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb9" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="rb8" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbEaster" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbChristmas" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbOther" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="rbMay24th" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -155,7 +155,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="btnBACK" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -190,23 +190,23 @@
                           <Component id="jSeparator2" min="-2" pref="3" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rb3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbBirthDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbChristmas" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rb5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbNewYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbEaster" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rb7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbCarnival" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbMay24th" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rb9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbOther" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbHalloween" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -245,12 +245,12 @@
             <Property name="text" type="java.lang.String" value="RECORDATORIO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnBACK">
+        <Component class="javax.swing.JButton" name="btnBack">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;REGRESAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBACKActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtId">
@@ -372,7 +372,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btmFindActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb3">
+        <Component class="javax.swing.JRadioButton" name="rbBirthDay">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -380,10 +380,10 @@
             <Property name="text" type="java.lang.String" value="Cumplea&#xf1;os"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBirthDayActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb4">
+        <Component class="javax.swing.JRadioButton" name="rbChristmas">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -391,10 +391,10 @@
             <Property name="text" type="java.lang.String" value="Navidad"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbChristmasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb5">
+        <Component class="javax.swing.JRadioButton" name="rbNewYear">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -402,10 +402,10 @@
             <Property name="text" type="java.lang.String" value="A&#xf1;o nuevo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbNewYearActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb6">
+        <Component class="javax.swing.JRadioButton" name="rbEaster">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -413,7 +413,7 @@
             <Property name="text" type="java.lang.String" value="Semana Santa"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb7">
+        <Component class="javax.swing.JRadioButton" name="rbCarnival">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -421,10 +421,10 @@
             <Property name="text" type="java.lang.String" value="Carnaval"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbCarnivalActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb8">
+        <Component class="javax.swing.JRadioButton" name="rbMay24th">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -432,7 +432,7 @@
             <Property name="text" type="java.lang.String" value="24 de Mayo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb9">
+        <Component class="javax.swing.JRadioButton" name="rbOther">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -440,10 +440,10 @@
             <Property name="text" type="java.lang.String" value="Otro"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb9ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbOtherActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="rb10">
+        <Component class="javax.swing.JRadioButton" name="rbHalloween">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grpReminders"/>
@@ -451,7 +451,7 @@
             <Property name="text" type="java.lang.String" value="Halloween"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb10ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbHalloweenActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btmClean">

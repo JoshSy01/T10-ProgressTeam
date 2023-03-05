@@ -43,13 +43,13 @@ public class FrmAccounting extends javax.swing.JFrame {
           private void initComponents() {
 
                     pnlAccounting = new javax.swing.JPanel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     jLabel1 = new javax.swing.JLabel();
                     jScrollPane3 = new javax.swing.JScrollPane();
                     jtblTravels = new javax.swing.JTable();
                     btnWiewTravels = new javax.swing.JButton();
                     jLabel2 = new javax.swing.JLabel();
-                    txtTotal = new javax.swing.JTextField();
+                    txtTotalPayed = new javax.swing.JTextField();
                     jLabel3 = new javax.swing.JLabel();
                     txtOutstanding = new javax.swing.JTextField();
                     btmCreatePDF = new javax.swing.JButton();
@@ -60,10 +60,10 @@ public class FrmAccounting extends javax.swing.JFrame {
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setResizable(false);
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -96,10 +96,10 @@ public class FrmAccounting extends javax.swing.JFrame {
 
                     jLabel2.setText("Total de dinero cobrado:");
 
-                    txtTotal.setEditable(false);
-                    txtTotal.addActionListener(new java.awt.event.ActionListener() {
+                    txtTotalPayed.setEditable(false);
+                    txtTotalPayed.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        txtTotalActionPerformed(evt);
+                                        txtTotalPayedActionPerformed(evt);
                               }
                     });
 
@@ -132,7 +132,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(pnlAccountingLayout.createSequentialGroup()
                                                             .addGap(25, 25, 25)
-                                                            .addComponent(btnBACK)
+                                                            .addComponent(btnBack)
                                                             .addGap(189, 189, 189)
                                                             .addComponent(jLabel1))
                                                   .addGroup(pnlAccountingLayout.createSequentialGroup()
@@ -144,7 +144,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                                                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlAccountingLayout.createSequentialGroup()
                                                                                           .addComponent(jLabel2)
                                                                                           .addGap(20, 20, 20)
-                                                                                          .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                          .addComponent(txtTotalPayed, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                           .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                                           .addComponent(btmCreatePDF, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlAccountingLayout.createSequentialGroup()
@@ -165,7 +165,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                               .addGroup(pnlAccountingLayout.createSequentialGroup()
                                         .addGap(33, 33, 33)
                                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                  .addComponent(btnBACK)
+                                                  .addComponent(btnBack)
                                                   .addComponent(jLabel1))
                                         .addGap(61, 61, 61)
                                         .addComponent(btnWiewTravels)
@@ -174,7 +174,7 @@ public class FrmAccounting extends javax.swing.JFrame {
                                         .addGap(33, 33, 33)
                                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                   .addComponent(jLabel2)
-                                                  .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                  .addComponent(txtTotalPayed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                                         .addGroup(pnlAccountingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountingLayout.createSequentialGroup()
@@ -207,12 +207,12 @@ public class FrmAccounting extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void jtblTravelsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblTravelsMouseClicked
 
@@ -243,7 +243,7 @@ public class FrmAccounting extends javax.swing.JFrame {
         outsBalance = AccountingController.calculateTotal(outsValues);
         lostPercent = AccountingController.calculateLostPercent(totalValue, outsBalance);
         viewTravels();
-        txtTotal.setText(Float.toString(totalValue));
+        txtTotalPayed.setText(Float.toString(totalValue));
         txtOutstanding.setText(Float.toString(outsBalance));
         txtflostPercent.setText(Float.toString(lostPercent));
         TableRowSorter<TableModel> sorter = new TableRowSorter<>(jtblTravels.getModel());
@@ -252,15 +252,15 @@ public class FrmAccounting extends javax.swing.JFrame {
         jtblTravels.repaint();
     }//GEN-LAST:event_btnWiewTravelsActionPerformed
 
-    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
-    }//GEN-LAST:event_txtTotalActionPerformed
+    private void txtTotalPayedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalPayedActionPerformed
+    }//GEN-LAST:event_txtTotalPayedActionPerformed
 
     private void txtOutstandingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOutstandingActionPerformed
     }//GEN-LAST:event_txtOutstandingActionPerformed
 
     private void btmCreatePDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmCreatePDFActionPerformed
         MessageFormat header = new MessageFormat("Accouting of travels");
-        MessageFormat footer = new MessageFormat(" Total: " + txtTotal.getText() + " Outstanding Balance: " + txtOutstanding.getText() + " page {0,number,integer}");
+        MessageFormat footer = new MessageFormat(" Total: " + txtTotalPayed.getText() + " Outstanding Balance: " + txtOutstanding.getText() + " page {0,number,integer}");
 
         try {
             jtblTravels.print(JTable.PrintMode.FIT_WIDTH, header, footer);
@@ -313,7 +313,7 @@ public class FrmAccounting extends javax.swing.JFrame {
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
           private javax.swing.JButton btmCreatePDF;
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.JButton btnWiewTravels;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;
@@ -324,7 +324,7 @@ public class FrmAccounting extends javax.swing.JFrame {
           private javax.swing.JTable jtblTravels;
           private javax.swing.JPanel pnlAccounting;
           private javax.swing.JTextField txtOutstanding;
-          private javax.swing.JTextField txtTotal;
+          private javax.swing.JTextField txtTotalPayed;
           private javax.swing.JTextField txtflostPercent;
           // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,5 @@
 package ec.edu.espe.AirporTaxiScheduling.controller;
 
-import ec.edu.espe.AirporTaxiScheduling.controller.ISubscribedTraveler;
 import ec.edu.espe.AirporTaxiScheduling.model.PendingTask;
 import java.util.Properties;
 import javax.mail.Message;
@@ -33,10 +32,10 @@ public class SubscribedTraveler implements ISubscribedTraveler {
         String emailTo;
         String subject;
         String content = "";
-        Properties mProperties;
-        Session mSession;
-        MimeMessage mEmail;
-        mProperties = new Properties();
+        Properties emailProperties;
+        Session emailSession;
+        MimeMessage emailMessage;
+        emailProperties = new Properties();
         subject = "notified observer " + name;
         emailTo = email;
         if (args instanceof Boolean) {
@@ -48,12 +47,12 @@ public class SubscribedTraveler implements ISubscribedTraveler {
 
         }
 
-        mProperties.put("mail.smtp.host", "smtp.gmail.com");
-        mProperties.put("mail.smtp.port", "587");
-        mProperties.put("mail.smtp.auth", "true");
-        mProperties.put("mail.smtp.starttls.enable", "true");
+        emailProperties.put("mail.smtp.host", "smtp.gmail.com");
+        emailProperties.put("mail.smtp.port", "587");
+        emailProperties.put("mail.smtp.auth", "true");
+        emailProperties.put("mail.smtp.starttls.enable", "true");
 
-        mSession = Session.getDefaultInstance(mProperties, new javax.mail.Authenticator() {
+        emailSession = Session.getDefaultInstance(emailProperties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
 
                 return new PasswordAuthentication(emailFrom, passwordFrom);
@@ -61,11 +60,11 @@ public class SubscribedTraveler implements ISubscribedTraveler {
             }
         });
         try {
-            mEmail = new MimeMessage(mSession);
-            mEmail.addRecipient(Message.RecipientType.TO, new InternetAddress(emailTo, true));
-            mEmail.setSubject(subject);
-            mEmail.setText(content);
-            Transport.send(mEmail);
+            emailMessage = new MimeMessage(emailSession);
+            emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailTo, true));
+            emailMessage.setSubject(subject);
+            emailMessage.setText(content);
+            Transport.send(emailMessage);
 
             JOptionPane.showMessageDialog(null, "Correo enviado");
 

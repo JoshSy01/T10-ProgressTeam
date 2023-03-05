@@ -48,7 +48,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
                     btnPay = new javax.swing.JButton();
                     jLabel2 = new javax.swing.JLabel();
                     lblTaxiDriver = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     jLabel3 = new javax.swing.JLabel();
 
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,10 +80,10 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
 
                     jLabel2.setText("Conductor:");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -96,7 +96,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
                               jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                               .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(30, 30, 30)
-                                        .addComponent(btnBACK)
+                                        .addComponent(btnBack)
                                         .addGap(229, 229, 229)
                                         .addComponent(jLabel3)
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -125,7 +125,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                       .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(btnBACK)
+                                                                                .addComponent(btnBack)
                                                                                 .addGap(15, 15, 15))
                                                                       .addGroup(jPanel1Layout.createSequentialGroup()
                                                                                 .addComponent(jLabel3)
@@ -189,12 +189,12 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
               lblTaxiDriver.setText(jtblTravels.getValueAt(row, 1).toString());
     }//GEN-LAST:event_jtblTravelsMouseClicked
 
-          private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+          private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
                     AirportTaxiScheduling airportTaxiScheduling;
                     airportTaxiScheduling = new AirportTaxiScheduling();
                     this.setVisible(false);
                     airportTaxiScheduling.setVisible(true);
-          }//GEN-LAST:event_btnBACKActionPerformed
+          }//GEN-LAST:event_btnBackActionPerformed
 
           /**
            * @param args the command line arguments
@@ -230,7 +230,7 @@ public class FrmUncollectedTravel extends javax.swing.JFrame {
           }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.JButton btnPay;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;

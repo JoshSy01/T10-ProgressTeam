@@ -40,28 +40,28 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
                     buttonGroup1 = new javax.swing.ButtonGroup();
                     jLabel1 = new javax.swing.JLabel();
-                    jButton1 = new javax.swing.JButton();
+                    btBack = new javax.swing.JButton();
                     label7 = new java.awt.Label();
-                    bt2 = new javax.swing.JButton();
+                    btFind = new javax.swing.JButton();
                     label3 = new java.awt.Label();
                     txt2 = new javax.swing.JTextField();
-                    sp3 = new javax.swing.JSpinner();
+                    spMonth = new javax.swing.JSpinner();
                     jLabel3 = new javax.swing.JLabel();
                     label2 = new java.awt.Label();
-                    sp1 = new javax.swing.JSpinner();
-                    txt0 = new javax.swing.JTextField();
+                    spDay = new javax.swing.JSpinner();
+                    txtId = new javax.swing.JTextField();
                     label4 = new java.awt.Label();
-                    txt1 = new javax.swing.JTextField();
+                    txtNameTraveler = new javax.swing.JTextField();
                     label5 = new java.awt.Label();
                     jLabel4 = new javax.swing.JLabel();
-                    sp2 = new javax.swing.JSpinner();
+                    spYear = new javax.swing.JSpinner();
                     jLabel2 = new javax.swing.JLabel();
-                    txt3 = new javax.swing.JTextField();
-                    bt4 = new javax.swing.JButton();
-                    bt5 = new javax.swing.JButton();
+                    txtEmail = new javax.swing.JTextField();
+                    btUpdate = new javax.swing.JButton();
+                    btClean = new javax.swing.JButton();
                     jScrollPane1 = new javax.swing.JScrollPane();
                     tableOfTravelers = new javax.swing.JTable();
-                    bt1 = new javax.swing.JButton();
+                    btShowAllTravelers = new javax.swing.JButton();
                     tbHotmail = new javax.swing.JToggleButton();
                     tbGmail = new javax.swing.JToggleButton();
                     jLabel13 = new javax.swing.JLabel();
@@ -73,20 +73,20 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
                     jLabel1.setText("ACTUALIZAR PASAJERO");
 
-                    jButton1.setText("<REGRESAR");
-                    jButton1.addActionListener(new java.awt.event.ActionListener() {
+                    btBack.setText("<REGRESAR");
+                    btBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        jButton1ActionPerformed(evt);
+                                        btBackActionPerformed(evt);
                               }
                     });
 
                     label7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
                     label7.setText("Cumpleaños");
 
-                    bt2.setText("ENCONTRAR");
-                    bt2.addActionListener(new java.awt.event.ActionListener() {
+                    btFind.setText("ENCONTRAR");
+                    btFind.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        bt2ActionPerformed(evt);
+                                        btFindActionPerformed(evt);
                               }
                     });
 
@@ -108,13 +108,13 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                               }
                     });
 
-                    sp3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                    sp3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
-                    sp3.setToolTipText("");
-                    sp3.setEnabled(false);
-                    sp3.addKeyListener(new java.awt.event.KeyAdapter() {
+                    spMonth.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                    spMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+                    spMonth.setToolTipText("");
+                    spMonth.setEnabled(false);
+                    spMonth.addKeyListener(new java.awt.event.KeyAdapter() {
                               public void keyTyped(java.awt.event.KeyEvent evt) {
-                                        sp3KeyTyped(evt);
+                                        spMonthKeyTyped(evt);
                               }
                     });
 
@@ -123,45 +123,45 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                     label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
                     label2.setText("Id: ");
 
-                    sp1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                    sp1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
-                    sp1.setToolTipText("");
-                    sp1.setEnabled(false);
-                    sp1.addKeyListener(new java.awt.event.KeyAdapter() {
+                    spDay.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                    spDay.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+                    spDay.setToolTipText("");
+                    spDay.setEnabled(false);
+                    spDay.addKeyListener(new java.awt.event.KeyAdapter() {
                               public void keyTyped(java.awt.event.KeyEvent evt) {
-                                        sp1KeyTyped(evt);
+                                        spDayKeyTyped(evt);
                               }
                     });
 
-                    txt0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                    txt0.setToolTipText("Ingress for create traveler, search traveler or delete traveler :)");
-                    txt0.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-                    txt0.addActionListener(new java.awt.event.ActionListener() {
+                    txtId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtId.setToolTipText("Ingress for create traveler, search traveler or delete traveler :)");
+                    txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtId.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        txt0ActionPerformed(evt);
+                                        txtIdActionPerformed(evt);
                               }
                     });
-                    txt0.addKeyListener(new java.awt.event.KeyAdapter() {
+                    txtId.addKeyListener(new java.awt.event.KeyAdapter() {
                               public void keyTyped(java.awt.event.KeyEvent evt) {
-                                        txt0KeyTyped(evt);
+                                        txtIdKeyTyped(evt);
                               }
                     });
 
                     label4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
                     label4.setText("Numero de telefono del Pasajero");
 
-                    txt1.setEditable(false);
-                    txt1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                    txt1.setToolTipText("First the name, later the last name");
-                    txt1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-                    txt1.addActionListener(new java.awt.event.ActionListener() {
+                    txtNameTraveler.setEditable(false);
+                    txtNameTraveler.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtNameTraveler.setToolTipText("First the name, later the last name");
+                    txtNameTraveler.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtNameTraveler.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        txt1ActionPerformed(evt);
+                                        txtNameTravelerActionPerformed(evt);
                               }
                     });
-                    txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+                    txtNameTraveler.addKeyListener(new java.awt.event.KeyAdapter() {
                               public void keyTyped(java.awt.event.KeyEvent evt) {
-                                        txt1KeyTyped(evt);
+                                        txtNameTravelerKeyTyped(evt);
                               }
                     });
 
@@ -170,43 +170,43 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
 
                     jLabel4.setText("YEAR");
 
-                    sp2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                    sp2.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
-                    sp2.setToolTipText("");
-                    sp2.setEnabled(false);
-                    sp2.addKeyListener(new java.awt.event.KeyAdapter() {
+                    spYear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                    spYear.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2100, 1));
+                    spYear.setToolTipText("");
+                    spYear.setEnabled(false);
+                    spYear.addKeyListener(new java.awt.event.KeyAdapter() {
                               public void keyTyped(java.awt.event.KeyEvent evt) {
-                                        sp2KeyTyped(evt);
+                                        spYearKeyTyped(evt);
                               }
                     });
 
                     jLabel2.setText("MONTH");
 
-                    txt3.setEditable(false);
-                    txt3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                    txt3.setToolTipText("");
-                    txt3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-                    txt3.addActionListener(new java.awt.event.ActionListener() {
+                    txtEmail.setEditable(false);
+                    txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                    txtEmail.setToolTipText("");
+                    txtEmail.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+                    txtEmail.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        txt3ActionPerformed(evt);
+                                        txtEmailActionPerformed(evt);
                               }
                     });
 
-                    bt4.setText("ACTUALIZAR");
-                    bt4.setEnabled(false);
-                    bt4.setFocusPainted(false);
-                    bt4.setFocusable(false);
-                    bt4.setOpaque(true);
-                    bt4.addActionListener(new java.awt.event.ActionListener() {
+                    btUpdate.setText("ACTUALIZAR");
+                    btUpdate.setEnabled(false);
+                    btUpdate.setFocusPainted(false);
+                    btUpdate.setFocusable(false);
+                    btUpdate.setOpaque(true);
+                    btUpdate.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        bt4ActionPerformed(evt);
+                                        btUpdateActionPerformed(evt);
                               }
                     });
 
-                    bt5.setText("LIMPIAR");
-                    bt5.addActionListener(new java.awt.event.ActionListener() {
+                    btClean.setText("LIMPIAR");
+                    btClean.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        bt5ActionPerformed(evt);
+                                        btCleanActionPerformed(evt);
                               }
                     });
 
@@ -240,10 +240,10 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                     });
                     jScrollPane1.setViewportView(tableOfTravelers);
 
-                    bt1.setText("Mostrar a todos los Pasajeros");
-                    bt1.addActionListener(new java.awt.event.ActionListener() {
+                    btShowAllTravelers.setText("Mostrar a todos los Pasajeros");
+                    btShowAllTravelers.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        bt1ActionPerformed(evt);
+                                        btShowAllTravelersActionPerformed(evt);
                               }
                     });
 
@@ -282,7 +282,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                               layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                               .addGroup(layout.createSequentialGroup()
                                         .addGap(26, 26, 26)
-                                        .addComponent(jButton1)
+                                        .addComponent(btBack)
                                         .addGap(136, 136, 136)
                                         .addComponent(jLabel1)
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -294,17 +294,17 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                                                       .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(58, 58, 58)
-                                                                                .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(btFind, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                       .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(txtNameTraveler, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                .addComponent(btUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                             .addGap(14, 14, 14))
                                                   .addGroup(layout.createSequentialGroup()
                                                             .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,7 +320,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                                                                 .addGap(87, 87, 87)
                                                                                 .addComponent(jLabel14))
                                                                       .addGroup(layout.createSequentialGroup()
-                                                                                .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(18, 18, 18)
                                                                                 .addComponent(lbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                             .addGap(0, 138, Short.MAX_VALUE))
@@ -338,21 +338,21 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                                                                           .addGroup(layout.createSequentialGroup()
                                                                                                     .addGap(30, 30, 30)
                                                                                                     .addComponent(jLabel3))
-                                                                                          .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                          .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                           .addGroup(layout.createSequentialGroup()
                                                                                                     .addGap(80, 80, 80)
                                                                                                     .addComponent(jLabel2))
                                                                                           .addGroup(layout.createSequentialGroup()
                                                                                                     .addGap(65, 65, 65)
-                                                                                                    .addComponent(sp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                    .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                                 .addGap(97, 97, 97)
                                                                                 .addComponent(jLabel4))
                                                                       .addGroup(layout.createSequentialGroup()
                                                                                 .addGap(393, 393, 393)
-                                                                                .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                       .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                      .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                      .addComponent(btShowAllTravelers, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     );
                     layout.setVerticalGroup(
@@ -363,20 +363,20 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                                   .addGroup(layout.createSequentialGroup()
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                       .addComponent(jLabel1)
-                                                                      .addComponent(jButton1))
+                                                                      .addComponent(btBack))
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                                       .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                       .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(txt0, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(bt2))))
-                                                  .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(btFind))))
+                                                  .addComponent(btClean, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addComponent(label3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                            .addComponent(txtNameTraveler, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(btUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                   .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -401,18 +401,18 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                                                                                           .addComponent(jLabel4))
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                          .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                          .addComponent(sp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                          .addComponent(sp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                          .addComponent(spDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                          .addComponent(spYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                          .addComponent(spMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                       .addGroup(layout.createSequentialGroup()
                                                                                 .addGap(9, 9, 9)
                                                                                 .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(bt1))
+                                                            .addComponent(btShowAllTravelers))
                                                   .addGroup(layout.createSequentialGroup()
                                                             .addGap(3, 3, 3)
                                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                      .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                      .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                       .addComponent(lbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,89 +423,89 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
               AirportTaxiScheduling airportTaxiScheduling;
               airportTaxiScheduling = new AirportTaxiScheduling();
               this.setVisible(false);
               airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btBackActionPerformed
 
-    private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
-              if (txt0.getText().isEmpty()) {
+    private void btFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFindActionPerformed
+              if (txtId.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
               } else {
-                        int takeId = Integer.valueOf(txt0.getText());
+                        int takeId = Integer.valueOf(txtId.getText());
                         Traveler traveler = new Traveler();
                         traveler = TravelerdbController.findDocumentdb(traveler, takeId);
                         if (traveler.getPhoneNumber() != 0) {
-                                  txt1.setText(traveler.getName());
+                                  txtNameTraveler.setText(traveler.getName());
                                   txt2.setText(Long.toString(traveler.getPhoneNumber()));
                                   if (traveler.getMail().contains("@gmail.com") == true) {
-                                            txt3.setText(traveler.getMail().replaceAll("@gmail.com", ""));
+                                            txtEmail.setText(traveler.getMail().replaceAll("@gmail.com", ""));
                                             tbGmail.setSelected(true);
                                             tbHotmail.setSelected(false);
                                   } else if (traveler.getMail().contains("@hotmail.com")) {
-                                            txt3.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
+                                            txtEmail.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
                                             tbGmail.setSelected(false);
                                             tbHotmail.setSelected(true);
                                   } else {
-                                            txt3.setText("");
+                                            txtEmail.setText("");
                                   }
-                                  sp1.setValue(traveler.getBirthdayDay());
-                                  sp2.setValue(traveler.getYear());
-                                  sp3.setValue(traveler.getBirthdayMonth());
-                                  bt4.setEnabled(true);
-                                  txt1.setEditable(true);
+                                  spDay.setValue(traveler.getBirthdayDay());
+                                  spYear.setValue(traveler.getYear());
+                                  spMonth.setValue(traveler.getBirthdayMonth());
+                                  btUpdate.setEnabled(true);
+                                  txtNameTraveler.setEditable(true);
                                   txt2.setEditable(true);
-                                  txt3.setEditable(true);
-                                  sp1.setEnabled(true);
-                                  sp2.setEnabled(true);
-                                  sp3.setEnabled(true);
+                                  txtEmail.setEditable(true);
+                                  spDay.setEnabled(true);
+                                  spYear.setEnabled(true);
+                                  spMonth.setEnabled(true);
                                   tbGmail.setEnabled(true);
                                   tbHotmail.setEnabled(true);
-                                  txt0.setEditable(false);
-                                  bt2.setEnabled(false);
+                                  txtId.setEditable(false);
+                                  btFind.setEnabled(false);
                                   lbEmail.setEnabled(true);
                         } else {
                                   cleanPanel();
                         }
 
               }
-    }//GEN-LAST:event_bt2ActionPerformed
+    }//GEN-LAST:event_btFindActionPerformed
 
           private void findTable(int id) {
 
                     Traveler traveler = new Traveler();
                     traveler = TravelerdbController.findDocumentdb(traveler, id);
                     if (traveler.getPhoneNumber() != 0) {
-                              txt0.setText(String.valueOf(id));
-                              txt1.setText(traveler.getName());
+                              txtId.setText(String.valueOf(id));
+                              txtNameTraveler.setText(traveler.getName());
                               txt2.setText(Long.toString(traveler.getPhoneNumber()));
                               if (traveler.getMail().contains("@gmail.com") == true) {
-                                        txt3.setText(traveler.getMail().replaceAll("@gmail.com", ""));
+                                        txtEmail.setText(traveler.getMail().replaceAll("@gmail.com", ""));
                                         tbGmail.setSelected(true);
                                         tbHotmail.setSelected(false);
                               } else if (traveler.getMail().contains("@hotmail.com")) {
-                                        txt3.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
+                                        txtEmail.setText(traveler.getMail().replaceAll("@hotmail.com", ""));
                                         tbGmail.setSelected(false);
                                         tbHotmail.setSelected(true);
                               } else {
-                                        txt3.setText("");
+                                        txtEmail.setText("");
                               }
-                              sp1.setValue(traveler.getBirthdayDay());
-                              sp2.setValue(traveler.getYear());
-                              sp3.setValue(traveler.getBirthdayMonth());
-                              bt4.setEnabled(true);
-                              txt1.setEditable(true);
+                              spDay.setValue(traveler.getBirthdayDay());
+                              spYear.setValue(traveler.getYear());
+                              spMonth.setValue(traveler.getBirthdayMonth());
+                              btUpdate.setEnabled(true);
+                              txtNameTraveler.setEditable(true);
                               txt2.setEditable(true);
-                              txt3.setEditable(true);
-                              sp1.setEnabled(true);
-                              sp2.setEnabled(true);
-                              sp3.setEnabled(true);
+                              txtEmail.setEditable(true);
+                              spDay.setEnabled(true);
+                              spYear.setEnabled(true);
+                              spMonth.setEnabled(true);
                               tbGmail.setEnabled(true);
                               tbHotmail.setEnabled(true);
-                              txt0.setEditable(false);
-                              bt2.setEnabled(false);
+                              txtId.setEditable(false);
+                              btFind.setEnabled(false);
                     } else {
                               cleanPanel();
                     }
@@ -525,7 +525,7 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
               }
     }//GEN-LAST:event_txt2KeyTyped
 
-    private void sp3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp3KeyTyped
+    private void spMonthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spMonthKeyTyped
               int validNumber = evt.getKeyChar();
               boolean number = validNumber >= 48 && validNumber <= 57;
               if (!number) {
@@ -534,9 +534,9 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
               if (txt2.getText().length() >= 2) {
                         evt.consume();
               }
-    }//GEN-LAST:event_sp3KeyTyped
+    }//GEN-LAST:event_spMonthKeyTyped
 
-    private void sp1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp1KeyTyped
+    private void spDayKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spDayKeyTyped
               int validNumber = evt.getKeyChar();
               boolean number = validNumber >= 48 && validNumber <= 57;
               if (!number) {
@@ -545,35 +545,35 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
               if (txt2.getText().length() >= 2) {
                         evt.consume();
               }
-    }//GEN-LAST:event_sp1KeyTyped
+    }//GEN-LAST:event_spDayKeyTyped
 
-    private void txt0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt0ActionPerformed
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
 
-    }//GEN-LAST:event_txt0ActionPerformed
+    }//GEN-LAST:event_txtIdActionPerformed
 
-    private void txt0KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt0KeyTyped
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
               int validNumber = evt.getKeyChar();
               boolean number = validNumber >= 48 && validNumber <= 57;
               if (!number) {
                         evt.consume();
               }
-              if (txt0.getText().length() >= 7) {
+              if (txtId.getText().length() >= 7) {
                         evt.consume();
               }
-    }//GEN-LAST:event_txt0KeyTyped
+    }//GEN-LAST:event_txtIdKeyTyped
 
-    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
-    }//GEN-LAST:event_txt1ActionPerformed
+    private void txtNameTravelerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameTravelerActionPerformed
+    }//GEN-LAST:event_txtNameTravelerActionPerformed
 
-    private void txt1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyTyped
+    private void txtNameTravelerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameTravelerKeyTyped
               int key = evt.getKeyChar();
               boolean letters = (key >= 65 && key <= 90) || (key >= 97 && key <= 122) || (key == 32);
               if (!letters) {
                         evt.consume();
               }
-    }//GEN-LAST:event_txt1KeyTyped
+    }//GEN-LAST:event_txtNameTravelerKeyTyped
 
-    private void sp2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sp2KeyTyped
+    private void spYearKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_spYearKeyTyped
               int validNumber = evt.getKeyChar();
               boolean number = validNumber >= 48 && validNumber <= 57;
               if (!number) {
@@ -582,82 +582,82 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
               if (txt2.getText().length() >= 4) {
                         evt.consume();
               }
-    }//GEN-LAST:event_sp2KeyTyped
+    }//GEN-LAST:event_spYearKeyTyped
 
-    private void txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt3ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
 
-    }//GEN-LAST:event_txt3ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
-              if (txt0.getText().isEmpty() || txt1.getText().isEmpty() || txt2.getText().isEmpty() || txt3.getText().isEmpty()) {
+    private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
+              if (txtId.getText().isEmpty() || txtNameTraveler.getText().isEmpty() || txt2.getText().isEmpty() || txtEmail.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Error, algunos campos estan vacios");
               } else {
                         if (txt2.getText().length() < 9) {
                                   JOptionPane.showMessageDialog(null, "Numero de telefono ingresado esta incorrecto, vuelva a ingresar");
                         } else {
                                   Traveler traveler = new Traveler();
-                                  traveler.setId(Integer.valueOf(txt0.getText()));
-                                  traveler.setName(txt1.getText());
+                                  traveler.setId(Integer.valueOf(txtId.getText()));
+                                  traveler.setName(txtNameTraveler.getText());
                                   traveler.setPhoneNumber(Integer.valueOf(txt2.getText()));
                                   if (tbGmail.isSelected() == true) {
                                             String gmail = "@gmail.com";
-                                            traveler.setMail(txt3.getText() + gmail);
+                                            traveler.setMail(txtEmail.getText() + gmail);
                                   } else {
                                             String gmail = "@hotmail.com";
-                                            traveler.setMail(txt3.getText() + gmail);
+                                            traveler.setMail(txtEmail.getText() + gmail);
                                   }
-                                  traveler.setBirthdayDay((int) sp1.getValue());
-                                  traveler.setBirthdayMonth((int) sp3.getValue());
-                                  traveler.setYear((int) sp2.getValue());
+                                  traveler.setBirthdayDay((int) spDay.getValue());
+                                  traveler.setBirthdayMonth((int) spMonth.getValue());
+                                  traveler.setYear((int) spYear.getValue());
                                   TravelerdbController.updateDocumentdb(traveler, traveler.getId());
                                   viewAllDocument();
                                   cleanPanel();
                         }
               }
-    }//GEN-LAST:event_bt4ActionPerformed
+    }//GEN-LAST:event_btUpdateActionPerformed
 
           private void cleanPanel() {
-                    bt4.setEnabled(false);
-                    txt0.setText("");
-                    txt1.setText("");
+                    btUpdate.setEnabled(false);
+                    txtId.setText("");
+                    txtNameTraveler.setText("");
                     txt2.setText("");
-                    txt3.setText("");
-                    sp1.setValue(1);
-                    sp3.setValue(1);
-                    sp2.setValue(2000);
-                    txt1.setEditable(false);
+                    txtEmail.setText("");
+                    spDay.setValue(1);
+                    spMonth.setValue(1);
+                    spYear.setValue(2000);
+                    txtNameTraveler.setEditable(false);
                     txt2.setEditable(false);
-                    txt3.setEditable(false);
-                    sp1.setEnabled(false);
-                    sp2.setEnabled(false);
-                    sp3.setEnabled(false);
+                    txtEmail.setEditable(false);
+                    spDay.setEnabled(false);
+                    spYear.setEnabled(false);
+                    spMonth.setEnabled(false);
                     tbGmail.setEnabled(false);
                     tbHotmail.setEnabled(false);
           }
 
-    private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
+    private void btCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCleanActionPerformed
               cleanPanel();
-              txt0.setEditable(true);
-              bt2.setEnabled(true);
-              bt4.setEnabled(false);
-    }//GEN-LAST:event_bt5ActionPerformed
+              txtId.setEditable(true);
+              btFind.setEnabled(true);
+              btUpdate.setEnabled(false);
+    }//GEN-LAST:event_btCleanActionPerformed
 
     private void tableOfTravelersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableOfTravelersMouseClicked
               int id;
               int row = tableOfTravelers.rowAtPoint(evt.getPoint());
               id = Integer.parseInt(tableOfTravelers.getValueAt(row, 0).toString());
               findTable(id);
-              bt2.setEnabled(false);
-              txt0.setEditable(false);
+              btFind.setEnabled(false);
+              txtId.setEditable(false);
     }//GEN-LAST:event_tableOfTravelersMouseClicked
 
-    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+    private void btShowAllTravelersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btShowAllTravelersActionPerformed
               viewAllDocument();
               TableRowSorter<TableModel> sorter = new TableRowSorter<>(tableOfTravelers.getModel());
               sorter.setSortKeys(Collections.singletonList(new RowSorter.SortKey(1, SortOrder.DESCENDING)));
               tableOfTravelers.setRowSorter(sorter);
               tableOfTravelers.repaint();
-    }//GEN-LAST:event_bt1ActionPerformed
+    }//GEN-LAST:event_btShowAllTravelersActionPerformed
 
           private void tbHotmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbHotmailActionPerformed
                     lbEmail.setText("@hotmail.com");
@@ -730,12 +730,12 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
           }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton bt1;
-          private javax.swing.JButton bt2;
-          private javax.swing.JButton bt4;
-          private javax.swing.JButton bt5;
+          private javax.swing.JButton btBack;
+          private javax.swing.JButton btClean;
+          private javax.swing.JButton btFind;
+          private javax.swing.JButton btShowAllTravelers;
+          private javax.swing.JButton btUpdate;
           private javax.swing.ButtonGroup buttonGroup1;
-          private javax.swing.JButton jButton1;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel13;
           private javax.swing.JLabel jLabel14;
@@ -749,15 +749,15 @@ public class FrmUpdateTraveler extends javax.swing.JFrame {
           private java.awt.Label label5;
           private java.awt.Label label7;
           private javax.swing.JLabel lbEmail;
-          private javax.swing.JSpinner sp1;
-          private javax.swing.JSpinner sp2;
-          private javax.swing.JSpinner sp3;
+          private javax.swing.JSpinner spDay;
+          private javax.swing.JSpinner spMonth;
+          private javax.swing.JSpinner spYear;
           private javax.swing.JTable tableOfTravelers;
           private javax.swing.JToggleButton tbGmail;
           private javax.swing.JToggleButton tbHotmail;
-          private javax.swing.JTextField txt0;
-          private javax.swing.JTextField txt1;
           private javax.swing.JTextField txt2;
-          private javax.swing.JTextField txt3;
+          private javax.swing.JTextField txtEmail;
+          private javax.swing.JTextField txtId;
+          private javax.swing.JTextField txtNameTraveler;
           // End of variables declaration//GEN-END:variables
 }

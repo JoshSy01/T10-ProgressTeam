@@ -30,7 +30,7 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     jLabel2 = new javax.swing.JLabel();
                     mnubAirportTaxiScheduling = new javax.swing.JMenuBar();
                     jMenu1 = new javax.swing.JMenu();
-                    mitAbout = new javax.swing.JMenuItem();
+                    miAbout = new javax.swing.JMenuItem();
                     miExit = new javax.swing.JMenuItem();
                     jMenu4 = new javax.swing.JMenu();
                     mitAddTaxiDriver = new javax.swing.JMenuItem();
@@ -86,13 +86,13 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
 
                     jMenu1.setText("Airport Taxi Sheduling");
 
-                    mitAbout.setText("Acerca de");
-                    mitAbout.addActionListener(new java.awt.event.ActionListener() {
+                    miAbout.setText("Acerca de");
+                    miAbout.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        mitAboutActionPerformed(evt);
+                                        miAboutActionPerformed(evt);
                               }
                     });
-                    jMenu1.add(mitAbout);
+                    jMenu1.add(miAbout);
 
                     miExit.setText("Salir");
                     miExit.addActionListener(new java.awt.event.ActionListener() {
@@ -269,13 +269,13 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void mitAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAboutActionPerformed
+    private void miAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAboutActionPerformed
               FrmAbout about;
               about = new FrmAbout();
               about.setVisible(true);
               this.dispose();
 
-    }//GEN-LAST:event_mitAboutActionPerformed
+    }//GEN-LAST:event_miAboutActionPerformed
 
     private void mitAddTravelerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAddTravelerActionPerformed
               // TODO add your handling code here:
@@ -429,8 +429,8 @@ public class AirportTaxiScheduling extends javax.swing.JFrame {
           private javax.swing.JMenuBar jMenuBar1;
           private javax.swing.JMenuItem jMenuItem1;
           private javax.swing.JPanel jPanel1;
+          private javax.swing.JMenuItem miAbout;
           private javax.swing.JMenuItem miExit;
-          private javax.swing.JMenuItem mitAbout;
           private javax.swing.JMenuItem mitAccounting;
           private javax.swing.JMenuItem mitAddTaxiDriver;
           private javax.swing.JMenuItem mitAddTraveler;

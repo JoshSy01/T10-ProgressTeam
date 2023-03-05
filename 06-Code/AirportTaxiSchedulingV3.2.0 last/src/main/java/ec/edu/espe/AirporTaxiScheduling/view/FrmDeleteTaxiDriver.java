@@ -29,7 +29,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
 
                     jPanel1 = new javax.swing.JPanel();
                     jLabel1 = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     txtCIdelete = new javax.swing.JTextField();
                     jLabel2 = new javax.swing.JLabel();
                     btnDelete = new javax.swing.JButton();
@@ -40,10 +40,10 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
                     jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
                     jLabel1.setText("ELIMINAR CONDUCTOR");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -75,7 +75,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(19, 19, 19)
-                                                            .addComponent(btnBACK)
+                                                            .addComponent(btnBack)
                                                             .addGap(18, 18, 18)
                                                             .addComponent(jLabel1))
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
@@ -97,7 +97,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
                               .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(25, 25, 25)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                  .addComponent(btnBACK, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                  .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING)
                                                   .addComponent(jLabel1))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel2)
@@ -123,11 +123,11 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
               AirportTaxiScheduling airportTaxiSheduling = new AirportTaxiScheduling();
               airportTaxiSheduling.setVisible(true);
               this.dispose();
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
               if (txtCIdelete.getText().length() == 10) {
@@ -205,7 +205,7 @@ public class FrmDeleteTaxiDriver extends javax.swing.JFrame {
           }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.JButton btnDelete;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;

@@ -49,13 +49,13 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                     jTable1 = new javax.swing.JTable();
                     jPanel1 = new javax.swing.JPanel();
                     jLabel1 = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     jPanel2 = new javax.swing.JPanel();
                     jScrollPane2 = new javax.swing.JScrollPane();
                     tbFind = new javax.swing.JTable();
                     jLabel2 = new javax.swing.JLabel();
                     txtCI = new javax.swing.JTextField();
-                    jButton1 = new javax.swing.JButton();
+                    btSearch = new javax.swing.JButton();
 
                     jTable1.setModel(new javax.swing.table.DefaultTableModel(
                               new Object [][] {
@@ -76,10 +76,10 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                     jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
                     jLabel1.setText("MOSTRAR CONDUCTOR");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -109,10 +109,10 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
 
                     jLabel2.setText("Ingrese C.L");
 
-                    jButton1.setText("BUSCAR");
-                    jButton1.addActionListener(new java.awt.event.ActionListener() {
+                    btSearch.setText("BUSCAR");
+                    btSearch.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        jButton1ActionPerformed(evt);
+                                        btSearchActionPerformed(evt);
                               }
                     });
 
@@ -126,7 +126,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                                                             .addContainerGap()
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                       .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(btnBACK)
+                                                                                .addComponent(btnBack)
                                                                                 .addGap(248, 248, 248)
                                                                                 .addComponent(jLabel1)
                                                                                 .addGap(28, 28, 28))
@@ -137,7 +137,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                                                                                                     .addGap(54, 54, 54))
                                                                                           .addComponent(txtCI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                                                                    .addComponent(jButton1)
+                                                                                                    .addComponent(btSearch)
                                                                                                     .addGap(36, 36, 36)))
                                                                                 .addGap(81, 81, 81)))
                                                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -151,7 +151,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                               .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(13, 13, 13)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                  .addComponent(btnBACK)
+                                                  .addComponent(btnBack)
                                                   .addComponent(jLabel1))
                                         .addGap(27, 27, 27)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +161,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                             .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                            .addComponent(jButton1)))
+                                                            .addComponent(btSearch)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addContainerGap(19, Short.MAX_VALUE))
@@ -187,13 +187,13 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
               AirportTaxiScheduling airportTaxiSheduling = new AirportTaxiScheduling();
               airportTaxiSheduling.setVisible(true);
               this.dispose();
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSearchActionPerformed
               if (txtCI.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Error, Algunos campos estan vacios, complete los campos");
               } else {
@@ -228,7 +228,7 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
               }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btSearchActionPerformed
 
           /**
            * @param args the command line arguments
@@ -274,8 +274,8 @@ public class FrmViewTaxiDriver extends javax.swing.JFrame {
           }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton btnBACK;
-          private javax.swing.JButton jButton1;
+          private javax.swing.JButton btSearch;
+          private javax.swing.JButton btnBack;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;
           private javax.swing.JPanel jPanel1;

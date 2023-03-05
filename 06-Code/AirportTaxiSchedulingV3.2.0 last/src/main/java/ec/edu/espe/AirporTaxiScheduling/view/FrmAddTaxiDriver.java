@@ -361,9 +361,9 @@ public class FrmAddTaxiDriver extends javax.swing.JFrame {
           }
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
-              char c = evt.getKeyChar();
+              char characterTyped = evt.getKeyChar();
 
-              if ((Character.isLetter(c)) || (Character.isWhitespace(c)) || (Character.isISOControl(c))) {
+              if ((Character.isLetter(characterTyped)) || (Character.isWhitespace(characterTyped)) || (Character.isISOControl(characterTyped))) {
                         txtName.setEditable(true);
               } else {
                         txtName.setEditable(false);

@@ -25,15 +25,15 @@ public class FrmReminder extends javax.swing.JFrame {
     private String subject;
     private String content;
     
-    Properties mProperties;
-    Session mSession;
-    MimeMessage mEmail;
+    Properties emailProperties;
+    Session emailSession;
+    MimeMessage emailMessage;
     /**
      * Creates new form Reminder
      */
     public FrmReminder() {
         initComponents();
-        mProperties = new Properties();
+        emailProperties = new Properties();
     }
 
     private void createEmail(){
@@ -41,13 +41,13 @@ public class FrmReminder extends javax.swing.JFrame {
         subject = lblOption.getText();
         content = txtmailContent.getText();
         
-        mProperties.put("mail.smtp.host", "smtp.gmail.com"); 
-        mProperties.put("mail.smtp.port", "587"); 
-        mProperties.put("mail.smtp.auth", "true"); 
-        mProperties.put("mail.smtp.starttls.enable", "true"); 
+        emailProperties.put("mail.smtp.host", "smtp.gmail.com"); 
+        emailProperties.put("mail.smtp.port", "587"); 
+        emailProperties.put("mail.smtp.auth", "true"); 
+        emailProperties.put("mail.smtp.starttls.enable", "true"); 
     
     
-    mSession = Session.getDefaultInstance(mProperties, new javax.mail.Authenticator() {
+    emailSession = Session.getDefaultInstance(emailProperties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
 
                 return new PasswordAuthentication(emailFrom, passwordFrom);
@@ -55,11 +55,11 @@ public class FrmReminder extends javax.swing.JFrame {
             }
         });
     try{
-            mEmail = new MimeMessage(mSession);
-            mEmail.addRecipient(Message.RecipientType.TO, new InternetAddress(emailTo, true));
-            mEmail.setSubject(subject);
-            mEmail.setText(content);
-            Transport.send(mEmail);
+            emailMessage = new MimeMessage(emailSession);
+            emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(emailTo, true));
+            emailMessage.setSubject(subject);
+            emailMessage.setText(content);
+            Transport.send(emailMessage);
             
             JOptionPane.showMessageDialog(null, "Correo enviado");
 
@@ -81,7 +81,7 @@ public class FrmReminder extends javax.swing.JFrame {
                     grpReminders = new javax.swing.ButtonGroup();
                     jPanel1 = new javax.swing.JPanel();
                     jLabel1 = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     txtId = new javax.swing.JTextField();
                     jLabel10 = new javax.swing.JLabel();
                     jLabel9 = new javax.swing.JLabel();
@@ -98,14 +98,14 @@ public class FrmReminder extends javax.swing.JFrame {
                     jLabel12 = new javax.swing.JLabel();
                     lblMail = new javax.swing.JLabel();
                     btmFind = new javax.swing.JButton();
-                    rb3 = new javax.swing.JRadioButton();
-                    rb4 = new javax.swing.JRadioButton();
-                    rb5 = new javax.swing.JRadioButton();
-                    rb6 = new javax.swing.JRadioButton();
-                    rb7 = new javax.swing.JRadioButton();
-                    rb8 = new javax.swing.JRadioButton();
-                    rb9 = new javax.swing.JRadioButton();
-                    rb10 = new javax.swing.JRadioButton();
+                    rbBirthDay = new javax.swing.JRadioButton();
+                    rbChristmas = new javax.swing.JRadioButton();
+                    rbNewYear = new javax.swing.JRadioButton();
+                    rbEaster = new javax.swing.JRadioButton();
+                    rbCarnival = new javax.swing.JRadioButton();
+                    rbMay24th = new javax.swing.JRadioButton();
+                    rbOther = new javax.swing.JRadioButton();
+                    rbHalloween = new javax.swing.JRadioButton();
                     btmClean = new javax.swing.JButton();
                     btmShow1 = new javax.swing.JButton();
                     lblOption = new javax.swing.JLabel();
@@ -116,10 +116,10 @@ public class FrmReminder extends javax.swing.JFrame {
 
                     jLabel1.setText("RECORDATORIO");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -182,57 +182,57 @@ public class FrmReminder extends javax.swing.JFrame {
                               }
                     });
 
-                    grpReminders.add(rb3);
-                    rb3.setText("Cumpleaños");
-                    rb3.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbBirthDay);
+                    rbBirthDay.setText("Cumpleaños");
+                    rbBirthDay.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb3ActionPerformed(evt);
+                                        rbBirthDayActionPerformed(evt);
                               }
                     });
 
-                    grpReminders.add(rb4);
-                    rb4.setText("Navidad");
-                    rb4.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbChristmas);
+                    rbChristmas.setText("Navidad");
+                    rbChristmas.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb4ActionPerformed(evt);
+                                        rbChristmasActionPerformed(evt);
                               }
                     });
 
-                    grpReminders.add(rb5);
-                    rb5.setText("Año nuevo");
-                    rb5.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbNewYear);
+                    rbNewYear.setText("Año nuevo");
+                    rbNewYear.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb5ActionPerformed(evt);
+                                        rbNewYearActionPerformed(evt);
                               }
                     });
 
-                    grpReminders.add(rb6);
-                    rb6.setText("Semana Santa");
+                    grpReminders.add(rbEaster);
+                    rbEaster.setText("Semana Santa");
 
-                    grpReminders.add(rb7);
-                    rb7.setText("Carnaval");
-                    rb7.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbCarnival);
+                    rbCarnival.setText("Carnaval");
+                    rbCarnival.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb7ActionPerformed(evt);
+                                        rbCarnivalActionPerformed(evt);
                               }
                     });
 
-                    grpReminders.add(rb8);
-                    rb8.setText("24 de Mayo");
+                    grpReminders.add(rbMay24th);
+                    rbMay24th.setText("24 de Mayo");
 
-                    grpReminders.add(rb9);
-                    rb9.setText("Otro");
-                    rb9.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbOther);
+                    rbOther.setText("Otro");
+                    rbOther.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb9ActionPerformed(evt);
+                                        rbOtherActionPerformed(evt);
                               }
                     });
 
-                    grpReminders.add(rb10);
-                    rb10.setText("Halloween");
-                    rb10.addActionListener(new java.awt.event.ActionListener() {
+                    grpReminders.add(rbHalloween);
+                    rbHalloween.setText("Halloween");
+                    rbHalloween.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        rb10ActionPerformed(evt);
+                                        rbHalloweenActionPerformed(evt);
                               }
                     });
 
@@ -275,7 +275,7 @@ public class FrmReminder extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(18, 18, 18)
-                                                            .addComponent(btnBACK)
+                                                            .addComponent(btnBack)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                       .addGroup(jPanel1Layout.createSequentialGroup()
                                                                                 .addGap(208, 208, 208)
@@ -297,16 +297,16 @@ public class FrmReminder extends javax.swing.JFrame {
                                                                                                               .addComponent(btmClean))
                                                                                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                                                                                               .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                        .addComponent(rb7)
-                                                                                                                        .addComponent(rb10)
-                                                                                                                        .addComponent(rb3)
-                                                                                                                        .addComponent(rb5))
+                                                                                                                        .addComponent(rbCarnival)
+                                                                                                                        .addComponent(rbHalloween)
+                                                                                                                        .addComponent(rbBirthDay)
+                                                                                                                        .addComponent(rbNewYear))
                                                                                                               .addGap(59, 59, 59)
                                                                                                               .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                        .addComponent(rb6)
-                                                                                                                        .addComponent(rb4)
-                                                                                                                        .addComponent(rb9)
-                                                                                                                        .addComponent(rb8))))
+                                                                                                                        .addComponent(rbEaster)
+                                                                                                                        .addComponent(rbChristmas)
+                                                                                                                        .addComponent(rbOther)
+                                                                                                                        .addComponent(rbMay24th))))
                                                                                           .addGroup(jPanel1Layout.createSequentialGroup()
                                                                                                     .addComponent(lblOption1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -340,7 +340,7 @@ public class FrmReminder extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(18, 18, 18)
-                                                            .addComponent(btnBACK))
+                                                            .addComponent(btnBack))
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addContainerGap()
                                                             .addComponent(jLabel1)
@@ -369,20 +369,20 @@ public class FrmReminder extends javax.swing.JFrame {
                                                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addGap(26, 26, 26)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                      .addComponent(rb3)
-                                                                      .addComponent(rb4))
+                                                                      .addComponent(rbBirthDay)
+                                                                      .addComponent(rbChristmas))
                                                             .addGap(18, 18, 18)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                      .addComponent(rb5)
-                                                                      .addComponent(rb6))
+                                                                      .addComponent(rbNewYear)
+                                                                      .addComponent(rbEaster))
                                                             .addGap(18, 18, 18)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                      .addComponent(rb7)
-                                                                      .addComponent(rb8))
+                                                                      .addComponent(rbCarnival)
+                                                                      .addComponent(rbMay24th))
                                                             .addGap(18, 18, 18)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                      .addComponent(rb9)
-                                                                      .addComponent(rb10))
+                                                                      .addComponent(rbOther)
+                                                                      .addComponent(rbHalloween))
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                       .addComponent(btmClean, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -420,12 +420,12 @@ public class FrmReminder extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
            AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
         char c = evt.getKeyChar();
@@ -445,25 +445,25 @@ public class FrmReminder extends javax.swing.JFrame {
         }  
     }//GEN-LAST:event_btmFindActionPerformed
 
-    private void rb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb3ActionPerformed
+    private void rbBirthDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBirthDayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb3ActionPerformed
+    }//GEN-LAST:event_rbBirthDayActionPerformed
 
-    private void rb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb5ActionPerformed
+    private void rbNewYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNewYearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb5ActionPerformed
+    }//GEN-LAST:event_rbNewYearActionPerformed
 
-    private void rb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb7ActionPerformed
+    private void rbCarnivalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCarnivalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb7ActionPerformed
+    }//GEN-LAST:event_rbCarnivalActionPerformed
 
-    private void rb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb9ActionPerformed
+    private void rbOtherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbOtherActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb9ActionPerformed
+    }//GEN-LAST:event_rbOtherActionPerformed
 
-    private void rb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb10ActionPerformed
+    private void rbHalloweenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHalloweenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb10ActionPerformed
+    }//GEN-LAST:event_rbHalloweenActionPerformed
 
     private void btmShow1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmShow1ActionPerformed
         String message = null;
@@ -471,35 +471,35 @@ public class FrmReminder extends javax.swing.JFrame {
         int takeId = Integer.valueOf(txtId.getText());
         Traveler traveler = new Traveler();
         traveler = TravelerdbController.findDocumentdb(traveler, takeId);
-        if(rb3.isSelected()){
+        if(rbBirthDay.isSelected()){
             message = "Cumpleaños";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team te enviamos este mensaje para desearte un muy Feliz Cumpleaños y que recuerdes que aquí siempre serás apreciado.";
         }
-        if(rb4.isSelected()){
+        if(rbChristmas.isSelected()){
             message = "Navidad";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle una muy Feliz Navidad y que recuerde que aquí siempre será apreciado.";
         }
-        if(rb5.isSelected()){
+        if(rbNewYear.isSelected()){
             message = "Año nuevo";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Año Nuevo y que recuerde que aquí siempre será apreciado.";
         }
-        if(rb6.isSelected()){
+        if(rbEaster.isSelected()){
             message = "Semana Santa";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle una muy Feliz Semana y que recuerde que aquí siempre será apreciado.";
         }
-        if(rb7.isSelected()){
+        if(rbCarnival.isSelected()){
             message = "Carnaval";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Carnaval y que recuerde que aquí siempre será apreciado.";
         }
-        if(rb8.isSelected()){
+        if(rbMay24th.isSelected()){
             message = "24 de Mayo";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + ", desde Airport Taxi Scheduling, Progress Team le enviamos este mensaje para desearle un muy Feliz Día de la Independencia y que recuerde que aquí siempre será apreciado.";
         }
-        if(rb9.isSelected()){
+        if(rbOther.isSelected()){
             message = "Otros";
             message2 = "";
         }
-        if(rb10.isSelected()){
+        if(rbHalloween.isSelected()){
             message = "Halloween";
             message2 = "¡Hola! Estimado usuario, " + traveler.getName() + " desde Airport Taxi Scheduling, nosotros, el equipo de Progress te enviamos este mensaje para desearte un muy Feliz Halloween y que recuerdes que aquí siempre serás apreciado.";
         }
@@ -522,9 +522,9 @@ public class FrmReminder extends javax.swing.JFrame {
         txtmailContent.setText("");
     }//GEN-LAST:event_btmCancelActionPerformed
 
-    private void rb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb4ActionPerformed
+    private void rbChristmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbChristmasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rb4ActionPerformed
+    }//GEN-LAST:event_rbChristmasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -574,7 +574,7 @@ public class FrmReminder extends javax.swing.JFrame {
           private javax.swing.JButton btmFind;
           private javax.swing.JButton btmSend;
           private javax.swing.JButton btmShow1;
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.ButtonGroup grpReminders;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel10;
@@ -591,14 +591,14 @@ public class FrmReminder extends javax.swing.JFrame {
           private javax.swing.JLabel lblMail;
           private javax.swing.JLabel lblOption;
           private javax.swing.JLabel lblOption1;
-          private javax.swing.JRadioButton rb10;
-          private javax.swing.JRadioButton rb3;
-          private javax.swing.JRadioButton rb4;
-          private javax.swing.JRadioButton rb5;
-          private javax.swing.JRadioButton rb6;
-          private javax.swing.JRadioButton rb7;
-          private javax.swing.JRadioButton rb8;
-          private javax.swing.JRadioButton rb9;
+          private javax.swing.JRadioButton rbBirthDay;
+          private javax.swing.JRadioButton rbCarnival;
+          private javax.swing.JRadioButton rbChristmas;
+          private javax.swing.JRadioButton rbEaster;
+          private javax.swing.JRadioButton rbHalloween;
+          private javax.swing.JRadioButton rbMay24th;
+          private javax.swing.JRadioButton rbNewYear;
+          private javax.swing.JRadioButton rbOther;
           private javax.swing.JTextField txtId;
           private javax.swing.JTextArea txtmailContent;
           // End of variables declaration//GEN-END:variables

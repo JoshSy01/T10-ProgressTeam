@@ -24,8 +24,8 @@ public class FrmContactSupport extends javax.swing.JFrame {
     public FrmContactSupport() {
         initComponents();
         
-        txtArea.setLineWrap(true);
-        txtArea.setWrapStyleWord(true);
+        txtAreaContent.setLineWrap(true);
+        txtAreaContent.setWrapStyleWord(true);
     }
     
     /**
@@ -39,30 +39,30 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
                     jPanel1 = new javax.swing.JPanel();
                     jLabel1 = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
-                    btnACCEPT = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
+                    btnAccept = new javax.swing.JButton();
                     jLabel2 = new javax.swing.JLabel();
                     jLabel3 = new javax.swing.JLabel();
                     txtProblem = new javax.swing.JTextField();
                     jScrollPane1 = new javax.swing.JScrollPane();
-                    txtArea = new javax.swing.JTextArea();
+                    txtAreaContent = new javax.swing.JTextArea();
 
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setResizable(false);
 
                     jLabel1.setText("CONTACTAR AL SOPORTE");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
-                    btnACCEPT.setText("ACEPTAR");
-                    btnACCEPT.addActionListener(new java.awt.event.ActionListener() {
+                    btnAccept.setText("ACEPTAR");
+                    btnAccept.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnACCEPTActionPerformed(evt);
+                                        btnAcceptActionPerformed(evt);
                               }
                     });
 
@@ -70,9 +70,9 @@ public class FrmContactSupport extends javax.swing.JFrame {
 
                     jLabel3.setText("Contenido:");
 
-                    txtArea.setColumns(20);
-                    txtArea.setRows(5);
-                    jScrollPane1.setViewportView(txtArea);
+                    txtAreaContent.setColumns(20);
+                    txtAreaContent.setRows(5);
+                    jScrollPane1.setViewportView(txtAreaContent);
 
                     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                     jPanel1.setLayout(jPanel1Layout);
@@ -82,10 +82,10 @@ public class FrmContactSupport extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(btnACCEPT))
+                                                            .addComponent(btnAccept))
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(21, 21, 21)
-                                                            .addComponent(btnBACK)
+                                                            .addComponent(btnBack)
                                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                             .addComponent(jLabel1)))
                                         .addGap(157, 157, 157))
@@ -110,7 +110,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
                                         .addGap(16, 16, 16)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                   .addComponent(jLabel1)
-                                                  .addComponent(btnBACK))
+                                                  .addComponent(btnBack))
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                   .addComponent(txtProblem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,7 +120,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
                                                   .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                   .addComponent(jLabel3))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                                        .addComponent(btnACCEPT)
+                                        .addComponent(btnAccept)
                                         .addGap(35, 35, 35))
                     );
 
@@ -139,15 +139,15 @@ public class FrmContactSupport extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
            AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnACCEPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACCEPTActionPerformed
+    private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
         ReportProblem reportProblems = null;
         System.out.println("TLSEmail Start");
         Properties props = new Properties();
@@ -170,7 +170,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress("progressteam2003@gmail.com", true));
            
             message.setSubject(txtProblem.getText());
-            message.setText(txtArea.getText());
+            message.setText(txtAreaContent.getText());
 
             Transport.send(message);
             JOptionPane.showMessageDialog(this, "Mensaje enviado Exitosamente");
@@ -179,7 +179,7 @@ public class FrmContactSupport extends javax.swing.JFrame {
             System.out.println("Exception: "+me);
 
         }
-    }//GEN-LAST:event_btnACCEPTActionPerformed
+    }//GEN-LAST:event_btnAcceptActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,14 +217,14 @@ public class FrmContactSupport extends javax.swing.JFrame {
     }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton btnACCEPT;
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnAccept;
+          private javax.swing.JButton btnBack;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;
           private javax.swing.JLabel jLabel3;
           private javax.swing.JPanel jPanel1;
           private javax.swing.JScrollPane jScrollPane1;
-          private javax.swing.JTextArea txtArea;
+          private javax.swing.JTextArea txtAreaContent;
           private javax.swing.JTextField txtProblem;
           // End of variables declaration//GEN-END:variables
 }

@@ -25,7 +25,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
 
                     jPanel1 = new javax.swing.JPanel();
                     jLabel1 = new javax.swing.JLabel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     jLabel2 = new javax.swing.JLabel();
                     jSeparator1 = new javax.swing.JSeparator();
                     jSeparator2 = new javax.swing.JSeparator();
@@ -35,10 +35,10 @@ public class FrmCommonProblems extends javax.swing.JFrame {
 
                     jLabel1.setText("PROBLEMAS COMUNES");
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -52,7 +52,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(27, 27, 27)
-                                                            .addComponent(btnBACK)
+                                                            .addComponent(btnBack)
                                                             .addGap(174, 174, 174)
                                                             .addComponent(jLabel1))
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
@@ -75,7 +75,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
                                         .addGap(14, 14, 14)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                   .addComponent(jLabel1)
-                                                  .addComponent(btnBACK))
+                                                  .addComponent(btnBack))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -102,13 +102,13 @@ public class FrmCommonProblems extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +146,7 @@ public class FrmCommonProblems extends javax.swing.JFrame {
     }
 
           // Variables declaration - do not modify//GEN-BEGIN:variables
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel2;
           private javax.swing.JPanel jPanel1;

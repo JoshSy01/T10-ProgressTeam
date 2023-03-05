@@ -23,13 +23,7 @@ import javax.swing.table.TableRowSorter;
  * @author Sebastian Verdugo,ProgressTeam,DCCO-ESPE
  */
 public class FrmHistory extends javax.swing.JFrame {
-    ArrayList<Travel> travels = new ArrayList<Travel>();
-    Travel travel = new Travel();
     TraveldbController dataBaseManager = new TraveldbController();
-    Traveler traveler = new Traveler();
-    ArrayList<TaxiDriver> taxiDrivers = new ArrayList<TaxiDriver>();
-    TaxiDriver taxiDriver = new TaxiDriver();
-    ArrayList<Traveler> travelers = new ArrayList<Traveler>();
 
     
     String collectionName = "Travels";
@@ -54,7 +48,7 @@ public class FrmHistory extends javax.swing.JFrame {
                     jPanel2 = new javax.swing.JPanel();
                     grpReminders = new javax.swing.ButtonGroup();
                     jPanel1 = new javax.swing.JPanel();
-                    btnBACK = new javax.swing.JButton();
+                    btnBack = new javax.swing.JButton();
                     jSeparator2 = new javax.swing.JSeparator();
                     btmCreatePDF = new javax.swing.JButton();
                     jLabel12 = new javax.swing.JLabel();
@@ -86,10 +80,10 @@ public class FrmHistory extends javax.swing.JFrame {
                     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                     setResizable(false);
 
-                    btnBACK.setText("<REGRESAR");
-                    btnBACK.addActionListener(new java.awt.event.ActionListener() {
+                    btnBack.setText("<REGRESAR");
+                    btnBack.addActionListener(new java.awt.event.ActionListener() {
                               public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                        btnBACKActionPerformed(evt);
+                                        btnBackActionPerformed(evt);
                               }
                     });
 
@@ -186,7 +180,7 @@ public class FrmHistory extends javax.swing.JFrame {
                                                                                 .addGap(16, 16, 16)
                                                                                 .addComponent(jLabel10))
                                                                       .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addComponent(btnBACK)
+                                                                                .addComponent(btnBack)
                                                                                 .addGap(65, 65, 65)
                                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                           .addGroup(jPanel1Layout.createSequentialGroup()
@@ -219,7 +213,7 @@ public class FrmHistory extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addGap(16, 16, 16)
-                                                            .addComponent(btnBACK))
+                                                            .addComponent(btnBack))
                                                   .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addContainerGap()
                                                             .addComponent(jLabel1)
@@ -271,17 +265,17 @@ public class FrmHistory extends javax.swing.JFrame {
                     setLocationRelativeTo(null);
           }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBACKActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
            AirportTaxiScheduling airportTaxiScheduling;
         airportTaxiScheduling = new AirportTaxiScheduling();
         this.setVisible(false);
         airportTaxiScheduling.setVisible(true);
-    }//GEN-LAST:event_btnBACKActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
-        char c = evt.getKeyChar();
-        if(c<'0' || c>'9'){
+        char characterTyped = evt.getKeyChar();
+        if(characterTyped<'0' || characterTyped>'9'){
             evt.consume();
         }
     }//GEN-LAST:event_txtIdKeyTyped
@@ -359,7 +353,7 @@ public class FrmHistory extends javax.swing.JFrame {
           // Variables declaration - do not modify//GEN-BEGIN:variables
           private javax.swing.JButton btmCreatePDF;
           private javax.swing.JButton btmFind;
-          private javax.swing.JButton btnBACK;
+          private javax.swing.JButton btnBack;
           private javax.swing.ButtonGroup grpReminders;
           private javax.swing.JLabel jLabel1;
           private javax.swing.JLabel jLabel10;
@@ -383,7 +377,6 @@ public class FrmHistory extends javax.swing.JFrame {
         
         dataBaseManager = TraveldbController.connectToDatabase( dataBaseManager);
         ArrayList<Travel> travelsView = new ArrayList<Travel>();
-        Travel travelView = new Travel();
         String[] titles = {"Id Viaje", "Conductor", "Direccion"};
         String[] travelsString = new String[3];
         DefaultTableModel tableOfTravels = new DefaultTableModel(null, titles);

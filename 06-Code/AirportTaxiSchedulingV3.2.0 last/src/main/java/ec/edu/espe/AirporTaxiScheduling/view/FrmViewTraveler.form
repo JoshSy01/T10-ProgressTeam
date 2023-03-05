@@ -36,14 +36,14 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="label3" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txt1" min="-2" pref="312" max="-2" attributes="0"/>
+                                              <Component id="txtTraavelerName" min="-2" pref="312" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="label2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txt0" min="-2" pref="117" max="-2" attributes="0"/>
+                                              <Component id="txtId" min="-2" pref="117" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                              <Component id="bt2" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Component id="btFind" min="-2" pref="118" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
                                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="sp1" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="spDay" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
@@ -63,7 +63,7 @@
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <Component id="sp3" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <Component id="spMonth" min="-2" pref="80" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
-                                              <Component id="sp2" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <Component id="spYear" min="-2" pref="80" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
@@ -81,23 +81,23 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="label4" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txt2" min="-2" pref="191" max="-2" attributes="0"/>
+                                              <Component id="txtPhoneNumberTraveler" min="-2" pref="191" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="label5" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txt3" max="32767" attributes="0"/>
+                                                  <Component id="txtEmailTraveler" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="label6" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txt4" min="-2" pref="216" max="-2" attributes="0"/>
+                                                  <Component id="txtOutstandingBalance" min="-2" pref="216" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="bt5" min="-2" pref="162" max="-2" attributes="0"/>
+                                      <Component id="btClean" min="-2" pref="162" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -109,13 +109,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="btnBACK" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="bt1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btShowTravelers" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -131,42 +131,42 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBACK" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="label2" alignment="0" max="32767" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="txt0" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="bt2" alignment="3" max="32767" attributes="0"/>
+                      <Component id="txtId" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="btFind" alignment="3" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label3" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="txt1" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="txtTraavelerName" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="label4" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="txt2" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="txtPhoneNumberTraveler" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="label5" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txt3" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="txtEmailTraveler" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="bt5" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btClean" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txt4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtOutstandingBalance" alignment="0" max="32767" attributes="0"/>
                   <Component id="label6" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -178,9 +178,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="sp1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sp2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sp3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spMonth" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -189,7 +189,7 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="bt1" min="-2" max="-2" attributes="0"/>
+              <Component id="btShowTravelers" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="142" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -203,12 +203,12 @@
         <Property name="text" type="java.lang.String" value="BUSCAR PASAJEROS"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnBACK">
+    <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;REGRESAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBACKActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -240,7 +240,7 @@
         <Property name="text" type="java.lang.String" value="E-mail del Pasajero"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt4">
+    <Component class="javax.swing.JTextField" name="txtOutstandingBalance">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -252,10 +252,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt4KeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtOutstandingBalanceKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt3">
+    <Component class="javax.swing.JTextField" name="txtEmailTraveler">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -267,10 +267,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailTravelerActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt2">
+    <Component class="javax.swing.JTextField" name="txtPhoneNumberTraveler">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -282,8 +282,8 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt2ActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt2KeyTyped"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPhoneNumberTravelerActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPhoneNumberTravelerKeyTyped"/>
       </Events>
     </Component>
     <Component class="java.awt.Label" name="label2">
@@ -294,7 +294,7 @@
         <Property name="text" type="java.lang.String" value="Id: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt1">
+    <Component class="javax.swing.JTextField" name="txtTraavelerName">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -306,8 +306,8 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt1ActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt1KeyTyped"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTraavelerNameActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTraavelerNameKeyTyped"/>
       </Events>
     </Component>
     <Component class="java.awt.Label" name="label7">
@@ -318,7 +318,7 @@
         <Property name="text" type="java.lang.String" value="Cumplea&#xf1;os"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JSpinner" name="sp3">
+    <Component class="javax.swing.JSpinner" name="spMonth">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -330,10 +330,10 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sp3KeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="spMonthKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JSpinner" name="sp1">
+    <Component class="javax.swing.JSpinner" name="spDay">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -345,10 +345,10 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sp1KeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="spDayKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JSpinner" name="sp2">
+    <Component class="javax.swing.JSpinner" name="spYear">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
@@ -360,7 +360,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sp2KeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="spYearKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -381,7 +381,7 @@
         <Property name="text" type="java.lang.String" value="DIA"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt0">
+    <Component class="javax.swing.JTextField" name="txtId">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -392,8 +392,8 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt0ActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt0KeyTyped"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdKeyTyped"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -459,28 +459,28 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="bt2">
+    <Component class="javax.swing.JButton" name="btFind">
       <Properties>
         <Property name="text" type="java.lang.String" value="ENCONTRAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFindActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt1">
+    <Component class="javax.swing.JButton" name="btShowTravelers">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mostrar a todos los Pasajeros"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btShowTravelersActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt5">
+    <Component class="javax.swing.JButton" name="btClean">
       <Properties>
         <Property name="text" type="java.lang.String" value="LIMPIAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCleanActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
